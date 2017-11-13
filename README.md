@@ -30,7 +30,7 @@ Gardener enforces many best code style practises using [ESLint](https://eslint.o
 
     # grunt gardener
 
-This will generate some files.
+This will generate some files and alter your existing package.json file.
 
 # Details
 
