@@ -3,9 +3,13 @@
   "version": "0.0.0-development",
   "description": "Automated project test and best practise guide / enforcement.",
   "main": "lib/tasks",
+  "engines": {
+    "node": ">= 6.10.3"
+  },
   "scripts": {
     "test": "grunt gardener",
-    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info"
+    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -22,7 +26,12 @@
     "ci"
   ],
   "author": "Lukas Siemon",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/simlu/grunt-gardener/blob/master/LICENSE"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/simlu/grunt-gardener/issues"
   },
@@ -43,11 +52,12 @@
     "grunt-project-update": "0.2.4",
     "grunt-yamllint": "0.3.0",
     "istanbul": "0.4.5",
+    "lodash.merge": "4.6.0",
     "mocha": "4.0.1"
   },
   "devDependencies": {
     "chai": "4.1.2",
     "coveralls": "3.0.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "2.6.2"
   }
 }
