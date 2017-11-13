@@ -1,5 +1,7 @@
 # Gardener
 
+[![Join the chat at https://gitter.im/simlu/grunt-gardener](https://badges.gitter.im/simlu/grunt-gardener.svg)](https://gitter.im/simlu/grunt-gardener?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://img.shields.io/travis/simlu/grunt-gardener/master.svg)](https://travis-ci.org/simlu/grunt-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/grunt-gardener/master.svg)](https://coveralls.io/github/simlu/grunt-gardener?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/simlu/grunt-gardener.svg)](https://greenkeeper.io/)
