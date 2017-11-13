@@ -2,9 +2,9 @@
   "name": "grunt-gardener",
   "version": "0.0.0-development",
   "description": "Automated test and best practise enforcements.",
-  "main": "lib/gardener",
+  "main": "tasks/gardener",
   "files": [
-    "lib"
+    "lib", "tasks"
   ],
   "engines": {
     "node": ">= 6.10.3"
