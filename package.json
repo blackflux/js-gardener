@@ -1,7 +1,7 @@
 {
   "name": "grunt-gardener",
   "version": "0.0.0-development",
-  "description": "Automated test and best practise enforcements.",
+  "description": "Minimizes project setup and maintenance complexity, so you can focus on writing code.",
   "main": "tasks/gardener",
   "files": [
     "lib",
