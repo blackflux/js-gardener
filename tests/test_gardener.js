@@ -1,7 +1,7 @@
 const path = require('path');
 const expect = require("chai").expect;
 const grunt = require('grunt');
-const gardener = require('../lib/gardener');
+const gardener = require('../tasks/gardener');
 const rimraf = require('rimraf');
 
 describe("Testing Gardener", () => {
