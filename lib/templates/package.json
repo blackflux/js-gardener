@@ -8,7 +8,7 @@
     }
   },
   "defaults": {
-    "homepage": "{{GIT_URL}}",
+    "homepage": "{{GIT_URL}}#readme",
     "license": "MIT",
     "licenses": [
       {
@@ -29,6 +29,9 @@
     },
     "bugs": {
       "url": "{{GIT_URL}}/issues"
-    }
+    },
+    "files": [
+      "lib"
+    ]
   }
 }
