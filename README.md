@@ -20,3 +20,6 @@ Abstract various tests for your project and help with best practises and useful 
 
 This will generate some files.
 
+# Details
+
+...
