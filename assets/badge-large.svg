@@ -1,1 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="132" height="28"><g shape-rendering="crispEdges"><path fill="#555" d="M0 0h35v28H0z"/><path fill="#97CA00" d="M35 0h97v28H35z"/></g><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="100"><image x="9" y="7" width="14" height="14" xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iMjU2LVRyZWUiIGlkPSJfMjU2LVRyZWUiPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMTYgMzIgMTYgMTAgMTMgNyIvPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjE2IiB4Mj0iMjAiIHkxPSIxNiIgeTI9IjEyIi8+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iMTYiIHgyPSIxMiIgeTE9IjE5IiB5Mj0iMTUiLz48bGluZSBjbGFzcz0iY2xzLTEiIHgxPSIxNiIgeDI9IjE5IiB5MT0iMTAiIHkyPSI3Ii8+PGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSIxNiIgY3k9IjEyIiByPSIxMSIvPjwvZz48L3N2Zz4="/><text x="245" y="175" transform="scale(.1)" textLength="-30"></text><text x="835" y="175" font-weight="bold" transform="scale(.1)" textLength="730">GARDENER</text></g> </svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="132"
+   height="28"
+   version="1.1"
+   id="svg24"
+   sodipodi:docname="badge-large.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata30">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs28">
+    <style
+       id="style32">.cls-1{fill:none;stroke:#000;stroke-linejoin:round;stroke-width:2px;}</style>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1275"
+     inkscape:window-height="898"
+     id="namedview26"
+     showgrid="false"
+     inkscape:zoom="3.5757576"
+     inkscape:cx="26.86027"
+     inkscape:cy="19.278561"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g22" />
+  <g
+     shape-rendering="crispEdges"
+     id="g14">
+    <path
+       fill="#555"
+       d="M0 0h35v28H0z"
+       id="path10" />
+    <path
+       fill="#97CA00"
+       d="M35 0h97v28H35z"
+       id="path12" />
+  </g>
+  <g
+     fill="#fff"
+     text-anchor="middle"
+     font-family="DejaVu Sans,Verdana,Geneva,sans-serif"
+     font-size="100"
+     id="g22">
+    <text
+       x="245"
+       y="175"
+       transform="scale(.1)"
+       textLength="-30"
+       id="text18" />
+    <text
+       x="835"
+       y="175"
+       font-weight="bold"
+       transform="scale(.1)"
+       textLength="730"
+       id="text20">GARDENER</text>
+    <g
+       id="_256-Tree"
+       data-name="256-Tree"
+       transform="matrix(0.76694915,0,0,0.76694915,5.0677967,2.0254237)">
+      <polyline
+         id="polyline38"
+         points="16 32 16 10 13 7"
+         class="cls-1"
+         style="fill:none;stroke:#ffffff;stroke-width:2px;stroke-linejoin:round" />
+      <line
+         id="line40"
+         y2="12"
+         y1="16"
+         x2="20"
+         x1="16"
+         class="cls-1"
+         style="fill:none;stroke:#ffffff;stroke-width:2px;stroke-linejoin:round" />
+      <line
+         id="line42"
+         y2="15"
+         y1="19"
+         x2="12"
+         x1="16"
+         class="cls-1"
+         style="fill:none;stroke:#ffffff;stroke-width:2px;stroke-linejoin:round" />
+      <line
+         id="line44"
+         y2="7"
+         y1="10"
+         x2="19"
+         x1="16"
+         class="cls-1"
+         style="fill:none;stroke:#ffffff;stroke-width:2px;stroke-linejoin:round" />
+      <circle
+         id="circle46"
+         r="11"
+         cy="12"
+         cx="16"
+         class="cls-1"
+         style="fill:none;stroke:#ffffff;stroke-width:2px;stroke-linejoin:round" />
+    </g>
+  </g>
+</svg>
