@@ -1,5 +1,5 @@
 {
-  "name": "grunt-greenkeeper",
+  "name": "grunt-gardener",
   "version": "0.0.0-development",
   "description": "Automated test and best practise enforcements.",
   "main": "lib/tasks",
