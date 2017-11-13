@@ -1,2 +1,2 @@
 lib/conf/rules/*.js
-tests/mock/**
+test/mock/**
