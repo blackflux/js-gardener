@@ -18,7 +18,8 @@
     ],
     "devDependencies": {
       "coveralls": "3.0.0",
-      "semantic-release": "8.2.0"
+      "semantic-release": "8.2.0",
+      "cracks": "3.1.2"
     },
     "engines": {
       "node": ">= 6.10.3"
@@ -29,6 +30,13 @@
     },
     "bugs": {
       "url": "{{GIT_URL}}/issues"
+    },
+    "release": {
+      "verifyRelease": {
+        "path": "cracks",
+        "paths": ["test", "package.json", "package-lock.json"],
+        "silent": true
+      }
     }
   }
 }
