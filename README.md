@@ -1,5 +1,8 @@
 # Gardener
 
+[![Build Status](https://img.shields.io/travis/simlu/grunt-gardener/master.svg)](https://travis-ci.org/simlu/grunt-gardener)
+[![Test Coverage](https://img.shields.io/coveralls/simlu/grunt-gardener/master.svg)](https://coveralls.io/github/simlu/grunt-gardener?branch=master)
+
 Abstract various tests for your project and help with best practises and useful external services.
 
 # Getting Started
