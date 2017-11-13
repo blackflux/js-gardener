@@ -4,8 +4,9 @@ Abstract various tests for your project and help with best practises and useful 
 
 # Getting Started
 
-### Basic
+### Preparation
 
+- Create New Project
 - Create Empty Repository
 - Run `git init`, `git remote add origin URL`, `git checkout -b master`
 - Run `npm init` and fill in details
