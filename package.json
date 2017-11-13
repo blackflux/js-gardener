@@ -1,7 +1,7 @@
 {
   "name": "grunt-greenkeeper",
   "version": "0.0.0-development",
-  "description": "Automated project test and best practise guide / enforcement.",
+  "description": "Automated test and best practise enforcements.",
   "main": "lib/tasks",
   "engines": {
     "node": ">= 6.10.3"
