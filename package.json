@@ -67,18 +67,6 @@
     "chai": "4.1.2",
     "coveralls": "3.0.0",
     "rimraf": "2.6.2",
-    "semantic-release": "8.2.0",
-    "cracks": "3.1.2"
-  },
-  "release": {
-    "verifyRelease": {
-      "path": "cracks",
-      "paths": [
-        "test",
-        "package.json",
-        "package-lock.json"
-      ],
-      "silent": true
-    }
+    "semantic-release": "8.2.0"
   }
 }
