@@ -3,6 +3,9 @@
   "version": "0.0.0-development",
   "description": "Automated test and best practise enforcements.",
   "main": "lib/gardener",
+  "files": [
+    "lib"
+  ],
   "engines": {
     "node": ">= 6.10.3"
   },
