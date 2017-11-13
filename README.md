@@ -13,13 +13,6 @@ Highly recommended if you are getting started with a new project or module and e
 
 Gardener enforces many best code style practises using [eslint](https://eslint.org/) and [yamllint](https://github.com/nodeca/js-yaml), semi-automates config generation, provides various integrity tests (e.g. checks for un-used dependencies), enforces 100% test coverage using [istanbul](https://istanbul.js.org/) and helps you set up [CI](https://en.wikipedia.org/wiki/Continuous_integration) using [travis-ci](https://travis-ci.org/), [CD](https://en.wikipedia.org/wiki/Continuous_delivery) using [semantic-release](https://github.com/semantic-release/semantic-release) ([npm](https://www.npmjs.com/), [github](https://github.com/)) and semi-automatic dependency updates using [greenkeeper](https://greenkeeper.io/)
 
-![ESLint](https://img.shields.io/badge/ESLint-%E2%9C%93-green.svg?style=for-the-badge)
-![Semantic-Release](https://img.shields.io/badge/Semantic-Release-%E2%9C%93-green.svg?style=for-the-badge)
-![YAMLlint](https://img.shields.io/badge/YAMLlint-%E2%9C%93-green.svg?style=for-the-badge)
-![Istanbul](https://img.shields.io/badge/YAMLlint-%E2%9C%93-green.svg?style=for-the-badge)
-![TravisCI](https://img.shields.io/badge/TravisCI-%E2%9C%93-green.svg?style=for-the-badge)
-![Greenkeeper](https://img.shields.io/badge/Greenkeeper-%E2%9C%93-green.svg?style=for-the-badge)
-
 # Getting Started
 
 ### Preparation
