@@ -1,3 +1,3 @@
-lib/templates/LICENSE
-lib/templates/README.md
+lib/templates/files/LICENSE
+lib/templates/files/README.md
 tests/mock/**
