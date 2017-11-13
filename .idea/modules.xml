@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/grunt-gardener.iml" filepath="$PROJECT_DIR$/.idea/grunt-gardener.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/lambda-rate-limiter.iml" filepath="$PROJECT_DIR$/.idea/lambda-rate-limiter.iml" />
     </modules>
   </component>
 </project>
