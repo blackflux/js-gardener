@@ -14,7 +14,7 @@ Abstract various tests for your project and help with best practises and useful 
 
     # npm install --save-dev grunt-gardener
 
-### Run Baisc Setup
+### Run Basic Setup
 
     # grunt gardener
 
