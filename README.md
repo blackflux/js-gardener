@@ -11,7 +11,14 @@
 
 Highly recommended if you are getting started with a new project or module and extremely useful if you are maintaining multiple npm modules.
 
-Gardener enforces many best code style practises using [eslint](https://eslint.org/) and [yamllint](https://github.com/nodeca/js-yaml), semi-automates config generation, provides various integrity tests (e.g. checks for un-used dependencies), enforces 100% test coverage using [istanbul](https://istanbul.js.org/) and helps you set up [CI](https://en.wikipedia.org/wiki/Continuous_integration) using [travis-ci](https://travis-ci.org/), [CD](https://en.wikipedia.org/wiki/Continuous_delivery) using [semantic-release](https://github.com/semantic-release/semantic-release) ([npm](https://www.npmjs.com/), [github](https://github.com/)) and semi-automatic dependency updates using [greenkeeper](https://greenkeeper.io/)
+Gardener enforces many best code style practises using [ESLint](https://eslint.org/) and [YAMLlint](https://github.com/nodeca/js-yaml), semi-automates config generation, provides various integrity tests (e.g. checks for un-used dependencies), enforces 100% test coverage using [Istanbul](https://istanbul.js.org/) and helps you set up [CI](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/), [CD](https://en.wikipedia.org/wiki/Continuous_delivery) using [Semantic-Release](https://github.com/semantic-release/semantic-release) ([NPM](https://www.npmjs.com/), [GitHub](https://github.com/)) and semi-automatic dependency updates using [Greenkeeper](https://greenkeeper.io/).
+
+![](https://img.shields.io/badge/ESLint-%E2%9C%93-green.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Semantic-Release-%E2%9C%93-green.svg?style=for-the-badge)
+![](https://img.shields.io/badge/YAMLlint-%E2%9C%93-green.svg?style=for-the-badge)
+![](https://img.shields.io/badge/YAMLlint-%E2%9C%93-green.svg?style=for-the-badge)
+![](https://img.shields.io/badge/TravisCI-%E2%9C%93-green.svg?style=for-the-badge)
+![](https://img.shields.io/badge/Greenkeeper-%E2%9C%93-green.svg?style=for-the-badge)
 
 # Getting Started
 
