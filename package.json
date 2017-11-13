@@ -4,7 +4,8 @@
   "description": "Automated test and best practise enforcements.",
   "main": "tasks/gardener",
   "files": [
-    "lib", "tasks"
+    "lib",
+    "tasks"
   ],
   "engines": {
     "node": ">= 6.10.3"
@@ -41,6 +42,7 @@
   },
   "homepage": "https://github.com/simlu/grunt-gardener#readme",
   "dependencies": {
+    "app-root-path": "^2.0.1",
     "babel-eslint": "8.0.2",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
