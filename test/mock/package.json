@@ -35,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/simlu/grunt-gardener/issues"
   },
-  "homepage": "https://github.com/simlu/grunt-gardener"
+  "homepage": "https://github.com/simlu/grunt-gardener",
+  "files": [
+    "lib"
+  ]
 }
