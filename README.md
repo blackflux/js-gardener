@@ -51,35 +51,55 @@ Then run
 
 This will generate some files and alter your existing package.json file.
 
-# Folder Structure
+# Structure
 
-Write your tests in the `test` and your code in the `lib` folder.
+**Folders** - Write your tests in the `test` and your code in the `lib` folder.
+
+**Branches** - You release branch is `master`. Develop against `develop` or feature branches. When you are ready for a release, merge your changes into `master`.
 
 # Badges
 
-When completed, verify each badge by clicking on it.
+Badges represent external services that integrate with your repository. This section will instruct you on how to set up and utilize each service. When completed, verify each service by clicking the corresponding badge.
 
-If you username is different between github and other services, you will need to adjust the badge urls.
+If you username is different between github and a service, you will need to adjust the badge url.
 
 ### Travis
 
-Create TravisCI account, preferably with the same username that you use for github. Then enable TravisCI access to your repo.
+**What is it?** - TravisCI is used for [Continous Integration](https://docs.travis-ci.com/user/for-beginners/). It is also required by Semantic-Release.
+
+**Setup** - Create TravisCI account on [travis-ci.org](https://travis-ci.org/), preferably with the same username that you use for github. Then enable TravisCI access to your repo.
+
+**How to use** - Gardener takes care of setting up your configuration files. However if you want customize TravisCI, please refer to the [documentation](https://docs.travis-ci.com/).
 
 ### Coveralls
 
-Create Coveralls account, preferably with the same username that you use for github. Then enable Coveralls access to your repo.
+**What is it?** - Coveralls shows which parts of your code aren’t covered by your test suite. Note that Gardener currently enforces 100% test coverage.
+
+**Setup** - Create Coveralls account, preferably with the same username that you use for github. Then enable Coveralls access to your repo.
+
+**How to use** - Coveralls will automatically receive coverage information from TravisCI. You do *not* need to specify any configuration. More information can be found [here](https://coveralls.io/).
 
 ### Greenkeeper
 
-Create Greenkeeper account, preferably with the same username that you use for github. Then enable Greenkeeper access to your repo.
+**What is it?** - Greenkeeper automatically creates pull request with updated dependencies as soon as they become outdated.
+
+**Setup** - Create Greenkeeper account, preferably with the same username that you use for github. Then enable Greenkeeper access to your repo. No initial PR should be created and the status should turn green immediately.
+
+**How to use** - When Greenkeeper creates PRs you need to ensure that all checks pass. If they don't you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just click the merge button.
 
 ### NPM and Downloads
 
-Create NPM account, preferably with the same username that you use for github.
+**What is it?** - NPM makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you're sharing.
+
+**Setup** - Create NPM account, preferably with the same username that you use for github.
+
+**How to use** - Once your package is published you can easily install it by running `npm install --save PACKAGE_NAME`.
 
 ### Semantic-Release
 
-Install Semantic-Release globally with
+**What is it?** - Semantic-Release allows you to easily and consistently publish changes to github and npm.
+
+**Setup** - Install Semantic-Release globally with
 
     $ npm install -g semantic-release-cli
 
@@ -89,13 +109,19 @@ then run
 
 and follow instructions.
 
+**How to use** - When you merge your changes into `master`, a new version is automatically published if all tests pass and changes are detected.
+
 ### Gardener
 
 You've already enabled this by following the first steps of the Readme.
 
 ### Gitter
 
-Log into Gitter and create a room with your project name on github.
+**What is it?** - Chat rooms that easily allow people to ask questions about your project.
+
+**Setup** - Log into Gitter and create a room with your project name on github.
+
+**How to use** - Each repo should have it's own chat room, allowing people to talk about the repo. You will get notifications if people ask questions and can respond to it as appropritate. This is useful for e.g. lengthy discussions that are not appropritate to happen in a github issue.
 
 # Options
 
