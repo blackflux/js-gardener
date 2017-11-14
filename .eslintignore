@@ -4,3 +4,4 @@ test/mock/**
 assets/**/*.svg
 lib/templates/files/dot.*
 lib/templates/dot.*
+BADGES.md
