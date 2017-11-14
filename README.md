@@ -95,7 +95,7 @@ If you username is different between github and a service, you will need to adju
 
 **Setup** - Create NPM account, preferably with the same username that you use for github.
 
-**How to use** - Once your package is published you can easily install it by running `npm install --save PACKAGE_NAME`.
+**How to use** - Once your package is published using TravisCI and Semantic-Release, you can easily install it by running `npm install --save PACKAGE_NAME`.
 
 ### Semantic-Release
 
