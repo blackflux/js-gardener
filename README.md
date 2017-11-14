@@ -28,10 +28,110 @@ Gardener enforces many best code style practises using [ESLint](https://eslint.o
 
 ### Run Basic Setup
 
+Create `gruntfile.js` in the root folder with the following contents
+
+```javascript
+module.exports = (grunt) => {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    gardener: {
+      this: {
+        options: {}
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-gardener');
+};
+```
+
+Then run
+
     # grunt gardener
 
 This will generate some files and alter your existing package.json file.
 
-# Details
+# Folder Structure
 
-...
+Write your tests in the `test` and your code in the `lib` folder.
+
+# Badges
+
+### Travis
+
+Create TravisCI account, preferably with the same username that you use for github. Then enable TravisCI access to your repo.
+
+### Coveralls
+
+Create Coveralls account, preferably with the same username that you use for github. Then enable Coveralls access to your repo.
+
+### Greenkeeper
+
+Create Greenkeeper account, preferably with the same username that you use for github. Then enable Greenkeeper access to your repo.
+
+### NPM and Downloads
+
+Create NPM account, preferably with the same username that you use for github.
+
+### Semantic-Release
+
+Install Semantic-Release globally with
+
+    $ npm install -g semantic-release-cli
+
+then run
+
+    $ semantic-release-cli setup
+
+and follow instructions.
+
+### Gardener
+
+You've already enabled this by following the first steps of the Readme.
+
+### Gitter
+
+Log into Gitter and create a room with your project name on github.
+
+# Options
+
+### skip
+
+Type: `array`<br>
+Default: `[]`
+
+Array of tasks to skip. Should not be necessary to use unless you really need to. Available tasks are:
+- `mkdir`: Auto create folders
+- `copy`: Copy template files
+- `gardener_configure`: Alter configuration files
+- `projectUpdate`: Install dependencies exactly as specified in package.json
+- `eslint`: Ensure code is according to best eslint practises
+- `yamllint`: Ensure yaml files are passing lint
+- `depcheck`: Ensure all installed dependencies are used
+- `checkDependencies`: Ensure dependencies are installed as specified in package.json
+- `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
+
+### root
+
+Type: `string`<br>
+Default: `process.cwd()`
+
+Specify the directory to run the tests against. Useful if you have multiple modules that you manage centralized from a parent folder.
+
+# Ignore Files
+
+### .coverignore
+
+Define files which should be excluded from coverage.
+
+### .eslintignore
+
+Define files which should be excluded for eslint.
+
+### .depunusedignore
+
+Define dependencies that should be ignored from usage check. Useful when false negative is detected, e.g. for plugins where usage is defined in configuration.
+
+# How to Contribute to Gardener Repositories
+
+Always run `npm test` locally before you open a PR.
