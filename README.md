@@ -17,8 +17,8 @@ Gardener enforces many best code style practises using [ESLint](https://eslint.o
 
 ### Preparation
 
-- Create New Project
-- Create Empty Repository
+- Create New Project (e.g. using Webstorm)
+- Create New Repository on Github
 - Run `git init`, `git remote add origin URL`, `git checkout -b master`
 - Run `npm init` and fill in details
 
