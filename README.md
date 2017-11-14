@@ -136,6 +136,12 @@ Define files which should be excluded for eslint. Always excluded files can be f
 
 Define packages that should be excluded from usage check. Useful when a false negative is detected, e.g. for plugins where usage is defined in configuration. Always excluded packages can be found [here](lib/conf/.depunusedignore).
 
+# Sample Project
+
+While this project utilizes itself for testing (how cool is that?), a cleaner example can be found [here](test/mock).
+
+All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
+
 # How to Contribute
 
 When you contribute to any Gardener repositories, always run `npm test` locally before you open a PR.
