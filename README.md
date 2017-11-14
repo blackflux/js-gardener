@@ -75,7 +75,7 @@ If you username is different between github and a service, you will need to adju
 
 **What is it?** - Coveralls shows which parts of your code aren’t covered by your test suite. Note that Gardener currently enforces 100% test coverage.
 
-**Setup** - Create a Coveralls account, preferably with the same username that you use for github. Then enable Coveralls access for your repo.
+**Setup** - Create a Coveralls account on [coveralls.io](https://coveralls.io/), preferably with the same username that you use for github. Then enable Coveralls access for your repo.
 
 **How to use** - Coveralls will automatically receive coverage information from TravisCI. You do *not* need to specify any configuration. More information can be found [here](https://coveralls.io/).
 
