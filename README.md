@@ -132,6 +132,6 @@ Define files which should be excluded for eslint.
 
 Define dependencies that should be ignored from usage check. Useful when false negative is detected, e.g. for plugins where usage is defined in configuration.
 
-# How to Contribute to Gardener Repositories
+# How to Contribute
 
-Always run `npm test` locally before you open a PR.
+When you contribute to any Gardener repositories, always run `npm test` locally before you open a PR.
