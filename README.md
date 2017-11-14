@@ -121,7 +121,7 @@ You are currently working through this by following this Readme :)
 
 **What is it?** - Chat rooms that easily allow people to ask questions about your project.
 
-**Setup** - signup / Login into Gitter and create a room with your project name on github.
+**Setup** - Login into Gitter and create a room with your project name on github.
 
 **How to use** - Each repo should have it's own chat room, allowing people to talk sepcifically about the repo. You will get notifications and can respond to it as appropritate. This is useful for e.g. lengthy discussions that are not appropritate to happen in a github issue.
 
