@@ -24,7 +24,7 @@ Gardener enforces many best code style practises using [ESLint](https://eslint.o
 
 ### Install Gardener
 
-    # npm install --save-dev grunt-gardener
+    $ npm install --save-dev grunt-gardener
 
 ### Run Basic Setup
 
@@ -47,7 +47,7 @@ module.exports = (grunt) => {
 
 Then run
 
-    # grunt gardener
+    $ grunt gardener
 
 This will generate some files and alter your existing package.json file.
 
