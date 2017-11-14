@@ -138,7 +138,7 @@ Define packages that should be excluded from usage check. Useful when a false ne
 
 # Sample Project
 
-While this project utilizes itself for testing (how cool is that?), a cleaner example can be found [here](test/mock).
+While this project utilizes itself for testing - how cool is that? - a cleaner example (without the grunt file) can be found [here](test/mock).
 
 All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
 
