@@ -107,7 +107,7 @@ Default: `[]`
 Array of tasks to skip. Should not be necessary to use unless you really need to. Available tasks are:
 - `mkdir`: Auto create folders
 - `copy`: Copy template files
-- `gardener_configure`: Alter configuration files
+- `gardener_configure`: Alter configuration files, insert badges
 - `projectUpdate`: Install dependencies exactly as specified in package.json
 - `eslint`: Ensure code is according to best eslint practises
 - `yamllint`: Ensure yaml files are passing lint
