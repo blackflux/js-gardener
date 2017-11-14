@@ -1,0 +1,10 @@
+[
+  "[![Build Status](https://img.shields.io/travis/{{USER_NAME}}/{{REPO_NAME}}/master.svg)](https://travis-ci.org/{{USER_NAME}}/{{REPO_NAME}})",
+  "[![Test Coverage](https://img.shields.io/coveralls/{{USER_NAME}}/{{REPO_NAME}}/master.svg)](https://coveralls.io/github/{{USER_NAME}}/{{REPO_NAME}}?branch=master)",
+  "[![Greenkeeper badge](https://badges.greenkeeper.io/{{USER_NAME}}/{{REPO_NAME}}.svg)](https://greenkeeper.io/)",
+  "[![NPM](https://img.shields.io/npm/v/{{REPO_NAME}}.svg)](https://www.npmjs.com/package/{{REPO_NAME}})",
+  "[![Downloads](https://img.shields.io/npm/dt/{{REPO_NAME}}.svg)](https://www.npmjs.com/package/{{REPO_NAME}})",
+  "[![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)",
+  "[![Gardener](https://github.com/{{USER_NAME}}/{{REPO_NAME}}/blob/master/assets/badge.svg)](https://github.com/{{USER_NAME}}/{{REPO_NAME}})",
+  "[![Gitter](https://img.shields.io/gitter/room/{{USER_NAME}}/{{REPO_NAME}}.svg)](https://gitter.im/{{USER_NAME}}/{{REPO_NAME}})"
+]
