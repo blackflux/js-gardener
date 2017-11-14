@@ -5,7 +5,3 @@ test/
 .coveralls.yml
 .travis.yml
 gruntfile.js
-
-# ensure always complete
-!/lib/**/.*
-!/lib/**/*

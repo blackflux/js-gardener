@@ -2,3 +2,5 @@ lib/templates/files/LICENSE
 lib/templates/files/README.md
 test/mock/**
 assets/**/*.svg
+lib/templates/files/dot.*
+lib/templates/dot.*
