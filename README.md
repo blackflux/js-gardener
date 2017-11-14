@@ -61,6 +61,8 @@ This will generate some files and alter your existing package.json file.
 
 Badges represent external services that integrate with your repository. This section will instruct you on how to set up and utilize each service. When completed, verify each service by clicking the corresponding badge.
 
+Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed to the repository.
+
 If you username is different between github and a service, you will need to adjust the badge url.
 
 ### Travis
@@ -83,7 +85,7 @@ If you username is different between github and a service, you will need to adju
 
 **What is it?** - Greenkeeper automatically creates pull requests with updated dependencies as soon as they become outdated.
 
-**Setup** - Create a Greenkeeper account on [greenkeeper.io](https://greenkeeper.io/), preferably with the same username that you use for github. Then enable Greenkeeper access for your repo. No automatic PR should be created since the badge already exists and the status should turn green immediately.
+**Setup** - Create a Greenkeeper account on [greenkeeper.io](https://greenkeeper.io/), preferably with the same username that you use for github. Then enable Greenkeeper access for your repo. The status should turn green immediately.
 
 **How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
 
