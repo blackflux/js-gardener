@@ -126,15 +126,15 @@ Specify the directory to run the tests against. Useful if you have multiple modu
 
 ### .coverignore
 
-Define files which should be excluded from coverage.
+Define files which should be excluded from coverage. Always excluded files can be found [here](lib/conf/.coverignore).
 
 ### .eslintignore
 
-Define files which should be excluded for eslint.
+Define files which should be excluded for eslint. Always excluded files can be found [here](lib/conf/.eslintignore).
 
 ### .depunusedignore
 
-Define dependencies that should be ignored from usage check. Useful when false negative is detected, e.g. for plugins where usage is defined in configuration.
+Define packages that should be excluded from usage check. Useful when a false negative is detected, e.g. for plugins where usage is defined in configuration. Always excluded packages can be found [here](lib/conf/.depunusedignore).
 
 # How to Contribute
 
