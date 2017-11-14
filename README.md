@@ -67,29 +67,29 @@ If you username is different between github and a service, you will need to adju
 
 **What is it?** - TravisCI is used for [Continous Integration](https://docs.travis-ci.com/user/for-beginners/). It is also required by Semantic-Release.
 
-**Setup** - Create TravisCI account on [travis-ci.org](https://travis-ci.org/), preferably with the same username that you use for github. Then enable TravisCI access to your repo.
+**Setup** - Create a TravisCI account on [travis-ci.org](https://travis-ci.org/), preferably with the same username that you use for github. Then enable TravisCI access for your repo.
 
-**How to use** - Gardener takes care of setting up your configuration files. However if you want customize TravisCI, please refer to the [documentation](https://docs.travis-ci.com/).
+**How to use** - Gardener takes care of setting up your configuration files. If you would like to customize TravisCI further, please refer to the [documentation](https://docs.travis-ci.com/).
 
 ### Coveralls
 
 **What is it?** - Coveralls shows which parts of your code aren’t covered by your test suite. Note that Gardener currently enforces 100% test coverage.
 
-**Setup** - Create Coveralls account, preferably with the same username that you use for github. Then enable Coveralls access to your repo.
+**Setup** - Create a Coveralls account, preferably with the same username that you use for github. Then enable Coveralls access for your repo.
 
 **How to use** - Coveralls will automatically receive coverage information from TravisCI. You do *not* need to specify any configuration. More information can be found [here](https://coveralls.io/).
 
 ### Greenkeeper
 
-**What is it?** - Greenkeeper automatically creates pull request with updated dependencies as soon as they become outdated.
+**What is it?** - Greenkeeper automatically creates pull requests with updated dependencies as soon as they become outdated.
 
-**Setup** - Create Greenkeeper account, preferably with the same username that you use for github. Then enable Greenkeeper access to your repo. No initial PR should be created and the status should turn green immediately.
+**Setup** - Create a Greenkeeper account, preferably with the same username that you use for github. Then enable Greenkeeper access for your repo. No automatic PR should be created since the badge already exists and the status should turn green immediately.
 
-**How to use** - When Greenkeeper creates PRs you need to ensure that all checks pass. If they don't you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just click the merge button.
+**How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
 
 ### NPM and Downloads
 
-**What is it?** - NPM makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you're sharing.
+**What is it?** - NPM makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that is shared.
 
 **Setup** - Create NPM account, preferably with the same username that you use for github.
 
@@ -97,7 +97,7 @@ If you username is different between github and a service, you will need to adju
 
 ### Semantic-Release
 
-**What is it?** - Semantic-Release allows you to easily and consistently publish changes to github and npm.
+**What is it?** - Semantic-Release allows you to easily and consistently publish changes to github and npm using semantic versioning.
 
 **Setup** - Install Semantic-Release globally with
 
@@ -109,19 +109,19 @@ then run
 
 and follow instructions.
 
-**How to use** - When you merge your changes into `master`, a new version is automatically published if all tests pass and changes are detected.
+**How to use** - When you merge your changes into `master`, a new version is automatically published if all tests pass and changes are detected. You should adopt the [AngularJS Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit), i.e. write features as `feat: ...` and bug fixes as `fix: ...`.
 
 ### Gardener
 
-You've already enabled this by following the first steps of the Readme.
+You've are currently working through this by following this Readme :)
 
 ### Gitter
 
 **What is it?** - Chat rooms that easily allow people to ask questions about your project.
 
-**Setup** - Log into Gitter and create a room with your project name on github.
+**Setup** - signup / Login into Gitter and create a room with your project name on github.
 
-**How to use** - Each repo should have it's own chat room, allowing people to talk about the repo. You will get notifications if people ask questions and can respond to it as appropritate. This is useful for e.g. lengthy discussions that are not appropritate to happen in a github issue.
+**How to use** - Each repo should have it's own chat room, allowing people to talk sepcifically about the repo. You will get notifications and can respond to it as appropritate. This is useful for e.g. lengthy discussions that are not appropritate to happen in a github issue.
 
 # Options
 
