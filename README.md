@@ -115,7 +115,7 @@ and follow instructions.
 
 ### Gardener
 
-You've are currently working through this by following this Readme :)
+You are currently working through this by following this Readme :)
 
 ### Gitter
 
