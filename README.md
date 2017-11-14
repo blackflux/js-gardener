@@ -57,6 +57,10 @@ Write your tests in the `test` and your code in the `lib` folder.
 
 # Badges
 
+When completed, verify each badge by clicking on it.
+
+If you username is different between github and other services, you will need to adjust the badge urls.
+
 ### Travis
 
 Create TravisCI account, preferably with the same username that you use for github. Then enable TravisCI access to your repo.
