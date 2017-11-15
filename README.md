@@ -1,4 +1,4 @@
-[![Gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge.svg)](https://github.com/simlu/lambda-rate-limiter)# Gardener [![gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge-large.svg)](https://github.com/simlu/js-gardener)
+# Gardener [![gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge-large.svg)](https://github.com/simlu/js-gardener)
 
 [![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
