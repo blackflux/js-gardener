@@ -63,6 +63,8 @@ Then run
 
 This will generate some files and alter your existing package.json file.
 
+Create your files in the `lib` folder and corresponding tests in the `test` folder ([Chai](https://github.com/chaijs/chai) works great), and ensure everything works fine by running `npm test`. Finalize your README.md and package.json and commit and push to GitHub.
+
 # Structure
 
 **Folders** - Write your tests in the `test` and your code in the `lib` folder.
