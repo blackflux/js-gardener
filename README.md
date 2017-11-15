@@ -1,13 +1,13 @@
-# Gardener [![gardener](https://github.com/simlu/grunt-gardener/blob/master/assets/badge-large.svg)](https://github.com/simlu/grunt-gardener)
+[![Gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge.svg)](https://github.com/simlu/lambda-rate-limiter)# Gardener [![gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge-large.svg)](https://github.com/simlu/js-gardener)
 
-[![Build Status](https://img.shields.io/travis/simlu/grunt-gardener/master.svg)](https://travis-ci.org/simlu/grunt-gardener)
-[![Test Coverage](https://img.shields.io/coveralls/simlu/grunt-gardener/master.svg)](https://coveralls.io/github/simlu/grunt-gardener?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/simlu/grunt-gardener.svg)](https://greenkeeper.io/)
-[![NPM](https://img.shields.io/npm/v/grunt-gardener.svg)](https://www.npmjs.com/package/grunt-gardener)
-[![Downloads](https://img.shields.io/npm/dt/grunt-gardener.svg)](https://www.npmjs.com/package/grunt-gardener)
+[![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
+[![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/simlu/js-gardener.svg)](https://greenkeeper.io/)
+[![NPM](https://img.shields.io/npm/v/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
+[![Downloads](https://img.shields.io/npm/dt/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
 [![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Gardener](https://github.com/simlu/grunt-gardener/blob/master/assets/badge.svg)](https://github.com/simlu/grunt-gardener)
-[![Gitter](https://img.shields.io/gitter/room/simlu/grunt-gardener.svg)](https://gitter.im/simlu/grunt-gardener)
+[![Gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge.svg)](https://github.com/simlu/js-gardener)
+[![Gitter](https://img.shields.io/gitter/room/simlu/js-gardener.svg)](https://gitter.im/simlu/js-gardener)
 
 Minimizes package setup and maintenance complexity, so you can focus on writing code. Highly recommended if you are getting started with a new package and extremely useful if you are maintaining multiple packages.
 
@@ -32,7 +32,7 @@ Minimizes package setup and maintenance complexity, so you can focus on writing 
 
 ### Install Gardener
 
-    $ npm install --save-dev grunt-gardener
+    $ npm install --save-dev js-gardener
 
 ### Run Basic Setup
 
@@ -49,7 +49,7 @@ module.exports = (grunt) => {
     }
   });
 
-  grunt.loadNpmTasks('grunt-gardener');
+  grunt.loadNpmTasks('js-gardener');
 };
 ```
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/grunt-gardener.iml" filepath="$PROJECT_DIR$/.idea/grunt-gardener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/js-gardener.iml" filepath="$PROJECT_DIR$/.idea/js-gardener.iml" />
     </modules>
   </component>
 </project>
