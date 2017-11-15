@@ -69,7 +69,7 @@ This will generate some files and alter your existing package.json file.
 
 Badges represent external services that integrate with your repository. This section will instruct you on how to set up and utilize each service. When completed, verify each service by clicking the corresponding badge.
 
-Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed to the repository.
+Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed.
 
 > [Afterwards Setup Badges](BADGES.md)
 
