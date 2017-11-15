@@ -67,7 +67,7 @@ This will generate some files and alter your existing package.json file.
 
 # Badges
 
-Badges represent external services that integrate with your repository. This section will instruct you on how to set up and utilize each service. When completed, verify each service by clicking the corresponding badge.
+Badges represent external services that integrate with your repository. The Badges are auto generated, but the services need to be enabled manually. This section will instruct you on how to set up and utilize each service. When completed, verify each service by clicking the corresponding badge.
 
 Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed.
 
