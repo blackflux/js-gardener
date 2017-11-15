@@ -23,6 +23,10 @@ Minimizes package setup and maintenance complexity, so you can focus on writing 
 
 # Getting Started
 
+### Requirements
+
+Install grunt globally with `npm install -g grunt`.
+
 ### Preparation
 
 - Create New Project (e.g. using Webstorm)
