@@ -123,3 +123,9 @@ All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
 # How to Contribute
 
 When you contribute to any Gardener repositories, always run `npm test` locally before opening a PR.
+
+### Desired Changes
+
+- Move all grunt tasks into separate function
+- Use something more suitable than grunt
+- Add more configuration options
