@@ -73,7 +73,7 @@ Before configuring external services, ensure `npm test` runs locally without err
 
 > [Afterwards Setup Badges](BADGES.md)
 
-If you username is different between github and a service, you will need to adjust the badge url.
+*Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
 # Options
 
