@@ -5,6 +5,9 @@
     "plugin:jasmine/recommended"
   ],
   "rules": {
+    "jasmine/expect-single-argument": 0,
+    "jasmine-expect-two-arguments": 1,
+    "jasmine/new-line-before-expect": 0,
     "istanbul-prevent-ignore": 1,
     "max-len": ["error", { "code": 120 }],
     "mocha/no-exclusive-tests": "error",
