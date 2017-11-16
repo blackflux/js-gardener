@@ -32,7 +32,7 @@ Please refer to [README.md](README.md) for more details.
 
 **Setup** - Create account on [david-dm.org](https://david-dm.org/). If you get an error, just try again in a new browser tab.
 
-**How to use** - Will show a badge indicating the status of your dependencies.
+**How to use** - Will show a badge indicating the status of your dependencies. Especially useful since it will show if any dependencies are insecure.
 
 ### NPM and Downloads
 
