@@ -64,6 +64,10 @@ Then run
 
 This will generate some files and alter your existing package.json file.
 
+Create your files in the `lib` folder and corresponding tests in the `test` folder ([Chai](https://github.com/chaijs/chai) works great), and ensure everything works fine by running `npm test`. Finalize your README.md and package.json and commit and push to GitHub.
+
+Now configure your Badges.
+
 # Structure
 
 **Folders** - Write your tests in the `test` and your code in the `lib` folder.
@@ -76,7 +80,7 @@ Badges represent external services that integrate with your repository. The Badg
 
 Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed.
 
-> [Afterwards Setup Badges](BADGES.md)
+> [Setup Badges](BADGES.md)
 
 *Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
