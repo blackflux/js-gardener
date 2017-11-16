@@ -26,6 +26,14 @@ Please refer to [README.md](README.md) for more details.
 
 **How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
 
+### Dependencies
+
+**What is it?** - Display badge that shows if all dependencies are up to date.
+
+**Setup** - Create account on [david-dm.org](https://david-dm.org/). If you get an error, just try again in a new browser tab.
+
+**How to use** - Will show a badge indicating the status of your dependencies. Especially useful since it will show if any dependencies are insecure.
+
 ### NPM and Downloads
 
 **What is it?** - NPM makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that is shared.
