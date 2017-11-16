@@ -70,7 +70,7 @@ Now configure your Badges.
 
 # Structure
 
-**Folders** - Write your tests in the `test` and your code in the `lib` folder.
+**Folders** - Write your tests in the `test` and your code in the `lib` folder. Only test files of the format `test_*.js` are picked up.
 
 **Branches** - You release branch is `master`. Develop against `develop` or feature branches. When you are ready for a release, merge your changes into `master`.
 
@@ -98,7 +98,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `projectUpdate`: Install dependencies exactly as specified in package.json
 - `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
 - `yamllint`: Ensure yaml files are passing lint
-- `depcheck`: Ensure all installed dependencies are used
+- `depused`: Ensure all installed dependencies are used
 - `checkDependencies`: Ensure dependencies are installed as specified in package.json
 - `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
 
