@@ -18,7 +18,7 @@ describe("Testing depused", () => {
       ["unnecessary"]
     ).then((r) => {
       expect(r).to.equal(false);
-      expect(logs, `Provided ${logs}`).to.deep.equal(['Undetected Unused Dependencies: unnecessary']);
+      expect(logs, `Provided ${logs}`).to.contain('Undetected Unused Dependencies: unnecessary');
       done();
     });
   });
@@ -30,7 +30,7 @@ describe("Testing depused", () => {
       []
     ).then((r) => {
       expect(r).to.equal(false);
-      expect(logs, `Provided ${logs}`).to.deep.equal(['Unused Dependencies: eslint-config-airbnb-base, istanbul']);
+      expect(logs, `Provided ${logs}`).to.contain('Unused Dependencies: eslint-config-airbnb-base, istanbul');
       done();
     });
   });
