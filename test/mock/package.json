@@ -38,5 +38,6 @@
   "homepage": "https://github.com/simlu/js-gardener",
   "files": [
     "lib"
-  ]
+  ],
+  "dependencies": {}
 }
