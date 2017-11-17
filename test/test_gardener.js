@@ -14,7 +14,7 @@ describe("Testing Gardener", () => {
       gardener: {
         this: {
           options: {
-            root: path.join(__dirname, 'mock')
+            cwd: path.join(__dirname, 'mock')
           }
         }
       }

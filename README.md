@@ -103,7 +103,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `checkDependencies`: Ensure dependencies are installed as specified in package.json
 - `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
 
-### root
+### cwd
 
 Type: `string`<br>
 Default: `process.cwd()`
