@@ -16,6 +16,7 @@ describe("Testing copy", () => {
       'LICENSE',
       'README.md',
       'test',
+      'lib',
       'test/mocha.opts'
     ].sort());
     // no files are copied

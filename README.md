@@ -92,8 +92,7 @@ Type: `array`<br>
 Default: `[]`
 
 Array of tasks to skip. Should not be necessary to use unless you really need to. Available tasks are:
-- `mkdir`: Auto create [folders](lib/templates/folders.json)
-- `gardener_copy`: Copy [template files](lib/templates/files)
+- `gardener_copy`: Copy [template files](lib/templates/files) and create [folders](lib/templates/folders.json)
 - `gardener_package`: [Alter](lib/templates/package.json) package.json
 - `gardener_configure`: [Alter](lib/templates) other configuration files
 - `gardener_badges`: Insert [Badges](lib/templates/badges.json)
