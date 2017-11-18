@@ -30,7 +30,7 @@ Install grunt globally with `npm install -g grunt`.
 
 ### Preparation
 
-- Create New Project (e.g. using Webstorm)
+- Create New Project (e.g. using [Webstorm](https://www.jetbrains.com/webstorm/download/))
 - Create New Repository on Github
 - Run `git init`, `git remote add origin URL`, `git checkout -b master`
 - Run `npm init` and fill in details
@@ -127,7 +127,7 @@ Define packages that should be excluded from usage check. Useful when a false ne
 
 ### .structignore
 
-Define test files that should not be checked for structure. Usually not necessary.
+Define test files that should not be checked for structure. Usually not necessary. Always excluded test files can be found [here](lib/conf/.structignore).
 
 # Sample Project
 
