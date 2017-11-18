@@ -52,7 +52,6 @@
     "glob": "7.1.2",
     "grunt": "1.0.1",
     "grunt-check-dependencies": "1.0.0",
-    "grunt-contrib-copy": "1.0.0",
     "grunt-eslint": "20.1.0",
     "grunt-mkdir": "1.0.0",
     "grunt-mocha-istanbul": "5.0.2",
@@ -66,7 +65,8 @@
     "lodash.merge": "4.6.0",
     "mocha": "4.0.1",
     "node-yaml": "3.1.1",
-    "npm-check": "5.5.2"
+    "npm-check": "5.5.2",
+    "tmp": "0.0.33"
   },
   "devDependencies": {
     "chai": "4.1.2",
