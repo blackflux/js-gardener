@@ -97,6 +97,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_package`: [Alter](lib/templates/package.json) package.json
 - `gardener_configure`: [Alter](lib/templates) other configuration files
 - `gardener_badges`: Insert [Badges](lib/templates/badges.json)
+- `gardener_structure`: Enforce that test file structure matches lib content
 - `projectUpdate`: Install dependencies exactly as specified in package.json
 - `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
 - `yamllint`: Ensure yaml files are passing lint
@@ -124,6 +125,10 @@ Define files which should be excluded for eslint. Always excluded files can be f
 ### .depunusedignore
 
 Define packages that should be excluded from usage check. Useful when a false negative is detected, e.g. for plugins where usage is defined in configuration. Always excluded packages can be found [here](lib/conf/.depunusedignore).
+
+### .structignore
+
+Define test files that should not be checked for structure. Usually not necessary.
 
 # Sample Project
 
