@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const depused = require('../../lib/checks/depused');
+const depused = require('../../lib/subtasks/depused');
 
 const logs = [];
 const grunt = { log: { error: e => logs.push(e[0]) } };
