@@ -24,10 +24,6 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 # Getting Started
 
-### Requirements
-
-Install grunt globally with `npm install -g grunt`.
-
 ### Preparation
 
 - Create New Project (e.g. using [Webstorm](https://www.jetbrains.com/webstorm/download/))
