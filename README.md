@@ -64,6 +64,16 @@ Create your files in the `lib` folder and corresponding tests in the `test` fold
 
 Now configure your Badges.
 
+# Run Test Locally
+
+To run all tests locally
+
+    $ npm test
+    
+and in debug mode with
+
+    $ npm test -- --debug
+
 # Structure
 
 **Folders** - Write your tests in the `test` and your code in the `lib` folder. Only test files of the format `test_*.js` are picked up.
