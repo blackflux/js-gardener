@@ -1,8 +1,6 @@
 lib/templates/files/LICENSE
-lib/templates/files/README.md
 lib/templates/files/test/mocha.opts
 test/mock/**
 assets/**/*.svg
 lib/templates/files/dot.*
 lib/templates/dot.*
-BADGES.md

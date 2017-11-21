@@ -43,7 +43,7 @@
     "log4js": true
   },
   "plugins": [
-    "json", "jasmine", "mocha"
+    "json", "jasmine", "mocha", "markdown"
   ],
   "parser": "babel-eslint"
 }
