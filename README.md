@@ -64,7 +64,7 @@ Create your files in the `lib` folder and corresponding tests in the `test` fold
 
 Now configure your Badges.
 
-# Run Test Locally
+# Run Tests Locally
 
 To run all tests locally
 
