@@ -86,7 +86,7 @@ Badges represent external services that integrate with your repository. The Badg
 
 Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed.
 
-> [Setup Badges](BADGES.md)
+> [Configure Badges](BADGES.md)
 
 *Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
