@@ -1,6 +1,2 @@
-lib/templates/files/LICENSE
-lib/templates/files/test/mocha.opts
-test/mock/**
-assets/**/*.svg
-lib/templates/files/dot.*
-lib/templates/dot.*
+test/mock/node_modules/**
+test/mock/coverage/**

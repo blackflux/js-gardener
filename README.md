@@ -104,7 +104,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_badges`: Insert [Badges](lib/templates/badges.json)
 - `gardener_structure`: Enforce that test file structure matches lib content
 - `projectUpdate`: Install dependencies exactly as specified in package.json
-- `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
+- `gardener_eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
 - `yamllint`: Ensure yaml files are passing lint
 - `gardener_depused`: Ensure all installed dependencies are used
 - `checkDependencies`: Ensure dependencies are installed as specified in package.json

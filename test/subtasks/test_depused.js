@@ -30,7 +30,7 @@ describe("Testing depused", () => {
       []
     ).then((r) => {
       expect(r).to.equal(false);
-      expect(logs, `Provided ${logs}`).to.contain('Unused Dependencies: eslint, eslint-config-airbnb-base, istanbul');
+      expect(logs, `Provided ${logs}`).to.contain('Unused Dependencies: eslint-config-airbnb-base, istanbul');
       done();
     });
   });
