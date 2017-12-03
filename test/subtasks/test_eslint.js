@@ -20,7 +20,7 @@ describe("Testing eslint", () => {
   it("Testing Exception", () => {
     const result = eslint(grunt, null, ["file"]);
     expect(result).to.equal(false);
-    expect(String(logs)).to.contain("TypeError: Path must be a string");
+    expect(String(logs)).to.contain("TypeError");
   });
 
   it("Testing Invalid File", () => {
