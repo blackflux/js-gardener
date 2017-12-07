@@ -20,7 +20,7 @@ describe("Testing depused", () => {
       ["unnecessary"]
     ).then((r) => {
       expect(r).to.equal(false);
-      expect(logs, `Provided ${logs}`).to.contain('Undetected Unused Dependencies: unnecessary');
+      expect(logs, `Provided ${logs}`).to.contain('Suppressed, detected Dependencies: unnecessary');
       done();
     });
   });
