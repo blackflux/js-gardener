@@ -4,6 +4,9 @@ cache:
     - ~/.npm
 notifications:
   email: false
+install:
+  - npm install
+  - cd test/mock && npm install
 node_js:
   - 6.10.3
   - '9'
