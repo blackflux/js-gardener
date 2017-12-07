@@ -103,11 +103,10 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_configure`: [Alter](lib/templates) other configuration files
 - `gardener_badges`: Insert [Badges](lib/templates/badges.json)
 - `gardener_structure`: Enforce that test file structure matches lib content
-- `projectUpdate`: Install dependencies exactly as specified in package.json
 - `gardener_eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
 - `yamllint`: Ensure yaml files are passing lint
 - `gardener_depused`: Ensure all installed dependencies are used
-- `checkDependencies`: Ensure dependencies are installed as specified in package.json
+- `gardener_depcheck`: Ensure dependencies are installed as specified in package.json
 - `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
 
 ### cwd

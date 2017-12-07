@@ -11,7 +11,9 @@ describe("Testing depused", () => {
     logs.length = 0;
   });
 
-  it("Testing Unnecessary Suppressed", (done) => {
+  // eslint-disable-next-line func-names
+  it("Testing Unnecessary Suppressed", function (done) {
+    this.timeout(30000);
     depused(
       grunt,
       path.join(__dirname, "..", "mock"),
@@ -23,7 +25,9 @@ describe("Testing depused", () => {
     });
   });
 
-  it("Testing Unused", (done) => {
+  // eslint-disable-next-line func-names
+  it("Testing Unused", function (done) {
+    this.timeout(30000);
     depused(
       grunt,
       path.join(__dirname, "..", ".."),
