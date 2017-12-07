@@ -105,8 +105,8 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_structure`: Enforce that test file structure matches lib content
 - `gardener_eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
 - `yamllint`: Ensure yaml files are passing lint
-- `gardener_depused`: Ensure all installed dependencies are used
 - `gardener_depcheck`: Ensure dependencies are installed as specified in package.json
+- `gardener_depused`: Ensure all installed dependencies are used
 - `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
 
 ### cwd
