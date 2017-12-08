@@ -134,9 +134,11 @@ Define packages that should be excluded from usage check. Useful when a false ne
 
 Define test files that should not be checked for structure. Usually not necessary. Always excluded test files can be found [here](lib/conf/.structignore).
 
-# Sample Project
+# Example Project
 
 While this project utilizes itself for testing - how cool is that? - a cleaner example (without the grunt file) can be found [here](test/mock).
+
+Example project using [js-gardener](https://github.com/simlu/js-gardener) and [lambda-tdd](https://github.com/simlu/lambda-tdd) can be found [here](https://github.com/simlu/lambda-sample).
 
 All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
 
