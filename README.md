@@ -138,7 +138,7 @@ Define test files that should not be checked for structure. Usually not necessar
 
 While this project utilizes itself for testing - how cool is that? - a cleaner example (without the grunt file) can be found [here](test/mock).
 
-Example project using [js-gardener](https://github.com/simlu/js-gardener) and [lambda-tdd](https://github.com/simlu/lambda-tdd) can be found [here](https://github.com/simlu/lambda-tdd-example).
+Example project using [js-gardener](https://github.com/simlu/js-gardener) and [lambda-tdd](https://github.com/simlu/lambda-tdd) can be found [here](https://github.com/simlu/lambda-example).
 
 All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
 
