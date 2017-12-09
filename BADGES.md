@@ -26,6 +26,8 @@ Please refer to [README.md](README.md) for more details.
 
 **How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
 
+> **Tip**: *After a while it can get tedious to merge greenkeeper prs. You can configure [Octoscript](https://octoscripts.com/) to auto merge Greenkeeper prs when all checks succeed.*
+
 ### Dependencies
 
 **What is it?** - Display badge that shows if all dependencies are up to date.
