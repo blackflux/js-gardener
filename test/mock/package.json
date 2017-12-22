@@ -10,14 +10,14 @@
   "scripts": {
     "test": "grunt gardener",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "chai": "4.1.2",
     "coveralls": "3.0.0",
-    "semantic-release": "8.2.0"
+    "semantic-release": "11.0.2"
   },
   "licenses": [
     {
