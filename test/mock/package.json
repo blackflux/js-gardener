@@ -19,10 +19,6 @@
     "coveralls": "3.0.0",
     "semantic-release": "11.0.2"
   },
-  "peerDependencies": {
-    "grunt": "1.0.2",
-    "eslint": "4.17.0"
-  },
   "licenses": [
     {
       "type": "MIT",
@@ -43,5 +39,6 @@
   "files": [
     "lib"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {}
 }
