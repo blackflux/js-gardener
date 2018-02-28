@@ -75,9 +75,5 @@
     "rimraf": "2.6.2",
     "semantic-release": "12.4.1"
   },
-  "peerDependencies": {
-    "grunt": "1.0.2",
-    "eslint": "4.17.0",
-    "babel-eslint": "8.2.1"
-  }
+  "peerDependencies": {}
 }
