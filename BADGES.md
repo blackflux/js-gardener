@@ -22,7 +22,7 @@ Please refer to [README.md](README.md) for more details.
 
 **What is it?** - Greenkeeper automatically creates pull requests with updated dependencies as soon as they become outdated.
 
-**Setup** - Create a Greenkeeper account on [greenkeeper.io](https://greenkeeper.io/), preferably with the same username that you use for github. Then enable Greenkeeper access for your repo. The status should turn green immediately.
+**Setup** - Ensure [issues](https://help.github.com/articles/disabling-issues/) are enabled for your repo. Create a Greenkeeper account on [greenkeeper.io](https://greenkeeper.io/), preferably with the same username that you use for github. Then enable Greenkeeper access for your repo. The status should turn green immediately.
 
 **How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
 
