@@ -54,7 +54,7 @@
     "eslint-plugin-mocha": "4.11.0",
     "fs-extra": "5.0.0",
     "glob": "7.1.2",
-    "greenkeeper-lockfile": "1.13.2",
+    "greenkeeper-lockfile": "1.13.3",
     "grunt": "1.0.2",
     "grunt-mocha-istanbul": "5.0.2",
     "grunt-yamllint": "0.3.0",
