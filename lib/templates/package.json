@@ -8,6 +8,10 @@
     }
   },
   "defaults": {
+    "name": "???",
+    "description": "???",
+    "main": "lib/???.js",
+    "keywords": [],
     "homepage": "{{GIT_URL}}#readme",
     "license": "MIT",
     "licenses": [
@@ -16,6 +20,7 @@
         "url": "{{GIT_URL}}/blob/master/LICENSE"
       }
     ],
+    "author": "???",
     "devDependencies": {
       "coveralls": "3.0.0",
       "semantic-release": "11.0.2"
