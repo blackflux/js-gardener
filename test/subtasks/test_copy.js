@@ -10,6 +10,7 @@ describe("Testing copy", () => {
     // all files are copied
     expect(copy(null, dir).sort()).to.deep.equal([
       'dot.editorconfig',
+      'dot.flowconfig',
       'dot.gitignore',
       'dot.npmignore',
       'dot.travis.yml',

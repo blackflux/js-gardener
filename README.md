@@ -19,7 +19,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 - Provides various integrity tests (e.g. checks for un-used dependencies)
 - Enforces 100% test coverage using [Istanbul](https://istanbul.js.org/)
 - Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/)
-- Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release) 
+- Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release)
 - Enables automates dependency updates using [Greenkeeper](https://greenkeeper.io/).
 
 # Getting Started
@@ -69,7 +69,7 @@ Now configure your Badges.
 To run all tests locally
 
     $ npm test
-    
+
 and in debug mode with
 
     $ npm test -- --debug
@@ -104,6 +104,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_badges`: Insert [Badges](lib/templates/badges.json)
 - `gardener_structure`: Enforce that test file structure matches lib content
 - `gardener_eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
+- `gardener_flow`: Execute [flow](https://flow.org) validation for enabled files.
 - `yamllint`: Ensure yaml files are passing lint
 - `gardener_depcheck`: Ensure dependencies are installed as specified in package.json
 - `gardener_depused`: Ensure all installed dependencies are used
