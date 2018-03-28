@@ -30,7 +30,8 @@
       }
     ],
     "no-var": [1],
-    "no-fallthrough": [1]
+    "no-fallthrough": [1],
+    "spaced-comment": ["error", "always", {"block": {"markers": [":"]}}]
   },
   "env": {
     "es6": true,
