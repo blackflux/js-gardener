@@ -40,5 +40,6 @@
     "lib"
   ],
   "dependencies": {},
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "keywords": []
 }
