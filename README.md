@@ -97,6 +97,8 @@ Use the flow comment syntax to annotate your files. Note that the flow comment s
 
 Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto generate flow schemas.
 
+To enforce flow syntax in every file you can set the corresponding eslint rule.
+
 # Options
 
 ### skip
@@ -116,6 +118,14 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_depcheck`: Ensure dependencies are installed as specified in package.json
 - `gardener_depused`: Ensure all installed dependencies are used
 - `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
+
+### rules
+
+Type: `object`<br>
+Default: `{}`
+
+Object of custom eslint rules to set.
+- `flow-enforce`: Set to `1` to enforce flow on every file. 
 
 ### cwd
 
