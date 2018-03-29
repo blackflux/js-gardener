@@ -54,7 +54,7 @@
     "log4js": true
   },
   "plugins": [
-    "json", "jasmine", "mocha", "markdown"
+    "json", "jasmine", "mocha", "markdown", "flowtype"
   ],
   "parser": "babel-eslint"
 }

@@ -90,6 +90,15 @@ Before configuring external services, ensure `npm test` runs locally without err
 
 *Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
+# Using Flow
+
+Define your flow interfaces in `flow-typed` folder (as plain flow) and then use the `// @flow` syntax to enable for appropriate files.
+Use the [flow comment syntax](https://flow.org/en/docs/types/comments/) to annotate your files. Note that the flow comment style is required since there is no compilation step.
+
+Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto generate flow schemas.
+
+To enforce flow syntax in every file you can set the corresponding eslint rule.
+
 # Options
 
 ### skip
@@ -109,6 +118,14 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `gardener_depcheck`: Ensure dependencies are installed as specified in package.json
 - `gardener_depused`: Ensure all installed dependencies are used
 - `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
+
+### rules
+
+Type: `object`<br>
+Default: `{}`
+
+Object of custom eslint rules to set.
+- `flow-enforce`: Set to `1` to enforce flow for every file. 
 
 ### cwd
 
