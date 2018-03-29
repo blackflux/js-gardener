@@ -41,8 +41,7 @@
         "markers": ["=", "!", ":", "::"],
         "balanced": true
       }
-    }],
-    "flowtype/use-flow-type": 0
+    }]
   },
   "env": {
     "es6": true,
