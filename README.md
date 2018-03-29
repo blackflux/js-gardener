@@ -95,6 +95,8 @@ Before configuring external services, ensure `npm test` runs locally without err
 Define your flow interfaces in `flow-typed` (as flow) and then use the `// @flow` syntax to enable for appropriate files.
 Use the flow comment syntax to annotate your files. Note that the flow comment style is required since there is not compilation step.
 
+Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto generate flow schemas.
+
 # Options
 
 ### skip
