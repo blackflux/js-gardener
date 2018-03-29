@@ -90,6 +90,11 @@ Before configuring external services, ensure `npm test` runs locally without err
 
 *Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
+# Using Flow
+
+Define your flow interfaces in `flow-typed` (as flow) and then use the `// @flow` syntax to enable for appropriate files.
+Use the flow comment syntax to annotate your files. Note that the flow comment style is required since there is not compilation step.
+
 # Options
 
 ### skip
