@@ -41,7 +41,8 @@
         "markers": ["=", "!", ":", "::"],
         "balanced": true
       }
-    }]
+    }],
+    "flowtype/use-flow-type": 0
   },
   "env": {
     "es6": true,
@@ -54,7 +55,7 @@
     "log4js": true
   },
   "plugins": [
-    "json", "jasmine", "mocha", "markdown"
+    "json", "jasmine", "mocha", "markdown", "flowtype"
   ],
   "parser": "babel-eslint"
 }
