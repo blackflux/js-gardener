@@ -31,7 +31,17 @@
     ],
     "no-var": [1],
     "no-fallthrough": [1],
-    "spaced-comment": ["error", "always", {"block": {"markers": [":", "::"]}}]
+    "spaced-comment": ["error", "always", {
+      "line": {
+        "exceptions": ["-", "+"],
+        "markers": ["=", "!"]
+      },
+      "block": {
+        "exceptions": ["-", "+"],
+        "markers": ["=", "!", ":", "::"],
+        "balanced": true
+      }
+    }]
   },
   "env": {
     "es6": true,
