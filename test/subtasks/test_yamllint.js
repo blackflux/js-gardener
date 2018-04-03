@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const yamllint = require('../../lib/subtasks/yamllint');
 
 const logs = [];
-const grunt = { log: { error: e => logs.push(e[0]) } };
+const logger = { error: e => logs.push(e) };
 const projectFolder = path.join(__dirname, "..", "..");
 
 describe("Testing yamllint", () => {
@@ -12,8 +12,7 @@ describe("Testing yamllint", () => {
   });
 
   it("Testing Error", (done) => {
-    yamllint(grunt, projectFolder, ["test/invalid.yml.raw"]).then((r) => {
-      expect(r, `Provided ${logs}`).to.equal(false);
+    yamllint(logger, projectFolder, ["test/invalid.yml.raw"]).catch(() => {
       expect(logs.length, `Provided ${logs}`).to.equal(2);
       expect(logs, `Provided ${logs}`).to.deep.equal([
         "An error has occurred in: test/invalid.yml.raw",

@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const eslint = require('../../lib/subtasks/eslint');
 
 const logs = [];
-const grunt = { log: { error: e => logs.push(e[0]) } };
+const logger = { error: e => logs.push(e), info: e => logs.push(e) };
 const projectFolder = path.join(__dirname, "..", "..");
 
 describe("Testing eslint", () => {
@@ -11,29 +11,25 @@ describe("Testing eslint", () => {
     logs.length = 0;
   });
 
-  it("Testing No Files", () => {
-    const result = eslint(grunt, projectFolder, []);
-    expect(result).to.equal(false);
-    expect(logs).to.deep.equal(["No ESLint files found."]);
+  it("Testing No Files", (done) => {
+    eslint(logger, projectFolder, []).catch((result) => {
+      expect(String(result)).to.deep.contain("No ESLint files found.");
+      done();
+    });
   });
 
-  it("Testing Exception", () => {
-    const result = eslint(grunt, null, ["file"]);
-    expect(result).to.equal(false);
-    expect(String(logs)).to.contain("TypeError");
+  it("Testing Exception", (done) => {
+    eslint(logger, null, ["file"]).catch((result) => {
+      expect(String(result)).to.contain("TypeError");
+      done();
+    });
   });
 
-  it("Testing Invalid File", () => {
-    /* eslint-disable no-console */
-    const consoleLogOriginal = console.log;
-    const consoleLogs = [];
-    console.log = (...args) => {
-      consoleLogs.push(...args);
-    };
-    const result = eslint(grunt, projectFolder, [path.join(projectFolder, "LICENSE")]);
-    console.log = consoleLogOriginal;
-    expect(result).to.equal(false);
-    expect(String(consoleLogs)).to.contain("1 problem (1 error, 0 warnings)");
-    /* eslint-enable no-console */
+  it("Testing Invalid File", (done) => {
+    eslint(logger, projectFolder, [path.join(projectFolder, "LICENSE")]).catch((result) => {
+      expect(String(result)).to.contain("1 problem (1 error, 0 warnings)");
+      expect(String(logs)).to.contain("1 problem (1 error, 0 warnings)");
+      done();
+    });
   });
 });

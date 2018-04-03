@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const struct = require('../../lib/subtasks/struct');
 
 const logs = [];
-const grunt = { log: { error: e => logs.push(e[0]) } };
+const logger = { error: e => logs.push(e) };
 const projectFolder = path.join(__dirname, "..", "..");
 
 describe("Testing struct", () => {
@@ -12,8 +12,7 @@ describe("Testing struct", () => {
   });
 
   it("Testing Success", (done) => {
-    struct(grunt, projectFolder, ["test/mock/test/test_hello.js"]).then((r) => {
-      expect(r, `Provided ${logs}`).to.equal(true);
+    struct(logger, projectFolder, ["test/mock/test/test_hello.js"]).then(() => {
       expect(logs.length, `Provided ${logs}`).to.equal(0);
       expect(logs, `Provided ${logs}`).to.deep.equal([]);
       done();
@@ -21,8 +20,7 @@ describe("Testing struct", () => {
   });
 
   it("Testing Failure", (done) => {
-    struct(grunt, projectFolder, []).then((r) => {
-      expect(r, `Provided ${logs}`).to.equal(false);
+    struct(logger, projectFolder, []).catch((r) => {
       expect(logs.length, `Provided ${logs}`).to.equal(1);
       expect(logs[0], `Provided ${logs}`).to.contain('hello.js to exist for ');
       expect(logs[0], `Provided ${logs}`).to.contain('test_hello.js');
