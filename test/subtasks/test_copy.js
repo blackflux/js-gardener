@@ -31,8 +31,7 @@ describe("Testing copy", () => {
       ].sort());
       // no files are copied
       copy(logger, dir).then(() => {
-        expect(logs.length).to.equal(2);
-        expect(logs[1]).to.deep.equal([]);
+        expect(logs.length).to.equal(1);
         done();
       });
     });
