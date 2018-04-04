@@ -14,7 +14,7 @@ describe("Testing Gardener", () => {
     process.chdir(path.join(__dirname, 'mock'));
     gardener().then(() => {
       const coverage = fs.readFileSync(`${__dirname}/mock/coverage/lcov.info`, 'utf-8');
-      expect(coverage).to.contain('test_hello.js');
+      expect(coverage).to.contain('test_sum.js');
       process.chdir(savedCwd);
       done();
     });
