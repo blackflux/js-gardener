@@ -38,9 +38,9 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 ### Run Basic Setup
 
 Create `gardener.js` in the root folder with the following contents
-
+<!-- eslint-disable import/no-unresolved -->
 ```javascript
-const gardener = require('gardener');
+const gardener = require('js-gardener');
 
 if (require.main === module) {
   gardener();
