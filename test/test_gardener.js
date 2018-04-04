@@ -9,9 +9,23 @@ describe("Testing Gardener", () => {
   it("Testing Execution", function (done) {
     this.timeout(60000);
     rimraf.sync(path.join(__dirname, 'mock', 'coverage'));
-    gardener({ cwd: path.join(__dirname, 'mock') }).then(() => {
+    // change cwd for coverage (we don't need to)
+    const savedCwd = process.cwd();
+    process.chdir(path.join(__dirname, 'mock'));
+    gardener().then(() => {
       const coverage = fs.readFileSync(`${__dirname}/mock/coverage/lcov.info`, 'utf-8');
       expect(coverage).to.contain('test_hello.js');
+      process.chdir(savedCwd);
+      done();
+    });
+  });
+
+  it("Testing Skip All", (done) => {
+    gardener({
+      cwd: path.join(__dirname, 'mock'),
+      skip: ['copy', 'package', 'configure', 'badges', 'structure',
+        'eslint', 'flow', 'yamllint', 'depcheck', 'depused', 'nyc']
+    }).then(() => {
       done();
     });
   });
