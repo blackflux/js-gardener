@@ -18,7 +18,6 @@ describe("Testing copy", () => {
     copy(logger, dir).then(() => {
       expect(logs.length).to.equal(1);
       expect(logs[0].sort()).to.deep.equal([
-        'dot.babelrc',
         'dot.editorconfig',
         'dot.flowconfig',
         'dot.gitignore',
