@@ -1,5 +1,5 @@
 const gardener = require('./lib/gardener');
 
 if (require.main === module) {
-  gardener();
+  gardener().catch(() => process.exit(1));
 }

@@ -43,7 +43,7 @@ Create `gardener.js` in the root folder with the following contents
 const gardener = require('js-gardener');
 
 if (require.main === module) {
-  gardener();
+  gardener().catch(() => process.exit(1));
 }
 ```
 
