@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const eslint = require('../../lib/subtasks/eslint');
 
 const logs = [];
-const logger = { error: e => logs.push(e), info: e => logs.push(e) };
+const logger = { info: e => logs.push(e) };
 const projectFolder = path.join(__dirname, "..", "..");
 
 describe("Testing eslint", () => {

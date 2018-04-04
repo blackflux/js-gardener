@@ -3,7 +3,7 @@ const tmp = require('tmp');
 const copy = require('../../lib/subtasks/copy');
 
 const logs = [];
-const logger = { error: e => logs.push(e), info: e => logs.push(e) };
+const logger = { info: e => logs.push(e) };
 
 tmp.setGracefulCleanup();
 
