@@ -27,7 +27,7 @@ describe("Testing eslint", () => {
 
   it("Testing Invalid File", (done) => {
     eslint(logger, projectFolder, [path.join(projectFolder, "LICENSE")]).catch((result) => {
-      expect(String(result)).to.contain("1 problem (1 error, 0 warnings)");
+      expect(String(result)).to.contain("Error: Linter Problems");
       expect(String(logs)).to.contain("1 problem (1 error, 0 warnings)");
       done();
     });

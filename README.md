@@ -40,7 +40,11 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 Create `gardener.js` in the root folder with the following contents
 
 ```javascript
-require('./lib/gardener')();
+const gardener = require('gardener');
+
+if (require.main === module) {
+  gardener();
+}
 ```
 
 Then run
