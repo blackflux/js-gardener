@@ -91,6 +91,7 @@
       "gardener.js",
       "node_modules/*",
       "coverage/*",
+      "flow-typed/*",
       "test/mock/node_modules/*",
       "lib/conf/rules/*.js"
     ],

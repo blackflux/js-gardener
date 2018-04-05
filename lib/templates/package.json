@@ -51,8 +51,10 @@
         "**/*.js"
       ],
       "exclude": [
+        "gardener.js",
         "node_modules/*",
-        "coverage/*"
+        "coverage/*",
+        "flow-typed/*"
       ],
       "reporter": [
         "lcov",
