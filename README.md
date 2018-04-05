@@ -40,6 +40,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 Create `gardener.js` in the root folder with the following contents
 <!-- eslint-disable import/no-unresolved -->
 ```javascript
+// eslint-disable-next-line import/no-extraneous-dependencies
 const gardener = require('js-gardener');
 
 if (require.main === module) {
