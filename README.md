@@ -96,6 +96,9 @@ Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto gene
 
 To enforce flow syntax in every file you can set the corresponding eslint rule.
 
+If you are using flow you should be using `src` instead of `lib` for your raw code. The `lib` folder will
+be automatically generated.
+
 # Options
 
 ### skip
