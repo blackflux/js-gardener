@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node gardener",
+    "test": "node gardener && nyc mocha --recursive",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
     "semantic-release": "semantic-release"
   },
@@ -17,7 +17,8 @@
   "devDependencies": {
     "chai": "4.1.2",
     "coveralls": "3.0.0",
-    "semantic-release": "15.1.3"
+    "semantic-release": "15.1.3",
+    "nyc": "11.6.0"
   },
   "licenses": [
     {
@@ -41,5 +42,32 @@
   ],
   "dependencies": {},
   "peerDependencies": {},
-  "keywords": []
+  "keywords": [],
+  "nyc": {
+    "tempDirectory": "coverage/.nyc_output",
+    "check-coverage": true,
+    "per-file": false,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "**/*.js"
+    ],
+    "exclude": [
+      "node_modules/*",
+      "coverage/*"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "extension": [],
+    "cache": true,
+    "all": true,
+    "report-dir": "./coverage"
+  }
 }

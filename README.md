@@ -84,10 +84,13 @@ Before configuring external services, ensure `npm test` runs locally without err
 
 *Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
+# Coverage
+
+Customize the nyc section in your package.json
+
 # Using Flow
 
 Define your flow interfaces in `flow-typed` folder (as plain flow) and then use the `// @flow` syntax to enable for appropriate files.
-Use the [flow comment syntax](https://flow.org/en/docs/types/comments/) to annotate your files. Note that the flow comment style is required since there is no compilation step.
 
 Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto generate flow schemas.
 
@@ -111,7 +114,6 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `yamllint`: Ensure yaml files are passing lint
 - `depcheck`: Ensure dependencies are installed as specified in package.json
 - `depused`: Ensure all installed dependencies are used
-- `nyc`: Run tests in `test` folder and force 100% coverage
 
 ### rules
 

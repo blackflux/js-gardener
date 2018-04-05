@@ -24,4 +24,13 @@ describe("Testing depcheck", () => {
       done();
     });
   });
+
+  it("Testing Ok", (done) => {
+    const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
+    fs.writeFileSync(path.join(dir, "package.json"), '{"dependencies": {}}');
+    depcheck(logger, dir).then(() => {
+      expect(logs.length).to.equal(0);
+      done();
+    });
+  });
 });
