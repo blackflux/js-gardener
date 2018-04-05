@@ -14,13 +14,26 @@ describe("Testing depcheck", () => {
     logs.length = 0;
   });
 
-  it("Testing Not Installed", (done) => {
+  // eslint-disable-next-line func-names
+  it("Testing Not Installed", function (done) {
+    this.timeout(30000);
     const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     fs.writeFileSync(path.join(dir, "package.json"), '{"dependencies": {"mocha": "5.0.5"}}');
     depcheck(logger, dir).catch(() => {
       expect(logs.length).to.equal(2);
       expect(logs[0]).to.contain(" missing: mocha@5.0.5, required by ");
       expect(logs[1]).to.equal(undefined);
+      done();
+    });
+  });
+
+  // eslint-disable-next-line func-names
+  it("Testing Ok", function (done) {
+    this.timeout(30000);
+    const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
+    fs.writeFileSync(path.join(dir, "package.json"), '{"dependencies": {}}');
+    depcheck(logger, dir).then(() => {
+      expect(logs.length).to.equal(0);
       done();
     });
   });

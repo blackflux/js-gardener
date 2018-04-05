@@ -36,4 +36,17 @@ describe("Testing depused", () => {
       done();
     });
   });
+
+  // eslint-disable-next-line func-names
+  it("Testing Ok", function (done) {
+    this.timeout(30000);
+    depused(
+      logger,
+      path.join(__dirname, "..", ".."),
+      ["eslint-config-airbnb-base"]
+    ).then(() => {
+      expect(logs.length).to.equal(0);
+      done();
+    });
+  });
 });
