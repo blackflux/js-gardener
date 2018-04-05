@@ -17,7 +17,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 - Enforces best code style practises using [ESLint](https://eslint.org/) and [YAMLlint](https://github.com/nodeca/js-yaml)
 - Automates and assists with config generation
 - Provides various integrity tests (e.g. checks for un-used dependencies)
-- Enforces 100% test coverage using [Istanbul](https://istanbul.js.org/)
+- Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
 - Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/)
 - Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release)
 - Enables automates dependency updates using [Greenkeeper](https://greenkeeper.io/).
@@ -37,26 +37,19 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 ### Run Basic Setup
 
-Create `gruntfile.js` in the root folder with the following contents
-
+Create `gardener.js` in the root folder with the following contents
+<!-- eslint-disable import/no-unresolved -->
 ```javascript
-module.exports = (grunt) => {
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    gardener: {
-      this: {
-        options: {}
-      }
-    }
-  });
+const gardener = require('js-gardener');
 
-  grunt.loadNpmTasks('js-gardener');
-};
+if (require.main === module) {
+  gardener().catch(() => process.exit(1));
+}
 ```
 
 Then run
 
-    $ grunt gardener
+    $ node gardener
 
 This will generate some files and alter your existing package.json file.
 
@@ -107,17 +100,17 @@ Type: `array`<br>
 Default: `[]`
 
 Array of tasks to skip. Should not be necessary to use unless you really need to. Available tasks are:
-- `gardener_copy`: Copy [template files](lib/templates/files) and create [folders](lib/templates/folders.json)
-- `gardener_package`: [Alter](lib/templates/package.json) package.json
-- `gardener_configure`: [Alter](lib/templates) other configuration files
-- `gardener_badges`: Insert [Badges](lib/templates/badges.json)
-- `gardener_structure`: Enforce that test file structure matches lib content
-- `gardener_eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
-- `gardener_flow`: Execute [flow](https://flow.org) validation for enabled files.
+- `copy`: Copy [template files](lib/templates/files) and create [folders](lib/templates/folders.json)
+- `package`: [Alter](lib/templates/package.json) package.json
+- `configure`: [Alter](lib/templates) other configuration files
+- `badges`: Insert [Badges](lib/templates/badges.json)
+- `structure`: Enforce that test file structure matches lib content
+- `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
+- `flow`: Execute [flow](https://flow.org) validation for enabled files.
 - `yamllint`: Ensure yaml files are passing lint
-- `gardener_depcheck`: Ensure dependencies are installed as specified in package.json
-- `gardener_depused`: Ensure all installed dependencies are used
-- `mocha_istanbul`: Run tests in `test` folder and force 100% coverage
+- `depcheck`: Ensure dependencies are installed as specified in package.json
+- `depused`: Ensure all installed dependencies are used
+- `nyc`: Run tests in `test` folder and force 100% coverage
 
 ### rules
 
@@ -154,7 +147,7 @@ Define test files that should not be checked for structure. Usually not necessar
 
 # Example Projects
 
-While this project utilizes itself for testing - how cool is that? - a cleaner example (without the grunt file) can be found [here](test/mock).
+While this project utilizes itself for testing - how cool is that? - a cleaner example can be found [here](test/mock).
 
 Example project using [js-gardener](https://github.com/simlu/js-gardener) and [lambda-tdd](https://github.com/simlu/lambda-tdd) can be found [here](https://github.com/simlu/lambda-example).
 
@@ -166,6 +159,4 @@ When you contribute to any Gardener repositories, always run `npm test` locally 
 
 ### Desired Changes
 
-- Move all grunt tasks into separate function
-- Use something more suitable than grunt
 - Add more configuration options

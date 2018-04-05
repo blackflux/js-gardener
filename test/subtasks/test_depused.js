@@ -3,7 +3,7 @@ const expect = require("chai").expect;
 const depused = require('../../lib/subtasks/depused');
 
 const logs = [];
-const grunt = { log: { error: e => logs.push(e[0]) } };
+const logger = { error: e => logs.push(e) };
 
 
 describe("Testing depused", () => {
@@ -15,11 +15,10 @@ describe("Testing depused", () => {
   it("Testing Unnecessary Suppressed", function (done) {
     this.timeout(30000);
     depused(
-      grunt,
+      logger,
       path.join(__dirname, "..", "mock"),
       ["unnecessary"]
-    ).then((r) => {
-      expect(r).to.equal(false);
+    ).catch(() => {
       expect(logs, `Provided ${logs}`).to.contain('Suppressed, detected Dependencies: unnecessary');
       done();
     });
@@ -29,12 +28,11 @@ describe("Testing depused", () => {
   it("Testing Unused", function (done) {
     this.timeout(30000);
     depused(
-      grunt,
+      logger,
       path.join(__dirname, "..", ".."),
       []
-    ).then((r) => {
-      expect(r).to.equal(false);
-      expect(logs, `Provided ${logs}`).to.contain('Unused Dependencies: eslint-config-airbnb-base, istanbul');
+    ).catch(() => {
+      expect(logs, `Provided ${logs}`).to.contain('Unused Dependencies: eslint-config-airbnb-base');
       done();
     });
   });

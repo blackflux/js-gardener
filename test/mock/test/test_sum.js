@@ -1,6 +1,6 @@
 const expect = require("chai").expect;
-const hello = require('../lib/hello');
+const sum = require('../lib/sum');
 
 describe("Testing Module", () => it("Testing Addition", () => {
-  expect(hello()).to.equal('Hello World');
+  expect(sum(3, 6)).to.equal(9);
 }));
