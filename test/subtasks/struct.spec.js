@@ -12,7 +12,7 @@ describe("Testing struct", () => {
   });
 
   it("Testing Success", (done) => {
-    struct(logger, projectFolder, ["test/mock/test/test_sum.js"]).then(() => {
+    struct(logger, projectFolder, ["test/mock/test/sum.spec.js"]).then(() => {
       expect(logs.length, `Provided ${logs}`).to.equal(0);
       expect(logs, `Provided ${logs}`).to.deep.equal([]);
       done();
@@ -23,7 +23,7 @@ describe("Testing struct", () => {
     struct(logger, projectFolder, []).catch((r) => {
       expect(logs.length, `Provided ${logs}`).to.equal(1);
       expect(logs[0], `Provided ${logs}`).to.contain('sum.js to exist for ');
-      expect(logs[0], `Provided ${logs}`).to.contain('test_sum.js');
+      expect(logs[0], `Provided ${logs}`).to.contain('sum.spec.js');
       done();
     });
   });
