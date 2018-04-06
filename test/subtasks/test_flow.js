@@ -1,6 +1,6 @@
 const tmp = require('tmp');
 const expect = require("chai").expect;
-const flow = require('../../lib/subtasks/flow');
+const flow = require('../../src/subtasks/flow');
 
 const logs = [];
 const logger = { error: e => logs.push(e) };

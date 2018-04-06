@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const struct = require('../../lib/subtasks/struct');
+const struct = require('../../src/subtasks/struct');
 
 const logs = [];
 const logger = { error: e => logs.push(e) };

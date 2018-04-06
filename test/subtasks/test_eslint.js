@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const eslint = require('../../lib/subtasks/eslint');
+const eslint = require('../../src/subtasks/eslint');
 
 const logs = [];
 const logger = { info: e => logs.push(e) };

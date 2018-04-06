@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const depused = require('../../lib/subtasks/depused');
+const depused = require('../../src/subtasks/depused');
 
 const logs = [];
 const logger = { error: e => logs.push(e) };
@@ -26,7 +26,7 @@ describe("Testing depused", () => {
 
   // eslint-disable-next-line func-names
   it("Testing Unused", function (done) {
-    this.timeout(30000);
+    this.timeout(60000);
     depused(
       logger,
       path.join(__dirname, "..", ".."),
@@ -39,7 +39,7 @@ describe("Testing depused", () => {
 
   // eslint-disable-next-line func-names
   it("Testing Ok", function (done) {
-    this.timeout(30000);
+    this.timeout(60000);
     depused(
       logger,
       path.join(__dirname, "..", ".."),

@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const yamllint = require('../../lib/subtasks/yamllint');
+const yamllint = require('../../src/subtasks/yamllint');
 
 const logs = [];
 const logger = { error: e => logs.push(e) };

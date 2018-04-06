@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const util = require('./../lib/util');
+const util = require('./../src/util');
 
 describe("Testing Util", () => {
   it("Testing loadConfig", () => {
