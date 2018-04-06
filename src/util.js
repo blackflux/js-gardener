@@ -12,7 +12,7 @@ module.exports.getEsLintFiles = (folder, ignore) => globSync(
 );
 
 module.exports.getTestFiles = folder => globSync(
-  "test/**/test_*.js",
+  "test/**/*.spec.js",
   {
     cwd: folder,
     ignore: [

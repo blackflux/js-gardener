@@ -1,6 +1,6 @@
 const expect = require("chai").expect;
 const tmp = require('tmp');
-const copy = require('../../lib/subtasks/copy');
+const copy = require('../../src/subtasks/copy');
 
 const logs = [];
 const logger = { info: e => logs.push(e) };
@@ -27,7 +27,7 @@ describe("Testing copy", () => {
         'LICENSE',
         'README.md',
         'test',
-        'lib',
+        'src',
         'test/mocha.opts'
       ].sort());
       // no files are copied

@@ -2,6 +2,7 @@
 conf/
 coverage/
 test/
+src/
 .coveralls.yml
 .travis.yml
 gardener.js

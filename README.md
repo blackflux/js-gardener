@@ -54,7 +54,7 @@ Then run
 
 This will generate some files and alter your existing package.json file.
 
-Create your files in the `lib` folder and corresponding tests in the `test` folder ([Mocha](https://mochajs.org/) and [Chai](https://github.com/chaijs/chai) work great), and ensure everything works fine by running `npm test`. Finalize your README.md and package.json and commit and push to GitHub.
+Create your files in the `src` folder and corresponding tests in the `test` folder ([Mocha](https://mochajs.org/) and [Chai](https://github.com/chaijs/chai) work great), and ensure everything works fine by running `npm test`. Finalize your README.md and package.json and commit and push to GitHub.
 
 Now configure your Badges.
 
@@ -70,7 +70,7 @@ and in debug mode with
 
 # Structure
 
-**Folders** - Write your tests in the `test` and your code in the `lib` folder. Only test files of the format `test_*.js` are picked up.
+**Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target.
 
 **Branches** - You release branch is `master`. Develop against `develop` or feature branches. When you are ready for a release, merge your changes into `master`.
 
@@ -95,9 +95,6 @@ Define your flow interfaces in `flow-typed` folder (as plain flow) and then use 
 Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto generate flow schemas.
 
 To enforce flow syntax in every file you can set the corresponding eslint rule.
-
-If you are using flow you should be using `src` instead of `lib` for your raw code. The `lib` folder will
-be automatically generated.
 
 # Options
 

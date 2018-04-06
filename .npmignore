@@ -1,6 +1,7 @@
 .idea/
 conf/
 coverage/
+src/
 test/
 .coveralls.yml
 .travis.yml

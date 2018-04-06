@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const tmp = require('tmp');
 const expect = require("chai").expect;
-const depcheck = require('../../lib/subtasks/depcheck');
+const depcheck = require('../../src/subtasks/depcheck');
 
 const logs = [];
 const logger = { error: e => logs.push(e) };

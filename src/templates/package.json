@@ -1,0 +1,84 @@
+{
+  "force": {
+    "version": "0.0.0-development",
+    "scripts": {
+      "clean": "rm -rf lib",
+      "build": "npx babel src --out-dir lib --source-maps inline --copy-files --include-dotfiles",
+      "clean-build": "npm run clean && npm run build",
+      "test-simple": "nyc mocha --recursive",
+      "test": "npm run clean && npm run gardener && npm run test-simple",
+      "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
+      "semantic-release": "npm run clean-build && semantic-release"
+    },
+    "nyc": {
+      "tempDirectory": "./coverage/.nyc_output",
+      "report-dir": "./coverage",
+      "check-coverage": true,
+      "per-file": false,
+      "lines": 100,
+      "statements": 100,
+      "functions": 100,
+      "branches": 100,
+      "include": [
+        "**/*.js"
+      ],
+      "reporter": [
+        "lcov",
+        "text-summary"
+      ],
+      "require": [
+        "babel-register"
+      ],
+      "extension": [],
+      "cache": true,
+      "all": true,
+      "babel": true
+    }
+  },
+  "defaults": {
+    "scripts": {
+      "gardener": "node gardener"
+    },
+    "name": "???",
+    "description": "???",
+    "main": "lib/???.js",
+    "keywords": [],
+    "homepage": "{{GIT_URL}}#readme",
+    "license": "MIT",
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "{{GIT_URL}}/blob/master/LICENSE"
+      }
+    ],
+    "author": "???",
+    "devDependencies": {
+      "babel-cli": "7.0.0-beta.3",
+      "coveralls": "3.0.0",
+      "nyc": "11.6.0",
+      "semantic-release": "11.0.2"
+    },
+    "engines": {
+      "node": ">= 6.10.3"
+    },
+    "repository": {
+      "type": "git",
+      "url": "{{GIT_URL}}.git"
+    },
+    "bugs": {
+      "url": "{{GIT_URL}}/issues"
+    },
+    "files": [
+      "lib"
+    ],
+    "nyc": {
+      "exclude": [
+        "gardener.js",
+        "node_modules/*",
+        "coverage/*",
+        "flow-typed/*",
+        "lib/*"
+      ]
+    }
+  }
+}

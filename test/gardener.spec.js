@@ -1,6 +1,6 @@
 const path = require('path');
 const expect = require("chai").expect;
-const gardener = require('./../lib/gardener');
+const gardener = require('./../src/gardener');
 const log = require("fancy-log");
 
 const logs = [];
