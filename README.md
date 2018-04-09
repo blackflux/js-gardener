@@ -70,7 +70,7 @@ and in debug mode with
 
 # Structure
 
-**Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target.
+**Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target. Test files must be of format `*.spec.js`.
 
 **Branches** - You release branch is `master`. Develop against `develop` or feature branches. When you are ready for a release, merge your changes into `master`.
 
@@ -121,7 +121,7 @@ Type: `object`<br>
 Default: `{}`
 
 Object of custom eslint rules to set.
-- `flow-enforce`: Set to `1` to enforce flow for every file. 
+- `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
 
 ### cwd
 
