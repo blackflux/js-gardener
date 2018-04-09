@@ -32,7 +32,7 @@ describe("Testing depused", () => {
       path.join(__dirname, "..", ".."),
       []
     ).catch(() => {
-      expect(logs, `Provided ${logs}`).to.contain('Unused Dependencies: eslint-config-airbnb-base');
+      expect(logs, `Provided ${logs}`).to.contain('Unused/Not Installed Dependencies: eslint-config-airbnb-base');
       done();
     });
   });
