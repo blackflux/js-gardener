@@ -121,7 +121,7 @@ Type: `object`<br>
 Default: `{}`
 
 Object of custom eslint rules to set.
-- `flow-enforce`: Set to `1` to enforce flow for every file. 
+- `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
 
 ### cwd
 

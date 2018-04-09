@@ -16,7 +16,9 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  rules = {}
+  rules = {
+    "flow-enforce": 1
+  }
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
