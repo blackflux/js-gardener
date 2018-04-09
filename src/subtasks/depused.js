@@ -8,7 +8,7 @@ module.exports = (logger, dir, suppressed) => new Promise((resolve, reject) => n
   .then((unused) => {
     const unexpected = difference(unused, suppressed).sort();
     if (unexpected.length !== 0) {
-      logger.error(`Unused Dependencies: ${unexpected.join(", ")}`);
+      logger.error(`Unused/Not Installed Dependencies: ${unexpected.join(", ")}`);
     }
     const suppressedNotUnused = difference(suppressed, unused).sort();
     if (suppressedNotUnused.length !== 0) {

@@ -23,7 +23,7 @@ describe("Testing Gardener", () => {
     const savedCwd = process.cwd();
     process.chdir(path.join(__dirname, 'mock'));
     gardener().catch(() => {
-      expect(logs).to.deep.equal(['Unused Dependencies: coveralls, nyc, semantic-release']);
+      expect(logs).to.deep.equal(['Unused/Not Installed Dependencies: coveralls, nyc, semantic-release']);
       process.chdir(savedCwd);
       done();
     });
