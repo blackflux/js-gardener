@@ -15,7 +15,7 @@ describe("Testing copy", () => {
   it("Testing Copy", (done) => {
     const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     // all files are copied
-    copy(logger, dir).then(() => {
+    copy(logger, dir, {}).then(() => {
       expect(logs.length).to.equal(1);
       expect(logs[0].sort()).to.deep.equal([
         'dot.babelrc',
@@ -33,7 +33,7 @@ describe("Testing copy", () => {
         'test/mocha.opts'
       ].sort());
       // no files are copied
-      copy(logger, dir).then(() => {
+      copy(logger, dir, []).then(() => {
         expect(logs.length).to.equal(1);
         done();
       });

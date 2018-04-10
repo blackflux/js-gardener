@@ -1,11 +1,17 @@
 const path = require("path");
+const omit = require("lodash.omit");
+const get = require("lodash.get");
 const util = require("./../util");
 
 // create missing badges
-module.exports = (logger, cwd) => {
+module.exports = (logger, cwd, config) => {
   const gitUrl = util.getGitUrl(cwd);
-  const badges = util
-    .readJsonFile(path.join(__dirname, "..", "templates", "badges.json"))
+  const badgesTemplates = omit(
+    util.readJsonFile(path.join(__dirname, "..", "templates", "badges.json")),
+    get(config, "skip", [])
+  );
+  const badges = Object.keys(badgesTemplates)
+    .map(key => badgesTemplates[key])
     .reduce((obj, badge) => Object.assign(obj, {
       [
       badge
