@@ -8,9 +8,9 @@ const util = require("./../util");
 // rewrite configuration files
 module.exports = (logger, cwd) => {
   // update yml files
-  ['.travis.yml'].forEach((fileName) => {
+  ['.travis.yml', '.circleci/config.yml'].forEach((fileName) => {
     const filePath = path.join(cwd, fileName);
-    const expected = yaml.readSync(path.join(__dirname, "..", "templates", `dot${fileName}`));
+    const expected = yaml.readSync(path.join(__dirname, "..", "templates", "overwrite", `dot${fileName}`));
     const actual = yaml.readSync(filePath);
     yaml.write(filePath, defaults(actual, expected));
     fs.appendFileSync(filePath, "\n");
@@ -19,7 +19,7 @@ module.exports = (logger, cwd) => {
   // update list files
   ['.gitignore', '.npmignore'].forEach((fileName) => {
     const filePath = path.join(cwd, fileName);
-    const expected = util.readListFile(path.join(__dirname, "..", "templates", `dot${fileName}`));
+    const expected = util.readListFile(path.join(__dirname, "..", "templates", "overwrite", `dot${fileName}`));
     const actual = util.readListFile(filePath);
     fs.appendFileSync(filePath, difference(expected, actual).join("\n"));
   });

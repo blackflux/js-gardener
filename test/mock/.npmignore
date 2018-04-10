@@ -3,6 +3,7 @@ conf/
 coverage/
 test/
 .coveralls.yml
+.circleci/config.yml
 .travis.yml
 gardener.js
 src/
