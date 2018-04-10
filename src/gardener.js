@@ -16,20 +16,21 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  rules = {
-    "flow-enforce": 1
-  }
+  copy = { skip: [".circleci", ".circleci/config.yml"] },
+  configure = { skip: [".circleci/config.yml"] },
+  badges = { skip: ["circleci"] },
+  eslint = { rules: { "flow-enforce": 1 } }
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
 
   const tasks = {
-    copy: () => copySubtask(logger, cwd),
+    copy: () => copySubtask(logger, cwd, copy),
     package: () => packageSubtask(logger, cwd),
-    configure: () => configureSubtask(logger, cwd),
-    badges: () => badgesSubtask(logger, cwd),
+    configure: () => configureSubtask(logger, cwd, configure),
+    badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, ".structignore")),
-    eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util.loadConfig(cwd, ".eslintignore")), rules),
+    eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util.loadConfig(cwd, ".eslintignore")), eslint),
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),

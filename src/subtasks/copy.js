@@ -1,27 +1,35 @@
 const fs = require('fs-extra');
+const get = require("lodash.get");
 const path = require("path");
 const globSync = require("glob").sync;
 const util = require("./../util");
 
 // create folder and dirs, return created
-module.exports = (logger, targetFolder) => {
+module.exports = (logger, targetFolder, config) => {
   const fromFolder = path.join(__dirname, "..", "templates", "files");
   const created = [];
+  const toSkip = get(config, "skip", []);
   globSync("**/*", { cwd: fromFolder, dot: true })
     .concat(util.readJsonFile(path.join(__dirname, "..", "templates", "folders.json")))
     .map(f => [
       f,
-      path.join(fromFolder, f),
-      path.join(targetFolder, f.replace(/(^|\/)dot\./, '$1.'))
+      f.replace(/(^|\/)dot\./, '$1.')
     ])
-    .forEach(([relPath, fromFile, toFile]) => {
+    .map(([origin, target]) => [
+      origin,
+      target,
+      path.join(fromFolder, origin),
+      path.join(targetFolder, target)
+    ])
+    .filter(f => toSkip.indexOf(f[1]) === -1)
+    .forEach(([origin, target, fromFile, toFile]) => {
       if (!fs.existsSync(toFile)) {
         if (fs.existsSync(fromFile) && fs.lstatSync(fromFile).isFile()) {
           fs.copySync(fromFile, toFile);
         } else {
           fs.mkdirSync(toFile);
         }
-        created.push(relPath);
+        created.push(origin);
       }
     });
   if (created.length !== 0) {

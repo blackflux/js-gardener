@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/simlu/js-gardener.svg)](https://greenkeeper.io/)
+[![Greenkeeper Badge](https://badges.greenkeeper.io/simlu/js-gardener.svg)](https://greenkeeper.io/)
 [![Dependencies](https://david-dm.org/simlu/js-gardener/status.svg)](https://david-dm.org/simlu/js-gardener)
 [![NPM](https://img.shields.io/npm/v/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
 [![Downloads](https://img.shields.io/npm/dt/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
@@ -18,7 +18,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 - Automates and assists with config generation
 - Provides various integrity tests (e.g. checks for un-used dependencies)
 - Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
-- Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/)
+- Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/) or [CircleCI](https://circleci.com).
 - Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release)
 - Enables automates dependency updates using [Greenkeeper](https://greenkeeper.io/).
 
@@ -115,20 +115,38 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `depcheck`: Ensure dependencies are installed as specified in package.json
 - `depused`: Ensure all installed dependencies are used
 
-### rules
-
-Type: `object`<br>
-Default: `{}`
-
-Object of custom eslint rules to set.
-- `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
-
 ### cwd
 
 Type: `string`<br>
 Default: `process.cwd()`
 
 Specify the directory to run the tests against. Useful if you have multiple packages that you manage centralized from a parent folder.
+
+### eslint
+
+Type: `object`<br>
+
+Object of eslint customizations. Define property rules `rules`:
+
+- `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
+
+### copy
+
+Type: `object`<br>
+
+Define `skip` array as property to define files to not copy.
+
+### configure
+
+Type: `object`<br>
+
+Define `skip` array as property to define files to not configure.
+
+### badges
+
+Type: `object`<br>
+
+Define `skip` array as property to define badges to not create / update.
 
 # Ignore Files
 

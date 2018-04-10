@@ -2,13 +2,26 @@
 
 Please refer to [README.md](README.md) for more details.
 
-### Travis
+### Continuous Integration
 
-**What is it?** - TravisCI is used for [Continous Integration](https://docs.travis-ci.com/user/for-beginners/). It is also required by Semantic-Release.
+By default gardener will try to configure TravisCI. However you can switch to CircleCI by changing the initialization configuration. Continuous Integration is required by Semantic-Release.
+
+#### TravisCI
+
+**What is it?** - TravisCI allows you to set up [Continous Integration](https://docs.travis-ci.com/user/for-beginners/).
 
 **Setup** - Create a TravisCI account on [travis-ci.org](https://travis-ci.org/), preferably with the same username that you use for github. Then enable TravisCI access for your repo.
 
 **How to use** - Gardener takes care of setting up your configuration files. If you would like to customize TravisCI further, please refer to the [documentation](https://docs.travis-ci.com/).
+
+#### CircleCI
+
+**What is it?** - CircleCI allows you to set up [Continous Integration](https://circleci.com/docs/1.0/getting-started/).
+
+**Setup** - Create a TravisCI account on [circleci.com](https://circleci.com), preferably with the same username that you use for github. Then enable CircleCi access for your repo.
+
+**How to use** - Gardener takes care of setting up your configuration files. If you would like to customize CircleCI further, please refer to the [documentation](https://docs.travis-ci.com/).
+
 
 ### Coveralls
 
