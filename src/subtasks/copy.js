@@ -12,7 +12,7 @@ module.exports = (logger, targetFolder) => {
     .map(f => [
       f,
       path.join(fromFolder, f),
-      path.join(targetFolder, f.replace(/^(.*?[/\\])?dot(\.[^/\\]*?)$/, '$1$2'))
+      path.join(targetFolder, f.replace(/(^|\/)dot\./, '$1.'))
     ])
     .forEach(([relPath, fromFile, toFile]) => {
       if (!fs.existsSync(toFile)) {

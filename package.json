@@ -7,7 +7,7 @@
     "lib"
   ],
   "engines": {
-    "node": ">= 6.10.3"
+    "node": ">= 8.10"
   },
   "scripts": {
     "build": "npx babel src --out-dir lib --source-maps inline --copy-files --include-dotfiles",

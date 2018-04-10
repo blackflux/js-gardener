@@ -24,6 +24,8 @@ describe("Testing copy", () => {
         'dot.gitignore',
         'dot.npmignore',
         'dot.travis.yml',
+        'dot.circleci',
+        'dot.circleci/config.yml',
         'LICENSE',
         'README.md',
         'test',
