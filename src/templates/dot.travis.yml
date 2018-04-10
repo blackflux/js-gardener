@@ -12,7 +12,7 @@ install:
 node_js:
   - '9'
   - '8'
-  - 8.10
+  - '8.10'
 before_script: greenkeeper-lockfile-update
 script:
   - npm test
