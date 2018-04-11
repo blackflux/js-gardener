@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: c21c068bac1d4c9fedc17497db449624
 // flow-typed version: <<STUB>>/eslint-plugin-mocha_v5.0.0/flow_v0.69.0
 

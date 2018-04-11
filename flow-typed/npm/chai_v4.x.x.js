@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: c46b11661e19e83f574595250845c8e1
 // flow-typed version: a5452d3be3/chai_v4.x.x/flow_>=v0.25.0
 

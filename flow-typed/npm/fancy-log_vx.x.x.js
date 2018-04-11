@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 27196c2b998a34ab31b6e46e5616b89f
 // flow-typed version: <<STUB>>/fancy-log_v1.3.2/flow_v0.69.0
 

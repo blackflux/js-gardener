@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 952834bf1cd000280881dcf3496cea3c
 // flow-typed version: <<STUB>>/babel-cli_v7.0.0-beta.3/flow_v0.69.0
 

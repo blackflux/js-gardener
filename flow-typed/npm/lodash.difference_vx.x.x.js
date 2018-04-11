@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: e9c6becd22603ae8a63a4b54f031d13c
 // flow-typed version: <<STUB>>/lodash.difference_v4.5.0/flow_v0.69.0
 

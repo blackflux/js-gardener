@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 031d0a57ee4eea68d8876cd93911e2ba
 // flow-typed version: <<STUB>>/coveralls_v3.0.0/flow_v0.69.0
 

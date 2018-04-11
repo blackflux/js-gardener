@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: de07c758719335281e9ebf3d1c846c77
 // flow-typed version: <<STUB>>/glob_v7.1.2/flow_v0.69.0
 

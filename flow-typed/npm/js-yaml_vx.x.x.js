@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: f976e6c7cb5bd65724d703b77b30be6a
 // flow-typed version: <<STUB>>/js-yaml_v3.11.0/flow_v0.69.0
 

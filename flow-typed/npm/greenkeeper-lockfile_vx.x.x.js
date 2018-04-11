@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 4a0f4ce4fd136d1b8af1f98c51cc0d3f
 // flow-typed version: <<STUB>>/greenkeeper-lockfile_v1.14.0/flow_v0.69.0
 
