@@ -11,7 +11,7 @@ const updateStruct = (cwd, files, converter) => files.forEach((fileName) => {
   const expected = converter[0](fs.readFileSync(path
     .join(__dirname, "..", "templates", "overwrite", `dot${fileName}`), 'utf8'));
   const actual = converter[0](fs.readFileSync(filePath, 'utf8'));
-  fs.writeFileSync(filePath, converter[1](defaults(actual, expected)), 'utf8');
+  fs.writeFileSync(filePath, converter[1](defaults(actual, expected)).trim("\n"), 'utf8');
   fs.appendFileSync(filePath, "\n");
 });
 
@@ -30,10 +30,12 @@ module.exports = (logger, cwd, config) => {
     yaml: ['.travis.yml', '.circleci/config.yml'],
     seq: ['.gitignore', '.npmignore']
   };
+  const filteredTasks = Object.keys(tasks)
+    .reduce((p, c) => Object.assign(p, { [c]: tasks[c].filter(f => toSkip.indexOf(f) === -1) }), {});
 
-  updateStruct(cwd, tasks.json.filter(f => toSkip.indexOf(f) === -1), [JSON.parse, e => JSON.stringify(e, null, 2)]);
-  updateStruct(cwd, tasks.yaml.filter(f => toSkip.indexOf(f) === -1), [yaml.safeLoad, yaml.safeDump]);
-  updateSequential(cwd, tasks.seq.filter(f => toSkip.indexOf(f) === -1));
+  updateStruct(cwd, filteredTasks.json, [JSON.parse, e => JSON.stringify(e, null, 2)]);
+  updateStruct(cwd, filteredTasks.yaml, [yaml.safeLoad, yaml.safeDump]);
+  updateSequential(cwd, filteredTasks.seq);
 
   return Promise.resolve();
 };
