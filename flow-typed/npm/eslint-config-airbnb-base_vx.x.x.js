@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: e4f4508669f8ccf6036602eb510628d7
 // flow-typed version: <<STUB>>/eslint-config-airbnb-base_v12.1.0/flow_v0.69.0
 

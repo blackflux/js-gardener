@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: c8f6be4da391a620d6d32186db3792f6
 // flow-typed version: <<STUB>>/babel-eslint_v8.2.2/flow_v0.69.0
 

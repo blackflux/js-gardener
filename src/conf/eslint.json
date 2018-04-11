@@ -2,7 +2,8 @@
   "root": true,
   "extends": [
     "airbnb-base",
-    "plugin:jasmine/recommended"
+    "plugin:jasmine/recommended",
+    "plugin:flowtype/recommended"
   ],
   "rules": {
     "jasmine/expect-single-argument": 0,

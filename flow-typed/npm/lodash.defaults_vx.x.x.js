@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: f67f0b90ff9475b2ffa11918a3be7e62
 // flow-typed version: <<STUB>>/lodash.defaults_v4.2.0/flow_v0.69.0
 

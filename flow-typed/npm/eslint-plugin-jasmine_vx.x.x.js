@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 46b0b244ed145d2b25fa2b4420e4e0a0
 // flow-typed version: <<STUB>>/eslint-plugin-jasmine_v2.9.3/flow_v0.69.0
 

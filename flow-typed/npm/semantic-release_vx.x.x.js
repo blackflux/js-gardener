@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 19b2cd14b0a71d51440267af0c1f6357
 // flow-typed version: <<STUB>>/semantic-release_v15.1.5/flow_v0.69.0
 

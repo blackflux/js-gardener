@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 662e4256c8a3d54d028ed45057034775
 // flow-typed version: <<STUB>>/fs-extra_v5.0.0/flow_v0.69.0
 

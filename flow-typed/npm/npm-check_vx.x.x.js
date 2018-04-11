@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 08b23a5bfd182329131a53ac08fcbdd9
 // flow-typed version: <<STUB>>/npm-check_v5.6.0/flow_v0.69.0
 
