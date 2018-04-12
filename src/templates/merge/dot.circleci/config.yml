@@ -5,9 +5,21 @@ workflows:
       - node-v9
       - node-v8
       - node-v8.10
+      - release:
+          requires:
+            - node-v9
+            - node-v8
+            - node-v8.10
 
 version: 2
 jobs:
+  release:
+    docker:
+      - image: circleci/node:8.10
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run semantic-release
   node-base: &node-base
     docker:
       - image: node

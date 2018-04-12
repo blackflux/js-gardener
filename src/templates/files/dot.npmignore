@@ -7,3 +7,4 @@ src/
 .circleci/config.yml
 .travis.yml
 gardener.js
+.releaserc.json

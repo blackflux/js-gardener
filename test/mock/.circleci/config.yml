@@ -10,35 +10,37 @@ workflows:
             - node-v9
             - node-v8
             - node-v8.10
-
 version: 2
 jobs:
   release:
     docker:
-      - image: circleci/node:8.10
+      - image: 'circleci/node:8.10'
     steps:
       - checkout
       - run: npm install
       - run: npm run semantic-release
-  node-base: &node-base
+  node-base:
     docker:
       - image: node
     working_directory: ~/working_directory
-    steps:
+    steps: &ref_0
       - run: sudo npm install -g npm
       - checkout
       - run: rm -rf node_modules
       - run: npm install
       - run: npm test
   node-v9:
-    <<: *node-base
     docker:
-      - image: circleci/node:9
+      - image: 'circleci/node:9'
+    working_directory: ~/working_directory
+    steps: *ref_0
   node-v8:
-    <<: *node-base
     docker:
-      - image: circleci/node:8
+      - image: 'circleci/node:8'
+    working_directory: ~/working_directory
+    steps: *ref_0
   node-v8.10:
-    <<: *node-base
     docker:
-      - image: circleci/node:8.10
+      - image: 'circleci/node:8.10'
+    working_directory: ~/working_directory
+    steps: *ref_0

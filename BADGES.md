@@ -4,7 +4,7 @@ Please refer to [README.md](README.md) for more details.
 
 ### Continuous Integration
 
-By default gardener will try to configure TravisCI. However you can switch to CircleCI by changing the initialization configuration. Continuous Integration is required by Semantic-Release.
+By default gardener will configure TravisCI. However you can switch to CircleCI by changing the initialization configuration. Continuous Integration is required by Semantic-Release.
 
 #### TravisCI
 
