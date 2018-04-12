@@ -131,16 +131,16 @@ Object of eslint customizations. Define property rules `rules`:
 - `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
 
 ### ci
-Default: `['travis']`
 
 Type: `array`<br>
+Default: `['travis']`
 
 Configure list of CI tools to use. Available are `circle` and `travis`.
 
 ### npm
-Default: `true`
 
 Type: `boolean`<br>
+Default: `true`
 
 Configure whether to deploy to npm or only to github.
 
