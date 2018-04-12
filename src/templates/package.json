@@ -8,7 +8,7 @@
       "test-simple": "nyc mocha \"./test/**/*.spec.js\"",
       "test": "npm run clean && npm run gardener && npm run test-simple",
       "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
-      "semantic-release": "npm run clean-build && semantic-release"
+      "semantic-release": "npm run clean-build && npx semantic-release"
     },
     "nyc": {
       "tempDirectory": "./coverage/.nyc_output",
