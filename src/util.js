@@ -43,7 +43,7 @@ module.exports.getNpmDependencies = (cwd) => {
   return [String(data.stdout), String(data.stderr)];
 };
 
-module.exports.readListFile = filePath => String(fs.readFileSync(filePath))
+module.exports.readListFile = filePath => String(fs.readFileSync(filePath, "utf8"))
   .split("\n")
   .map(e => e.split("#", 1)[0].trim())
   .filter(e => e !== "");

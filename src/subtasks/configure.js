@@ -9,7 +9,7 @@ const util = require("./../util");
 const updateStruct = (cwd, files, converter) => files.forEach((fileName) => {
   const filePath = path.join(cwd, fileName);
   const expected = converter[0](fs.readFileSync(path
-    .join(__dirname, "..", "templates", "overwrite", `dot${fileName}`), 'utf8'));
+    .join(__dirname, "..", "templates", "merge", `dot${fileName}`), 'utf8'));
   const actual = converter[0](fs.readFileSync(filePath, 'utf8'));
   fs.writeFileSync(filePath, converter[1](defaults(actual, expected)).trim("\n"), 'utf8');
   fs.appendFileSync(filePath, "\n");
@@ -17,7 +17,7 @@ const updateStruct = (cwd, files, converter) => files.forEach((fileName) => {
 
 const updateSequential = (cwd, folders) => folders.forEach((fileName) => {
   const filePath = path.join(cwd, fileName);
-  const expected = util.readListFile(path.join(__dirname, "..", "templates", "overwrite", `dot${fileName}`));
+  const expected = util.readListFile(path.join(__dirname, "..", "templates", "merge", `dot${fileName}`));
   const actual = util.readListFile(filePath);
   fs.appendFileSync(filePath, difference(expected, actual).join("\n"));
 });
