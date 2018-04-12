@@ -17,12 +17,29 @@ describe("Testing Gardener", () => {
   });
 
   // eslint-disable-next-line func-names
-  it("Testing Execution", function (done) {
+  it("Testing Defaults", function (done) {
     this.timeout(60000);
-    // change cwd for coverage (we don't need to)
+    // change cwd for coverage (because we exit with exception!)
     const savedCwd = process.cwd();
     process.chdir(path.join(__dirname, 'mock'));
     gardener().catch(() => {
+      expect(logs).to.deep.equal(['Unused/Not Installed Dependencies: coveralls, nyc, semantic-release']);
+      process.chdir(savedCwd);
+      done();
+    });
+  });
+
+  // eslint-disable-next-line func-names
+  it("Testing CircleCI and no NPM", function (done) {
+    this.timeout(60000);
+    // change cwd for coverage (because we exit with exception!)
+    const savedCwd = process.cwd();
+    process.chdir(path.join(__dirname, 'mock'));
+    gardener({
+      ci: ["circle"],
+      npm: false,
+      cwd: path.join(__dirname, 'mock')
+    }).catch(() => {
       expect(logs).to.deep.equal(['Unused/Not Installed Dependencies: coveralls, nyc, semantic-release']);
       process.chdir(savedCwd);
       done();

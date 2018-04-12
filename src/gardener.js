@@ -16,13 +16,30 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  copy = { skip: [".circleci", ".circleci/config.yml"] },
-  configure = { skip: [".circleci/config.yml"] },
-  badges = { skip: ["circleci"] },
+  ci = ["travis"],
+  npm = true,
+  copy = { skip: [] },
+  configure = { skip: [] },
+  badges = { skip: [] },
   eslint = { rules: { "flow-enforce": 1 } }
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
+
+  if (ci.indexOf("circle") === -1) {
+    copy.skip.push(".circleci", ".circleci/config.yml");
+    configure.skip.push(".circleci/config.yml");
+    badges.skip.push("circleci");
+  }
+  if (ci.indexOf("travis") === -1) {
+    copy.skip.push(".travis.yml");
+    configure.skip.push(".travis.yml");
+    badges.skip.push("travisci");
+  }
+  if (npm === true) {
+    copy.skip.push(".releaserc.json");
+    configure.skip.push(".releaserc.json");
+  }
 
   const tasks = {
     copy: () => copySubtask(logger, cwd, copy),

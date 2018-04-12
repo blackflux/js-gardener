@@ -1,0 +1,8 @@
+{
+  "npmPublish": false,
+  "publish": [
+    {
+      "path": "@semantic-release/github"
+    }
+  ]
+}

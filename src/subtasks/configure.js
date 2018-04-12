@@ -26,7 +26,7 @@ const updateSequential = (cwd, folders) => folders.forEach((fileName) => {
 module.exports = (logger, cwd, config) => {
   const toSkip = get(config, "skip", []);
   const tasks = {
-    json: ['.babelrc'],
+    json: ['.babelrc', '.releaserc.json'],
     yaml: ['.travis.yml', '.circleci/config.yml'],
     seq: ['.gitignore', '.npmignore']
   };
