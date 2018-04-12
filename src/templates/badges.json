@@ -1,5 +1,5 @@
 {
-  "circleci": "[![Build Status](https://circleci.com/gh/{{USER_NAME}}/{{REPO_NAME}}.png)](https://circleci.com/gh/{{USER_NAME}}/{{REPO_NAME}})",
+  "circleci": "[![Build Status](https://circleci.com/gh/{{USER_NAME}}/{{REPO_NAME}}.png?style=shield)](https://circleci.com/gh/{{USER_NAME}}/{{REPO_NAME}})",
   "travisci": "[![Build Status](https://img.shields.io/travis/{{USER_NAME}}/{{REPO_NAME}}/master.svg)](https://travis-ci.org/{{USER_NAME}}/{{REPO_NAME}})",
   "coveralls": "[![Test Coverage](https://img.shields.io/coveralls/{{USER_NAME}}/{{REPO_NAME}}/master.svg)](https://coveralls.io/github/{{USER_NAME}}/{{REPO_NAME}}?branch=master)",
   "greenkeeper": "[![Greenkeeper Badge](https://badges.greenkeeper.io/{{USER_NAME}}/{{REPO_NAME}}.svg)](https://greenkeeper.io/)",
