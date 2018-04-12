@@ -1,5 +1,6 @@
 # Project Title
 
+[![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
 [![Build Status](https://circleci.com/gh/simlu/js-gardener.png)](https://circleci.com/gh/simlu/js-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
 [![Greenkeeper Badge](https://badges.greenkeeper.io/simlu/js-gardener.svg)](https://greenkeeper.io/)

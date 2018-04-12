@@ -71,5 +71,9 @@ module.exports = ({
       logger.info(`Running: ${chalk.green(cur)}`);
       return tasks[cur]();
     }), Promise.resolve())
-    .then(() => process.chdir(savedCwd));
+    .then(() => process.chdir(savedCwd))
+    .catch((err) => {
+      process.chdir(savedCwd);
+      throw err;
+    });
 };
