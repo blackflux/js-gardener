@@ -8,3 +8,4 @@ src/
 .travis.yml
 gardener.js
 .releaserc.json
+release.tar.gz
