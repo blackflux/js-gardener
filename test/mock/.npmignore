@@ -8,3 +8,4 @@ test/
 gardener.js
 src/
 .releaserc.json
+release.tar.gz

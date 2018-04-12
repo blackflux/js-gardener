@@ -9,6 +9,8 @@
 # Node Specific
 node_modules
 npm-debug.log
+yarn-error.log
+release.tar.gz
 
 # Test Specific
 coverage/
