@@ -5,7 +5,7 @@
       "clean": "rm -rf lib",
       "build": "npx babel src --out-dir lib --source-maps inline --copy-files --include-dotfiles",
       "clean-build": "npm run clean && npm run build",
-      "build-artifact": "npm run clean-build && tar -zxvf $(npm pack) && rm *-0.0.0-development.tgz && tar -zcvf release.tar.gz package/* && rm -rf package",
+      "build-artifact": "npm run clean-build && tar -zxvf $(npm pack) && rm *-0.0.0-development.tgz && cd package && tar -zcvf ../release.tar.gz . && cd .. && rm -rf package",
       "test-simple": "nyc mocha \"./test/**/*.spec.js\"",
       "test": "npm run clean && npm run gardener && npm run test-simple",
       "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
