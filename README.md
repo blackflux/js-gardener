@@ -128,7 +128,7 @@ Type: `object`<br>
 
 Object of eslint customizations. Define property rules `rules`:
 
-- `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
+- `flow-enforce`: Set to `1` to enforce flow for every file. Not enforced by default.
 
 ### ci
 
@@ -143,6 +143,22 @@ Type: `boolean`<br>
 Default: `true`
 
 Configure whether to deploy to npm or only to github.
+
+### license
+
+Type: `string`<br>
+Default: `MIT`
+
+Configure the license type you want to use.
+
+Options are `MIT`, `UNLICENSED`
+
+### author
+
+Type: `string`<br>
+Default: `The Author`
+
+Name of the author or the authoring company.
 
 ### copy
 

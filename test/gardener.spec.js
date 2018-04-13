@@ -42,6 +42,12 @@ describe("Testing Gardener", () => {
     });
   });
 
+  it("Testing Invalid License", () => {
+    expect(() => gardener({
+      license: "Invalid"
+    })).to.throw("Invalid license provided!");
+  });
+
   it("Testing Skip All", (done) => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
