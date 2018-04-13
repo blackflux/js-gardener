@@ -16,6 +16,8 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
+  license = "MIT",
+  author = "The Author",
   ci = ["travis"],
   npm = true,
   copy = { skip: [] },
@@ -25,6 +27,10 @@ module.exports = ({
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
+
+  if (["MIT", "UNLICENSED"].indexOf(license) === -1) {
+    throw new Error("Invalid license provided!");
+  }
 
   if (ci.indexOf("circle") === -1) {
     copy.skip.push(".circleci", ".circleci/config.yml");
@@ -43,7 +49,7 @@ module.exports = ({
 
   const tasks = {
     copy: () => copySubtask(logger, cwd, copy),
-    package: () => packageSubtask(logger, cwd),
+    package: () => packageSubtask(logger, cwd, { license, author }),
     configure: () => configureSubtask(logger, cwd, configure),
     badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, ".structignore")),

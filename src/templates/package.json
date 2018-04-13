@@ -34,7 +34,15 @@
       "cache": true,
       "all": true,
       "babel": true
-    }
+    },
+    "license": "{{LICENCE}}",
+    "licenses": [
+      {
+        "type": "{{LICENCE}}",
+        "url": "{{GIT_URL}}/blob/master/LICENSE"
+      }
+    ],
+    "author": "{{AUTHOR}}"
   },
   "defaults": {
     "scripts": {
@@ -45,14 +53,6 @@
     "main": "lib/???.js",
     "keywords": [],
     "homepage": "{{GIT_URL}}#readme",
-    "license": "MIT",
-    "licenses": [
-      {
-        "type": "MIT",
-        "url": "{{GIT_URL}}/blob/master/LICENSE"
-      }
-    ],
-    "author": "???",
     "devDependencies": {
       "babel-cli": "7.0.0-beta.3",
       "coveralls": "3.0.0",

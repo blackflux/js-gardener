@@ -5,13 +5,17 @@ const mapValues = require('lodash.mapvalues');
 const util = require("./../util");
 
 // rewrite package.json
-module.exports = (logger, cwd) => {
+module.exports = (logger, cwd, config) => {
   const gitUrl = util.getGitUrl(cwd);
   const packageFile = path.join(cwd, 'package.json');
   const packageJson = util.readJsonFile(packageFile);
   const packageTemplate = JSON.parse(util
     .readTextFile(`${__dirname}/../templates/package.json`)
-    .replace(/{{GIT_URL}}/g, gitUrl));
+    .replace(/{{GIT_URL}}/g, gitUrl)
+    .replace(/{{LICENSE}}/g, config.license));
+  const license = util.readTextFile(`${__dirname}/../templates/licenses/${config.license}`)
+    .replace(/{{AUTHOR}}/g, config.author);
+  util.writeTextFile(path.join(cwd, 'LICENSE'), license);
   merge(packageJson, packageTemplate.force);
   defaultsDeep(packageJson, packageTemplate.defaults);
   ['dependencies', 'devDependencies', 'peerDependencies'].forEach((deps) => {

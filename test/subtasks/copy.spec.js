@@ -27,7 +27,6 @@ describe("Testing copy", () => {
         'dot.travis.yml',
         'dot.circleci',
         'dot.circleci/config.yml',
-        'LICENSE',
         'README.md',
         'test',
         'src',
