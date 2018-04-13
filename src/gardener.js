@@ -21,7 +21,7 @@ module.exports = ({
   copy = { skip: [] },
   configure = { skip: [] },
   badges = { skip: [] },
-  eslint = { rules: { "flow-enforce": 1 } }
+  eslint = { rules: { "flow-enforce": 0 } }
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);

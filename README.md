@@ -128,7 +128,7 @@ Type: `object`<br>
 
 Object of eslint customizations. Define property rules `rules`:
 
-- `flow-enforce`: Set to `1` to enforce flow for every file. Enforced by default.
+- `flow-enforce`: Set to `1` to enforce flow for every file. Not enforced by default.
 
 ### ci
 
