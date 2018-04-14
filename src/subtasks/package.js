@@ -12,6 +12,7 @@ module.exports = (logger, cwd, config) => {
   const packageTemplate = JSON.parse(util
     .readTextFile(`${__dirname}/../templates/package.json`)
     .replace(/{{GIT_URL}}/g, gitUrl)
+    .replace(/{{AUTHOR}}/g, config.author)
     .replace(/{{LICENSE}}/g, config.license));
   const license = util.readTextFile(`${__dirname}/../templates/licenses/${config.license}`)
     .replace(/{{AUTHOR}}/g, config.author);
