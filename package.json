@@ -34,11 +34,11 @@
     "setup",
     "ci"
   ],
-  "author": "{{AUTHOR}}",
-  "license": "{{LICENCE}}",
+  "author": "Lukas Siemon",
+  "license": "MIT",
   "licenses": [
     {
-      "type": "{{LICENCE}}",
+      "type": "MIT",
       "url": "https://github.com/simlu/js-gardener/blob/master/LICENSE"
     }
   ],

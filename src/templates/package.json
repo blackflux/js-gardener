@@ -35,10 +35,10 @@
       "all": true,
       "babel": true
     },
-    "license": "{{LICENCE}}",
+    "license": "{{LICENSE}}",
     "licenses": [
       {
-        "type": "{{LICENCE}}",
+        "type": "{{LICENSE}}",
         "url": "{{GIT_URL}}/blob/master/LICENSE"
       }
     ],

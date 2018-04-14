@@ -18,8 +18,8 @@
     "gardener": "node gardener",
     "test-simple": "nyc mocha \"./test/**/*.spec.js\""
   },
-  "author": "{{AUTHOR}}",
-  "license": "{{LICENCE}}",
+  "author": "The Author",
+  "license": "MIT",
   "devDependencies": {
     "chai": "4.1.2",
     "coveralls": "3.0.0",
@@ -29,7 +29,7 @@
   },
   "licenses": [
     {
-      "type": "{{LICENCE}}",
+      "type": "MIT",
       "url": "https://github.com/simlu/js-gardener/blob/master/LICENSE"
     }
   ],
