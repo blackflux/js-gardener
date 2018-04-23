@@ -44,7 +44,7 @@ const getRepoUrl = (cwd, remote) => String(spawnSync(
 module.exports.getGitUrl = cwd => (getRepoUrl(cwd, "upstream") || getRepoUrl(cwd, "origin")).slice(0, -4);
 
 module.exports.getNpmDependencies = (cwd) => {
-  const data = spawnSync('npm', ['ls', '--depth=0', '--parsable', '--json'], { cwd });
+  const data = spawnSync('npm', ['ls', '--depth=0', '--parsable', '--json', '--no-update-notifier'], { cwd });
   return [String(data.stdout), String(data.stderr)];
 };
 
