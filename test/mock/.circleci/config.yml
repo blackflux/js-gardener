@@ -10,6 +10,9 @@ workflows:
             - node-v9
             - node-v8
             - node-v8.10
+          filters:
+            branches:
+              only: master
 version: 2
 jobs:
   release:
