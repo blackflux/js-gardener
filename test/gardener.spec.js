@@ -48,6 +48,12 @@ describe("Testing Gardener", () => {
     })).to.throw("Invalid license provided!");
   });
 
+  it("Testing Not in Docker", () => {
+    expect(() => gardener({
+      lambda: true
+    })).to.throw("Please run in Docker using \". manage.sh\"");
+  });
+
   it("Testing Skip All", (done) => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
