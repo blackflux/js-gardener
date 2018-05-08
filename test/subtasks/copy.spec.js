@@ -30,7 +30,10 @@ describe("Testing copy", () => {
         'README.md',
         'test',
         'src',
-        'test/mocha.opts'
+        'test/mocha.opts',
+        "manage.sh",
+        "docker",
+        "docker/Dockerfile"
       ].sort());
       // no files are copied
       copy(logger, dir, []).then(() => {

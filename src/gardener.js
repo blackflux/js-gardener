@@ -1,3 +1,4 @@
+const fs = require("fs");
 const log = require("fancy-log");
 const chalk = require("chalk");
 const util = require('./util');
@@ -23,7 +24,8 @@ module.exports = ({
   copy = { skip: [] },
   configure = { skip: [] },
   badges = { skip: [] },
-  eslint = { rules: { "flow-enforce": 0 } }
+  eslint = { rules: { "flow-enforce": 0 } },
+  lambda = false
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
@@ -45,6 +47,12 @@ module.exports = ({
   if (npm === true) {
     copy.skip.push(".releaserc.json");
     configure.skip.push(".releaserc.json");
+  }
+  if (lambda !== true) {
+    copy.skip.push("manage.sh", "docker", "docker/Dockerfile");
+  } else if (!fs.existsSync("/.dockerenv")) {
+    // Ensure running in docker container
+    throw Error("Please run in Docker using \". manage.sh\"");
   }
 
   const tasks = {
