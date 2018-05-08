@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const expect = require("chai").expect;
 const gardener = require('./../src/gardener');
@@ -49,9 +50,23 @@ describe("Testing Gardener", () => {
   });
 
   it("Testing Not in Docker", () => {
+    let fsExistsSyncOriginal = fs.existsSync;
+    fs.existsSync = () => false;
     expect(() => gardener({
       lambda: true
     })).to.throw("Please run in Docker using \". manage.sh\"");
+    fs.existsSync = fsExistsSyncOriginal;
+  });
+
+  it("Testing in Docker", () => {
+    let fsExistsSyncOriginal = fs.existsSync;
+    fs.existsSync = () => true;
+    expect(() => gardener({
+      lambda: true,
+      skip: ['copy', 'package', 'configure', 'badges', 'structure',
+        'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
+    })).to.not.throw("Please run in Docker using \". manage.sh\"");
+    fs.existsSync = fsExistsSyncOriginal;
   });
 
   it("Testing Skip All", (done) => {

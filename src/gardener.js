@@ -50,8 +50,7 @@ module.exports = ({
   }
   if (lambda !== true) {
     copy.skip.push("manage.sh", "docker", "docker/Dockerfile");
-  }
-  if (lambda === true && !fs.existsSync("/.dockerenv")) {
+  } else if (!fs.existsSync("/.dockerenv")) {
     // Ensure running in docker container
     throw Error("Please run in Docker using \". manage.sh\"");
   }
