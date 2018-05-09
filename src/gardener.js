@@ -25,7 +25,7 @@ module.exports = ({
   configure = { skip: [] },
   badges = { skip: [] },
   eslint = { rules: { "flow-enforce": 0 } },
-  lambda = false
+  docker = []
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
@@ -48,7 +48,7 @@ module.exports = ({
     copy.skip.push(".releaserc.json");
     configure.skip.push(".releaserc.json");
   }
-  if (lambda !== true) {
+  if (docker.indexOf("lambda") === -1) {
     copy.skip.push("manage.sh", "docker", "docker/Dockerfile");
   } else if (!fs.existsSync("/.dockerenv")) {
     // Ensure running in docker container

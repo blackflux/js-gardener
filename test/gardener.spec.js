@@ -50,19 +50,19 @@ describe("Testing Gardener", () => {
   });
 
   it("Testing Not in Docker", () => {
-    let fsExistsSyncOriginal = fs.existsSync;
+    const fsExistsSyncOriginal = fs.existsSync;
     fs.existsSync = () => false;
     expect(() => gardener({
-      lambda: true
+      docker: ["lambda"]
     })).to.throw("Please run in Docker using \". manage.sh\"");
     fs.existsSync = fsExistsSyncOriginal;
   });
 
   it("Testing in Docker", () => {
-    let fsExistsSyncOriginal = fs.existsSync;
+    const fsExistsSyncOriginal = fs.existsSync;
     fs.existsSync = () => true;
     expect(() => gardener({
-      lambda: true,
+      docker: ["lambda"],
       skip: ['copy', 'package', 'configure', 'badges', 'structure',
         'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     })).to.not.throw("Please run in Docker using \". manage.sh\"");
