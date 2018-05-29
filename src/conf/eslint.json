@@ -27,7 +27,8 @@
     "no-unused-vars": [
       1, {
         "vars": "all",
-        "args": "none"
+        "args": "none",
+        "ignoreRestSiblings": true
       }
     ],
     "no-var": [1],
