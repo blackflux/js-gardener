@@ -16,7 +16,7 @@ describe("Testing struct", () => {
       expect(logs.length, `Provided ${logs}`).to.equal(0);
       expect(logs, `Provided ${logs}`).to.deep.equal([]);
       done();
-    }).catch(done);
+    }).catch(done.fail);
   });
 
   it("Testing Failure", (done) => {
