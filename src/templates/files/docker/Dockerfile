@@ -7,7 +7,7 @@ ENV NO_UPDATE_NOTIFIER 0
 
 RUN yum install git vi -y \
   && npm install -g serverless npm-check-updates \
-  && npm install -g npm@5.6.0
+  && npm install -g npm@6.1.0
 
 # set home folder
 ENV HOME /user

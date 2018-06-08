@@ -47,6 +47,6 @@ describe("Testing depused", () => {
     ).then(() => {
       expect(logs.length).to.equal(0);
       done();
-    });
+    }).catch(done);
   });
 });
