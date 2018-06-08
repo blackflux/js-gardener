@@ -39,7 +39,7 @@ describe("Testing copy", () => {
       copy(logger, dir, []).then(() => {
         expect(logs.length).to.equal(1);
         done();
-      }).catch(done);
-    }).catch(done);
+      }).catch(done.fail);
+    }).catch(done.fail);
   });
 });

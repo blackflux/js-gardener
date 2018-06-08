@@ -24,7 +24,7 @@ describe("Testing depcheck", () => {
       expect(logs[0]).to.contain(" missing: mocha@5.0.5, required by ");
       expect(logs[1]).to.equal(undefined);
       done();
-    }).catch(done);
+    }).catch(done.fail);
   });
 
   // eslint-disable-next-line func-names
@@ -35,6 +35,6 @@ describe("Testing depcheck", () => {
     depcheck(logger, dir).then(() => {
       expect(logs.length).to.equal(0);
       done();
-    }).catch(done);
+    }).catch(done.fail);
   });
 });
