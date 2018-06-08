@@ -76,6 +76,6 @@ describe("Testing Gardener", () => {
         'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     }).then(() => {
       done();
-    });
+    }).catch(done);
   });
 });
