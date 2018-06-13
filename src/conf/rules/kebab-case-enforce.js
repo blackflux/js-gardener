@@ -2,12 +2,11 @@ const path = require("path");
 
 module.exports = {
   create(context) {
-    const filePath = context.getFilename();
-    const fileName = path.basename(filePath);
+    const filePath = path.relative(process.cwd(), context.getFilename());
 
     return {
       Program() {
-        if (fileName !== fileName.toLowerCase()) {
+        if (filePath !== filePath.toLowerCase()) {
           context.report({
             loc: { start: { line: 0, column: 0 } },
             message: `Use Kebab Case. Upper Case found in ${filePath}`
