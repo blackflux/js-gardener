@@ -126,7 +126,7 @@ Specify the directory to run the tests against. Useful if you have multiple pack
 
 Type: `object`<br>
 
-Object of eslint customizations. Define property rules `rules`:
+Set eslint custom rules
 
 - `flow-enforce`: Set to `1` to enforce flow for every file. Not enforced by default.
 - `kebab-case-enforce`: Set to `0` to not enforce kebab case for all js files.

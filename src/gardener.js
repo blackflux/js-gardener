@@ -24,7 +24,7 @@ module.exports = ({
   copy = { skip: [] },
   configure = { skip: [] },
   badges = { skip: [] },
-  eslint = { rules: { "flow-enforce": 0 } },
+  eslint = {},
   docker = []
 } = {}) => {
   const savedCwd = process.cwd();
@@ -61,7 +61,11 @@ module.exports = ({
     configure: () => configureSubtask(logger, cwd, configure),
     badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, ".structignore")),
-    eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util.loadConfig(cwd, ".eslintignore")), eslint),
+    eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util
+      .loadConfig(cwd, ".eslintignore")), Object.assign({
+      "flow-enforce": 0,
+      "kebab-case-enforce": 1
+    }, eslint)),
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),
