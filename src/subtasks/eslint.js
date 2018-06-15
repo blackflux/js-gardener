@@ -1,14 +1,14 @@
 const path = require("path");
 const eslint = require("eslint");
 
-module.exports = (logger, dir, files, config) => new Promise((resolve, reject) => {
+module.exports = (logger, dir, files, rules) => new Promise((resolve, reject) => {
   if (files.length === 0) {
     return reject(new Error("No ESLint files found."));
   }
 
   const engine = new eslint.CLIEngine({
     cwd: dir,
-    baseConfig: { rules: config.rules },
+    baseConfig: { rules },
     configFile: path.resolve(`${__dirname}/../conf/eslint.json`),
     rulePaths: [path.resolve(`${__dirname}/../conf/rules`)],
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
