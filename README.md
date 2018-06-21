@@ -68,6 +68,10 @@ and in debug mode with
 
     $ npm test -- --debug
 
+All Mocha options can be passed in using the double dash. So for example to run individual tests in isolation one can use
+
+    $ npm run test-simple -- -g "Partial Test Description Here"
+
 # Structure
 
 **Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target. Test files must be of format `*.spec.js`.
