@@ -62,13 +62,13 @@ Now configure your Badges.
 
 To run all tests locally
 
-    $ npm test
+    $ npm t
 
 and in debug mode with
 
-    $ npm test -- --debug
+    $ npm t -- --debug
 
-All Mocha options can be passed in using the double dash. E.g. to run individual tests
+All Mocha options can be passed using double dash. E.g. to run individual tests
 
     $ npm run test-simple -- -g "Partial Test Description Here"
 
