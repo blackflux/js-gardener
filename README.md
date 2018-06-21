@@ -68,7 +68,7 @@ and in debug mode with
 
     $ npm test -- --debug
 
-All Mocha options can be passed in using the double dash. So for example to run individual tests in isolation one can use
+All Mocha options can be passed in using the double dash. E.g. to run individual tests
 
     $ npm run test-simple -- -g "Partial Test Description Here"
 
