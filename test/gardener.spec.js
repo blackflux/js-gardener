@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const log = require("fancy-log");
 const expect = require("chai").expect;
 const gardener = require('./../src/gardener');
-const log = require("fancy-log");
 
 const logs = [];
 const logErrorOriginal = log.error;
