@@ -25,19 +25,25 @@ module.exports = (logger, cwd) => {
 
   return new Promise((resolve, reject) => exec.run('npm audit --json', cwd, (err, out) => {
     const data = JSON.parse(out);
+    let error = false;
     objectScan(["advisories.*"])(data).forEach((key) => {
       const advisory = get(data, key);
       const create = Date.parse(advisory.created);
       const ageInSec = (new Date() - create) / 1000;
       const severity = advisory.severity;
       const timeToFailureInSec = MAX_AGE_IN_SEC[severity] - ageInSec;
+      const timeToFailureInDays = (timeToFailureInSec / (60 * 60 * 24)).toFixed(2);
+      let message = `Failure in ${timeToFailureInDays} days`;
       if (timeToFailureInSec < 0) {
-        reject(new Error("Problem Detected. Run npm audit and fix."));
-      } else {
-        const timeToFailureInDays = (timeToFailureInSec / (60 * 60 * 24)).toFixed(2);
-        logger.info(`Warning: Problem of Severity "${severity}" detected. Failure in ${timeToFailureInDays} days`);
+        error = true;
+        message = `Failure`;
       }
+      logger.info(`Warning: Problem of Severity "${severity}" detected. ${message}`);
     });
-    resolve();
+    if (error) {
+      reject(new Error("Failure. Fixing npm audit required."));
+    } else {
+      resolve();
+    }
   }));
 };

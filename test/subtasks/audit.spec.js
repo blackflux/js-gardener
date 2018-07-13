@@ -5,6 +5,7 @@ const exec = require("../../src/util/exec");
 const execRun = exec.run;
 const logs = [];
 const logger = {
+  info: e => logs.push(e),
   error: e => logs.push(e)
 };
 
@@ -43,8 +44,8 @@ describe("Testing copy", () => {
       }
     })) : execRun(...args));
     audit(logger).then(done.fail).catch((e) => {
-      expect(logs).to.deep.equal([]);
-      expect(e.message).to.equal("Problem Detected. Run npm audit and fix.");
+      expect(logs).to.deep.equal(["Warning: Problem of Severity \"critical\" detected. Failure"]);
+      expect(e.message).to.equal("Failure. Fixing npm audit required.");
       done();
     });
   });
