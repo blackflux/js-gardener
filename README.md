@@ -113,6 +113,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `configure`: [Alter](lib/templates) other configuration files
 - `badges`: Insert [Badges](lib/templates/badges.json)
 - `structure`: Enforce that test file structure matches lib content
+- `audit`: Runs [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit) and throws errors for old or important issues.
 - `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
 - `flow`: Execute [flow](https://flow.org) validation for enabled files.
 - `yamllint`: Ensure yaml files are passing lint
