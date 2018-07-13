@@ -39,7 +39,7 @@ By default gardener will configure TravisCI. However you can switch to CircleCI 
 
 **How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
 
-> **Tip**: *After a while it can get tedious to merge greenkeeper prs. You can configure [Octoscript](https://octoscripts.com/) to auto merge Greenkeeper prs when all checks succeed.*
+> **Important**: *Greenkeeper can create a lot of prs, since dependency pinning is enforced to ensure the package-lock.json file gets updated. Scheduled dependency updates [have been requested](https://github.com/greenkeeperio/greenkeeper/issues/808).*
 
 ### Dependencies
 
