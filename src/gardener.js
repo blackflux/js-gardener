@@ -7,6 +7,7 @@ const packageSubtask = require('./subtasks/package');
 const configureSubtask = require('./subtasks/configure');
 const badgesSubtask = require('./subtasks/badges');
 const structSubtask = require('./subtasks/struct');
+const auditSubtask = require('./subtasks/audit');
 const eslintSubtask = require('./subtasks/eslint');
 const flowSubtask = require('./subtasks/flow');
 const yamllintSubtask = require('./subtasks/yamllint');
@@ -61,6 +62,7 @@ module.exports = ({
     configure: () => configureSubtask(logger, cwd, configure),
     badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, ".structignore")),
+    audit: () => auditSubtask(logger, cwd),
     eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util
       .loadConfig(cwd, ".eslintignore")), Object.assign({
       "flow-enforce": 0,
@@ -78,6 +80,7 @@ module.exports = ({
     'configure',
     'badges',
     'structure',
+    'audit',
     'eslint',
     'flow',
     'yamllint',
