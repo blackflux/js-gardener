@@ -1,4 +1,5 @@
 const expect = require("chai").expect;
+const chalk = require("chalk");
 const audit = require('../../src/subtasks/audit');
 const exec = require("../../src/util/exec");
 
@@ -44,7 +45,9 @@ describe("Testing copy", () => {
       }
     })) : execRun(...args));
     audit(logger).then(done.fail).catch((e) => {
-      expect(logs).to.deep.equal(["Warning: Problem of Severity \"critical\" detected. Failure"]);
+      expect(logs).to.deep.equal([
+        `${chalk.yellow("Warning:")} Problem of Severity "critical" detected. ${chalk.red("Failure")}`
+      ]);
       expect(e.message).to.equal("Failure. Fixing npm audit required.");
       done();
     });
@@ -60,7 +63,9 @@ describe("Testing copy", () => {
       }
     })) : execRun(...args));
     audit(logger).then(() => {
-      expect(logs).to.deep.equal(["Warning: Problem of Severity \"low\" detected. Failure in 364.00 days"]);
+      expect(logs).to.deep.equal([
+        `${chalk.yellow("Warning:")} Problem of Severity "low" detected. Failure in 364.00 days`
+      ]);
       done();
     }).catch(done.fail);
   });

@@ -1,4 +1,5 @@
 const get = require("lodash.get");
+const chalk = require("chalk");
 const objectScan = require("object-scan");
 const exec = require("./../util/exec");
 
@@ -36,9 +37,9 @@ module.exports = (logger, cwd) => {
       let message = `Failure in ${timeToFailureInDays} days`;
       if (timeToFailureInSec < 0) {
         error = true;
-        message = `Failure`;
+        message = chalk.red("Failure");
       }
-      logger.info(`Warning: Problem of Severity "${severity}" detected. ${message}`);
+      logger.info(`${chalk.yellow("Warning:")} Problem of Severity "${severity}" detected. ${message}`);
     });
     if (error) {
       reject(new Error("Failure. Fixing npm audit required."));
