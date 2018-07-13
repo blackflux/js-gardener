@@ -34,7 +34,7 @@ describe("Testing copy", () => {
     }).catch(done.fail);
   });
 
-  it("Testing Audit Problem Found", (done) => {
+  it("Testing Audit Problem Found (Failure)", (done) => {
     exec.run = (...args) => (args[0] === "npm audit --json" ? args[2](null, JSON.stringify({
       advisories: {
         577: {
@@ -48,5 +48,20 @@ describe("Testing copy", () => {
       expect(e.message).to.equal("Failure. Fixing npm audit required.");
       done();
     });
+  });
+
+  it("Testing Audit Problem Found (Warning)", (done) => {
+    exec.run = (...args) => (args[0] === "npm audit --json" ? args[2](null, JSON.stringify({
+      advisories: {
+        577: {
+          created: new Date().toISOString(),
+          severity: "low"
+        }
+      }
+    })) : execRun(...args));
+    audit(logger).then(() => {
+      expect(logs).to.deep.equal(["Warning: Problem of Severity \"low\" detected. Failure in 364.00 days"]);
+      done();
+    }).catch(done.fail);
   });
 });
