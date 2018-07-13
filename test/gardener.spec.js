@@ -64,7 +64,7 @@ describe("Testing Gardener", () => {
     expect(() => gardener({
       docker: ["lambda"],
       skip: ['copy', 'package', 'configure', 'badges', 'structure',
-        'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
+        'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     })).to.not.throw("Please run in Docker using \". manage.sh\"");
     fs.existsSync = fsExistsSyncOriginal;
   });
@@ -73,7 +73,7 @@ describe("Testing Gardener", () => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
       skip: ['copy', 'package', 'configure', 'badges', 'structure',
-        'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
+        'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     }).then(() => {
       done();
     }).catch(done);
