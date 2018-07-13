@@ -16,6 +16,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 - Enforces best code style practises using [ESLint](https://eslint.org/) and [YAMLlint](https://github.com/nodeca/js-yaml)
 - Automates and assists with config generation
+- Scans dependencies for vulnerabilities using [npm audit](https://docs.npmjs.com/cli/audit).
 - Provides various integrity tests (e.g. checks for un-used dependencies)
 - Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
 - Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/) or [CircleCI](https://circleci.com).
