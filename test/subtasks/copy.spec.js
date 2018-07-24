@@ -18,22 +18,25 @@ describe("Testing copy", () => {
     copy(logger, dir, {}).then(() => {
       expect(logs.length).to.equal(1);
       expect(logs[0].sort()).to.deep.equal([
-        'dot.releaserc.json',
+        'README.md',
+        'docker',
+        'docker/Dockerfile',
         'dot.babelrc',
+        'dot.circleci',
+        'dot.circleci/config.yml',
         'dot.editorconfig',
         'dot.flowconfig',
         'dot.gitignore',
+        'dot.idea',
+        'dot.idea/jsLinters',
+        'dot.idea/jsLinters/eslint.xml',
         'dot.npmignore',
+        'dot.releaserc.json',
         'dot.travis.yml',
-        'dot.circleci',
-        'dot.circleci/config.yml',
-        'README.md',
-        'test',
+        'manage.sh',
         'src',
-        'test/mocha.opts',
-        "manage.sh",
-        "docker",
-        "docker/Dockerfile"
+        'test',
+        'test/mocha.opts'
       ].sort());
       // no files are copied
       copy(logger, dir, []).then(() => {
