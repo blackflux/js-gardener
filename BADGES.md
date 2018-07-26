@@ -31,15 +31,15 @@ By default gardener will configure TravisCI. However you can switch to CircleCI 
 
 **How to use** - Coveralls will automatically receive coverage information from TravisCI. You do *not* need to specify any configuration.
 
-### Greenkeeper
+### Dependabot
 
-**What is it?** - Greenkeeper automatically creates pull requests with updated dependencies as soon as they become outdated.
+**What is it?** - [Dependabot](https://dependabot.com/) automatically creates pull requests with updated dependencies. It has a lot of settings, like weekly, or monthly dependency updates, rebasing for outdated pull requests and automatic merging of dependencies.
 
-**Setup** - Ensure [issues](https://help.github.com/articles/disabling-issues/) are enabled for your repo. Create a Greenkeeper account on [greenkeeper.io](https://greenkeeper.io/), preferably with the same username that you use for github. Then enable Greenkeeper access for your repo. The status should turn green immediately.
+**Setup** - Create a Dependabot account on [dependabot.com](https://dependabot.com/) using your github account and oauth. Then enable Dependabot access for your repo.
 
-**How to use** - When Greenkeeper creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github.
+**How to use** - When Dependabot creates PRs, you need to ensure that all checks pass. If any fail, you will need to manually pull in the dependency locally and fix any issues. Often there are no problems however and you can just merge through github or automatically.
 
-> **Important**: *Greenkeeper can create a lot of prs, since dependency pinning is enforced to ensure the package-lock.json file gets updated. Scheduled dependency updates [have been requested](https://github.com/greenkeeperio/greenkeeper/issues/808).*
+> **Important**: Badge is currently [being worked on](https://github.com/dependabot/feedback/issues/6). This will then replace david-dm.org badge below.
 
 ### Dependencies
 

@@ -2,7 +2,6 @@
 
 [![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
-[![Greenkeeper Badge](https://badges.greenkeeper.io/simlu/js-gardener.svg)](https://greenkeeper.io/)
 [![Dependencies](https://david-dm.org/simlu/js-gardener/status.svg)](https://david-dm.org/simlu/js-gardener)
 [![NPM](https://img.shields.io/npm/v/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
 [![Downloads](https://img.shields.io/npm/dt/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
@@ -21,7 +20,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 - Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
 - Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/) or [CircleCI](https://circleci.com).
 - Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release)
-- Enables automates dependency updates using [Greenkeeper](https://greenkeeper.io/).
+- Enables automates dependency updates using [Dependabot](https://dependabot.com/).
 
 # Getting Started
 
