@@ -71,7 +71,7 @@
     "lodash.omit": "4.5.0",
     "mocha": "5.2.0",
     "npm-check": "5.7.1",
-    "object-scan": "1.1.6",
+    "object-scan": "1.2.0",
     "tmp": "0.0.33"
   },
   "devDependencies": {
