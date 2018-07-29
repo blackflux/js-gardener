@@ -3,6 +3,7 @@
 [![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
 [![Build Status](https://circleci.com/gh/simlu/js-gardener.png?style=shield)](https://circleci.com/gh/simlu/js-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=simlu/js-gardener)](https://dependabot.com)
 [![Dependencies](https://david-dm.org/simlu/js-gardener/status.svg)](https://david-dm.org/simlu/js-gardener)
 [![NPM](https://img.shields.io/npm/v/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
 [![Downloads](https://img.shields.io/npm/dt/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
