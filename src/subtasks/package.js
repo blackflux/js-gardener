@@ -19,7 +19,7 @@ module.exports = (logger, cwd, config) => {
   util.writeTextFile(path.join(cwd, 'LICENSE'), license);
   merge(packageJson, packageTemplate.force);
   defaultsDeep(packageJson, packageTemplate.defaults);
-  ['dependencies', 'devDependencies', 'peerDependencies'].forEach((deps) => {
+  ['dependencies', 'devDependencies'].forEach((deps) => {
     packageJson[deps] = mapValues(packageJson[deps], dep => dep.replace(/^\^/, ''));
   });
   util.writeTextFile(packageFile, `${JSON.stringify(packageJson, null, 2)}\n`);
