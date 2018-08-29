@@ -71,6 +71,7 @@
     "mocha": "5.2.0",
     "npm-check": "5.8.0",
     "object-scan": "1.2.2",
+    "parse-github-url": "1.0.2",
     "tmp": "0.0.33"
   },
   "devDependencies": {

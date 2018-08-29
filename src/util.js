@@ -1,6 +1,7 @@
 const fs = require("fs");
 const spawnSync = require('child_process').spawnSync;
 const globSync = require("glob").sync;
+const gh = require("parse-github-url");
 
 module.exports.getEsLintFiles = (folder, ignore) => globSync(
   "**/*.{js,json,md}",
@@ -41,8 +42,8 @@ const getRepoUrl = (cwd, remote) => {
     ['config', '--get', `remote.${remote}.url`],
     { cwd }
   ).stdout).trim();
-  return url === "" ? null : `https://github.com/${url
-    .match(/(?<![A-Za-z0-9_.-])([A-Za-z0-9_.-]+?\/[A-Za-z0-9_.-]+?)(?=\.git$|$)/)[1]}`;
+  const parsed = gh(url);
+  return parsed === null ? null : `https://${parsed.hostname}/${parsed.repo}`;
 };
 
 module.exports.getGitUrl = cwd => getRepoUrl(cwd, "upstream") || getRepoUrl(cwd, "origin");
