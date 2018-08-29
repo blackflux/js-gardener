@@ -35,13 +35,17 @@ module.exports.getYamlFiles = folder => globSync(
   }
 );
 
-const getRepoUrl = (cwd, remote) => String(spawnSync(
-  'git',
-  ['config', '--get', `remote.${remote}.url`],
-  { cwd }
-).stdout).trim();
+const getRepoUrl = (cwd, remote) => {
+  const url = String(spawnSync(
+    'git',
+    ['config', '--get', `remote.${remote}.url`],
+    { cwd }
+  ).stdout).trim();
+  return url === "" ? null : `https://github.com/${url
+    .match(/(?<![A-Za-z0-9_.-])([A-Za-z0-9_.-]+?\/[A-Za-z0-9_.-]+?)(?=\.git$|$)/)[1]}`;
+};
 
-module.exports.getGitUrl = cwd => (getRepoUrl(cwd, "upstream") || getRepoUrl(cwd, "origin")).slice(0, -4);
+module.exports.getGitUrl = cwd => getRepoUrl(cwd, "upstream") || getRepoUrl(cwd, "origin");
 
 module.exports.getNpmDependencies = (cwd) => {
   const data = spawnSync('npm', ['ls', '--depth=0', '--parsable', '--json', '--no-update-notifier'], { cwd });
