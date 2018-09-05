@@ -43,7 +43,7 @@ const getRepoUrl = (cwd, remote) => {
     { cwd }
   ).stdout).trim();
   const parsed = gh(url);
-  return parsed === null ? null : `https://${parsed.hostname}/${parsed.repo}`;
+  return parsed === null ? null : `https://${parsed.host}/${parsed.repo}`;
 };
 
 module.exports.getGitUrl = cwd => getRepoUrl(cwd, "upstream") || getRepoUrl(cwd, "origin");
