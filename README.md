@@ -92,6 +92,8 @@ Before configuring external services, ensure `npm test` runs locally without err
 
 Customize the nyc section in your package.json
 
+To completely ignore files from coverage put them into the `exclude` section in nyc.
+
 # Using Flow
 
 Define your flow interfaces in `flow-typed` folder (as plain flow) and then use the `// @flow` syntax to enable for appropriate files.
@@ -185,10 +187,6 @@ Type: `object`<br>
 Define `skip` array as property to define badges to not create / update.
 
 # Ignore Files
-
-### .coverignore
-
-Define files which should be excluded from coverage. Always excluded files can be found [here](lib/conf/.coverignore).
 
 ### .eslintignore
 
