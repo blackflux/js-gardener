@@ -1,6 +1,4 @@
-const get = require("lodash.get");
 const chalk = require("chalk");
-const objectScan = require("object-scan");
 const exec = require("./../util/exec");
 
 const MAX_AGE_IN_SEC = {
@@ -27,8 +25,7 @@ module.exports = (logger, cwd) => {
   return new Promise((resolve, reject) => exec.run('npm audit --json', cwd, (err, out) => {
     const data = JSON.parse(out);
     let error = false;
-    objectScan(["advisories.*"])(data).forEach((key) => {
-      const advisory = get(data, key);
+    Object.values(data.advisories || {}).forEach((advisory) => {
       const create = Date.parse(advisory.created);
       const ageInSec = (new Date() - create) / 1000;
       const severity = advisory.severity;
