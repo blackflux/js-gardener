@@ -70,7 +70,6 @@
     "lodash.omit": "4.5.0",
     "mocha": "5.2.0",
     "npm-check": "5.8.0",
-    "object-scan": "1.2.2",
     "parse-github-url": "1.0.2",
     "tmp": "0.0.33"
   },
@@ -83,7 +82,7 @@
     "chai": "4.1.2",
     "coveralls": "3.0.2",
     "nyc": "13.0.1",
-    "semantic-release": "15.9.12"
+    "semantic-release": "15.9.14"
   },
   "peerDependencies": {},
   "nyc": {
