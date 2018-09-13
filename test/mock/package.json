@@ -34,7 +34,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/simlu/js-gardener/blob/master/LICENSE"
+      "url": "https://github.com/blackflux/js-gardener/blob/master/LICENSE"
     }
   ],
   "engines": {
@@ -42,12 +42,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simlu/js-gardener.git"
+    "url": "https://github.com/blackflux/js-gardener.git"
   },
   "bugs": {
-    "url": "https://github.com/simlu/js-gardener/issues"
+    "url": "https://github.com/blackflux/js-gardener/issues"
   },
-  "homepage": "https://github.com/simlu/js-gardener",
+  "homepage": "https://github.com/blackflux/js-gardener",
   "files": [
     "lib"
   ],

@@ -1,13 +1,13 @@
-# Gardener [![gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge-large.svg)](https://github.com/simlu/js-gardener)
+# Gardener [![gardener](https://github.com/blackflux/js-gardener/blob/master/assets/badge-large.svg)](https://github.com/blackflux/js-gardener)
 
-[![Build Status](https://img.shields.io/travis/simlu/js-gardener/master.svg)](https://travis-ci.org/simlu/js-gardener)
-[![Test Coverage](https://img.shields.io/coveralls/simlu/js-gardener/master.svg)](https://coveralls.io/github/simlu/js-gardener?branch=master)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=simlu/js-gardener)](https://dependabot.com)
-[![Dependencies](https://david-dm.org/simlu/js-gardener/status.svg)](https://david-dm.org/simlu/js-gardener)
+[![Build Status](https://circleci.com/gh/blackflux/js-gardener.png?style=shield)](https://circleci.com/gh/blackflux/js-gardener)
+[![Test Coverage](https://img.shields.io/coveralls/blackflux/js-gardener/master.svg)](https://coveralls.io/github/blackflux/js-gardener?branch=master)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=blackflux/js-gardener)](https://dependabot.com)
+[![Dependencies](https://david-dm.org/blackflux/js-gardener/status.svg)](https://david-dm.org/blackflux/js-gardener)
 [![NPM](https://img.shields.io/npm/v/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
 [![Downloads](https://img.shields.io/npm/dt/js-gardener.svg)](https://www.npmjs.com/package/js-gardener)
-[![Semantic-Release](https://github.com/simlu/js-gardener/blob/master/assets/icons/semver.svg)](https://github.com/semantic-release/semantic-release)
-[![Gardener](https://github.com/simlu/js-gardener/blob/master/assets/badge.svg)](https://github.com/simlu/js-gardener)
+[![Semantic-Release](https://github.com/blackflux/js-gardener/blob/master/assets/icons/semver.svg)](https://github.com/semantic-release/semantic-release)
+[![Gardener](https://github.com/blackflux/js-gardener/blob/master/assets/badge.svg)](https://github.com/blackflux/js-gardener)
 
 Enforces highest code quality and minimizes package setup and maintenance complexity - so you can focus on writing code. Highly recommended if you are getting started with a new package and extremely useful if you are maintaining multiple packages.
 
@@ -204,7 +204,7 @@ Define test files that should not be checked for structure. Usually not necessar
 
 While this project utilizes itself for testing - how cool is that? - a cleaner example can be found [here](test/mock).
 
-Example project using [js-gardener](https://github.com/simlu/js-gardener) and [lambda-tdd](https://github.com/simlu/lambda-tdd) can be found [here](https://github.com/simlu/lambda-example).
+Example project using [js-gardener](https://github.com/blackflux/js-gardener) and [lambda-tdd](https://github.com/blackflux/lambda-tdd) can be found [here](https://github.com/blackflux/lambda-example).
 
 All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
 

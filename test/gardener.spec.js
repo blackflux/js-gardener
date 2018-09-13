@@ -17,9 +17,7 @@ describe("Testing Gardener", () => {
     log.error = logErrorOriginal;
   });
 
-  // eslint-disable-next-line func-names
-  it("Testing Defaults", function (done) {
-    this.timeout(60000);
+  it("Testing Defaults", (done) => {
     // change cwd for coverage (so we can invoke with no parameters)
     const savedCwd = process.cwd();
     process.chdir(path.join(__dirname, 'mock'));
@@ -28,11 +26,9 @@ describe("Testing Gardener", () => {
       process.chdir(savedCwd);
       done();
     });
-  });
+  }).timeout(60000);
 
-  // eslint-disable-next-line func-names
-  it("Testing CircleCI and no NPM", function (done) {
-    this.timeout(60000);
+  it("Testing CircleCI and no NPM", (done) => {
     gardener({
       ci: ["circle"],
       npm: false,
@@ -41,7 +37,7 @@ describe("Testing Gardener", () => {
       expect(logs).to.deep.equal(['Unused/Not Installed Dependencies: coveralls, nyc, semantic-release']);
       done();
     });
-  });
+  }).timeout(60000);
 
   it("Testing Invalid License", () => {
     expect(() => gardener({
