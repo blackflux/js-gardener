@@ -31,13 +31,7 @@
     "$full-master": {
       "@": "$full",
       "required_status_checks": {
-        "strict": false,
-        "contexts": [
-          "ci/circleci: gally",
-          "ci/circleci: test-node-v10",
-          "ci/circleci: test-node-v8.10",
-          "ci/circleci: release"
-        ]
+        "strict": false
       }
     },
     "$full": {
