@@ -1,3 +1,4 @@
+const get = require("lodash.get");
 const chalk = require("chalk");
 const exec = require("./../util/exec");
 
@@ -25,7 +26,7 @@ module.exports = (logger, cwd) => {
   return new Promise((resolve, reject) => exec.run('npm audit --json', cwd, (err, out) => {
     const data = JSON.parse(out);
     let error = false;
-    Object.values(data.advisories || {}).forEach((advisory) => {
+    Object.values(get(data, "advisories", {})).forEach((advisory) => {
       const create = Date.parse(advisory.created);
       const ageInSec = (new Date() - create) / 1000;
       const severity = advisory.severity;
