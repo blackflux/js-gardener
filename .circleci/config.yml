@@ -29,6 +29,7 @@ jobs:
       - checkout
       - run: npm i
       - run: npm t
+      - run: npm run coveralls
   test-node-v8.10:
     docker:
       - image: 'circleci/node:8.10'
