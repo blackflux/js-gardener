@@ -55,7 +55,7 @@
   "peerDependencies": {},
   "keywords": [],
   "nyc": {
-    "tempDirectory": "./coverage/.nyc_output",
+    "tempDir": "./coverage/.nyc_output",
     "report-dir": "./coverage",
     "check-coverage": true,
     "per-file": false,
