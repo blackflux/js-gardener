@@ -19,7 +19,9 @@ describe("Testing package", () => {
         url: "git+https://github.com/blackflux/js-gardener.git"
       }
     }, null, 2));
-    expect(() => pkg(null, dir, { license: "MIT" }))
-      .to.throw("Repository Url required to start with https://");
+    const expectedError = "Repository Url required to start with https://";
+    const msgs = [];
+    expect(() => pkg({ error: msg => msgs.push(msg) }, dir, { license: "MIT" })).to.throw(expectedError);
+    expect(msgs).to.deep.equal([expectedError]);
   });
 });
