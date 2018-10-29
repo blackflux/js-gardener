@@ -27,7 +27,9 @@ module.exports = (logger, cwd, config) => {
     packageJson[deps] = mapValues(packageJson[deps], dep => dep.replace(/^\^/, ''));
   });
   if (!get(packageJson, "repository.url", "").startsWith("https://")) {
-    throw new Error(`Repository Url required to start with https://`);
+    const msg = `Repository Url required to start with https://`;
+    logger.error(msg);
+    throw new Error(msg);
   }
   util.writeTextFile(packageFile, `${JSON.stringify(packageJson, null, 2)}\n`);
   return Promise.resolve();
