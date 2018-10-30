@@ -22,7 +22,9 @@ describe('Testing Gardener', () => {
     const savedCwd = process.cwd();
     process.chdir(path.join(__dirname, 'mock'));
     gardener().catch(() => {
-      expect(logs).to.deep.equal(['Unused/Not Installed Dependencies: coveralls, nyc, semantic-release']);
+      expect(logs.length).to.equal(1);
+      expect(logs[0])
+        .to.equal('Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release');
       process.chdir(savedCwd);
       done();
     });
@@ -34,7 +36,9 @@ describe('Testing Gardener', () => {
       npm: false,
       cwd: path.join(__dirname, 'mock')
     }).catch(() => {
-      expect(logs).to.deep.equal(['Unused/Not Installed Dependencies: coveralls, nyc, semantic-release']);
+      expect(logs.length).to.equal(1);
+      expect(logs[0])
+        .to.equal('Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release');
       done();
     });
   }).timeout(60000);

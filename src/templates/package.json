@@ -56,7 +56,8 @@
     "devDependencies": {
       "babel-register": "7.0.0-beta.3",
       "babel-eslint": "8.2.3",
-      "babel-cli": "7.0.0-beta.3",
+      "@babel/core": "7.1.2",
+      "@babel/cli": "7.1.2",
       "babel-plugin-transform-flow-comments": "7.0.0-beta.3",
       "babel-preset-flow": "7.0.0-beta.3",
       "coveralls": "3.0.0",
