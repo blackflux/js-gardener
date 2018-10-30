@@ -1,4 +1,4 @@
-const expect = require("chai").expect;
+const expect = require('chai').expect;
 const tmp = require('tmp');
 const copy = require('../../src/subtasks/copy');
 
@@ -7,12 +7,12 @@ const logger = { info: e => logs.push(e) };
 
 tmp.setGracefulCleanup();
 
-describe("Testing copy", () => {
+describe('Testing copy', () => {
   beforeEach(() => {
     logs.length = 0;
   });
 
-  it("Testing Copy", (done) => {
+  it('Testing Copy', (done) => {
     const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     // all files are copied
     copy(logger, dir, {}).then(() => {

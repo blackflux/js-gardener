@@ -16,7 +16,7 @@
     "comma-dangle": ["error", "never"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "quotes": [
-      0, "double"
+      2, "single", { "avoidEscape": true }
     ],
     "linebreak-style": [
       2, "unix"

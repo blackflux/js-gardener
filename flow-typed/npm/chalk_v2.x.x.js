@@ -58,7 +58,7 @@ type $npm$chalk$Style = {
   bgWhiteBright: $npm$chalk$Chain
 };
 
-declare module "chalk" {
+declare module 'chalk' {
   declare var enabled: boolean;
   declare var supportsColor: boolean;
 

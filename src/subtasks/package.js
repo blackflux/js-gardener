@@ -1,9 +1,9 @@
-const path = require("path");
+const path = require('path');
 const get = require('lodash.get');
 const merge = require('lodash.merge');
 const defaultsDeep = require('lodash.defaultsdeep');
 const mapValues = require('lodash.mapvalues');
-const util = require("./../util");
+const util = require('./../util');
 
 // rewrite package.json
 module.exports = (logger, cwd, config) => {
@@ -26,8 +26,8 @@ module.exports = (logger, cwd, config) => {
   ['dependencies', 'devDependencies'].forEach((deps) => {
     packageJson[deps] = mapValues(packageJson[deps], dep => dep.replace(/^\^/, ''));
   });
-  if (!get(packageJson, "repository.url", "").startsWith("https://")) {
-    const msg = `Repository Url required to start with https://`;
+  if (!get(packageJson, 'repository.url', '').startsWith('https://')) {
+    const msg = 'Repository Url required to start with https://';
     logger.error(msg);
     throw new Error(msg);
   }
