@@ -193,7 +193,7 @@ declare function beforeEach(description: string, callback: (/* this: $npm$mocha$
 declare function afterEach(callback: (/* this: $npm$mocha$BeforeAndAfterContext, */ done: $npm$mocha$done) => mixed): void;
 declare function afterEach(description: string, callback: (/* this: $npm$mocha$BeforeAndAfterContext, */ done: $npm$mocha$done) => mixed): void;
 
-declare module "mocha" {
+declare module 'mocha' {
   declare export var mocha: typeof mocha;
   declare export var describe: typeof describe;
   declare export var xdescribe: typeof xdescribe;

@@ -1,9 +1,9 @@
-const path = require("path");
-const eslint = require("eslint");
+const path = require('path');
+const eslint = require('eslint');
 
 module.exports = (logger, dir, files, rules) => new Promise((resolve, reject) => {
   if (files.length === 0) {
-    return reject(new Error("No ESLint files found."));
+    return reject(new Error('No ESLint files found.'));
   }
 
   const engine = new eslint.CLIEngine({
@@ -27,5 +27,5 @@ module.exports = (logger, dir, files, rules) => new Promise((resolve, reject) =>
     logger.info(output);
   }
 
-  return report.warningCount === 0 && report.errorCount === 0 ? resolve() : reject(new Error("Linter Problems"));
+  return report.warningCount === 0 && report.errorCount === 0 ? resolve() : reject(new Error('Linter Problems'));
 });

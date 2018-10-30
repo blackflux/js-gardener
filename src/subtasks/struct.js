@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const util = require(`./../util`);
+const util = require('./../util');
 
 // Check project structure
 module.exports = (logger, cwd, ignored) => new Promise((resolve, reject) => {

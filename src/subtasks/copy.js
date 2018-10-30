@@ -1,16 +1,16 @@
 const fs = require('fs-extra');
-const get = require("lodash.get");
-const path = require("path");
-const globSync = require("glob").sync;
-const util = require("./../util");
+const get = require('lodash.get');
+const path = require('path');
+const globSync = require('glob').sync;
+const util = require('./../util');
 
 // create folder and dirs, return created
 module.exports = (logger, targetFolder, config) => {
-  const fromFolder = path.join(__dirname, "..", "templates", "files");
+  const fromFolder = path.join(__dirname, '..', 'templates', 'files');
   const created = [];
-  const toSkip = get(config, "skip", []);
-  globSync("**/*", { cwd: fromFolder, dot: true })
-    .concat(util.readJsonFile(path.join(__dirname, "..", "templates", "folders.json")))
+  const toSkip = get(config, 'skip', []);
+  globSync('**/*', { cwd: fromFolder, dot: true })
+    .concat(util.readJsonFile(path.join(__dirname, '..', 'templates', 'folders.json')))
     .map(f => [
       f,
       f.replace(/(^|\/)dot\./, '$1.')
