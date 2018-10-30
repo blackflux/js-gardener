@@ -1,6 +1,6 @@
-const fs = require("fs");
-const log = require("fancy-log");
-const chalk = require("chalk");
+const fs = require('fs');
+const log = require('fancy-log');
+const chalk = require('chalk');
 const util = require('./util');
 const copySubtask = require('./subtasks/copy');
 const packageSubtask = require('./subtasks/package');
@@ -18,9 +18,9 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  license = "MIT",
-  author = "The Author",
-  ci = ["travis"],
+  license = 'MIT',
+  author = 'The Author',
+  ci = ['travis'],
   npm = true,
   copy = { skip: [] },
   configure = { skip: [] },
@@ -31,29 +31,29 @@ module.exports = ({
   const savedCwd = process.cwd();
   process.chdir(cwd);
 
-  if (["MIT", "UNLICENSED"].indexOf(license) === -1) {
-    throw new Error("Invalid license provided!");
+  if (['MIT', 'UNLICENSED'].indexOf(license) === -1) {
+    throw new Error('Invalid license provided!');
   }
 
-  if (ci.indexOf("circle") === -1) {
-    copy.skip.push(".circleci", ".circleci/config.yml");
-    configure.skip.push(".circleci/config.yml");
-    badges.skip.push("circleci");
+  if (ci.indexOf('circle') === -1) {
+    copy.skip.push('.circleci', '.circleci/config.yml');
+    configure.skip.push('.circleci/config.yml');
+    badges.skip.push('circleci');
   }
-  if (ci.indexOf("travis") === -1) {
-    copy.skip.push(".travis.yml");
-    configure.skip.push(".travis.yml");
-    badges.skip.push("travisci");
+  if (ci.indexOf('travis') === -1) {
+    copy.skip.push('.travis.yml');
+    configure.skip.push('.travis.yml');
+    badges.skip.push('travisci');
   }
   if (npm === true) {
-    copy.skip.push(".releaserc.json");
-    configure.skip.push(".releaserc.json");
+    copy.skip.push('.releaserc.json');
+    configure.skip.push('.releaserc.json');
   }
-  if (docker.indexOf("lambda") === -1) {
-    copy.skip.push("manage.sh", "docker", "docker/Dockerfile");
-  } else if (!fs.existsSync("/.dockerenv")) {
+  if (docker.indexOf('lambda') === -1) {
+    copy.skip.push('manage.sh', 'docker', 'docker/Dockerfile');
+  } else if (!fs.existsSync('/.dockerenv')) {
     // Ensure running in docker container
-    throw Error("Please run in Docker using \". manage.sh\"");
+    throw Error('Please run in Docker using ". manage.sh"');
   }
 
   const tasks = {
@@ -61,17 +61,17 @@ module.exports = ({
     package: () => packageSubtask(logger, cwd, { license, author }),
     configure: () => configureSubtask(logger, cwd, configure),
     badges: () => badgesSubtask(logger, cwd, badges),
-    structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, ".structignore")),
+    structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),
     audit: () => auditSubtask(logger, cwd),
     eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util
-      .loadConfig(cwd, ".eslintignore")), Object.assign({
-      "flow-enforce": 0,
-      "kebab-case-enforce": 1
+      .loadConfig(cwd, '.eslintignore')), Object.assign({
+      'flow-enforce': 0,
+      'kebab-case-enforce': 1
     }, eslint)),
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),
-    depused: () => depusedSubtask(logger, cwd, util.loadConfig(cwd, ".depunusedignore"))
+    depused: () => depusedSubtask(logger, cwd, util.loadConfig(cwd, '.depunusedignore'))
   };
 
   return [
