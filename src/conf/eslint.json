@@ -6,17 +6,7 @@
     "plugin:flowtype/recommended"
   ],
   "rules": {
-    "prettier/prettier": ["error", {
-      "printWidth": 120,
-      "tabWidth": 2,
-      "useTabs": false,
-      "semi": true,
-      "trailingComma": "none",
-      "bracketSpacing": true,
-      "arrowParens": "avoid",
-      "singleQuote": true,
-      "parser": "flow"
-    }],
+    "prettier/prettier": "error",
     "jasmine/expect-single-argument": 0,
     "jasmine-expect-two-arguments": 1,
     "jasmine/new-line-before-expect": 0,

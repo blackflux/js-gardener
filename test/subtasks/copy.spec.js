@@ -42,7 +42,8 @@ describe('Testing copy', () => {
             'manage.sh',
             'src',
             'test',
-            'test/mocha.opts'
+            'test/mocha.opts',
+            'dot.prettierrc'
           ].sort()
         );
         // no files are copied
