@@ -13,7 +13,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 ## What it does
 
-- Enforces best code style practises using [ESLint](https://eslint.org/) and [YAMLlint](https://github.com/nodeca/js-yaml)
+- Enforces best code style practises using [ESLint](https://eslint.org/), [YAMLlint](https://github.com/nodeca/js-yaml) and [Prettier](https://www.npmjs.com/package/prettier)
 - Automates and assists with config generation
 - Scans dependencies for vulnerabilities using [npm audit](https://docs.npmjs.com/cli/audit).
 - Provides various integrity tests (e.g. checks for un-used dependencies)
@@ -39,7 +39,7 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 Create `gardener.js` in the root folder with the following contents
 <!-- eslint-disable import/no-unresolved -->
-```javascript
+```js
 // eslint-disable-next-line import/no-extraneous-dependencies
 const gardener = require('js-gardener');
 

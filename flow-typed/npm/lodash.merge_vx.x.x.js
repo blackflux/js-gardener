@@ -24,7 +24,6 @@ declare module 'lodash.merge' {
  * needed.
  */
 
-
 // Filename aliases
 declare module 'lodash.merge/index' {
   declare module.exports: $Exports<'lodash.merge'>;

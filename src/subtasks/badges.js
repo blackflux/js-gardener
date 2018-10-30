@@ -12,16 +12,20 @@ module.exports = (logger, cwd, config) => {
   );
   const badges = Object.keys(badgesTemplates)
     .map(key => badgesTemplates[key])
-    .reduce((obj, badge) => Object.assign(obj, {
-      [
-      badge
-        .replace(/{{USER_NAME}}/g, gitUrl.split('/').reverse()[1])
-        .replace(/{{REPO_NAME}}/g, gitUrl.split('/').reverse()[0])
-      ]: new RegExp(badge
-        .replace(/[-[\]/{}()*+?.\\^$|]/g, '\\$&')
-        .replace(/\\{\\{USER_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?')
-        .replace(/\\{\\{REPO_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?'))
-    }), {});
+    .reduce(
+      (obj, badge) =>
+        Object.assign(obj, {
+          [badge
+            .replace(/{{USER_NAME}}/g, gitUrl.split('/').reverse()[1])
+            .replace(/{{REPO_NAME}}/g, gitUrl.split('/').reverse()[0])]: new RegExp(
+            badge
+              .replace(/[-[\]/{}()*+?.\\^$|]/g, '\\$&')
+              .replace(/\\{\\{USER_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?')
+              .replace(/\\{\\{REPO_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?')
+          )
+        }),
+      {}
+    );
   const readmeFile = path.join(cwd, 'README.md');
   const readmeMd = util.readTextFile(readmeFile);
   const prepend = Object.keys(badges)

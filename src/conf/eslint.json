@@ -6,6 +6,17 @@
     "plugin:flowtype/recommended"
   ],
   "rules": {
+    "prettier/prettier": ["error", {
+      "printWidth": 120,
+      "tabWidth": 2,
+      "useTabs": false,
+      "semi": true,
+      "trailingComma": "none",
+      "bracketSpacing": true,
+      "arrowParens": "avoid",
+      "singleQuote": true,
+      "parser": "flow"
+    }],
     "jasmine/expect-single-argument": 0,
     "jasmine-expect-two-arguments": 1,
     "jasmine/new-line-before-expect": 0,
@@ -13,8 +24,13 @@
     "max-len": ["error", { "code": 120 }],
     "mocha/no-exclusive-tests": "error",
     "prefer-destructuring": ["error", {"object": false, "array": false}],
-    "comma-dangle": ["error", "never"],
-    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "comma-dangle": 0,
+    "function-paren-newline": 0,
+    "implicit-arrow-linebreak": 0,
+    "no-confusing-arrow": 0,
+    "arrow-parens": ["error", "as-needed"],
+    "space-before-function-paren": ["error", "never"],
+    "indent": 0,
     "quotes": [
       2, "single", { "avoidEscape": true }
     ],
@@ -56,7 +72,7 @@
     "log4js": true
   },
   "plugins": [
-    "json", "jasmine", "mocha", "markdown", "flowtype"
+    "json", "jasmine", "mocha", "markdown", "flowtype", "prettier"
   ],
   "parser": "babel-eslint"
 }

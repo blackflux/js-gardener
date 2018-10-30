@@ -11,22 +11,22 @@ describe('Testing eslint', () => {
     logs.length = 0;
   });
 
-  it('Testing No Files', (done) => {
-    eslint(logger, projectFolder, [], {}).catch((result) => {
+  it('Testing No Files', done => {
+    eslint(logger, projectFolder, [], {}).catch(result => {
       expect(String(result)).to.deep.contain('No ESLint files found.');
       done();
     });
   });
 
-  it('Testing Exception', (done) => {
-    eslint(logger, null, ['file'], {}).catch((result) => {
+  it('Testing Exception', done => {
+    eslint(logger, null, ['file'], {}).catch(result => {
       expect(String(result)).to.contain('TypeError');
       done();
     });
   });
 
-  it('Testing Invalid File', (done) => {
-    eslint(logger, projectFolder, [path.join(projectFolder, 'LICENSE')], {}).catch((result) => {
+  it('Testing Invalid File', done => {
+    eslint(logger, projectFolder, [path.join(projectFolder, 'LICENSE')], {}).catch(result => {
       expect(String(result)).to.contain('Error: Linter Problems');
       expect(String(logs)).to.contain('1 problem (1 error, 0 warnings)');
       done();

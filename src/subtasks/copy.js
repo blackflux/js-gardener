@@ -11,16 +11,8 @@ module.exports = (logger, targetFolder, config) => {
   const toSkip = get(config, 'skip', []);
   globSync('**/*', { cwd: fromFolder, dot: true })
     .concat(util.readJsonFile(path.join(__dirname, '..', 'templates', 'folders.json')))
-    .map(f => [
-      f,
-      f.replace(/(^|\/)dot\./, '$1.')
-    ])
-    .map(([origin, target]) => [
-      origin,
-      target,
-      path.join(fromFolder, origin),
-      path.join(targetFolder, target)
-    ])
+    .map(f => [f, f.replace(/(^|\/)dot\./, '$1.')])
+    .map(([origin, target]) => [origin, target, path.join(fromFolder, origin), path.join(targetFolder, target)])
     .filter(f => toSkip.indexOf(f[1]) === -1)
     .forEach(([origin, target, fromFile, toFile]) => {
       if (!fs.existsSync(toFile)) {

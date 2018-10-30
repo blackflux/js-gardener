@@ -24,7 +24,6 @@ declare module 'lodash.difference' {
  * needed.
  */
 
-
 // Filename aliases
 declare module 'lodash.difference/index' {
   declare module.exports: $Exports<'lodash.difference'>;

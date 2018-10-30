@@ -11,7 +11,7 @@ describe('Testing yamllint', () => {
     logs.length = 0;
   });
 
-  it('Testing Error', (done) => {
+  it('Testing Error', done => {
     yamllint(logger, projectFolder, ['test/invalid.yml.raw']).catch(() => {
       expect(logs.length, `Provided ${logs}`).to.equal(2);
       expect(logs, `Provided ${logs}`).to.deep.equal([

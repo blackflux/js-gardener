@@ -24,7 +24,6 @@ declare module 'lodash.defaults' {
  * needed.
  */
 
-
 // Filename aliases
 declare module 'lodash.defaults/index' {
   declare module.exports: $Exports<'lodash.defaults'>;

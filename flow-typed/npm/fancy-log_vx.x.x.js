@@ -24,7 +24,6 @@ declare module 'fancy-log' {
  * needed.
  */
 
-
 // Filename aliases
 declare module 'fancy-log/index' {
   declare module.exports: $Exports<'fancy-log'>;

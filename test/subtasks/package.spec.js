@@ -13,12 +13,19 @@ describe('Testing package', () => {
   });
 
   it('Testing Copy', () => {
-    fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({
-      repository: {
-        type: 'git',
-        url: 'git+https://github.com/blackflux/js-gardener.git'
-      }
-    }, null, 2));
+    fs.writeFileSync(
+      path.join(dir, 'package.json'),
+      JSON.stringify(
+        {
+          repository: {
+            type: 'git',
+            url: 'git+https://github.com/blackflux/js-gardener.git'
+          }
+        },
+        null,
+        2
+      )
+    );
     const expectedError = 'Repository Url required to start with https://';
     const msgs = [];
     expect(() => pkg({ error: msg => msgs.push(msg) }, dir, { license: 'MIT' })).to.throw(expectedError);

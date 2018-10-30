@@ -63,11 +63,19 @@ module.exports = ({
     badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),
     audit: () => auditSubtask(logger, cwd),
-    eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util
-      .loadConfig(cwd, '.eslintignore')), Object.assign({
-      'flow-enforce': 0,
-      'kebab-case-enforce': 1
-    }, eslint)),
+    eslint: () =>
+      eslintSubtask(
+        logger,
+        cwd,
+        util.getEsLintFiles(cwd, util.loadConfig(cwd, '.eslintignore')),
+        Object.assign(
+          {
+            'flow-enforce': 0,
+            'kebab-case-enforce': 1
+          },
+          eslint
+        )
+      ),
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),
@@ -88,12 +96,16 @@ module.exports = ({
     'depused'
   ]
     .filter(e => skip.indexOf(e) === -1)
-    .reduce((prev, cur) => prev.then(() => {
-      logger.info(`Running: ${chalk.green(cur)}`);
-      return tasks[cur]();
-    }), Promise.resolve())
+    .reduce(
+      (prev, cur) =>
+        prev.then(() => {
+          logger.info(`Running: ${chalk.green(cur)}`);
+          return tasks[cur]();
+        }),
+      Promise.resolve()
+    )
     .then(() => process.chdir(savedCwd))
-    .catch((err) => {
+    .catch(err => {
       process.chdir(savedCwd);
       throw err;
     });

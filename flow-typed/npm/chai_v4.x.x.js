@@ -48,11 +48,7 @@ declare module 'chai' {
 
     instanceof: (constructor: mixed, message?: string) => ExpectChain<T>,
     nested: ExpectChain<T>,
-    property: <P>(
-      name: string,
-      value?: P,
-      message?: string
-    ) => ExpectChain<P> & ((name: string) => ExpectChain<mixed>),
+    property: <P>(name: string, value?: P, message?: string) => ExpectChain<P> & ((name: string) => ExpectChain<mixed>),
 
     length: (value: number, message?: string) => ExpectChain<T> | ExpectChain<number>,
     lengthOf: (value: number, message?: string) => ExpectChain<T>,
@@ -61,10 +57,7 @@ declare module 'chai' {
     string: (string: string, message?: string) => ExpectChain<T>,
 
     key: (key: string) => ExpectChain<T>,
-    keys: (
-      key: string | Array<string>,
-      ...keys: Array<string>
-    ) => ExpectChain<T>,
+    keys: (key: string | Array<string>, ...keys: Array<string>) => ExpectChain<T>,
 
     throw: <E>(
       err?: Class<E> | Error | RegExp | string,
@@ -130,9 +123,7 @@ declare module 'chai' {
     containSubset: (obj: Object | Object[]) => ExpectChain<T>,
 
     // chai-redux-mock-store
-    dispatchedActions: (
-      actions: Array<Object | ((action: Object) => any)>
-    ) => ExpectChain<T>,
+    dispatchedActions: (actions: Array<Object | ((action: Object) => any)>) => ExpectChain<T>,
     dispatchedTypes: (actions: Array<string>) => ExpectChain<T>,
 
     // chai-enzyme
@@ -151,12 +142,7 @@ declare module 'chai' {
 
   declare class assert {
     static (expression: mixed, message?: string): void;
-    static fail(
-      actual: mixed,
-      expected: mixed,
-      message?: string,
-      operator?: string
-    ): void;
+    static fail(actual: mixed, expected: mixed, message?: string, operator?: string): void;
 
     static isOk(object: mixed, message?: string): void;
     static isNotOk(object: mixed, message?: string): void;
@@ -229,31 +215,11 @@ declare module 'chai' {
     static deepProperty(obj: Object, prop: string, msg?: string): void;
     static notDeepProperty(obj: Object, prop: string, msg?: string): void;
 
-    static propertyVal(
-      obj: Object,
-      prop: string,
-      val: mixed,
-      msg?: string
-    ): void;
-    static propertyNotVal(
-      obj: Object,
-      prop: string,
-      val: mixed,
-      msg?: string
-    ): void;
+    static propertyVal(obj: Object, prop: string, val: mixed, msg?: string): void;
+    static propertyNotVal(obj: Object, prop: string, val: mixed, msg?: string): void;
 
-    static deepPropertyVal(
-      obj: Object,
-      prop: string,
-      val: mixed,
-      msg?: string
-    ): void;
-    static deepPropertyNotVal(
-      obj: Object,
-      prop: string,
-      val: mixed,
-      msg?: string
-    ): void;
+    static deepPropertyVal(obj: Object, prop: string, val: mixed, msg?: string): void;
+    static deepPropertyNotVal(obj: Object, prop: string, val: mixed, msg?: string): void;
 
     static lengthOf(exp: mixed, len: number, msg?: string): void;
 
@@ -270,18 +236,8 @@ declare module 'chai' {
       msg?: string
     ): void;
 
-    static closeTo(
-      actual: number,
-      expected: number,
-      delta: number,
-      msg?: string
-    ): void;
-    static approximately(
-      actual: number,
-      expected: number,
-      delta: number,
-      msg?: string
-    ): void;
+    static closeTo(actual: number, expected: number, delta: number, msg?: string): void;
+    static approximately(actual: number, expected: number, delta: number, msg?: string): void;
 
     // chai-immutable
     static sizeOf(val: mixed, length: number): void;

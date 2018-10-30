@@ -23,26 +23,28 @@ module.exports = (logger, cwd) => {
     return Promise.resolve();
   }
 
-  return new Promise((resolve, reject) => exec.run('npm audit --json', cwd, (err, out) => {
-    const data = JSON.parse(out);
-    let error = false;
-    Object.values(get(data, 'advisories', {})).forEach((advisory) => {
-      const create = Date.parse(advisory.created);
-      const ageInSec = (new Date() - create) / 1000;
-      const severity = advisory.severity;
-      const timeToFailureInSec = MAX_AGE_IN_SEC[severity] - ageInSec;
-      const timeToFailureInDays = (timeToFailureInSec / (60 * 60 * 24)).toFixed(2);
-      let message = `Failure in ${timeToFailureInDays} days`;
-      if (timeToFailureInSec < 0) {
-        error = true;
-        message = chalk.red('Failure');
+  return new Promise((resolve, reject) =>
+    exec.run('npm audit --json', cwd, (err, out) => {
+      const data = JSON.parse(out);
+      let error = false;
+      Object.values(get(data, 'advisories', {})).forEach(advisory => {
+        const create = Date.parse(advisory.created);
+        const ageInSec = (new Date() - create) / 1000;
+        const severity = advisory.severity;
+        const timeToFailureInSec = MAX_AGE_IN_SEC[severity] - ageInSec;
+        const timeToFailureInDays = (timeToFailureInSec / (60 * 60 * 24)).toFixed(2);
+        let message = `Failure in ${timeToFailureInDays} days`;
+        if (timeToFailureInSec < 0) {
+          error = true;
+          message = chalk.red('Failure');
+        }
+        logger.info(`${chalk.yellow('Warning:')} Problem of Severity "${severity}" detected. ${message}`);
+      });
+      if (error) {
+        reject(new Error('Failure. Fixing npm audit required.'));
+      } else {
+        resolve();
       }
-      logger.info(`${chalk.yellow('Warning:')} Problem of Severity "${severity}" detected. ${message}`);
-    });
-    if (error) {
-      reject(new Error('Failure. Fixing npm audit required.'));
-    } else {
-      resolve();
-    }
-  }));
+    })
+  );
 };

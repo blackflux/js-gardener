@@ -12,9 +12,12 @@ describe('Testing flow', () => {
     logs.length = 0;
   });
 
-  it('Testing missing .flowconfig', (done) => {
+  it('Testing missing .flowconfig', done => {
     const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
-    flow(logger, dir).catch(() => {
+    flow(
+      logger,
+      dir
+    ).catch(() => {
       expect(logs.length).to.equal(2);
       expect(logs[0]).to.contain('Could not find a .flowconfig');
       expect(logs[1]).to.equal('');
