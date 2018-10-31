@@ -64,10 +64,7 @@ module.exports = ({
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),
     audit: () => auditSubtask(logger, cwd),
     eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util
-      .loadConfig(cwd, '.eslintignore')), Object.assign({
-      'flow-enforce': 0,
-      'kebab-case-enforce': 1
-    }, eslint)),
+      .loadConfig(cwd, '.eslintignore')), { 'flow-enforce': 0, 'kebab-case-enforce': 1, ...eslint }),
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),

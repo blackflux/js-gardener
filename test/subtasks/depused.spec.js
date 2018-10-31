@@ -32,7 +32,8 @@ describe('Testing depused', () => {
       path.join(__dirname, '..', '..'),
       []
     ).catch(() => {
-      expect(logs, `Provided ${logs}`).to.contain('Unused/Not Installed Dependencies: eslint-config-airbnb-base');
+      expect(logs, `Provided ${logs}`)
+        .to.contain('Unused/Not Installed Dependencies: @babel/register, eslint-config-airbnb-base');
       done();
     });
   });
@@ -43,7 +44,7 @@ describe('Testing depused', () => {
     depused(
       logger,
       path.join(__dirname, '..', '..'),
-      ['eslint-config-airbnb-base']
+      ['eslint-config-airbnb-base', '@babel/register']
     ).then(() => {
       expect(logs.length).to.equal(0);
       done();

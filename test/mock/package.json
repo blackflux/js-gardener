@@ -21,15 +21,17 @@
   "author": "The Author",
   "license": "MIT",
   "devDependencies": {
-    "chai": "4.1.2",
+    "chai": "4.2.0",
     "coveralls": "3.0.2",
-    "semantic-release": "15.9.15",
-    "nyc": "13.0.1",
-    "babel-cli": "7.0.0-beta.3",
-    "babel-plugin-transform-flow-comments": "7.0.0-beta.3",
-    "babel-register": "7.0.0-beta.3",
-    "babel-eslint": "9.0.0",
-    "babel-preset-flow": "7.0.0-beta.3"
+    "semantic-release": "15.10.6",
+    "nyc": "13.1.0",
+    "@babel/core": "7.1.2",
+    "@babel/cli": "7.1.2",
+    "@babel/plugin-transform-flow-comments": "7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/register": "7.0.0",
+    "babel-eslint": "10.0.1",
+    "@babel/preset-flow": "7.0.0"
   },
   "licenses": [
     {
@@ -78,7 +80,7 @@
       "text-summary"
     ],
     "require": [
-      "babel-register"
+      "@babel/register"
     ],
     "extension": [],
     "cache": true,
