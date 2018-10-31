@@ -13,7 +13,7 @@
     "max-len": ["error", { "code": 120 }],
     "mocha/no-exclusive-tests": "error",
     "prefer-destructuring": ["error", {"object": false, "array": false}],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "quotes": [
       2, "single", { "avoidEscape": true }

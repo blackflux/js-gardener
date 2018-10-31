@@ -26,7 +26,7 @@ module.exports = ({
   configure = { skip: [] },
   badges = { skip: [] },
   eslint = {},
-  docker = []
+  docker = [],
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
@@ -68,7 +68,7 @@ module.exports = ({
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),
-    depused: () => depusedSubtask(logger, cwd, util.loadConfig(cwd, '.depunusedignore'))
+    depused: () => depusedSubtask(logger, cwd, util.loadConfig(cwd, '.depunusedignore')),
   };
 
   return [
@@ -82,7 +82,7 @@ module.exports = ({
     'flow',
     'yamllint',
     'depcheck',
-    'depused'
+    'depused',
   ]
     .filter(e => skip.indexOf(e) === -1)
     .reduce((prev, cur) => prev.then(() => {

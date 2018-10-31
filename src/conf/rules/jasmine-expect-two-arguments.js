@@ -7,21 +7,21 @@ module.exports = context => ({
           if (['Literal', 'TemplateLiteral'].indexOf(node.arguments[1].type) === -1) {
             context.report({
               message: 'Expected second argument to be debug string',
-              node
+              node,
             });
           }
         } else {
           context.report({
             message: 'More than one argument passed to expect()',
-            node
+            node,
           });
         }
       } else if (node.arguments.length === 0) {
         context.report({
           message: 'No arguments passed to expect()',
-          node
+          node,
         });
       }
     }
-  }
+  },
 });

@@ -33,7 +33,7 @@ describe('Testing Gardener', () => {
     gardener({
       ci: ['circle'],
       npm: false,
-      cwd: path.join(__dirname, 'mock')
+      cwd: path.join(__dirname, 'mock'),
     }).catch(() => {
       expect(logs, `Provided: ${logs}`).to.deep
         .equal(['Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release']);
@@ -43,7 +43,7 @@ describe('Testing Gardener', () => {
 
   it('Testing Invalid License', () => {
     expect(() => gardener({
-      license: 'Invalid'
+      license: 'Invalid',
     })).to.throw('Invalid license provided!');
   });
 
@@ -51,7 +51,7 @@ describe('Testing Gardener', () => {
     const fsExistsSyncOriginal = fs.existsSync;
     fs.existsSync = () => false;
     expect(() => gardener({
-      docker: ['lambda']
+      docker: ['lambda'],
     })).to.throw('Please run in Docker using ". manage.sh"');
     fs.existsSync = fsExistsSyncOriginal;
   });
@@ -62,7 +62,7 @@ describe('Testing Gardener', () => {
     expect(() => gardener({
       docker: ['lambda'],
       skip: ['copy', 'package', 'configure', 'badges', 'structure',
-        'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
+        'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused'],
     })).to.not.throw('Please run in Docker using ". manage.sh"');
     fs.existsSync = fsExistsSyncOriginal;
   });
@@ -71,7 +71,7 @@ describe('Testing Gardener', () => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
       skip: ['copy', 'package', 'configure', 'badges', 'structure',
-        'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
+        'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused'],
     }).then(() => {
       done();
     }).catch(done);

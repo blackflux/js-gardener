@@ -40,7 +40,7 @@ describe('Testing copy', () => {
         'manage.sh',
         'src',
         'test',
-        'test/mocha.opts'
+        'test/mocha.opts',
       ].sort());
       // no files are copied
       copy(logger, dir, []).then(() => {

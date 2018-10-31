@@ -7,7 +7,7 @@ const execRun = exec.run;
 const logs = [];
 const logger = {
   info: e => logs.push(e),
-  error: e => logs.push(e)
+  error: e => logs.push(e),
 };
 
 describe('Testing copy', () => {
@@ -40,13 +40,13 @@ describe('Testing copy', () => {
       advisories: {
         577: {
           created: '2018-04-24T14:27:02.796Z',
-          severity: 'critical'
-        }
-      }
+          severity: 'critical',
+        },
+      },
     })) : execRun(...args));
     audit(logger).then(done.fail).catch((e) => {
       expect(logs).to.deep.equal([
-        `${chalk.yellow('Warning:')} Problem of Severity "critical" detected. ${chalk.red('Failure')}`
+        `${chalk.yellow('Warning:')} Problem of Severity "critical" detected. ${chalk.red('Failure')}`,
       ]);
       expect(e.message).to.equal('Failure. Fixing npm audit required.');
       done();
@@ -58,13 +58,13 @@ describe('Testing copy', () => {
       advisories: {
         577: {
           created: new Date().toISOString(),
-          severity: 'low'
-        }
-      }
+          severity: 'low',
+        },
+      },
     })) : execRun(...args));
     audit(logger).then(() => {
       expect(logs).to.deep.equal([
-        `${chalk.yellow('Warning:')} Problem of Severity "low" detected. Failure in 364.00 days`
+        `${chalk.yellow('Warning:')} Problem of Severity "low" detected. Failure in 364.00 days`,
       ]);
       done();
     }).catch(done.fail);

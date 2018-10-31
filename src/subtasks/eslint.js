@@ -12,7 +12,7 @@ module.exports = (logger, dir, files, rules) => new Promise((resolve, reject) =>
     configFile: path.resolve(`${__dirname}/../conf/eslint.json`),
     rulePaths: [path.resolve(`${__dirname}/../conf/rules`)],
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
-    ignore: false
+    ignore: false,
   });
 
   let report;

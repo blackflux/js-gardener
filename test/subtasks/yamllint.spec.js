@@ -16,7 +16,7 @@ describe('Testing yamllint', () => {
       expect(logs.length, `Provided ${logs}`).to.equal(2);
       expect(logs, `Provided ${logs}`).to.deep.equal([
         'An error has occurred in: test/invalid.yml.raw',
-        'duplicated mapping key at line 3, column -17:\n    double:\n    ^'
+        'duplicated mapping key at line 3, column -17:\n    double:\n    ^',
       ]);
       done();
     });

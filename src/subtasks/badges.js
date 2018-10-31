@@ -20,7 +20,7 @@ module.exports = (logger, cwd, config) => {
       ]: new RegExp(badge
         .replace(/[-[\]/{}()*+?.\\^$|]/g, '\\$&')
         .replace(/\\{\\{USER_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?')
-        .replace(/\\{\\{REPO_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?'))
+        .replace(/\\{\\{REPO_NAME\\}\\}/g, '[a-zA-Z0-9_-]+?')),
     }), {});
   const readmeFile = path.join(cwd, 'README.md');
   const readmeMd = util.readTextFile(readmeFile);

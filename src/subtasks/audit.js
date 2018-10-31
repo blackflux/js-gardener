@@ -7,7 +7,7 @@ const MAX_AGE_IN_SEC = {
   low: 60 * 60 * 24 * 7 * 52,
   moderate: 60 * 60 * 24 * 7 * 3,
   high: 0,
-  critical: 0
+  critical: 0,
 };
 
 module.exports = (logger, cwd) => {

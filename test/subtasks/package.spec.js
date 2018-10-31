@@ -16,8 +16,8 @@ describe('Testing package', () => {
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({
       repository: {
         type: 'git',
-        url: 'git+https://github.com/blackflux/js-gardener.git'
-      }
+        url: 'git+https://github.com/blackflux/js-gardener.git',
+      },
     }, null, 2));
     const expectedError = 'Repository Url required to start with https://';
     const msgs = [];

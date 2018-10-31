@@ -12,7 +12,7 @@ module.exports = {
     return {
       Program() {
         sourceCode.getAllComments().filter(token => token.type !== 'Shebang').forEach(testComment);
-      }
+      },
     };
-  }
+  },
 };

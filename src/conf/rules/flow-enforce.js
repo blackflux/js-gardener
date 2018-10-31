@@ -7,10 +7,10 @@ module.exports = {
         if (firstLine !== '// @flow') {
           context.report({
             loc: { start: { line: 0, column: 0 } },
-            message: "Expected line to equal '// @flow'"
+            message: "Expected line to equal '// @flow'",
           });
         }
-      }
+      },
     };
-  }
+  },
 };

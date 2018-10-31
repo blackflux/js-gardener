@@ -8,7 +8,7 @@ module.exports.getEsLintFiles = (folder, ignore) => globSync(
   {
     cwd: folder,
     ignore,
-    dot: true
+    dot: true,
   }
 );
 
@@ -19,9 +19,9 @@ module.exports.getTestFiles = folder => globSync(
     ignore: [
       '**/node_modules/**',
       '**/coverage/**',
-      '**/flow-typed/**'
+      '**/flow-typed/**',
     ],
-    dot: true
+    dot: true,
   }
 );
 
@@ -30,9 +30,9 @@ module.exports.getYamlFiles = folder => globSync(
   {
     cwd: folder,
     ignore: [
-      '**/node_modules/**'
+      '**/node_modules/**',
     ],
-    dot: true
+    dot: true,
   }
 );
 
