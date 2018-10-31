@@ -1,4 +1,3 @@
-// @flow
 const expect = require('chai').expect;
 const sum = require('../src/sum');
 
