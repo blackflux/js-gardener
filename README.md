@@ -72,6 +72,10 @@ All Mocha options can be passed using double dash. E.g. to run individual tests
 
     $ npm run test-simple -- -g "Partial Test Description Here"
 
+To auto fix fixable eslint problems run
+
+    $ node gardener.js --fix
+
 # Structure
 
 **Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target. Test files must be of format `*.spec.js`.
