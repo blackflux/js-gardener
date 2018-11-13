@@ -63,8 +63,11 @@ module.exports = ({
     badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),
     audit: () => auditSubtask(logger, cwd),
-    eslint: () => eslintSubtask(logger, cwd, util.getEsLintFiles(cwd, util
-      .loadConfig(cwd, '.eslintignore')), { 'flow-enforce': 0, 'kebab-case-enforce': 1, ...eslint }),
+    eslint: () => eslintSubtask(logger, cwd, {
+      files: util.getEsLintFiles(cwd, util.loadConfig(cwd, '.eslintignore')),
+      rules: { 'flow-enforce': 0, 'kebab-case-enforce': 1, ...eslint },
+      fix: process.argv.includes('--fix')
+    }),
     flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),
