@@ -1,13 +1,14 @@
 const path = require('path');
 const eslint = require('eslint');
 
-module.exports = (logger, dir, files, rules) => new Promise((resolve, reject) => {
+module.exports = (logger, dir, { files = [], rules = {}, fix = false } = {}) => new Promise((resolve, reject) => {
   if (files.length === 0) {
     return reject(new Error('No ESLint files found.'));
   }
 
   const engine = new eslint.CLIEngine({
     cwd: dir,
+    fix,
     baseConfig: { rules },
     configFile: path.resolve(`${__dirname}/../conf/eslint.json`),
     rulePaths: [path.resolve(`${__dirname}/../conf/rules`)],
@@ -18,6 +19,7 @@ module.exports = (logger, dir, files, rules) => new Promise((resolve, reject) =>
   let report;
   try {
     report = engine.executeOnFiles(files);
+    eslint.CLIEngine.outputFixes(report);
   } catch (err) {
     return reject(err);
   }
