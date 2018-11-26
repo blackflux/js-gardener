@@ -84,7 +84,7 @@
     "chai": "4.2.0",
     "coveralls": "3.0.2",
     "nyc": "13.1.0",
-    "semantic-release": "15.11.0"
+    "semantic-release": "15.12.1"
   },
   "peerDependencies": {},
   "nyc": {
