@@ -70,8 +70,10 @@
     "lodash.omit": "4.5.0",
     "mocha": "5.2.0",
     "npm-check": "5.9.0",
+    "object-scan": "2.0.4",
     "parse-github-url": "1.0.2",
-    "tmp": "0.0.33"
+    "tmp": "0.0.33",
+    "xml2js": "0.4.19"
   },
   "devDependencies": {
     "@babel/register": "7.0.0",
