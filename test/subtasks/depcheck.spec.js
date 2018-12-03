@@ -41,10 +41,8 @@ describe('Testing depcheck', () => {
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.5"}, "license": "MIT"}');
     fs.writeFileSync(path.join(dir, 'yarn.lock'), '{}');
     depcheck(logger, dir).catch(() => {
-      expect(logs).to.deep.equal([
-        '',
-        'error "mocha" not installed\nerror Found 1 errors.\n'
-      ]);
+      expect(logs.length).to.equal(2);
+      expect(logs[1]).to.contain('error "mocha" not installed');
       done();
     }).catch(done.fail);
   }).timeout(30000);
