@@ -11,9 +11,7 @@ describe('Testing depused', () => {
     logs.length = 0;
   });
 
-  // eslint-disable-next-line func-names
-  it('Testing Unnecessary Suppressed', function (done) {
-    this.timeout(30000);
+  it('Testing Unnecessary Suppressed', (done) => {
     depused(
       logger,
       path.join(__dirname, '..', 'mock'),
@@ -22,11 +20,10 @@ describe('Testing depused', () => {
       expect(logs, `Provided ${logs}`).to.contain('Suppressed, detected Dependencies: unnecessary');
       done();
     });
-  });
+  }).timeout(30000);
 
   // eslint-disable-next-line func-names
-  it('Testing Unused', function (done) {
-    this.timeout(60000);
+  it('Testing Unused', (done) => {
     depused(
       logger,
       path.join(__dirname, '..', '..'),
@@ -36,11 +33,10 @@ describe('Testing depused', () => {
         .to.contain('Unused/Not Installed Dependencies: @babel/register, eslint-config-airbnb-base');
       done();
     });
-  });
+  }).timeout(60000);
 
   // eslint-disable-next-line func-names
-  it('Testing Ok', function (done) {
-    this.timeout(60000);
+  it('Testing Ok', (done) => {
     depused(
       logger,
       path.join(__dirname, '..', '..'),
@@ -49,5 +45,5 @@ describe('Testing depused', () => {
       expect(logs.length).to.equal(0);
       done();
     }).catch(done.fail);
-  });
+  }).timeout(60000);
 });
