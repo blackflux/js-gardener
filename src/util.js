@@ -48,11 +48,6 @@ const getRepoUrl = (cwd, remote) => {
 
 module.exports.getGitUrl = cwd => getRepoUrl(cwd, 'upstream') || getRepoUrl(cwd, 'origin');
 
-module.exports.getNpmDependencies = (cwd) => {
-  const data = spawnSync('npm', ['ls', '--depth=0', '--parsable', '--json', '--no-update-notifier'], { cwd });
-  return [String(data.stdout), String(data.stderr)];
-};
-
 module.exports.readListFile = filePath => String(fs.readFileSync(filePath, 'utf8'))
   .split('\n')
   .map(e => e.split('#', 1)[0].trim())
