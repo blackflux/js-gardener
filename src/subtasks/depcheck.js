@@ -17,7 +17,7 @@ module.exports = (logger, dir) => new Promise((resolve, reject) => {
   if (success && fs.existsSync(path.join(dir, 'yarn.lock'))) {
     const data = spawnSync('yarn', ['check', '--integrity', '--verify-tree', '--silent'], { cwd: dir });
     const [stdout, stderr] = [String(data.stdout), String(data.stderr)];
-    success = stderr === '';
+    success = ['', 'null'].includes(stderr);
     if (!success) {
       logger.error(stdout);
       logger.error(stderr);
