@@ -26,7 +26,8 @@ module.exports = ({
   configure = { skip: [] },
   badges = { skip: [] },
   eslint = {},
-  docker = []
+  docker = [],
+  dependabot = false
 } = {}) => {
   const savedCwd = process.cwd();
   process.chdir(cwd);
@@ -54,6 +55,9 @@ module.exports = ({
   } else if (!fs.existsSync('/.dockerenv')) {
     // Ensure running in docker container
     throw Error('Please run in Docker using ". manage.sh"');
+  }
+  if (dependabot !== true) {
+    copy.skip.push('.dependabot', '.dependabot/config.yml');
   }
 
   const tasks = {
