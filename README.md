@@ -190,6 +190,13 @@ Type: `object`<br>
 
 Define `skip` array as property to define badges to not create / update.
 
+### dependabot
+
+Type: `boolean`<br>
+Default: `false`
+
+Set to true to ensure [dependabot config](https://dependabot.com/docs/config-file/) exists.
+
 # Ignore Files
 
 ### .eslintignore

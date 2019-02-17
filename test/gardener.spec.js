@@ -29,10 +29,11 @@ describe('Testing Gardener', () => {
     });
   }).timeout(60000);
 
-  it('Testing CircleCI and no NPM', (done) => {
+  it('Testing CircleCI, no NPM and dependabot', (done) => {
     gardener({
       ci: ['circle'],
       npm: false,
+      dependabot: true,
       cwd: path.join(__dirname, 'mock')
     }).catch(() => {
       expect(logs, `Provided: ${logs}`).to.deep
