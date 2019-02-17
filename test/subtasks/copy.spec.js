@@ -24,6 +24,8 @@ describe('Testing copy', () => {
         'dot.babelrc',
         'dot.circleci',
         'dot.circleci/config.yml',
+        'dot.dependabot',
+        'dot.dependabot/config.yml',
         'dot.editorconfig',
         'dot.flowconfig',
         'dot.gitignore',

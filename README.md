@@ -190,6 +190,13 @@ Type: `object`<br>
 
 Define `skip` array as property to define badges to not create / update.
 
+### dependabot
+
+Type: `boolean`<br>
+Default: `false`
+
+Set to true to ensure [dependabot config](https://dependabot.com/docs/config-file/) exists.
+
 # Ignore Files
 
 ### .eslintignore
@@ -210,7 +217,7 @@ While this project utilizes itself for testing - how cool is that? - a cleaner e
 
 Example project using [js-gardener](https://github.com/blackflux/js-gardener) and [lambda-tdd](https://github.com/blackflux/lambda-tdd) can be found [here](https://github.com/blackflux/lambda-example).
 
-All [my npm packages](https://www.npmjs.com/~simlu) also utilize Gardener.
+All [blackflux npm packages](https://www.npmjs.com/org/blackflux) also utilize Gardener.
 
 # How to Contribute
 
