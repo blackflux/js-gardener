@@ -33,7 +33,8 @@ describe('Testing configure', () => {
     cfg(null, dir, {
       skip: [
         '.babelrc',
-        '.releaserc.json',
+        '.releaserc.json#npm',
+        '.releaserc.json#dependabot',
         '.travis.yml',
         '.circleci/config.yml',
         '.gitignore',
@@ -44,7 +45,8 @@ describe('Testing configure', () => {
     cfg(null, dir, {
       skip: [
         '.babelrc',
-        '.releaserc.json',
+        '.releaserc.json#npm',
+        '.releaserc.json#dependabot',
         '.travis.yml',
         '.circleci/config.yml',
         '.gitignore',

@@ -33,11 +33,11 @@ const updateIdeaConfig = (cwd) => {
 };
 
 const updateStruct = (cwd, files, converter) => files.forEach((fileName) => {
-  const filePath = path.join(cwd, fileName);
+  const filePath = path.join(cwd, fileName.split('#')[0]);
+  const fileContent = fs.existsSync(filePath) ? converter[0](fs.readFileSync(filePath, 'utf8')) : {};
   const expected = converter[0](fs.readFileSync(path
     .join(__dirname, '..', 'templates', 'merge', `dot${fileName}`), 'utf8'));
-  const actual = converter[0](fs.readFileSync(filePath, 'utf8'));
-  fs.writeFileSync(filePath, converter[1](defaults(actual, expected)).trim('\n'), 'utf8');
+  fs.writeFileSync(filePath, converter[1](defaults(fileContent, expected)).trim('\n'), 'utf8');
   fs.appendFileSync(filePath, '\n');
 });
 
@@ -52,7 +52,7 @@ const updateSequential = (cwd, folders) => folders.forEach((fileName) => {
 module.exports = (logger, cwd, config) => {
   const toSkip = get(config, 'skip', []);
   const tasks = {
-    json: ['.babelrc', '.releaserc.json'],
+    json: ['.babelrc', '.releaserc.json#npm', '.releaserc.json#dependabot'],
     yaml: ['.travis.yml', '.circleci/config.yml'],
     seq: ['.gitignore', '.npmignore']
   };

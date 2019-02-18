@@ -1,0 +1,14 @@
+{
+  "release": {
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {
+          "type": "build",
+          "scope": "deps",
+          "release": "minor"
+        }
+      ]
+    }
+  }
+}
