@@ -47,8 +47,7 @@ module.exports = ({
     badges.skip.push('travisci');
   }
   if (npm === true) {
-    copy.skip.push('.releaserc.json');
-    configure.skip.push('.releaserc.json');
+    configure.skip.push('.releaserc.json#npm');
   }
   if (docker.indexOf('lambda') === -1) {
     copy.skip.push('manage.sh', 'docker', 'docker/Dockerfile');
@@ -58,6 +57,7 @@ module.exports = ({
   }
   if (dependabot !== true) {
     copy.skip.push('.dependabot', '.dependabot/config.yml');
+    configure.skip.push('.releaserc.json#dependabot');
   }
 
   const tasks = {
