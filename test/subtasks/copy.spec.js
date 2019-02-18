@@ -37,7 +37,6 @@ describe('Testing copy', () => {
         'dot.idea/inspectionProfiles',
         'dot.idea/inspectionProfiles/Project_Default.xml',
         'dot.npmignore',
-        'dot.releaserc.json',
         'dot.travis.yml',
         'manage.sh',
         'src',

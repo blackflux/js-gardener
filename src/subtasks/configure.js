@@ -12,32 +12,35 @@ const xmlBuilder = new xml2js.Builder();
 
 const updateIdeaConfig = (cwd) => {
   // update *.iml files in .idea folder
-  fs.readdirSync(path.join(cwd, '.idea'))
-    .filter(f => f.endsWith('.iml'))
-    .map(f => path.join(cwd, '.idea', f))
-    .forEach((f) => {
-      const imlData = fs.readFileSync(f);
-      xml2js.parseString(imlData, (err, result) => {
-        objectScan(
-          ['module.component[*].content[*].excludeFolder'],
-          { joined: false }
-        )(result).forEach((excludeFolderKey) => {
-          const entries = get(result, excludeFolderKey);
-          if (Array.isArray(entries) && !entries.some(e => get(e, ['$', 'url']) === 'file://$MODULE_DIR$/coverage')) {
-            entries.push({ $: { url: 'file://$MODULE_DIR$/coverage' } });
-          }
+  const ideaDir = path.join(cwd, '.idea');
+  if (fs.existsSync(ideaDir)) {
+    fs.readdirSync(ideaDir)
+      .filter(f => f.endsWith('.iml'))
+      .map(f => path.join(cwd, '.idea', f))
+      .forEach((f) => {
+        const imlData = fs.readFileSync(f);
+        xml2js.parseString(imlData, (err, result) => {
+          objectScan(
+            ['module.component[*].content[*].excludeFolder'],
+            { joined: false }
+          )(result).forEach((excludeFolderKey) => {
+            const entries = get(result, excludeFolderKey);
+            if (Array.isArray(entries) && !entries.some(e => get(e, ['$', 'url']) === 'file://$MODULE_DIR$/coverage')) {
+              entries.push({ $: { url: 'file://$MODULE_DIR$/coverage' } });
+            }
+          });
+          fs.writeFileSync(f, xmlBuilder.buildObject(result), 'utf8');
         });
-        fs.writeFileSync(f, xmlBuilder.buildObject(result), 'utf8');
       });
-    });
+  }
 };
 
 const updateStruct = (cwd, files, converter) => files.forEach((fileName) => {
-  const filePath = path.join(cwd, fileName);
+  const filePath = path.join(cwd, fileName.split('#')[0]);
+  const fileContent = fs.existsSync(filePath) ? converter[0](fs.readFileSync(filePath, 'utf8')) : {};
   const expected = converter[0](fs.readFileSync(path
     .join(__dirname, '..', 'templates', 'merge', `dot${fileName}`), 'utf8'));
-  const actual = converter[0](fs.readFileSync(filePath, 'utf8'));
-  fs.writeFileSync(filePath, converter[1](defaults(actual, expected)).trim('\n'), 'utf8');
+  fs.writeFileSync(filePath, converter[1](defaults(fileContent, expected)).trim('\n'), 'utf8');
   fs.appendFileSync(filePath, '\n');
 });
 
@@ -52,7 +55,7 @@ const updateSequential = (cwd, folders) => folders.forEach((fileName) => {
 module.exports = (logger, cwd, config) => {
   const toSkip = get(config, 'skip', []);
   const tasks = {
-    json: ['.babelrc', '.releaserc.json'],
+    json: ['.babelrc', '.releaserc.json#npm', '.releaserc.json#dependabot'],
     yaml: ['.travis.yml', '.circleci/config.yml'],
     seq: ['.gitignore', '.npmignore']
   };
