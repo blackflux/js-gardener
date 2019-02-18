@@ -17,7 +17,7 @@
       {
         "type": "build",
         "scope": "deps",
-        "release": "minor"
+        "release": "patch"
       }
     ]
   }
