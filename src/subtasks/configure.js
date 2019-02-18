@@ -12,24 +12,27 @@ const xmlBuilder = new xml2js.Builder();
 
 const updateIdeaConfig = (cwd) => {
   // update *.iml files in .idea folder
-  fs.readdirSync(path.join(cwd, '.idea'))
-    .filter(f => f.endsWith('.iml'))
-    .map(f => path.join(cwd, '.idea', f))
-    .forEach((f) => {
-      const imlData = fs.readFileSync(f);
-      xml2js.parseString(imlData, (err, result) => {
-        objectScan(
-          ['module.component[*].content[*].excludeFolder'],
-          { joined: false }
-        )(result).forEach((excludeFolderKey) => {
-          const entries = get(result, excludeFolderKey);
-          if (Array.isArray(entries) && !entries.some(e => get(e, ['$', 'url']) === 'file://$MODULE_DIR$/coverage')) {
-            entries.push({ $: { url: 'file://$MODULE_DIR$/coverage' } });
-          }
+  const ideaDir = path.join(cwd, '.idea');
+  if (fs.existsSync(ideaDir)) {
+    fs.readdirSync(ideaDir)
+      .filter(f => f.endsWith('.iml'))
+      .map(f => path.join(cwd, '.idea', f))
+      .forEach((f) => {
+        const imlData = fs.readFileSync(f);
+        xml2js.parseString(imlData, (err, result) => {
+          objectScan(
+            ['module.component[*].content[*].excludeFolder'],
+            { joined: false }
+          )(result).forEach((excludeFolderKey) => {
+            const entries = get(result, excludeFolderKey);
+            if (Array.isArray(entries) && !entries.some(e => get(e, ['$', 'url']) === 'file://$MODULE_DIR$/coverage')) {
+              entries.push({ $: { url: 'file://$MODULE_DIR$/coverage' } });
+            }
+          });
+          fs.writeFileSync(f, xmlBuilder.buildObject(result), 'utf8');
         });
-        fs.writeFileSync(f, xmlBuilder.buildObject(result), 'utf8');
       });
-    });
+  }
 };
 
 const updateStruct = (cwd, files, converter) => files.forEach((fileName) => {

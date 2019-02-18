@@ -12,6 +12,19 @@ describe('Testing configure', () => {
     dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
   });
 
+  it('Testing File Creation', () => {
+    cfg(null, dir, {
+      skip: [
+        '.babelrc',
+        '.travis.yml',
+        '.circleci/config.yml',
+        '.gitignore',
+        '.npmignore'
+      ]
+    });
+    expect(fs.readdirSync(dir)).to.deep.equal(['.releaserc.json']);
+  });
+
   it('Testing Iml Rewrite', () => {
     const ideaDir = path.join(dir, '.idea');
     fs.mkdirSync(ideaDir);
