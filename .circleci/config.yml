@@ -37,8 +37,8 @@ jobs:
     steps:
       - checkout
       - run: sudo npm i -g gally
-      - run: ga approve $CIRCLE_BUILD_NUM --condition "base.ref=dev&state=open&user.login=dependabot[bot]"
-      - run: ga merge $CIRCLE_BUILD_NUM --condition "base.ref=dev&state=open&user.login=dependabot[bot]"
+      - run: ga approve $CIRCLE_BUILD_NUM --condition "base.ref=dev&user.login=dependabot[bot]"
+      - run: ga merge $CIRCLE_BUILD_NUM --condition "base.ref=dev&user.login=dependabot[bot]"
   test-node-v10:
     docker:
       - image: 'circleci/node:10'
