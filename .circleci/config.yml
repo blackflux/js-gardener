@@ -35,10 +35,16 @@ jobs:
     docker:
       - image: 'circleci/node:10'
     steps:
+      - run:
+          name: Set PR number
+          command: |
+            echo 'export CIRCLE_PR_NUMBER="${CIRCLE_PR_NUMBER:-${CIRCLE_PULL_REQUEST##*/}}"' >> $BASH_ENV
+            source $BASH_ENV
+            echo $CIRCLE_PR_NUMBER
       - checkout
       - run: sudo npm i -g gally
-      - run: ga approve $CIRCLE_BUILD_NUM --condition "base.ref=dev&state=open&user.login=dependabot[bot]"
-      - run: ga merge $CIRCLE_BUILD_NUM --condition "base.ref=dev&state=open&user.login=dependabot[bot]"
+      - run: ga approve $CIRCLE_PR_NUMBER --condition "base.ref=dev&state=open&user.login=dependabot[bot]"
+      - run: ga merge $CIRCLE_PR_NUMBER --condition "base.ref=dev&state=open&user.login=dependabot[bot]"
   test-node-v10:
     docker:
       - image: 'circleci/node:10'
