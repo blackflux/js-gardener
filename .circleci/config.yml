@@ -14,6 +14,9 @@ workflows:
             - gally-create-pr
             - test-node-v10
             - test-node-v8.10
+          filters:
+            branches:
+              only: /dependabot\/.*/
       - release:
           requires:
             - gally-create-pr
