@@ -38,9 +38,10 @@
       "required_status_checks": {
         "strict": true,
         "contexts": [
-          "ci/circleci: gally",
+          "ci/circleci: gally-create-pr",
           "ci/circleci: test-node-v10",
-          "ci/circleci: test-node-v8.10"
+          "ci/circleci: test-node-v8.10",
+          "ci/circleci: gally-auto-merge"
         ]
       },
       "enforce_admins": true,
