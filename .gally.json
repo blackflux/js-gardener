@@ -26,7 +26,13 @@
   },
   "protection": {
     "$full-dev": {
-      "@": "$full"
+      "@": "$full",
+      "restrictions": {
+        "users": [
+          "simlu",
+          "MrsFlux"
+        ]
+      }
     },
     "$full-master": {
       "@": "$full",
@@ -57,8 +63,7 @@
       },
       "restrictions": {
         "users": [
-          "simlu",
-          "MrsFlux"
+          "simlu"
         ],
         "teams": []
       }
