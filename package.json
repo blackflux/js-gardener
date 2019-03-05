@@ -48,7 +48,7 @@
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
     "chalk": "2.4.2",
-    "eslint": "5.15.0",
+    "eslint": "5.15.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-flowtype": "3.4.2",
     "eslint-plugin-import": "2.16.0",
@@ -70,7 +70,7 @@
     "lodash.omit": "4.5.0",
     "mocha": "6.0.2",
     "npm-check": "5.9.0",
-    "object-scan": "5.0.1",
+    "object-scan": "5.0.2",
     "parse-github-url": "1.0.2",
     "tmp": "0.0.33",
     "xml2js": "0.4.19"
