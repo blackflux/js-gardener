@@ -26,6 +26,17 @@ module.exports = (logger, cwd, config) => {
   ['dependencies', 'devDependencies'].forEach((deps) => {
     packageJson[deps] = mapValues(packageJson[deps], dep => dep.replace(/^\^/, ''));
   });
+  if ([
+    'chai',
+    'coveralls',
+    'nyc',
+    'semantic-release',
+    'js-gardener'
+  ].some(d => packageJson.dependencies[d] !== undefined)) {
+    const msg = 'Designated devDependencies found in package->dependencies';
+    logger.error(msg);
+    throw new Error(msg);
+  }
   if (!get(packageJson, 'repository.url', '').startsWith('https://')) {
     const msg = 'Repository Url required to start with https://';
     logger.error(msg);

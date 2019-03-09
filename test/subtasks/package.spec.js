@@ -24,4 +24,16 @@ describe('Testing package', () => {
     expect(() => pkg({ error: msg => msgs.push(msg) }, dir, { license: 'MIT' })).to.throw(expectedError);
     expect(msgs).to.deep.equal([expectedError]);
   });
+
+  it('Testing Bad Dependency', () => {
+    fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({
+      dependencies: {
+        'js-gardener': '0.0.1'
+      }
+    }, null, 2));
+    const expectedError = 'Designated devDependencies found in package->dependencies';
+    const msgs = [];
+    expect(() => pkg({ error: msg => msgs.push(msg) }, dir, { license: 'MIT' })).to.throw(expectedError);
+    expect(msgs).to.deep.equal([expectedError]);
+  });
 });
