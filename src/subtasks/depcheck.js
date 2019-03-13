@@ -15,7 +15,7 @@ module.exports = (logger, dir) => new Promise((resolve, reject) => {
     }
   }
   if (success && fs.existsSync(path.join(dir, 'yarn.lock'))) {
-    const data = spawnSync('yarn', ['check', '--integrity', '--verify-tree', '--silent'], { cwd: dir });
+    const data = spawnSync('yarn', ['install', '--frozen-lockfile', '--silent', '--non-interactive'], { cwd: dir });
     const [stdout, stderr] = [String(data.stdout), String(data.stderr)];
     success = ['', 'null'].includes(stderr);
     if (!success) {
