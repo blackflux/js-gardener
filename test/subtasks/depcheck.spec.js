@@ -51,7 +51,7 @@ describe('Testing depcheck', () => {
 
   it('Testing Ok (YARN)', (done) => {
     const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
-    fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {}, "license": "MIT"}');
+    fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.5"}, "license": "MIT"}');
     spawnSync('yarn', ['install', '--silent', '--non-interactive'], { cwd: dir });
     depcheck(logger, dir).then(() => {
       expect(logs.length).to.equal(0);
