@@ -44,7 +44,7 @@ describe('Testing depcheck', () => {
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.0"}, "license": "MIT"}');
     depcheck(logger, dir).catch(() => {
       expect(logs.length).to.equal(2);
-      expect(logs[1]).to.contain('error Your lockfile needs to be updated');
+      expect(logs[1]).to.contain('Your lockfile needs to be updated');
       done();
     }).catch(done.fail);
   }).timeout(30000);
