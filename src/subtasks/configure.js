@@ -29,7 +29,7 @@ const updateIdeaConfig = (cwd) => {
               entries.push({ $: { url: 'file://$MODULE_DIR$/coverage' } });
             }
           });
-          fs.writeFileSync(f, xmlBuilder.buildObject(result), 'utf8');
+          fs.writeFileSync(f, `${xmlBuilder.buildObject(result)}\n`, 'utf8');
         });
       });
   }
