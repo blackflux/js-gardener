@@ -48,7 +48,7 @@
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
     "chalk": "2.4.2",
-    "eslint": "5.15.1",
+    "eslint": "5.15.2",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-flowtype": "3.4.2",
     "eslint-plugin-import": "2.16.0",
