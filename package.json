@@ -72,7 +72,7 @@
     "npm-check": "5.9.0",
     "object-scan": "5.0.3",
     "parse-github-url": "1.0.2",
-    "tmp": "0.0.33",
+    "tmp": "0.1.0",
     "xml2js": "0.4.19"
   },
   "devDependencies": {
