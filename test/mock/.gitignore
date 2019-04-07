@@ -81,11 +81,6 @@ yarn-error.log
 # ----------------------------------------
 # ----------------------------------------
 
-# IDE Specific
-.idea/dictionaries
-# OS Specific
-# Node Specific
-# Test Specific
 coverage/
 .coveralls.yml
 lib/
