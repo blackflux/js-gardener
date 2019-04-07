@@ -2,6 +2,7 @@ const fs = require('fs');
 const log = require('fancy-log');
 const chalk = require('chalk');
 const util = require('./util');
+const roboSubtask = require('./subtasks/robo');
 const copySubtask = require('./subtasks/copy');
 const packageSubtask = require('./subtasks/package');
 const configureSubtask = require('./subtasks/configure');
@@ -61,6 +62,7 @@ module.exports = ({
   }
 
   const tasks = {
+    robo: () => roboSubtask(logger, cwd),
     copy: () => copySubtask(logger, cwd, copy),
     package: () => packageSubtask(logger, cwd, { license, author }),
     configure: () => configureSubtask(logger, cwd, configure),
@@ -79,6 +81,7 @@ module.exports = ({
   };
 
   return [
+    'robo',
     'copy',
     'package',
     'configure',

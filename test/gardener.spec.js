@@ -71,7 +71,7 @@ describe('Testing Gardener', () => {
   it('Testing Skip All', (done) => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
-      skip: ['copy', 'package', 'configure', 'badges', 'structure',
+      skip: ['robo', 'copy', 'package', 'configure', 'badges', 'structure',
         'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     }).then(() => {
       done();
