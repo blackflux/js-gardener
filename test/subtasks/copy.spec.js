@@ -22,8 +22,6 @@ describe('Testing copy', () => {
         'docker',
         'docker/Dockerfile',
         'dot.babelrc',
-        'dot.dependabot',
-        'dot.dependabot/config.yml',
         'dot.editorconfig',
         'dot.flowconfig',
         'dot.gitignore',

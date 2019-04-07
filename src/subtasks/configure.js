@@ -55,7 +55,7 @@ const updateSequential = (cwd, folders) => folders.forEach((fileName) => {
 module.exports = (logger, cwd, config) => {
   const toSkip = get(config, 'skip', []);
   const tasks = {
-    json: ['.babelrc', '.releaserc.json#npm', '.releaserc.json#dependabot'],
+    json: ['.babelrc', '.releaserc.json#npm'],
     yaml: [],
     seq: ['.gitignore']
   };

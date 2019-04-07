@@ -22,8 +22,7 @@ module.exports = ({
   copy = { skip: [] },
   configure = { skip: [] },
   eslint = {},
-  docker = [],
-  dependabot = false
+  docker = []
 } = {}) => {
   // todo: validate input params
 
@@ -38,10 +37,6 @@ module.exports = ({
   } else if (!fs.existsSync('/.dockerenv')) {
     // Ensure running in docker container
     throw Error('Please run in Docker using ". manage.sh"');
-  }
-  if (dependabot !== true) {
-    copy.skip.push('.dependabot', '.dependabot/config.yml');
-    configure.skip.push('.releaserc.json#dependabot');
   }
 
   const tasks = {

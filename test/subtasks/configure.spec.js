@@ -44,7 +44,6 @@ describe('Testing configure', () => {
       skip: [
         '.babelrc',
         '.releaserc.json#npm',
-        '.releaserc.json#dependabot',
         '.gitignore'
       ]
     });
@@ -53,7 +52,6 @@ describe('Testing configure', () => {
       skip: [
         '.babelrc',
         '.releaserc.json#npm',
-        '.releaserc.json#dependabot',
         '.gitignore'
       ]
     });

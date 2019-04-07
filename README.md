@@ -20,7 +20,6 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 - Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
 - Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/) or [CircleCI](https://circleci.com).
 - Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release)
-- Enables automates dependency updates using [Dependabot](https://dependabot.com/).
 
 # Getting Started
 
@@ -148,13 +147,6 @@ Define `skip` array as property to define files to not copy.
 Type: `object`<br>
 
 Define `skip` array as property to define files to not configure.
-
-### dependabot
-
-Type: `boolean`<br>
-Default: `false`
-
-Set to true to ensure [dependabot config](https://dependabot.com/docs/config-file/) exists.
 
 # Ignore Files
 
