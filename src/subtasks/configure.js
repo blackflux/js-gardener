@@ -56,8 +56,8 @@ module.exports = (logger, cwd, config) => {
   const toSkip = get(config, 'skip', []);
   const tasks = {
     json: ['.babelrc', '.releaserc.json#npm', '.releaserc.json#dependabot'],
-    yaml: ['.travis.yml', '.circleci/config.yml'],
-    seq: ['.gitignore', '.npmignore']
+    yaml: [],
+    seq: ['.gitignore']
   };
   const filteredTasks = Object.keys(tasks)
     .reduce((p, c) => Object.assign(p, { [c]: tasks[c].filter(f => toSkip.indexOf(f) === -1) }), {});

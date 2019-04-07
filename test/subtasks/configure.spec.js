@@ -16,10 +16,7 @@ describe('Testing configure', () => {
     cfg(null, dir, {
       skip: [
         '.babelrc',
-        '.travis.yml',
-        '.circleci/config.yml',
-        '.gitignore',
-        '.npmignore'
+        '.gitignore'
       ]
     });
     expect(fs.readdirSync(dir)).to.deep.equal(['.releaserc.json']);
@@ -48,10 +45,7 @@ describe('Testing configure', () => {
         '.babelrc',
         '.releaserc.json#npm',
         '.releaserc.json#dependabot',
-        '.travis.yml',
-        '.circleci/config.yml',
-        '.gitignore',
-        '.npmignore'
+        '.gitignore'
       ]
     });
     // for coverage
@@ -60,10 +54,7 @@ describe('Testing configure', () => {
         '.babelrc',
         '.releaserc.json#npm',
         '.releaserc.json#dependabot',
-        '.travis.yml',
-        '.circleci/config.yml',
-        '.gitignore',
-        '.npmignore'
+        '.gitignore'
       ]
     });
     expect(String(fs.readFileSync(imlFile))).to.contain('<excludeFolder url="file://$MODULE_DIR$/coverage"/>');

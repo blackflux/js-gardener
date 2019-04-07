@@ -8,17 +8,5 @@
         "release": "patch"
       }
     ]
-  },
-  "npmPublish": false,
-  "publish": [
-    {
-      "path": "@semantic-release/github",
-      "assets": [
-        {
-          "path": "release.tar.gz",
-          "label": "Release Artifact"
-        }
-      ]
-    }
-  ]
+  }
 }

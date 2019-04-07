@@ -18,7 +18,6 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  ci = ['travis'],
   npm = true,
   copy = { skip: [] },
   configure = { skip: [] },
@@ -31,14 +30,6 @@ module.exports = ({
   const savedCwd = process.cwd();
   process.chdir(cwd);
 
-  if (ci.indexOf('circle') === -1) {
-    copy.skip.push('.circleci', '.circleci/config.yml');
-    configure.skip.push('.circleci/config.yml');
-  }
-  if (ci.indexOf('travis') === -1) {
-    copy.skip.push('.travis.yml');
-    configure.skip.push('.travis.yml');
-  }
   if (npm === true) {
     configure.skip.push('.releaserc.json#npm');
   }

@@ -29,19 +29,6 @@ describe('Testing Gardener', () => {
     });
   }).timeout(60000);
 
-  it('Testing CircleCI, no NPM and dependabot', (done) => {
-    gardener({
-      ci: ['circle'],
-      npm: false,
-      dependabot: true,
-      cwd: path.join(__dirname, 'mock')
-    }).catch(() => {
-      expect(logs, `Provided: ${logs}`).to.deep
-        .equal(['Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release']);
-      done();
-    });
-  }).timeout(60000);
-
   it('Testing Not in Docker', () => {
     const fsExistsSyncOriginal = fs.existsSync;
     fs.existsSync = () => false;

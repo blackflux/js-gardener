@@ -130,13 +130,6 @@ Set eslint custom rules
 - `flow-enforce`: Set to `1` to enforce flow for every file. Not enforced by default.
 - `kebab-case-enforce`: Set to `0` to not enforce kebab case for all js files.
 
-### ci
-
-Type: `array`<br>
-Default: `['travis']`
-
-Configure list of CI tools to use. Available are `circle` and `travis`.
-
 ### npm
 
 Type: `boolean`<br>

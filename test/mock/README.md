@@ -1,6 +1,5 @@
 # Project Title
 
-[![Build Status](https://img.shields.io/travis/blackflux/js-gardener/master.svg)](https://travis-ci.org/blackflux/js-gardener)
 [![Build Status](https://circleci.com/gh/blackflux/js-gardener.png?style=shield)](https://circleci.com/gh/blackflux/js-gardener)
 [![Test Coverage](https://img.shields.io/coveralls/blackflux/js-gardener/master.svg)](https://coveralls.io/github/blackflux/js-gardener?branch=master)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=blackflux/js-gardener)](https://dependabot.com)
