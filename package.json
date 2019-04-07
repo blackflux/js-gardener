@@ -68,7 +68,7 @@
     "lodash.mapvalues": "4.6.0",
     "lodash.merge": "4.6.1",
     "lodash.omit": "4.5.0",
-    "mocha": "6.0.2",
+    "mocha": "6.1.1",
     "npm-check": "5.9.0",
     "object-scan": "5.0.3",
     "parse-github-url": "1.0.2",
