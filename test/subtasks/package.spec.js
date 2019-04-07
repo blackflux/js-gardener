@@ -21,7 +21,7 @@ describe('Testing package', () => {
     }, null, 2));
     const expectedError = 'Repository Url required to start with https://';
     const msgs = [];
-    expect(() => pkg({ error: msg => msgs.push(msg) }, dir, { license: 'MIT' })).to.throw(expectedError);
+    expect(() => pkg({ error: msg => msgs.push(msg) }, dir)).to.throw(expectedError);
     expect(msgs).to.deep.equal([expectedError]);
   });
 
@@ -33,7 +33,7 @@ describe('Testing package', () => {
     }, null, 2));
     const expectedError = 'Designated devDependencies found in package->dependencies';
     const msgs = [];
-    expect(() => pkg({ error: msg => msgs.push(msg) }, dir, { license: 'MIT' })).to.throw(expectedError);
+    expect(() => pkg({ error: msg => msgs.push(msg) }, dir)).to.throw(expectedError);
     expect(msgs).to.deep.equal([expectedError]);
   });
 });

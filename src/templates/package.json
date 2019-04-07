@@ -34,15 +34,7 @@
       "cache": true,
       "all": true,
       "babel": true
-    },
-    "license": "{{LICENSE}}",
-    "licenses": [
-      {
-        "type": "{{LICENSE}}",
-        "url": "{{GIT_URL}}/blob/master/LICENSE"
-      }
-    ],
-    "author": "{{AUTHOR}}"
+    }
   },
   "defaults": {
     "scripts": {

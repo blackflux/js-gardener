@@ -19,8 +19,6 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  license = 'MIT',
-  author = 'The Author',
   ci = ['travis'],
   npm = true,
   copy = { skip: [] },
@@ -30,12 +28,10 @@ module.exports = ({
   docker = [],
   dependabot = false
 } = {}) => {
+  // todo: validate input params
+
   const savedCwd = process.cwd();
   process.chdir(cwd);
-
-  if (['MIT', 'UNLICENSED'].indexOf(license) === -1) {
-    throw new Error('Invalid license provided!');
-  }
 
   if (ci.indexOf('circle') === -1) {
     copy.skip.push('.circleci', '.circleci/config.yml');
@@ -64,7 +60,7 @@ module.exports = ({
   const tasks = {
     robo: () => roboSubtask(logger, cwd),
     copy: () => copySubtask(logger, cwd, copy),
-    package: () => packageSubtask(logger, cwd, { license, author }),
+    package: () => packageSubtask(logger, cwd),
     configure: () => configureSubtask(logger, cwd, configure),
     badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),

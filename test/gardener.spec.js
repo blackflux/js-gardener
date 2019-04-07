@@ -42,12 +42,6 @@ describe('Testing Gardener', () => {
     });
   }).timeout(60000);
 
-  it('Testing Invalid License', () => {
-    expect(() => gardener({
-      license: 'Invalid'
-    })).to.throw('Invalid license provided!');
-  });
-
   it('Testing Not in Docker', () => {
     const fsExistsSyncOriginal = fs.existsSync;
     fs.existsSync = () => false;
