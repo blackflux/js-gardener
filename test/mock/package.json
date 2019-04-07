@@ -18,7 +18,7 @@
     "gardener": "node gardener",
     "test-simple": "nyc mocha \"./test/**/*.spec.js\""
   },
-  "author": "The Author",
+  "author": "Lukas Siemon",
   "license": "MIT",
   "devDependencies": {
     "chai": "4.2.0",

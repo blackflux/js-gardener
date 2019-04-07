@@ -1,4 +1,14 @@
 {
+  "analyzeCommits": {
+    "preset": "angular",
+    "releaseRules": [
+      {
+        "type": "build",
+        "scope": "deps",
+        "release": "patch"
+      }
+    ]
+  },
   "npmPublish": false,
   "publish": [
     {
@@ -10,15 +20,5 @@
         }
       ]
     }
-  ],
-  "analyzeCommits": {
-    "preset": "angular",
-    "releaseRules": [
-      {
-        "type": "build",
-        "scope": "deps",
-        "release": "patch"
-      }
-    ]
-  }
+  ]
 }
