@@ -19,8 +19,6 @@ describe('Testing copy', () => {
       expect(logs.length).to.equal(1);
       expect(logs[0].sort()).to.deep.equal([
         'README.md',
-        'docker',
-        'docker/Dockerfile',
         'dot.babelrc',
         'dot.editorconfig',
         'dot.flowconfig',
@@ -32,7 +30,6 @@ describe('Testing copy', () => {
         'dot.idea/jsLinters/eslint.xml',
         'dot.idea/inspectionProfiles',
         'dot.idea/inspectionProfiles/Project_Default.xml',
-        'manage.sh',
         'src',
         'test',
         'test/mocha.opts'

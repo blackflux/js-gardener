@@ -22,7 +22,7 @@ module.exports = ({
   copy = { skip: [] },
   configure = { skip: [] },
   eslint = {},
-  docker = []
+  docker = false
 } = {}) => {
   // todo: validate input params
 
@@ -32,11 +32,8 @@ module.exports = ({
   if (npm === true) {
     configure.skip.push('.releaserc.json#npm');
   }
-  if (docker.indexOf('lambda') === -1) {
-    copy.skip.push('manage.sh', 'docker', 'docker/Dockerfile');
-  } else if (!fs.existsSync('/.dockerenv')) {
-    // Ensure running in docker container
-    throw Error('Please run in Docker using ". manage.sh"');
+  if (docker !== false && !fs.existsSync('/.dockerenv')) {
+    throw Error('Please run in Docker');
   }
 
   const tasks = {

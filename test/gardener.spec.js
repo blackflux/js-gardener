@@ -34,7 +34,7 @@ describe('Testing Gardener', () => {
     fs.existsSync = () => false;
     expect(() => gardener({
       docker: ['lambda']
-    })).to.throw('Please run in Docker using ". manage.sh"');
+    })).to.throw('Please run in Docker');
     fs.existsSync = fsExistsSyncOriginal;
   });
 
@@ -45,7 +45,7 @@ describe('Testing Gardener', () => {
       docker: ['lambda'],
       skip: ['copy', 'package', 'configure', 'structure',
         'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
-    })).to.not.throw('Please run in Docker using ". manage.sh"');
+    })).to.not.throw('Please run in Docker');
     fs.existsSync = fsExistsSyncOriginal;
   });
 
