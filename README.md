@@ -56,8 +56,6 @@ This will generate some files and alter your existing package.json file.
 
 Create your files in the `src` folder and corresponding tests in the `test` folder ([Mocha](https://mochajs.org/) and [Chai](https://github.com/chaijs/chai) work great), and ensure everything works fine by running `npm test`. Finalize your README.md and package.json and commit and push to GitHub.
 
-Now configure your Badges.
-
 # Run Tests Locally
 
 To run all tests locally
@@ -81,16 +79,6 @@ To auto fix fixable eslint problems run
 **Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target. Test files must be of format `*.spec.js`.
 
 **Branches** - You release branch is `master`. Develop against `develop` or feature branches. When you are ready for a release, merge your changes into `master`.
-
-# Badges
-
-Badges represent external services that integrate with your repository. The Badges are auto generated, but the services need to be enabled manually. This section will instruct you on how to set up and utilize each service. When completed, verify each service by clicking the corresponding badge.
-
-Before configuring external services, ensure `npm test` runs locally without errors and all changes are pushed.
-
-> [Configure Badges](BADGES.md)
-
-*Note:* If you username is different between github and a service, you will need to adjust the badge url.
 
 # Coverage
 
@@ -118,7 +106,6 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `copy`: Copy [template files](lib/templates/files) and create [folders](lib/templates/folders.json)
 - `package`: [Alter](lib/templates/package.json) package.json
 - `configure`: [Alter](lib/templates) other configuration files
-- `badges`: Insert [Badges](lib/templates/badges.json)
 - `structure`: Enforce that test file structure matches lib content
 - `audit`: Runs [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit) and throws errors for old or important issues.
 - `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
@@ -168,12 +155,6 @@ Define `skip` array as property to define files to not copy.
 Type: `object`<br>
 
 Define `skip` array as property to define files to not configure.
-
-### badges
-
-Type: `object`<br>
-
-Define `skip` array as property to define badges to not create / update.
 
 ### dependabot
 

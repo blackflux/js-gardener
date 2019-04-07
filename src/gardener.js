@@ -6,7 +6,6 @@ const roboSubtask = require('./subtasks/robo');
 const copySubtask = require('./subtasks/copy');
 const packageSubtask = require('./subtasks/package');
 const configureSubtask = require('./subtasks/configure');
-const badgesSubtask = require('./subtasks/badges');
 const structSubtask = require('./subtasks/struct');
 const auditSubtask = require('./subtasks/audit');
 const eslintSubtask = require('./subtasks/eslint');
@@ -23,7 +22,6 @@ module.exports = ({
   npm = true,
   copy = { skip: [] },
   configure = { skip: [] },
-  badges = { skip: [] },
   eslint = {},
   docker = [],
   dependabot = false
@@ -36,12 +34,10 @@ module.exports = ({
   if (ci.indexOf('circle') === -1) {
     copy.skip.push('.circleci', '.circleci/config.yml');
     configure.skip.push('.circleci/config.yml');
-    badges.skip.push('circleci');
   }
   if (ci.indexOf('travis') === -1) {
     copy.skip.push('.travis.yml');
     configure.skip.push('.travis.yml');
-    badges.skip.push('travisci');
   }
   if (npm === true) {
     configure.skip.push('.releaserc.json#npm');
@@ -62,7 +58,6 @@ module.exports = ({
     copy: () => copySubtask(logger, cwd, copy),
     package: () => packageSubtask(logger, cwd),
     configure: () => configureSubtask(logger, cwd, configure),
-    badges: () => badgesSubtask(logger, cwd, badges),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),
     audit: () => auditSubtask(logger, cwd),
     eslint: () => eslintSubtask(logger, cwd, {
@@ -81,7 +76,6 @@ module.exports = ({
     'copy',
     'package',
     'configure',
-    'badges',
     'structure',
     'audit',
     'eslint',

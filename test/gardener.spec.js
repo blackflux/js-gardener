@@ -56,7 +56,7 @@ describe('Testing Gardener', () => {
     fs.existsSync = () => true;
     expect(() => gardener({
       docker: ['lambda'],
-      skip: ['copy', 'package', 'configure', 'badges', 'structure',
+      skip: ['copy', 'package', 'configure', 'structure',
         'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     })).to.not.throw('Please run in Docker using ". manage.sh"');
     fs.existsSync = fsExistsSyncOriginal;
@@ -65,7 +65,7 @@ describe('Testing Gardener', () => {
   it('Testing Skip All', (done) => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
-      skip: ['robo', 'copy', 'package', 'configure', 'badges', 'structure',
+      skip: ['robo', 'copy', 'package', 'configure', 'structure',
         'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     }).then(() => {
       done();
