@@ -14,11 +14,10 @@
     "test-simple": "nyc mocha \"./test/**/*.spec.js\"",
     "test": "npm run clean && npm run gardener && npm run test-simple",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
-    "build-artifact": "npm run clean-build && tar -zxvf $(npm pack) && rm *-0.0.0-development.tgz && cd package && tar -zcvf ../release.tar.gz . && cd .. && rm -rf package",
-    "semantic-release": "npm run build-artifact && npm run clean-build && npx semantic-release",
+    "semantic-release": "npm run build-clean && npx semantic-release",
     "clean": "rm -rf lib",
-    "clean-build": "npm run clean && npm run build",
-    "gardener": "npm run clean-build && node gardener && npm run clean"
+    "build-clean": "npm run clean && npm run build",
+    "gardener": "npm run build-clean && node gardener && npm run clean"
   },
   "repository": {
     "type": "git",

@@ -12,16 +12,6 @@ describe('Testing configure', () => {
     dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
   });
 
-  it('Testing File Creation', () => {
-    cfg(null, dir, {
-      skip: [
-        '.babelrc',
-        '.gitignore'
-      ]
-    });
-    expect(fs.readdirSync(dir)).to.deep.equal(['.releaserc.json']);
-  });
-
   it('Testing Iml Rewrite', () => {
     const ideaDir = path.join(dir, '.idea');
     fs.mkdirSync(ideaDir);
@@ -43,7 +33,6 @@ describe('Testing configure', () => {
     cfg(null, dir, {
       skip: [
         '.babelrc',
-        '.releaserc.json#npm',
         '.gitignore'
       ]
     });
@@ -51,7 +40,6 @@ describe('Testing configure', () => {
     cfg(null, dir, {
       skip: [
         '.babelrc',
-        '.releaserc.json#npm',
         '.gitignore'
       ]
     });

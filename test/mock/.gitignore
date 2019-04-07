@@ -89,4 +89,3 @@ yarn-error.log
 coverage/
 .coveralls.yml
 lib/
-release.tar.gz

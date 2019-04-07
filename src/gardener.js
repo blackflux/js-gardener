@@ -18,7 +18,6 @@ module.exports = ({
   logger = log,
   cwd = process.cwd(),
   skip = [],
-  npm = true,
   copy = { skip: [] },
   configure = { skip: [] },
   eslint = {},
@@ -29,9 +28,6 @@ module.exports = ({
   const savedCwd = process.cwd();
   process.chdir(cwd);
 
-  if (npm === true) {
-    configure.skip.push('.releaserc.json#npm');
-  }
   if (docker !== false && !fs.existsSync('/.dockerenv')) {
     throw Error('Please run in Docker');
   }

@@ -5,14 +5,3 @@
 # ----------------------------------------
 # ----------------------------------------
 
-.idea/
-conf/
-coverage/
-src/
-test/
-.coveralls.yml
-.circleci/config.yml
-.travis.yml
-gardener.js
-.releaserc.json
-release.tar.gz

@@ -83,7 +83,6 @@ yarn-error.log
 
 # OS Specific
 # Node Specific
-release.tar.gz
 .idea/dictionaries
 # Test Specific
 coverage/
