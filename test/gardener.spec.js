@@ -43,7 +43,7 @@ describe('Testing Gardener', () => {
     fs.existsSync = () => true;
     expect(() => gardener({
       docker: ['lambda'],
-      skip: ['copy', 'package', 'configure', 'structure',
+      skip: ['copy', 'configure', 'structure',
         'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     })).to.not.throw('Please run in Docker');
     fs.existsSync = fsExistsSyncOriginal;
@@ -52,7 +52,7 @@ describe('Testing Gardener', () => {
   it('Testing Skip All', (done) => {
     gardener({
       cwd: path.join(__dirname, 'mock'),
-      skip: ['robo', 'copy', 'package', 'configure', 'structure',
+      skip: ['robo', 'copy', 'configure', 'structure',
         'audit', 'eslint', 'flow', 'yamllint', 'depcheck', 'depused']
     }).then(() => {
       done();

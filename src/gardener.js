@@ -4,7 +4,6 @@ const chalk = require('chalk');
 const util = require('./util');
 const roboSubtask = require('./subtasks/robo');
 const copySubtask = require('./subtasks/copy');
-const packageSubtask = require('./subtasks/package');
 const configureSubtask = require('./subtasks/configure');
 const structSubtask = require('./subtasks/struct');
 const auditSubtask = require('./subtasks/audit');
@@ -35,7 +34,6 @@ module.exports = ({
   const tasks = {
     robo: () => roboSubtask(logger, cwd),
     copy: () => copySubtask(logger, cwd, copy),
-    package: () => packageSubtask(logger, cwd),
     configure: () => configureSubtask(logger, cwd, configure),
     structure: () => structSubtask(logger, cwd, util.loadConfig(cwd, '.structignore')),
     audit: () => auditSubtask(logger, cwd),
@@ -53,7 +51,6 @@ module.exports = ({
   return [
     'robo',
     'copy',
-    'package',
     'configure',
     'structure',
     'audit',
