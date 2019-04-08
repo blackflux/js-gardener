@@ -20,7 +20,6 @@ describe('Testing copy', () => {
       expect(logs[0].sort()).to.deep.equal([
         'README.md',
         'dot.babelrc',
-        'dot.editorconfig',
         'dot.flowconfig',
         'dot.gitignore',
         'dot.idea',
