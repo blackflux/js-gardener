@@ -94,7 +94,7 @@ Default: `[]`
 
 Array of tasks to skip. Should not be necessary to use unless you really need to. Available tasks are:
 - `robo`: Apply [robo-config](https://github.com/blackflux/robo-config) configuration file.
-- `copy`: Copy [template files](lib/templates/files) and create [folders](lib/templates/folders.json)
+- `copy`: Copy [template files](lib/templates/files)
 - `package`: [Alter](lib/templates/package.json) package.json
 - `configure`: [Alter](lib/templates) other configuration files
 - `structure`: Enforce that test file structure matches lib content

@@ -18,7 +18,6 @@ describe('Testing copy', () => {
     copy(logger, dir, {}).then(() => {
       expect(logs.length).to.equal(1);
       expect(logs[0].sort()).to.deep.equal([
-        'README.md',
         'dot.babelrc',
         'dot.gitignore',
         'dot.idea',
@@ -27,9 +26,7 @@ describe('Testing copy', () => {
         'dot.idea/jsLinters',
         'dot.idea/jsLinters/eslint.xml',
         'dot.idea/inspectionProfiles',
-        'dot.idea/inspectionProfiles/Project_Default.xml',
-        'src',
-        'test'
+        'dot.idea/inspectionProfiles/Project_Default.xml'
       ].sort());
       // no files are copied
       copy(logger, dir, []).then(() => {
