@@ -30,8 +30,7 @@ describe('Testing copy', () => {
         'dot.idea/inspectionProfiles',
         'dot.idea/inspectionProfiles/Project_Default.xml',
         'src',
-        'test',
-        'test/mocha.opts'
+        'test'
       ].sort());
       // no files are copied
       copy(logger, dir, []).then(() => {
