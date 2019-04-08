@@ -18,8 +18,7 @@ module.exports.getTestFiles = folder => globSync(
     cwd: folder,
     ignore: [
       '**/node_modules/**',
-      '**/coverage/**',
-      '**/flow-typed/**'
+      '**/coverage/**'
     ],
     dot: true
   }

@@ -2,8 +2,7 @@
   "root": true,
   "extends": [
     "airbnb-base",
-    "plugin:jasmine/recommended",
-    "plugin:flowtype/recommended"
+    "plugin:jasmine/recommended"
   ],
   "rules": {
     "jasmine/expect-single-argument": 0,
@@ -56,7 +55,7 @@
     "log4js": true
   },
   "plugins": [
-    "json", "jasmine", "mocha", "markdown", "flowtype"
+    "json", "jasmine", "mocha", "markdown"
   ],
   "parser": "babel-eslint"
 }

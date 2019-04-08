@@ -85,14 +85,6 @@ Customize the nyc section in your package.json
 
 To completely ignore files from coverage put them into the `exclude` section in nyc.
 
-# Using Flow
-
-Define your flow interfaces in `flow-typed` folder (as plain flow) and then use the `// @flow` syntax to enable for appropriate files.
-
-Consider using [flow-typed](https://github.com/flowtype/flow-typed) to auto generate flow schemas.
-
-To enforce flow syntax in every file you can set the corresponding eslint rule.
-
 # Options
 
 ### skip
@@ -108,7 +100,6 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `structure`: Enforce that test file structure matches lib content
 - `audit`: Runs [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit) and throws errors for old or important issues.
 - `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
-- `flow`: Execute [flow](https://flow.org) validation for enabled files.
 - `yamllint`: Ensure yaml files are passing lint
 - `depcheck`: Ensure dependencies are installed as specified in package.json
 - `depused`: Ensure all installed dependencies are used
@@ -126,7 +117,6 @@ Type: `object`<br>
 
 Set eslint custom rules
 
-- `flow-enforce`: Set to `1` to enforce flow for every file. Not enforced by default.
 - `kebab-case-enforce`: Set to `0` to not enforce kebab case for all js files.
 
 ### npm

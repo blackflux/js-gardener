@@ -8,7 +8,6 @@ const configureSubtask = require('./subtasks/configure');
 const structSubtask = require('./subtasks/struct');
 const auditSubtask = require('./subtasks/audit');
 const eslintSubtask = require('./subtasks/eslint');
-const flowSubtask = require('./subtasks/flow');
 const yamllintSubtask = require('./subtasks/yamllint');
 const depcheckSubtask = require('./subtasks/depcheck');
 const depusedSubtask = require('./subtasks/depused');
@@ -39,10 +38,9 @@ module.exports = ({
     audit: () => auditSubtask(logger, cwd),
     eslint: () => eslintSubtask(logger, cwd, {
       files: util.getEsLintFiles(cwd, util.loadConfig(cwd, '.eslintignore')),
-      rules: { 'flow-enforce': 0, 'kebab-case-enforce': 1, ...eslint },
+      rules: { 'kebab-case-enforce': 1, ...eslint },
       fix: process.argv.includes('--fix')
     }),
-    flow: () => flowSubtask(logger, cwd),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),
     depcheck: () => depcheckSubtask(logger, cwd),
     depused: () => depusedSubtask(logger, cwd, util.loadConfig(cwd, '.depunusedignore'))
@@ -55,7 +53,6 @@ module.exports = ({
     'structure',
     'audit',
     'eslint',
-    'flow',
     'yamllint',
     'depcheck',
     'depused'
