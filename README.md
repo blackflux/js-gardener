@@ -99,7 +99,7 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `configure`: [Alter](lib/templates) other configuration files
 - `structure`: Enforce that test file structure matches lib content
 - `audit`: Runs [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit) and throws errors for old or important issues.
-- `eslint`: Ensure code is according to [best eslint practises](lib/conf/eslint.json)
+- `eslint`: Ensure code is according to eslint definitions.
 - `yamllint`: Ensure yaml files are passing lint
 - `depcheck`: Ensure dependencies are installed as specified in package.json
 - `depused`: Ensure all installed dependencies are used
@@ -110,14 +110,6 @@ Type: `string`<br>
 Default: `process.cwd()`
 
 Specify the directory to run the tests against. Useful if you have multiple packages that you manage centralized from a parent folder.
-
-### eslint
-
-Type: `object`<br>
-
-Set eslint custom rules
-
-- `kebab-case-enforce`: Set to `0` to not enforce kebab case for all js files.
 
 ### npm
 

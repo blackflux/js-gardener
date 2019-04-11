@@ -23,8 +23,6 @@ describe('Testing copy', () => {
         'dot.idea',
         'dot.idea/misc.xml',
         'dot.idea/jsLibraryMappings.xml',
-        'dot.idea/jsLinters',
-        'dot.idea/jsLinters/eslint.xml',
         'dot.idea/inspectionProfiles',
         'dot.idea/inspectionProfiles/Project_Default.xml'
       ].sort());

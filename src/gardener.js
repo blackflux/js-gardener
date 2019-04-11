@@ -18,7 +18,6 @@ module.exports = ({
   skip = [],
   copy = { skip: [] },
   configure = { skip: [] },
-  eslint = {},
   docker = false
 } = {}) => {
   // todo: validate input params
@@ -38,7 +37,6 @@ module.exports = ({
     audit: () => auditSubtask(logger, cwd),
     eslint: () => eslintSubtask(logger, cwd, {
       files: util.getEsLintFiles(cwd, util.loadConfig(cwd, '.eslintignore')),
-      rules: { 'kebab-case-enforce': 1, ...eslint },
       fix: process.argv.includes('--fix')
     }),
     yamllint: () => yamllintSubtask(logger, cwd, util.getYamlFiles(cwd)),

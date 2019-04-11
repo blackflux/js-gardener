@@ -1,2 +1,2 @@
-eslint-config-airbnb-base
+@blackflux/eslint-plugin-rules
 @blackflux/robo-config-plugin

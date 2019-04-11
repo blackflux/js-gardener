@@ -6,9 +6,10 @@
   ],
   "rules": {
     "jasmine/expect-single-argument": 0,
-    "jasmine-expect-two-arguments": 1,
+    "@blackflux/rules/jasmine-expect-two-arguments": 1,
     "jasmine/new-line-before-expect": 0,
-    "istanbul-prevent-ignore": 1,
+    "@blackflux/rules/istanbul-prevent-ignore": 1,
+    "@blackflux/rules/kebab-case-enforce": 1,
     "max-len": ["error", { "code": 120 }],
     "mocha/no-exclusive-tests": "error",
     "prefer-destructuring": ["error", {"object": false, "array": false}],
@@ -55,7 +56,7 @@
     "log4js": true
   },
   "plugins": [
-    "json", "jasmine", "mocha", "markdown"
+    "json", "jasmine", "mocha", "markdown", "@blackflux/rules"
   ],
   "parser": "babel-eslint"
 }
