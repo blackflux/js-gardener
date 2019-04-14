@@ -163,11 +163,3 @@ While this project utilizes itself for testing - how cool is that? - a cleaner e
 Example project using [js-gardener](https://github.com/blackflux/js-gardener) and [lambda-tdd](https://github.com/blackflux/lambda-tdd) can be found [here](https://github.com/blackflux/lambda-example).
 
 All [blackflux npm packages](https://www.npmjs.com/org/blackflux) also utilize Gardener.
-
-# How to Contribute
-
-When you contribute to any Gardener repositories, always run `npm test` locally before opening a PR.
-
-### Desired Changes
-
-- Add more configuration options
