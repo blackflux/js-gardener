@@ -39,8 +39,7 @@
       "gardener.js",
       "node_modules/*",
       "coverage/*",
-      "lib/*",
-      "src/conf/rules/*.js"
+      "lib/*"
     ],
     "tempDir": "./coverage/.nyc_output",
     "report-dir": "./coverage",
