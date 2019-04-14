@@ -14,14 +14,8 @@ module.exports = (logger, dir, { files = [], fix = false } = {}) => new Promise(
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
     ignore: false
   });
-
-  let report;
-  try {
-    report = engine.executeOnFiles(files);
-    eslint.CLIEngine.outputFixes(report);
-  } catch (err) {
-    return reject(err);
-  }
+  const report = engine.executeOnFiles(files);
+  eslint.CLIEngine.outputFixes(report);
 
   const output = engine.getFormatter()(report.results);
   if (output) {
