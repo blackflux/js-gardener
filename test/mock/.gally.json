@@ -2,7 +2,7 @@
   "defaultBranch": "master",
   "contribBranch": "dev",
   "repository": {
-    "url": "https://github.com/blackflux/js-gardener.git"
+    "url": "https://github.com/org/mock.git"
   },
   "branches": {
     "dev": {
@@ -29,8 +29,8 @@
       "@": "$full",
       "restrictions": {
         "users": [
-          "simlu",
-          "MrsFlux"
+          "owner",
+          "mergebot"
         ]
       }
     },
@@ -53,7 +53,7 @@
       "required_pull_request_reviews": {
         "dismissal_restrictions": {
           "users": [
-            "simlu"
+            "owner"
           ],
           "teams": []
         },
@@ -63,7 +63,7 @@
       },
       "restrictions": {
         "users": [
-          "simlu"
+          "owner"
         ],
         "teams": []
       }

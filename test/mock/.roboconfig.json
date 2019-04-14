@@ -4,12 +4,12 @@
       "assorted/@npm-opensource"
     ],
     "variables": {
-      "repoKey": "blackflux/js-gardener",
-      "packageName": "js-gardener",
-      "projectName": "js-gardener",
-      "owner": "simlu",
-      "ownerName": "Lukas Siemon",
-      "mergeBot": "MrsFlux"
+      "repoKey": "org/mock",
+      "packageName": "mock",
+      "projectName": "mock",
+      "owner": "owner",
+      "ownerName": "Owner Name",
+      "mergeBot": "mergebot"
     }
   }
 }

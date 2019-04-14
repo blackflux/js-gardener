@@ -1,59 +1,37 @@
 {
-  "name": "mock",
-  "version": "0.0.0-development",
   "description": "One Paragraph of project description goes here",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "scripts": {
-    "clean": "rm -rf lib",
-    "build": "npx babel src --out-dir lib --source-maps inline --copy-files --include-dotfiles",
-    "build-clean": "npm run clean && npm run build",
-    "test": "npm run clean && npm run gardener && npm run test-simple",
-    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
-    "semantic-release": "npm run build-clean && npx semantic-release",
-    "gardener": "node gardener",
-    "test-simple": "nyc mocha \"./test/**/*.spec.js\""
-  },
-  "author": "Lukas Siemon",
-  "license": "MIT",
+  "keywords": [],
   "devDependencies": {
+    "@babel/cli": "7.4.3",
+    "@babel/core": "7.4.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.3",
+    "@babel/register": "7.4.0",
+    "@blackflux/eslint-plugin-rules": "1.0.0",
+    "@blackflux/robo-config-plugin": "1.2.2",
+    "babel-eslint": "10.0.1",
     "chai": "4.2.0",
-    "coveralls": "3.0.2",
-    "semantic-release": "15.13.3",
+    "coveralls": "3.0.3",
+    "eslint": "5.16.0",
     "nyc": "13.3.0",
-    "@babel/core": "7.3.3",
-    "@babel/cli": "7.2.3",
-    "@babel/plugin-proposal-object-rest-spread": "7.3.2",
-    "@babel/register": "7.0.0",
-    "babel-eslint": "10.0.1"
+    "semantic-release": "^15.13.8"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/blackflux/js-gardener/blob/master/LICENSE"
-    }
-  ],
   "engines": {
     "node": ">= 8.10"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/blackflux/js-gardener.git"
-  },
-  "bugs": {
-    "url": "https://github.com/blackflux/js-gardener/issues"
-  },
-  "homepage": "https://github.com/blackflux/js-gardener",
   "files": [
     "lib"
   ],
-  "dependencies": {},
-  "peerDependencies": {},
-  "keywords": [],
+  "resolutions": {
+    "tar": ">=4.4.2",
+    "js-yaml": ">=3.13.0"
+  },
   "nyc": {
+    "exclude": [
+      "gardener.js",
+      "node_modules/*",
+      "coverage/*",
+      "lib/*"
+    ],
     "tempDir": "./coverage/.nyc_output",
     "report-dir": "./coverage",
     "check-coverage": true,
@@ -64,12 +42,6 @@
     "branches": 100,
     "include": [
       "**/*.js"
-    ],
-    "exclude": [
-      "gardener.js",
-      "node_modules/*",
-      "coverage/*",
-      "lib/*"
     ],
     "reporter": [
       "lcov",
@@ -82,5 +54,40 @@
     "cache": true,
     "all": true,
     "babel": true
-  }
+  },
+  "name": "mock",
+  "version": "0.0.0-development",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "npx babel src --out-dir lib --source-maps inline --copy-files --include-dotfiles",
+    "build-clean": "npm run clean && npm run build",
+    "test-simple": "nyc mocha \"./test/**/*.spec.js\"",
+    "test": "npm run clean && npm run gardener && npm run test-simple",
+    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
+    "semantic-release": "npm run build-clean && npx semantic-release",
+    "gardener": "node gardener"
+  },
+  "author": "Owner Name",
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/org/mock/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/org/mock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/org/mock/issues"
+  },
+  "homepage": "https://github.com/org/mock#readme",
+  "dependencies": {},
+  "peerDependencies": {}
 }

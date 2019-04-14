@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
 const expect = require('chai').expect;
-const gardener = require('./../src/gardener');
+const gardener = require('./../src/index');
 
 const logs = [];
 const logErrorOriginal = log.error;
@@ -21,7 +21,9 @@ describe('Testing Gardener', () => {
     // change cwd for coverage (so we can invoke with no parameters)
     const savedCwd = process.cwd();
     process.chdir(path.join(__dirname, 'mock'));
-    gardener().catch(() => {
+    gardener({
+      skip: ['audit']
+    }).catch(() => {
       expect(logs, `Provided: ${logs}`).to.deep
         .equal(['Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release']);
       process.chdir(savedCwd);
