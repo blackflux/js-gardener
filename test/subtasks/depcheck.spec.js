@@ -11,12 +11,13 @@ const logger = { error: e => logs.push(e) };
 tmp.setGracefulCleanup();
 
 describe('Testing depcheck', () => {
+  let dir;
   beforeEach(() => {
+    dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     logs.length = 0;
   });
 
   it('Testing Not Installed (NPM)', (done) => {
-    const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.5"}}');
     fs.writeFileSync(path.join(dir, 'package-lock.json'), '{"lockfileVersion": 1}');
     depcheck(logger, dir).catch(() => {
@@ -28,7 +29,6 @@ describe('Testing depcheck', () => {
   }).timeout(30000);
 
   it('Testing Ok (NPM)', (done) => {
-    const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {}}');
     fs.writeFileSync(path.join(dir, 'package-lock.json'), '{"lockfileVersion": 1}');
     depcheck(logger, dir).then(() => {
@@ -38,7 +38,6 @@ describe('Testing depcheck', () => {
   }).timeout(30000);
 
   it('Testing Not Installed (YARN)', (done) => {
-    const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.5"}, "license": "MIT"}');
     spawnSync('yarn', ['install', '--silent', '--non-interactive'], { cwd: dir });
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.0"}, "license": "MIT"}');
@@ -50,7 +49,6 @@ describe('Testing depcheck', () => {
   }).timeout(30000);
 
   it('Testing Ok (YARN)', (done) => {
-    const dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
     fs.writeFileSync(path.join(dir, 'package.json'), '{"dependencies": {"mocha": "5.0.5"}, "license": "MIT"}');
     spawnSync('yarn', ['install', '--silent', '--non-interactive'], { cwd: dir });
     depcheck(logger, dir).then(() => {
