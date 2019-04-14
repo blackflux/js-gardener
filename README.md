@@ -94,9 +94,7 @@ Default: `[]`
 
 Array of tasks to skip. Should not be necessary to use unless you really need to. Available tasks are:
 - `robo`: Apply [robo-config](https://github.com/blackflux/robo-config) configuration file.
-- `copy`: Copy [template files](lib/templates/files)
 - `package`: [Alter](lib/templates/package.json) package.json
-- `configure`: [Alter](lib/templates) other configuration files
 - `structure`: Enforce that test file structure matches lib content
 - `audit`: Runs [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit) and throws errors for old or important issues.
 - `eslint`: Ensure code is according to eslint definitions.
@@ -117,18 +115,6 @@ Type: `boolean`<br>
 Default: `true`
 
 Configure whether to deploy to npm or only to github.
-
-### copy
-
-Type: `object`<br>
-
-Define `skip` array as property to define files to not copy.
-
-### configure
-
-Type: `object`<br>
-
-Define `skip` array as property to define files to not configure.
 
 # Ignore Files
 
