@@ -12,7 +12,7 @@ module.exports = (logger, dir, suppressed) => new Promise((resolve, reject) => n
     }
     const suppressedNotUnused = difference(suppressed, unused).sort();
     if (suppressedNotUnused.length !== 0) {
-      logger.error(`Suppressed, detected Dependencies: ${suppressedNotUnused.join(', ')}`);
+      logger.error(`Suppressed, not installed Dependencies: ${suppressedNotUnused.join(', ')}`);
     }
     return unexpected.length === 0 && suppressedNotUnused.length === 0 ? resolve() : reject();
   }));

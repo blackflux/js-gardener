@@ -1,0 +1,15 @@
+{
+  "@blackflux/robo-config-plugin": {
+    "tasks": [
+      "assorted/@npm-opensource"
+    ],
+    "variables": {
+      "repoKey": "org/mock",
+      "packageName": "mock",
+      "projectName": "mock",
+      "owner": "owner",
+      "ownerName": "Owner Name",
+      "mergeBot": "mergebot"
+    }
+  }
+}

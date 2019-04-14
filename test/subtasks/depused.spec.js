@@ -17,7 +17,7 @@ describe('Testing depused', () => {
       path.join(__dirname, '..', 'mock'),
       ['unnecessary']
     ).catch(() => {
-      expect(logs, `Provided ${logs}`).to.contain('Suppressed, detected Dependencies: unnecessary');
+      expect(logs, `Provided ${logs}`).to.contain('Suppressed, not installed Dependencies: unnecessary');
       done();
     });
   }).timeout(30000);
@@ -29,8 +29,13 @@ describe('Testing depused', () => {
       path.join(__dirname, '..', '..'),
       []
     ).catch(() => {
+      const deps = [
+        '@babel/register',
+        '@blackflux/eslint-plugin-rules',
+        '@blackflux/robo-config-plugin'
+      ].join(', ');
       expect(logs, `Provided ${logs}`)
-        .to.contain('Unused/Not Installed Dependencies: @babel/register, eslint-config-airbnb-base');
+        .to.contain(`Unused/Not Installed Dependencies: ${deps}`);
       done();
     });
   }).timeout(60000);
@@ -40,7 +45,11 @@ describe('Testing depused', () => {
     depused(
       logger,
       path.join(__dirname, '..', '..'),
-      ['eslint-config-airbnb-base', '@babel/register']
+      [
+        '@babel/register',
+        '@blackflux/eslint-plugin-rules',
+        '@blackflux/robo-config-plugin'
+      ]
     ).then(() => {
       expect(logs.length).to.equal(0);
       done();
