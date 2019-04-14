@@ -14,12 +14,10 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 ## What it does
 
 - Enforces best code style practises using [ESLint](https://eslint.org/) and [YAMLlint](https://github.com/nodeca/js-yaml)
-- Automates and assists with config generation
-- Scans dependencies for vulnerabilities using [npm audit](https://docs.npmjs.com/cli/audit).
+- Automates and assists with config generation and best practices via [robo-config](https://github.com/blackflux/robo-config)
+- Scans dependencies for vulnerabilities using [npm audit](https://docs.npmjs.com/cli/audit)
 - Provides various integrity tests (e.g. checks for un-used dependencies)
 - Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
-- Enables [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) using [TravisCI](https://travis-ci.org/) or [CircleCI](https://circleci.com).
-- Enables [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) to [NPM](https://www.npmjs.com/) and [GitHub](https://github.com/) using [Semantic-Release](https://github.com/semantic-release/semantic-release)
 
 # Getting Started
 
@@ -35,6 +33,8 @@ Enforces highest code quality and minimizes package setup and maintenance comple
     $ npm install --save-dev js-gardener
 
 ### Run Basic Setup
+
+`// TODO: Slighly outdated below`
 
 Create `gardener.js` in the root folder with the following contents
 <!-- eslint-disable import/no-unresolved -->
@@ -77,7 +77,7 @@ To auto fix fixable eslint problems run
 
 **Folders** - Write your tests in the `test` and your code in the `src` folder. The lib folder is used as the build target. Test files must be of format `*.spec.js`.
 
-**Branches** - You release branch is `master`. Develop against `develop` or feature branches. When you are ready for a release, merge your changes into `master`.
+**Branches** - You release branch is `master`. Develop against `dev` or feature branches. When you are ready for a release, merge your changes into `master`.
 
 # Coverage
 
