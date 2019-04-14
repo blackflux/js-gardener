@@ -1,9 +1,9 @@
 const path = require('path');
-const spawnSync = require('child_process').spawnSync;
 const tmp = require('tmp');
 const expect = require('chai').expect;
 const sfs = require('smart-fs');
 const depcheck = require('../../src/subtasks/depcheck');
+const exec = require('./../../src/util/exec');
 
 const logs = [];
 const logger = { error: e => logs.push(e) };
@@ -39,7 +39,7 @@ describe('Testing depcheck', () => {
 
   it('Testing Not Installed (YARN)', (done) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '5.0.5' }, license: 'MIT' });
-    spawnSync('yarn', ['install', '--silent', '--non-interactive'], { cwd: dir });
+    exec.run('yarn install --silent --non-interactive', dir);
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '4.0.0' }, license: 'MIT' });
     depcheck(logger, dir).catch(() => {
       expect(logs.length).to.equal(2);
@@ -50,7 +50,7 @@ describe('Testing depcheck', () => {
 
   it('Testing Ok (YARN)', (done) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '5.0.5' }, license: 'MIT' });
-    spawnSync('yarn', ['install', '--silent', '--non-interactive'], { cwd: dir });
+    exec.run('yarn install --silent --non-interactive', dir);
     depcheck(logger, dir).then(() => {
       expect(logs.length).to.equal(0);
       done();
