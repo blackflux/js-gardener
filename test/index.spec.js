@@ -21,9 +21,7 @@ describe('Testing Gardener', () => {
     // change cwd for coverage (so we can invoke with no parameters)
     const savedCwd = process.cwd();
     process.chdir(path.join(__dirname, 'mock'));
-    gardener({
-      skip: ['audit']
-    }).catch(() => {
+    gardener().catch(() => {
       expect(logs, `Provided: ${logs}`).to.deep
         .equal(['Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release']);
       process.chdir(savedCwd);
