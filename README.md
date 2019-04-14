@@ -34,8 +34,6 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 ### Run Basic Setup
 
-`// TODO: Slighly outdated below`
-
 Create `gardener.js` in the root folder with the following contents
 <!-- eslint-disable import/no-unresolved -->
 ```javascript
@@ -45,6 +43,27 @@ const gardener = require('js-gardener');
 if (require.main === module) {
   gardener().catch(() => process.exit(1));
 }
+```
+
+Now create a `.roboconfig.json` file. Recommended for OpenSource npm packages is the following:
+
+```json
+{
+  "@blackflux/robo-config-plugin": {
+    "tasks": [
+      "assorted/@npm-opensource"
+    ],
+    "variables": {
+      "repoKey": "org-name/repo-name",
+      "packageName": "repo-name",
+      "projectName": "repo-name",
+      "owner": "owner-name",
+      "ownerName": "Owner Name",
+      "mergeBot": "mergebot-name"
+    }
+  }
+}
+
 ```
 
 Then run
