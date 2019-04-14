@@ -17,7 +17,7 @@ describe('Testing depused', () => {
       path.join(__dirname, '..', 'mock'),
       ['unnecessary']
     ).catch(() => {
-      expect(logs, `Provided ${logs}`).to.contain('Suppressed, detected Dependencies: unnecessary');
+      expect(logs, `Provided ${logs}`).to.contain('Suppressed, not installed Dependencies: unnecessary');
       done();
     });
   }).timeout(30000);

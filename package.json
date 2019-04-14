@@ -21,7 +21,8 @@
     "chai": "4.2.0",
     "coveralls": "3.0.3",
     "nyc": "13.3.0",
-    "semantic-release": "15.13.3"
+    "semantic-release": "15.13.3",
+    "smart-fs": "1.6.0"
   },
   "resolutions": {
     "tar": ">=4.4.2",
