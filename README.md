@@ -87,6 +87,13 @@ To completely ignore files from coverage put them into the `exclude` section in 
 
 # Options
 
+### logger
+
+Type: `logger`<br>
+Default: [`fancy-log`](https://www.npmjs.com/package/fancy-log)
+
+Attach custom logger.
+
 ### skip
 
 Type: `array`<br>
@@ -109,12 +116,12 @@ Default: `process.cwd()`
 
 Specify the directory to run the tests against. Useful if you have multiple packages that you manage centralized from a parent folder.
 
-### npm
+### docker
 
 Type: `boolean`<br>
-Default: `true`
+Default: `false`
 
-Configure whether to deploy to npm or only to github.
+Execution will fail if not inside docker container, when set to `true`.
 
 # Ignore Files
 
