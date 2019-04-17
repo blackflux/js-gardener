@@ -25,17 +25,12 @@ describe('Testing robo', () => {
 
   it('Testing Update (Failure)', (done) => {
     const result = [
-      'Updated: LICENSE',
-      'Updated: package.json',
       'Updated: CONFDOCS.md'
     ];
     sfs.smartWrite(path.join(dir, '.roboconfig.json'), {
       '@blackflux/robo-config-plugin': {
-        tasks: ['license/@MIT-npm'],
-        variables: {
-          repoKey: 'org/repo',
-          ownerName: 'Owner Name'
-        }
+        tasks: [],
+        variables: {}
       }
     });
     robo(logger, dir).catch((r) => {
