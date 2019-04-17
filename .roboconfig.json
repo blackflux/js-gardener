@@ -10,6 +10,9 @@
       "owner": "simlu",
       "ownerName": "Lukas Siemon",
       "mergeBot": "MrsFlux"
-    }
+    },
+    "exclude": [
+      "gardener.js"
+    ]
   }
 }
