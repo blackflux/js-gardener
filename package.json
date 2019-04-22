@@ -15,14 +15,14 @@
     "@babel/core": "7.4.3",
     "@babel/plugin-proposal-object-rest-spread": "7.4.3",
     "@babel/register": "7.4.0",
-    "@blackflux/eslint-plugin-rules": "1.0.5",
-    "@blackflux/robo-config-plugin": "1.7.5",
+    "@blackflux/eslint-plugin-rules": "1.0.6",
+    "@blackflux/robo-config-plugin": "1.7.6",
     "babel-eslint": "10.0.1",
     "chai": "4.2.0",
     "coveralls": "3.0.3",
     "nyc": "14.0.0",
     "semantic-release": "15.13.3",
-    "smart-fs": "1.7.0"
+    "smart-fs": "1.7.1"
   },
   "resolutions": {
     "tar": ">=4.4.2",
@@ -111,7 +111,7 @@
     "lodash.get": "4.4.2",
     "mocha": "6.1.4",
     "npm-check": "5.9.0",
-    "robo-config": "2.2.1",
+    "robo-config": "2.2.2",
     "tmp": "0.1.0"
   },
   "peerDependencies": {}
