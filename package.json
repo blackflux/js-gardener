@@ -20,7 +20,7 @@
     "babel-eslint": "10.0.1",
     "chai": "4.2.0",
     "coveralls": "3.0.3",
-    "nyc": "14.0.0",
+    "nyc": "14.1.0",
     "semantic-release": "15.13.3",
     "smart-fs": "1.7.6"
   },
