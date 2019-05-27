@@ -1,10 +1,11 @@
 const fs = require('fs');
+const path = require('path');
 const yaml = require('js-yaml');
 
 module.exports = (logger, cwd, files) => new Promise((resolve, reject) => {
   let result = true;
   files.forEach((file) => {
-    const content = fs.readFileSync(file, 'utf-8');
+    const content = fs.readFileSync(path.join(cwd, file), 'utf-8');
     try {
       yaml.loadAll(content, () => {}, { schema: yaml.DEFAULT_SAFE_SCHEMA });
     } catch (e) {

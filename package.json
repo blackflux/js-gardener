@@ -12,35 +12,28 @@
   ],
   "devDependencies": {
     "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.4",
+    "@babel/core": "7.4.5",
     "@babel/plugin-proposal-object-rest-spread": "7.4.4",
     "@babel/register": "7.4.4",
-    "@blackflux/eslint-plugin-rules": "1.0.14",
-    "@blackflux/robo-config-plugin": "1.8.2",
+    "@blackflux/eslint-plugin-rules": "1.0.15",
+    "@blackflux/robo-config-plugin": "1.10.3",
     "babel-eslint": "10.0.1",
     "chai": "4.2.0",
     "coveralls": "3.0.3",
     "nyc": "14.1.1",
     "semantic-release": "15.13.12",
-    "smart-fs": "1.7.6"
+    "smart-fs": "1.7.7",
+    "eslint": "5.16.0"
   },
-  "resolutions": {
-    "tar": ">=4.4.2",
-    "js-yaml": ">=3.13.0"
-  },
-  "engines": {
-    "node": ">= 8.10"
-  },
-  "files": [
-    "lib"
-  ],
+  "resolutions": {"tar": ">=4.4.2", "js-yaml": ">=3.13.0"},
+  "engines": {"node": ">= 8.10"},
+  "files": ["lib"],
   "nyc": {
     "exclude": [
       "gardener.js",
       "node_modules/*",
       "coverage/*",
-      "lib/*",
-      "test/mock/gardener.js"
+      "lib/*"
     ],
     "tempDir": "./coverage/.nyc_output",
     "report-dir": "./coverage",
@@ -50,16 +43,9 @@
     "statements": 100,
     "functions": 100,
     "branches": 100,
-    "include": [
-      "**/*.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ],
-    "require": [
-      "@babel/register"
-    ],
+    "include": ["**/*.js"],
+    "reporter": ["lcov", "text-summary"],
+    "require": ["@babel/register"],
     "extension": [],
     "cache": true,
     "all": true,
@@ -90,15 +76,13 @@
       "url": "https://github.com/blackflux/js-gardener/blob/master/LICENSE"
     }
   ],
-  "bugs": {
-    "url": "https://github.com/blackflux/js-gardener/issues"
-  },
+  "bugs": {"url": "https://github.com/blackflux/js-gardener/issues"},
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
     "chalk": "2.4.2",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-import": "2.17.3",
     "eslint-plugin-jasmine": "2.10.1",
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-markdown": "1.0.0",
@@ -111,7 +95,7 @@
     "lodash.get": "4.4.2",
     "mocha": "6.1.4",
     "npm-check": "5.9.0",
-    "robo-config": "3.0.14",
+    "robo-config": "3.0.15",
     "tmp": "0.1.0"
   },
   "peerDependencies": {}

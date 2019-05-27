@@ -1,29 +1,18 @@
 const path = require('path');
-const tmp = require('tmp');
 const expect = require('chai').expect;
 const sfs = require('smart-fs');
+const desc = require('../util/desc');
 const robo = require('../../src/subtasks/robo');
 
-const logs = [];
-const logger = { error: e => logs.push(e) };
 
-describe('Testing robo', () => {
-  let dir;
-  beforeEach(() => {
-    dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
-    logs.length = 0;
-  });
-
-  it('Testing Success (Done)', (done) => {
+desc('Testing robo', ({ it }) => {
+  it('Testing Success (Done)', async ({ dir, logs, logger }) => {
     sfs.smartWrite(path.join(dir, '.roboconfig.json'), {});
-    robo(logger, dir).then(() => {
-      expect(logs.length, `Provided ${logs}`).to.equal(0);
-      expect(logs, `Provided ${logs}`).to.deep.equal([]);
-      done();
-    }).catch(done.fail);
+    await robo(logger, dir);
+    expect(logs.length, `Provided ${logs}`).to.equal(0);
   });
 
-  it('Testing Update (Failure)', (done) => {
+  it('Testing Update (Failure)', async ({ dir, logs, logger }) => {
     const result = [
       'Updated: CONFDOCS.md'
     ];
@@ -33,20 +22,24 @@ describe('Testing robo', () => {
         variables: {}
       }
     });
-    robo(logger, dir).catch((r) => {
-      expect(logs, `Provided ${logs}`).to.deep.equal(result);
-      expect(r).to.deep.equal(result);
-      done();
-    });
+    try {
+      await robo(logger, dir);
+    } catch (e) {
+      expect(logs[0][0], `Provided ${logs}`).to.equal('error');
+      expect([logs[0][1]], `Provided ${logs}`).to.deep.equal(result);
+      expect(e).to.deep.equal(result);
+    }
   });
 
-  it('Testing Failure', (done) => {
+  it('Testing Failure', async ({ dir, logs, logger }) => {
     const result = `Configuration File missing: ${dir}/.roboconfig`;
-    robo(logger, dir).catch((r) => {
+    try {
+      await robo(logger, dir);
+    } catch (e) {
       expect(logs.length).to.equal(1);
-      expect(logs[0].message).to.equal(result);
-      expect(r.message).to.equal(result);
-      done();
-    });
+      expect(logs[0][0]).to.equal('error');
+      expect(logs[0][1].message).to.equal(result);
+      expect(e.message).to.equal(result);
+    }
   });
 });

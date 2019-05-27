@@ -158,7 +158,7 @@ Define test files that should not be checked for structure. Usually not necessar
 
 # Example Projects
 
-While this project utilizes itself for testing - how cool is that? - a cleaner example can be found [here](test/mock).
+This project utilizes itself for testing - how cool is that? All other projects published under [blackflux](https://github.com/blackflux) also utilize this framework.
 
 Example project using [js-gardener](https://github.com/blackflux/js-gardener) and [lambda-tdd](https://github.com/blackflux/lambda-tdd) can be found [here](https://github.com/blackflux/lambda-example).
 

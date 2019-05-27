@@ -1,57 +1,66 @@
 const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
+const sfs = require('smart-fs');
 const expect = require('chai').expect;
+const desc = require('./util/desc');
 const gardener = require('./../src/index');
 
-const logs = [];
-const logErrorOriginal = log.error;
+desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
+  const logs = [];
+  const logErrorOriginal = log.error;
 
-describe('Testing Gardener', () => {
-  beforeEach(() => {
+  let fsExistsSyncOriginal;
+  let savedCwd;
+
+  beforeEach(({ dir }) => {
+    fsExistsSyncOriginal = fs.existsSync;
     logs.length = 0;
     log.error = e => logs.push(e);
+    savedCwd = process.cwd();
+    process.chdir(dir);
   });
 
   afterEach(() => {
     log.error = logErrorOriginal;
+    fs.existsSync = fsExistsSyncOriginal;
+    process.chdir(savedCwd);
   });
 
-  it('Testing Defaults', (done) => {
-    // change cwd for coverage (so we can invoke with no parameters)
-    const savedCwd = process.cwd();
-    process.chdir(path.join(__dirname, 'mock'));
-    gardener().catch(() => {
-      expect(logs, `Provided: ${logs}`).to.deep
-        .equal(['Unused/Not Installed Dependencies: @babel/cli, @babel/core, coveralls, nyc, semantic-release']);
-      process.chdir(savedCwd);
-      done();
+  it('Testing Ok', async ({ dir }) => {
+    sfs.smartWrite(path.join(dir, '.roboconfig.json'), {});
+    sfs.smartWrite(
+      path.join(dir, '.eslintrc.json'),
+      sfs.smartRead(path.join(__dirname, '..', '.eslintrc.json'))
+    );
+    sfs.smartWrite(path.join(dir, 'package.json'), {
+      name: 'pkg',
+      dependencies: {
+        '@babel/register': '1.0.0'
+      },
+      main: 'index.js'
     });
-  }).timeout(60000);
+    expect(await gardener()).to.equal(undefined);
+  });
 
-  it('Testing Not in Docker', () => {
-    const fsExistsSyncOriginal = fs.existsSync;
+  it('Testing Failure', async ({ dir }) => {
+    try {
+      await gardener();
+    } catch (e) {
+      expect(e.message).to.equal(`Configuration File missing: ${dir}/.roboconfig`);
+    }
+  });
+
+  it('Testing Not in Docker', ({ dir }) => {
     fs.existsSync = () => false;
-    expect(() => gardener({ docker: true })).to.throw('Please run in Docker');
-    fs.existsSync = fsExistsSyncOriginal;
+    expect(() => gardener({ docker: true, cwd: dir })).to.throw('Please run in Docker');
   });
 
   it('Testing in Docker', () => {
-    const fsExistsSyncOriginal = fs.existsSync;
     fs.existsSync = () => true;
     expect(() => gardener({
       docker: true,
-      skip: ['structure', 'audit', 'eslint', 'yamllint', 'depcheck', 'depused']
-    })).to.not.throw('Please run in Docker');
-    fs.existsSync = fsExistsSyncOriginal;
-  });
-
-  it('Testing Skip All', (done) => {
-    gardener({
-      cwd: path.join(__dirname, 'mock'),
       skip: ['robo', 'structure', 'audit', 'eslint', 'yamllint', 'depcheck', 'depused']
-    }).then(() => {
-      done();
-    }).catch(done);
+    })).to.not.throw('Please run in Docker');
   });
 });
