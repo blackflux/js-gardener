@@ -25,9 +25,16 @@
     "smart-fs": "1.7.7",
     "eslint": "5.16.0"
   },
-  "resolutions": {"tar": ">=4.4.2", "js-yaml": ">=3.13.0"},
-  "engines": {"node": ">= 8.10"},
-  "files": ["lib"],
+  "resolutions": {
+    "tar": ">=4.4.2",
+    "js-yaml": ">=3.13.0"
+  },
+  "engines": {
+    "node": ">= 8.10"
+  },
+  "files": [
+    "lib"
+  ],
   "nyc": {
     "exclude": [
       "gardener.js",
@@ -43,9 +50,16 @@
     "statements": 100,
     "functions": 100,
     "branches": 100,
-    "include": ["**/*.js"],
-    "reporter": ["lcov", "text-summary"],
-    "require": ["@babel/register"],
+    "include": [
+      "**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "require": [
+      "@babel/register"
+    ],
     "extension": [],
     "cache": true,
     "all": true,
@@ -76,7 +90,9 @@
       "url": "https://github.com/blackflux/js-gardener/blob/master/LICENSE"
     }
   ],
-  "bugs": {"url": "https://github.com/blackflux/js-gardener/issues"},
+  "bugs": {
+    "url": "https://github.com/blackflux/js-gardener/issues"
+  },
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
     "chalk": "2.4.2",
