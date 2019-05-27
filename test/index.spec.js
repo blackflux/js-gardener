@@ -37,7 +37,7 @@ desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
       main: 'index.js'
     });
     expect(await gardener({ cwd: dir })).to.equal(undefined);
-  });
+  }).timeout(3000);
 
   it('Testing Failure', async ({ dir }) => {
     const savedCwd = process.cwd();
