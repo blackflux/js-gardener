@@ -20,10 +20,10 @@
     "babel-eslint": "10.0.1",
     "chai": "4.2.0",
     "coveralls": "3.0.3",
+    "eslint": "5.16.0",
     "nyc": "14.1.1",
     "semantic-release": "15.13.12",
-    "smart-fs": "1.7.7",
-    "eslint": "5.16.0"
+    "smart-fs": "1.7.8"
   },
   "resolutions": {
     "tar": ">=4.4.2",
@@ -111,7 +111,7 @@
     "lodash.get": "4.4.2",
     "mocha": "6.1.4",
     "npm-check": "5.9.0",
-    "robo-config": "3.0.15",
+    "robo-config": "3.0.16",
     "tmp": "0.1.0"
   },
   "peerDependencies": {}
