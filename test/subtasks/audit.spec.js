@@ -1,41 +1,29 @@
 const expect = require('chai').expect;
 const chalk = require('chalk');
+const desc = require('../util/desc');
 const audit = require('../../src/subtasks/audit');
 const exec = require('../../src/util/exec');
 
 const execRun = exec.run;
-const logs = [];
-const logger = {
-  info: e => logs.push(e),
-  error: e => logs.push(e)
-};
 
-describe('Testing copy', () => {
-  beforeEach(() => {
-    logs.length = 0;
-  });
-
+desc('Testing copy', ({ it }) => {
   afterEach(() => {
     exec.run = execRun;
   });
 
-  it('Testing Missing Npm', (done) => {
+  it('Testing Missing Npm', async ({ logger, logs }) => {
     exec.run = () => 'false';
-    audit(logger).then(() => {
-      expect(logs).to.deep.equal(['NPM unavailable.']);
-      done();
-    }).catch(done.fail);
+    await audit(logger);
+    expect(logs).to.deep.equal([['error', 'NPM unavailable.']]);
   });
 
-  it('Testing Invalid Npm Version', (done) => {
+  it('Testing Invalid Npm Version', async ({ logger, logs }) => {
     exec.run = (...args) => (args[0] === 'npm --version' ? '5.6.0' : execRun(...args));
-    audit(logger).then(() => {
-      expect(logs).to.deep.equal(['Invalid NPM version (5.6.0).']);
-      done();
-    }).catch(done.fail);
+    await audit(logger);
+    expect(logs).to.deep.equal([['error', 'Invalid NPM version (5.6.0).']]);
   });
 
-  it('Testing Audit Problem Found (Failure)', (done) => {
+  it('Testing Audit Problem Found (Failure)', async ({ logger, logs }) => {
     exec.run = (...args) => (args[0] === 'npm audit --json' ? args[2](null, JSON.stringify({
       advisories: {
         577: {
@@ -44,16 +32,18 @@ describe('Testing copy', () => {
         }
       }
     })) : execRun(...args));
-    audit(logger).then(done.fail).catch((e) => {
-      expect(logs).to.deep.equal([
+    try {
+      await audit(logger);
+    } catch (e) {
+      expect(logs).to.deep.equal([[
+        'info',
         `${chalk.yellow('Warning:')} Problem of Severity "critical" detected. ${chalk.red('Failure')}`
-      ]);
+      ]]);
       expect(e.message).to.equal('Failure. Fixing npm audit required.');
-      done();
-    });
+    }
   });
 
-  it('Testing Audit Problem Found (Warning)', (done) => {
+  it('Testing Audit Problem Found (Warning)', async ({ logger, logs }) => {
     exec.run = (...args) => (args[0] === 'npm audit --json' ? args[2](null, JSON.stringify({
       advisories: {
         577: {
@@ -62,11 +52,10 @@ describe('Testing copy', () => {
         }
       }
     })) : execRun(...args));
-    audit(logger).then(() => {
-      expect(logs).to.deep.equal([
-        `${chalk.yellow('Warning:')} Problem of Severity "low" detected. Failure in 364.00 days`
-      ]);
-      done();
-    }).catch(done.fail);
+    await audit(logger);
+    expect(logs).to.deep.equal([[
+      'info',
+      `${chalk.yellow('Warning:')} Problem of Severity "low" detected. Failure in 364.00 days`
+    ]]);
   });
 });

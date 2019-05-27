@@ -1,42 +1,41 @@
 const path = require('path');
 const expect = require('chai').expect;
-const tmp = require('tmp');
 const sfs = require('smart-fs');
+const desc = require('../util/desc');
 const eslint = require('../../src/subtasks/eslint');
 
-const logs = [];
-const logger = { info: e => logs.push(e) };
-
-describe('Testing eslint', () => {
-  let dir;
-  beforeEach(() => {
-    dir = tmp.dirSync({ keep: false, unsafeCleanup: true }).name;
+desc('Testing eslint', ({ it, beforeEach }) => {
+  beforeEach(({ dir }) => {
     sfs.smartWrite(
       path.join(dir, '.eslintrc.json'),
       sfs.smartRead(path.join(__dirname, '..', '..', '.eslintrc.json'))
     );
-    logs.length = 0;
   });
 
-  it('Testing No Files', (done) => {
-    eslint(logger, dir)
-      .then(done.fail)
-      .catch((result) => {
-        expect(String(result)).to.deep.contain('No ESLint files found.');
-        done();
-      });
+  it('Testing Ok', async ({ dir, logger }) => {
+    const idxFile = path.join(dir, 'src', 'index.js');
+    sfs.smartWrite(idxFile, ['module.exports = {};']);
+    sfs.smartWrite(path.join(dir, '.eslintrc.json'), { root: true });
+    expect(await eslint(logger, dir, { files: [idxFile] })).to.equal(undefined);
   });
 
-  it('Testing Exception: File Not Exists', (done) => {
-    eslint(logger, null, { files: ['file'] })
-      .then(done.fail)
-      .catch((result) => {
-        expect(String(result)).to.contain('TypeError');
-        done();
-      });
+  it('Testing No Files', async ({ dir, logger }) => {
+    try {
+      await eslint(logger, dir);
+    } catch (e) {
+      expect(String(e.message)).to.deep.contain('No ESLint files found.');
+    }
   });
 
-  it('Testing Exception: Invalid Fix Type', (done) => {
+  it('Testing Exception: File Not Exists', async ({ logger }) => {
+    try {
+      await eslint(logger, null, { files: ['file'] });
+    } catch (e) {
+      expect(String(e)).to.contain('TypeError');
+    }
+  });
+
+  it('Testing Exception: Invalid Fix Type', async ({ dir, logger }) => {
     sfs.smartWrite(path.join(dir, '.eslintrc.json'), {
       root: true,
       rules: {
@@ -44,22 +43,20 @@ describe('Testing eslint', () => {
       }
     });
     sfs.smartWrite(path.join(dir, 'index.js'), ["module.exports = 'string';\n"]);
-    eslint(logger, dir, { files: ['index.js'] })
-      .then(done.fail)
-      .catch((result) => {
-        expect(String(result)).to.contain('Error: Linter Problems');
-        done();
-      });
+    try {
+      await eslint(logger, dir, { files: ['index.js'] });
+    } catch (e) {
+      expect(String(e)).to.contain('Error: Linter Problems');
+    }
   });
 
-  it('Testing Invalid File', (done) => {
+  it('Testing Invalid File', async ({ dir, logger, logs }) => {
     sfs.smartWrite(path.join(dir, 'index.js'), ['module.exports = "string"\n']);
-    eslint(logger, dir, { files: [path.join(dir, 'index.js')] })
-      .then(done.fail)
-      .catch((result) => {
-        expect(String(result)).to.contain('Error: Linter Problems');
-        expect(String(logs)).to.contain('4 problems (3 errors, 1 warning)');
-        done();
-      });
+    try {
+      await eslint(logger, dir, { files: [path.join(dir, 'index.js')] });
+    } catch (e) {
+      expect(String(e)).to.contain('Error: Linter Problems');
+      expect(String(logs)).to.contain('4 problems (3 errors, 1 warning)');
+    }
   });
 });

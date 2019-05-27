@@ -43,9 +43,6 @@ module.exports = (options = {}) => {
     `Parameter Validation Error: ${Joi.validate(ctx, schema).error}`
   );
 
-  const savedCwd = process.cwd();
-  process.chdir(ctx.cwd);
-
   if (ctx.docker !== false && !fs.existsSync('/.dockerenv')) {
     throw Error('Please run in Docker');
   }
@@ -68,10 +65,5 @@ module.exports = (options = {}) => {
     .reduce((prev, cur) => prev.then(() => {
       ctx.logger.info(`Running: ${chalk.green(cur)}`);
       return tasks[cur]();
-    }), Promise.resolve())
-    .then(() => process.chdir(savedCwd))
-    .catch((err) => {
-      process.chdir(savedCwd);
-      throw err;
-    });
+    }), Promise.resolve());
 };
