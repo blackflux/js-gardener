@@ -11,20 +11,16 @@ desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
   const logErrorOriginal = log.error;
 
   let fsExistsSyncOriginal;
-  let savedCwd;
 
   beforeEach(({ dir }) => {
     fsExistsSyncOriginal = fs.existsSync;
     logs.length = 0;
     log.error = e => logs.push(e);
-    savedCwd = process.cwd();
-    process.chdir(dir);
   });
 
   afterEach(() => {
     log.error = logErrorOriginal;
     fs.existsSync = fsExistsSyncOriginal;
-    process.chdir(savedCwd);
   });
 
   it('Testing Ok', async ({ dir }) => {
@@ -40,14 +36,18 @@ desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
       },
       main: 'index.js'
     });
-    expect(await gardener()).to.equal(undefined);
+    expect(await gardener({ cwd: dir })).to.equal(undefined);
   });
 
   it('Testing Failure', async ({ dir }) => {
+    const savedCwd = process.cwd();
+    process.chdir(dir);
     try {
       await gardener();
     } catch (e) {
       expect(e.message).to.equal(`Configuration File missing: ${dir}/.roboconfig`);
+    } finally {
+      process.chdir(savedCwd);
     }
   });
 
@@ -56,10 +56,11 @@ desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
     expect(() => gardener({ docker: true, cwd: dir })).to.throw('Please run in Docker');
   });
 
-  it('Testing in Docker', () => {
+  it('Testing in Docker', ({ dir }) => {
     fs.existsSync = () => true;
     expect(() => gardener({
       docker: true,
+      cwd: dir,
       skip: ['robo', 'structure', 'audit', 'eslint', 'yamllint', 'depcheck', 'depused']
     })).to.not.throw('Please run in Docker');
   });
