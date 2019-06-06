@@ -1,4 +1,3 @@
-const path = require('path');
 const eslint = require('eslint');
 
 module.exports = (logger, dir, { files = [], fix = false } = {}) => new Promise((resolve, reject) => {
@@ -10,7 +9,6 @@ module.exports = (logger, dir, { files = [], fix = false } = {}) => new Promise(
     cwd: dir,
     fix,
     baseConfig: {},
-    configFile: path.resolve(path.join(dir, '.eslintrc.json')),
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
     ignore: false
   });
