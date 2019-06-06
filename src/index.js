@@ -2,7 +2,7 @@ const assert = require('assert');
 const fs = require('fs');
 const log = require('fancy-log');
 const chalk = require('chalk');
-const Joi = require('joi');
+const Joi = require('joi-strict');
 const util = require('./util');
 const roboSubtask = require('./subtasks/robo');
 const structSubtask = require('./subtasks/struct');
@@ -22,13 +22,11 @@ const taskNames = [
   'depused'
 ];
 const schema = Joi.object().keys({
-  logger: Joi.any().required(),
-  cwd: Joi.string().required(),
-  skip: Joi.array().items(Joi.string().valid(...taskNames)).unique().required(),
-  docker: Joi.boolean().required()
-})
-  .unknown(false)
-  .required();
+  logger: Joi.any(),
+  cwd: Joi.string(),
+  skip: Joi.array().items(Joi.string().valid(...taskNames)).unique(),
+  docker: Joi.boolean()
+});
 
 module.exports = (options = {}) => {
   assert(options instanceof Object && !Array.isArray(options));
