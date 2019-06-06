@@ -26,8 +26,7 @@ const schema = Joi.object().keys({
   cwd: Joi.string(),
   skip: Joi.array().items(Joi.string().valid(...taskNames)).unique(),
   docker: Joi.boolean()
-})
-  .unknown(false);
+});
 
 module.exports = (options = {}) => {
   assert(options instanceof Object && !Array.isArray(options));
