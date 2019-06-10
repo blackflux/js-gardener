@@ -23,7 +23,7 @@
     "eslint": "5.16.0",
     "nyc": "14.1.1",
     "semantic-release": "15.13.12",
-    "smart-fs": "1.7.9"
+    "smart-fs": "1.8.0"
   },
   "resolutions": {
     "tar": ">=4.4.2",
