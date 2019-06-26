@@ -22,7 +22,7 @@
     "coveralls": "3.0.4",
     "eslint": "5.16.0",
     "nyc": "14.1.1",
-    "semantic-release": "15.13.16",
+    "semantic-release": "15.13.17",
     "smart-fs": "1.8.0"
   },
   "resolutions": {
