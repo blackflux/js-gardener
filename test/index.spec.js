@@ -29,6 +29,10 @@ desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
       path.join(dir, '.eslintrc.json'),
       sfs.smartRead(path.join(__dirname, '..', '.eslintrc.json'))
     );
+    fs.symlinkSync(
+      path.join(__dirname, '..', 'node_modules'),
+      path.join(dir, 'node_modules')
+    );
     sfs.smartWrite(path.join(dir, 'package.json'), {
       name: 'pkg',
       dependencies: {

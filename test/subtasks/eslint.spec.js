@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const expect = require('chai').expect;
 const sfs = require('smart-fs');
@@ -9,6 +10,10 @@ desc('Testing eslint', ({ it, beforeEach }) => {
     sfs.smartWrite(
       path.join(dir, '.eslintrc.json'),
       sfs.smartRead(path.join(__dirname, '..', '..', '.eslintrc.json'))
+    );
+    fs.symlinkSync(
+      path.join(__dirname, '..', '..', 'node_modules'),
+      path.join(dir, 'node_modules')
     );
   });
 
