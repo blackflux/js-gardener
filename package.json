@@ -106,7 +106,7 @@
     "js-yaml": "3.13.1",
     "lodash.difference": "4.5.0",
     "lodash.get": "4.4.2",
-    "mocha": "6.1.4",
+    "mocha": "6.2.0",
     "npm-check": "5.9.0",
     "robo-config": "3.0.28",
     "tmp": "0.1.0"
