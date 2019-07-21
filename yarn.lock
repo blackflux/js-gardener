@@ -175,10 +175,10 @@
   dependencies:
     smart-fs "1.9.0"
 
-"@blackflux/robo-config-plugin@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.1.1.tgz#fe4ff30e8bc712bed25465e365a8e464fe8d98c5"
-  integrity sha512-Dp6+VaZlZ95/FGh/8sKNLVqzSmp0ev0gjZZWGXOUPboyqbkvBvTIChw5xphKlEsNm3hHfend0IHwCHvUFJOojA==
+"@blackflux/robo-config-plugin@2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.1.3.tgz#6eab17634b4c196cde1020b298805f774f0f19a7"
+  integrity sha512-BPEIDP3h2MClW3Z7QJ9Bj5Jf3QiF1nKaCyR0ei9JH4Sk14dnpmu92RAo7TwNfEwkakE0j5K2i2fw5e9hMttecg==
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -6110,10 +6110,10 @@ rimraf@2, rimraf@2.6.3, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.0.28:
-  version "3.0.28"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.0.28.tgz#acd380db148383a33d52ef2a557890ad8c944e7c"
-  integrity sha512-r/2hL35GLvv3BkwtJSTiGfUMH7D9UJUDcPL28zqt0KN5OXeqLnim/BytQrPowmNPmA+nqrOaibh/X1DgB1LbAw==
+robo-config@3.0.29:
+  version "3.0.29"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.0.29.tgz#edf836b558af6303fbaab8dea8e82831334f0629"
+  integrity sha512-EMKxzFjEWJZ1mUnP+t8LxuKGyJwZnxgIL/RxNfDvY+whGhh1G1FlgQuJr+ilccTPJco8v8io7+fGFBEUcUo7SQ==
   dependencies:
     "@hapi/joi" "15.1.0"
     app-root-path "2.2.1"
