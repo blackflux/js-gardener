@@ -175,10 +175,10 @@
   dependencies:
     smart-fs "1.9.0"
 
-"@blackflux/robo-config-plugin@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.1.1.tgz#fe4ff30e8bc712bed25465e365a8e464fe8d98c5"
-  integrity sha512-Dp6+VaZlZ95/FGh/8sKNLVqzSmp0ev0gjZZWGXOUPboyqbkvBvTIChw5xphKlEsNm3hHfend0IHwCHvUFJOojA==
+"@blackflux/robo-config-plugin@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.1.2.tgz#df912a85464c02c4f0e6b4e9848ff6997815c87e"
+  integrity sha512-b9QjH9ePAK51ZfDbNFvfhWd+Op9WBCkNYX0yOfMQgE+BtsyT0WBblqy1V/ERu5LK3aKsh7z+pMEE81P1PvBkuw==
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -1640,7 +1640,7 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   dependencies:
     ms "^2.1.1"
 
-debuglog@^1.0.1:
+debuglog@*, debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -3025,7 +3025,7 @@ import-lazy@^2.1.0:
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
   integrity sha1-BWmOPUXIjo1+nZLLBYTnfwlvPkM=
 
-imurmurhash@^0.1.4:
+imurmurhash@*, imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -3766,7 +3766,7 @@ libnpm@^3.0.0:
     read-package-json "^2.0.13"
     stringify-package "^1.0.0"
 
-libnpmaccess@^3.0.2:
+libnpmaccess@*, libnpmaccess@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/libnpmaccess/-/libnpmaccess-3.0.2.tgz#8b2d72345ba3bef90d3b4f694edd5c0417f58923"
   integrity sha512-01512AK7MqByrI2mfC7h5j8N9V4I7MHJuk9buo8Gv+5QgThpOgpjB7sQBDDkeZqRteFb1QM/6YNdHfG7cDvfAQ==
@@ -3795,7 +3795,7 @@ libnpmhook@^5.0.2, libnpmhook@^5.0.3:
     get-stream "^4.0.0"
     npm-registry-fetch "^4.0.0"
 
-libnpmorg@^1.0.1:
+libnpmorg@*, libnpmorg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/libnpmorg/-/libnpmorg-1.0.1.tgz#5d2503f6ceb57f33dbdcc718e6698fea6d5ad087"
   integrity sha512-0sRUXLh+PLBgZmARvthhYXQAWn0fOsa6T5l3JSe2n9vKG/lCVK4nuG7pDsa7uMq+uTt2epdPK+a2g6btcY11Ww==
@@ -3829,7 +3829,7 @@ libnpmsearch@^2.0.1, libnpmsearch@^2.0.2:
     get-stream "^4.0.0"
     npm-registry-fetch "^4.0.0"
 
-libnpmteam@^1.0.2:
+libnpmteam@*, libnpmteam@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/libnpmteam/-/libnpmteam-1.0.2.tgz#8b48bcbb6ce70dd8150c950fcbdbf3feb6eec820"
   integrity sha512-p420vM28Us04NAcg1rzgGW63LMM6rwe+6rtZpfDxCcXxM0zUTLl7nPFEnRF3JfFBF5skF/yuZDUthTsHgde8QA==
@@ -3937,6 +3937,11 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
+lodash._baseindexof@*:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
+  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
+
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -3945,10 +3950,32 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
+lodash._bindcallback@*:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
+  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
+
+lodash._cacheindexof@*:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
+  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
+
+lodash._createcache@*:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
+  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
+  dependencies:
+    lodash._getnative "^3.0.0"
+
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
+
+lodash._getnative@*, lodash._getnative@^3.0.0:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
+  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -4004,6 +4031,11 @@ lodash.mergewith@4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
   integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
+
+lodash.restparam@*:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
+  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.set@4.3.2, lodash.set@^4.3.2:
   version "4.3.2"
@@ -4730,7 +4762,7 @@ npm-pick-manifest@^2.2.3:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-profile@^4.0.2:
+npm-profile@*, npm-profile@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/npm-profile/-/npm-profile-4.0.2.tgz#8272a71c19634d0dce9c35a5daf8ee589cbb0f52"
   integrity sha512-VRsC04pvRH+9cF+PoVh2nTmJjiG21yu59IHpsBpkxk+jaGAV8lxx96G4SDc0jOHAkfWLXbc6kIph3dGAuRnotQ==
@@ -6110,10 +6142,10 @@ rimraf@2, rimraf@2.6.3, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.0.28:
-  version "3.0.28"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.0.28.tgz#acd380db148383a33d52ef2a557890ad8c944e7c"
-  integrity sha512-r/2hL35GLvv3BkwtJSTiGfUMH7D9UJUDcPL28zqt0KN5OXeqLnim/BytQrPowmNPmA+nqrOaibh/X1DgB1LbAw==
+robo-config@3.0.29:
+  version "3.0.29"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.0.29.tgz#edf836b558af6303fbaab8dea8e82831334f0629"
+  integrity sha512-EMKxzFjEWJZ1mUnP+t8LxuKGyJwZnxgIL/RxNfDvY+whGhh1G1FlgQuJr+ilccTPJco8v8io7+fGFBEUcUo7SQ==
   dependencies:
     "@hapi/joi" "15.1.0"
     app-root-path "2.2.1"
