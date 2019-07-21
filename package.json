@@ -16,11 +16,11 @@
     "@babel/plugin-proposal-object-rest-spread": "7.5.5",
     "@babel/register": "7.5.5",
     "@blackflux/eslint-plugin-rules": "1.0.23",
-    "@blackflux/robo-config-plugin": "2.0.1",
+    "@blackflux/robo-config-plugin": "2.1.1",
     "babel-eslint": "10.0.2",
     "chai": "4.2.0",
     "coveralls": "3.0.5",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "nyc": "14.1.1",
     "semantic-release": "15.13.18",
     "smart-fs": "1.9.0"
@@ -72,7 +72,13 @@
     "test": "npm run clean && npm run gardener && npm run test-simple",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
     "semantic-release": "npm run build-clean && npx semantic-release",
-    "gardener": "node gardener"
+    "gardener": "node gardener",
+    "docker": "docker run -u`id -u`:`id -g` -v $(pwd):/user/project -v ~/.aws:/user/.aws -v ~/.npmrc:/user/.npmrc -w /user/project -it --entrypoint /bin/bash",
+    "yu": "yarn upgrade --latest --force",
+    "yi": "yarn install --frozen-lockfile",
+    "t": "yarn test",
+    "ts": "yarn run test-simple",
+    "tsv": "yarn run test-simple --verbose"
   },
   "repository": {
     "type": "git",
@@ -92,9 +98,9 @@
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
     "chalk": "2.4.2",
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-config-airbnb-base": "13.2.0",
-    "eslint-plugin-import": "2.18.1",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jasmine": "2.10.1",
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-markdown": "1.0.0",
