@@ -23,7 +23,7 @@
     "eslint": "6.1.0",
     "nyc": "14.1.1",
     "semantic-release": "15.13.18",
-    "smart-fs": "1.9.1"
+    "smart-fs": "1.9.2"
   },
   "engines": {
     "node": ">= 8.10"
