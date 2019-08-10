@@ -15,7 +15,7 @@ desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
   beforeEach(({ dir }) => {
     fsExistsSyncOriginal = fs.existsSync;
     logs.length = 0;
-    log.error = e => logs.push(e);
+    log.error = (e) => logs.push(e);
   });
 
   afterEach(() => {
