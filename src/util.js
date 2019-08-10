@@ -10,7 +10,7 @@ module.exports.getEsLintFiles = (folder, ignore) => globSync(
   }
 );
 
-module.exports.getTestFiles = folder => globSync(
+module.exports.getTestFiles = (folder) => globSync(
   'test/**/*.spec.js',
   {
     cwd: folder,
@@ -22,7 +22,7 @@ module.exports.getTestFiles = folder => globSync(
   }
 );
 
-module.exports.getYamlFiles = folder => globSync(
+module.exports.getYamlFiles = (folder) => globSync(
   '**/*.{yml,yaml}',
   {
     cwd: folder,
@@ -33,10 +33,10 @@ module.exports.getYamlFiles = folder => globSync(
   }
 );
 
-module.exports.readTextFile = filePath => String(fs.readFileSync(filePath));
+module.exports.readTextFile = (filePath) => String(fs.readFileSync(filePath));
 
 module.exports.loadConfig = (cwd, name) => this.readTextFile(`${__dirname}/conf/${name}`).split('\n')
   // add additional config options from project
   .concat(fs.existsSync(`${cwd}/${name}`) ? this.readTextFile(`${cwd}/${name}`).split('\n') : [])
-  .map(e => e.split('#', 1)[0].trim())
-  .filter(e => e !== '');
+  .map((e) => e.split('#', 1)[0].trim())
+  .filter((e) => e !== '');

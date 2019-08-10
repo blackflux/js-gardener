@@ -6,7 +6,7 @@ module.exports = (suiteName, tests) => {
   let dir = null;
   const logs = [];
   const logger = logLevel.reduce((p, c) => Object.assign(p, {
-    [c]: e => logs.push([c, e])
+    [c]: (e) => logs.push([c, e])
   }), {});
   const getArgs = () => ({ dir, logger, logs });
   let beforeEachCb = () => {};

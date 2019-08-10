@@ -30,12 +30,13 @@ const schema = Joi.object().keys({
 
 module.exports = (options = {}) => {
   assert(options instanceof Object && !Array.isArray(options));
-  const ctx = Object.assign({
+  const ctx = {
     logger: log,
     cwd: process.cwd(),
     skip: [],
-    docker: false
-  }, options);
+    docker: false,
+    ...options
+  };
   assert(
     Joi.validate(ctx, schema).error === null,
     `Parameter Validation Error: ${Joi.validate(ctx, schema).error}`
@@ -59,7 +60,7 @@ module.exports = (options = {}) => {
   };
 
   return taskNames
-    .filter(e => ctx.skip.indexOf(e) === -1)
+    .filter((e) => ctx.skip.indexOf(e) === -1)
     .reduce((prev, cur) => prev.then(() => {
       ctx.logger.info(`Running: ${chalk.green(cur)}`);
       return tasks[cur]();
