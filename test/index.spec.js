@@ -3,16 +3,16 @@ const path = require('path');
 const log = require('fancy-log');
 const sfs = require('smart-fs');
 const expect = require('chai').expect;
-const desc = require('./util/desc');
+const { desc } = require('node-tdd');
 const gardener = require('./../src/index');
 
-desc('Testing Integration', ({ it, beforeEach, afterEach }) => {
+desc('Testing Integration', { useTmpDir: true }, ({ it, beforeEach, afterEach }) => {
   const logs = [];
   const logErrorOriginal = log.error;
 
   let fsExistsSyncOriginal;
 
-  beforeEach(({ dir }) => {
+  beforeEach(() => {
     fsExistsSyncOriginal = fs.existsSync;
     logs.length = 0;
     log.error = (e) => logs.push(e);
