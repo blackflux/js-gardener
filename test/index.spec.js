@@ -3,10 +3,10 @@ const path = require('path');
 const log = require('fancy-log');
 const sfs = require('smart-fs');
 const expect = require('chai').expect;
-const { desc } = require('node-tdd');
+const { describe } = require('node-tdd');
 const gardener = require('./../src/index');
 
-desc('Testing Integration', { useTmpDir: true }, ({ it, beforeEach, afterEach }) => {
+describe('Testing Integration', { useTmpDir: true }, () => {
   const logs = [];
   const logErrorOriginal = log.error;
 
