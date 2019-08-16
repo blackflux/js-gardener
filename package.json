@@ -98,7 +98,7 @@
   },
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
-    "@hapi/joi": "15.1.0",
+    "@hapi/joi": "15.1.1",
     "chalk": "2.4.2",
     "eslint": "6.1.0",
     "eslint-config-airbnb-base": "14.0.0",
