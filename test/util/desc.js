@@ -10,7 +10,6 @@ module.exports = (suiteName, tests) => {
   }), {});
   const getArgs = () => ({ dir, logger, logs });
   let beforeEachCb = () => {};
-  let afterEachCb = () => {};
 
   describe(suiteName, () => {
     before(() => {
@@ -23,17 +22,10 @@ module.exports = (suiteName, tests) => {
       await beforeEachCb(getArgs());
     });
 
-    afterEach(async () => {
-      await afterEachCb(getArgs());
-    });
-
     tests({
       it: (testName, fn) => it(testName, () => fn(getArgs())),
       beforeEach: (fn) => {
         beforeEachCb = fn;
-      },
-      afterEach: (fn) => {
-        afterEachCb = fn;
       }
     });
   });
