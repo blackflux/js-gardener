@@ -3,7 +3,7 @@ const expect = require('chai').expect;
 const sfs = require('smart-fs');
 const desc = require('../util/desc');
 const depcheck = require('../../src/subtasks/depcheck');
-const exec = require('./../../src/util/exec');
+const exec = require('../../src/util/exec');
 
 desc('Testing depcheck', ({ it }) => {
   it('Testing Not Installed (NPM)', async ({ dir, logs, logger }) => {
