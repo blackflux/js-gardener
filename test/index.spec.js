@@ -4,7 +4,7 @@ const log = require('fancy-log');
 const sfs = require('smart-fs');
 const expect = require('chai').expect;
 const { describe } = require('node-tdd');
-const gardener = require('./../src/index');
+const gardener = require('../src/index');
 
 describe('Testing Integration', { useTmpDir: true }, () => {
   const logs = [];

@@ -1,6 +1,6 @@
 const get = require('lodash.get');
 const chalk = require('chalk');
-const exec = require('./../util/exec');
+const exec = require('../util/exec');
 
 const MAX_AGE_IN_SEC = {
   info: 60 * 60 * 24 * 7 * 52 * 3,
