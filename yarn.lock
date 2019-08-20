@@ -6157,10 +6157,10 @@ rimraf@2.6.3:
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.2.2.tgz#82f311316ac312f3e944d7b0f600115735ed598e"
-  integrity sha512-BHQdmDmRhpG+sTOW21OuwjWA7UpxXOxzV3gEDUXg9+lPnf/VZ1e50UlvY41rlUMqVuH4486GB60smvvai/rqaw==
+robo-config@3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.2.3.tgz#799d3fae26fc55bcb0ef355b5b21c2664787aff5"
+  integrity sha512-uvA58GIUpXmCMisgsAVds6iWQ7+cUNqfcgp6bFFFbL5a47v1VtL5bwvphMPQSjOnodWmF3g+0x2HTn1bbIDjIA==
   dependencies:
     "@hapi/joi" "15.1.1"
     app-root-path "2.2.1"
@@ -6172,7 +6172,7 @@ robo-config@3.2.2:
     object-deep-contain "1.0.16"
     object-scan "10.0.9"
     object-treeify "1.1.17"
-    smart-fs "1.9.7"
+    smart-fs "1.9.8"
 
 run-async@^0.1.0:
   version "0.1.0"
