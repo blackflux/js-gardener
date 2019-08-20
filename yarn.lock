@@ -175,10 +175,10 @@
   dependencies:
     smart-fs "1.9.6"
 
-"@blackflux/robo-config-plugin@2.5.6":
-  version "2.5.6"
-  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.5.6.tgz#fc334b1d1152ae142144ad7899782c63b23f6c03"
-  integrity sha512-VGhnItrlWcadmickMAppiDJjPI8Ll6YOzwQI6LLH9H6ehW24pkw80azydFV/lqiVp48sdEOUfqd0Kzij/2QXcA==
+"@blackflux/robo-config-plugin@2.5.8":
+  version "2.5.8"
+  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.5.8.tgz#54b5bf029a5aa0be9dc3c0a6b46a8bee0b4358c4"
+  integrity sha512-zKmvfImrneCxJLMz2Aam5qr6617W/jtLm48eKaFSDMIqw03WM9n2HXRsACdLZZurZwOUz47hNFvU1xLzLRz4kQ==
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -919,9 +919,9 @@ byte-size@^5.0.1:
   integrity sha512-/XuKeqWocKsYa/cBY1YbSJSWWqTi4cFgr9S6OyM7PBaPbr9zvNGwWP33vt0uqGhwDdN+y3yhbXVILEUpnwEWGw==
 
 cacache@^12.0.0, cacache@^12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/cacache/-/cacache-12.0.2.tgz#8db03205e36089a3df6954c66ce92541441ac46c"
-  integrity sha512-ifKgxH2CKhJEg6tNdAwziu6Q33EvuG26tYcda6PT3WKisZcYDXsnEdnRv67Po3yCzFfaSoMjGZzJyD2c3DT1dg==
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-12.0.3.tgz#be99abba4e1bf5df461cd5a2c1071fc432573390"
+  integrity sha512-kqdmfXEGFepesTuROHMs3MpFLWrPkSSpRqOw80RCflZXy/khxaArvFrQ7uJxSUduzAufc6G0g1VUCOZXxWavPw==
   dependencies:
     bluebird "^3.5.5"
     chownr "^1.1.1"
@@ -4602,17 +4602,17 @@ node-pre-gyp@^0.12.0:
     semver "^5.3.0"
     tar "^4"
 
-node-tdd@1.12.3:
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/node-tdd/-/node-tdd-1.12.3.tgz#e35cc01e55db7d259be5f779c657629eb0d3dd1e"
-  integrity sha512-fafvlSEnEhjGyXfSkYBmXgL2W5Vck9QuEMKV0MbzTY8FxVVfNiYY4ebQ5zIV7QVDuxWwYW+spVAslmja80kCvw==
+node-tdd@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/node-tdd/-/node-tdd-2.0.0.tgz#9660a69caaed2cbc05655dc460ec6f988319d64e"
+  integrity sha512-poZa1fEdU2FuLjsd9LU84tZbEIxVoRDbDEbt1yoYlPqMtgnM1i3Jr2kE9O9w33/MO2JRh/mnK5WKunCxDlSPXA==
   dependencies:
     "@hapi/joi" "15.1.1"
     callsites "3.1.0"
-    joi-strict "1.0.6"
+    joi-strict "1.0.7"
     lodash.get "4.4.2"
     nock "11.0.0"
-    smart-fs "1.9.6"
+    smart-fs "1.9.7"
     timekeeper "2.2.0"
     tmp "0.1.0"
 
@@ -4756,6 +4756,15 @@ npm-pick-manifest@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/npm-pick-manifest/-/npm-pick-manifest-2.2.3.tgz#32111d2a9562638bb2c8f2bf27f7f3092c8fae40"
   integrity sha512-+IluBC5K201+gRU85vFlUwX3PFShZAbAgDNp2ewJdWMVSppdo/Zih0ul2Ecky/X7b51J7LrrUAP+XOmOCvYZqA==
+  dependencies:
+    figgy-pudding "^3.5.1"
+    npm-package-arg "^6.0.0"
+    semver "^5.4.1"
+
+npm-pick-manifest@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/npm-pick-manifest/-/npm-pick-manifest-3.0.0.tgz#c94cab52d201a85875e45198fffe1a8a348e7af7"
+  integrity sha512-H+OnFudiq38Qj8P8xcesD/1Xa0Kvr2QRn1DTlephIwNfJg3P30Szc1wtpGEgdPXfAyKZKT2ajIM2X8YtCrbXrA==
   dependencies:
     figgy-pudding "^3.5.1"
     npm-package-arg "^6.0.0"
@@ -5287,9 +5296,9 @@ package-json@^4.0.0, package-json@^4.0.1:
     semver "^5.1.0"
 
 pacote@^9.1.0, pacote@^9.5.3, pacote@^9.5.4:
-  version "9.5.6"
-  resolved "https://registry.yarnpkg.com/pacote/-/pacote-9.5.6.tgz#1f749e25d82921941cf02e58e3312053940e5ea0"
-  integrity sha512-WyfTZU04KGx9h+ZD37vSmCK0KZMAPp2XTVhWdue7/1bAxBYM3YtyBGz1CNgiOvl3u5TYRT8RG4duhyXxQvaIxw==
+  version "9.5.8"
+  resolved "https://registry.yarnpkg.com/pacote/-/pacote-9.5.8.tgz#23480efdc4fa74515855c9ecf39cf64078f99786"
+  integrity sha512-0Tl8Oi/K0Lo4MZmH0/6IsT3gpGf9eEAznLXEQPKgPq7FscnbUOyopnVpwXlnQdIbCUaojWy1Wd7VMyqfVsRrIw==
   dependencies:
     bluebird "^3.5.3"
     cacache "^12.0.2"
@@ -5307,7 +5316,7 @@ pacote@^9.1.0, pacote@^9.5.3, pacote@^9.5.4:
     normalize-package-data "^2.4.0"
     npm-package-arg "^6.1.0"
     npm-packlist "^1.1.12"
-    npm-pick-manifest "^2.2.3"
+    npm-pick-manifest "^3.0.0"
     npm-registry-fetch "^4.0.0"
     osenv "^0.1.5"
     promise-inflight "^1.0.1"
