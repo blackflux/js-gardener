@@ -27,10 +27,10 @@
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-markdown": "1.0.0",
     "eslint-plugin-mocha": "6.0.0",
-    "node-tdd": "2.0.3",
+    "node-tdd": "2.0.4",
     "nyc": "14.1.1",
     "semantic-release": "15.13.21",
-    "smart-fs": "1.9.8"
+    "smart-fs": "1.9.9"
   },
   "engines": {
     "node": ">= 8.10"
@@ -114,7 +114,7 @@
     "lodash.get": "4.4.2",
     "mocha": "6.2.0",
     "npm-check": "5.9.0",
-    "robo-config": "3.2.4",
+    "robo-config": "3.2.5",
     "tmp": "0.1.0"
   },
   "peerDependencies": {
