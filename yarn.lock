@@ -4597,10 +4597,10 @@ node-pre-gyp@^0.12.0:
     semver "^5.3.0"
     tar "^4"
 
-node-tdd@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/node-tdd/-/node-tdd-2.1.0.tgz#5430046708e2cae9b48575cfdd6360f145d65dce"
-  integrity sha512-E+8EIwDnH2Bin691Gmg/oUnPAbSKcx0ZrQDafcQAX4HHSRc+4o1uFNcEgGDJ9qC8T+Jw/+oaVuw70+d/kThmjQ==
+node-tdd@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/node-tdd/-/node-tdd-2.2.0.tgz#2e0dc6ba74244877a2d9cad2f8f06393a17b3782"
+  integrity sha512-SrdmqJrCJPgk9MjLhGMYKkTQSniDidgpmDMaNy71s6086rxqpeFqsCn5l/t39dGZ9eGiy04kq/URlL1QEK2hmg==
   dependencies:
     "@hapi/joi" "15.1.1"
     callsites "3.1.0"
