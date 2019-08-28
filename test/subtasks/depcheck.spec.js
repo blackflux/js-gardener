@@ -1,49 +1,42 @@
 const path = require('path');
 const expect = require('chai').expect;
 const sfs = require('smart-fs');
-const desc = require('../util/desc');
+const { describe } = require('node-tdd');
 const depcheck = require('../../src/subtasks/depcheck');
 const exec = require('../../src/util/exec');
 
-desc('Testing depcheck', ({ it }) => {
-  it('Testing Not Installed (NPM)', async ({ dir, logs, logger }) => {
+describe('Testing depcheck', { timeout: 30000, record: console, useTmpDir: true }, () => {
+  it('Testing Not Installed (NPM)', async ({ dir, recorder, capture }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '5.0.5' } });
     sfs.smartWrite(path.join(dir, 'package-lock.json'), { lockfileVersion: 1 });
-    try {
-      await depcheck(logger, dir);
-    } catch (e) {
-      expect(logs.length).to.equal(2);
-      expect(logs[0][0]).to.equal('error');
-      expect(logs[0][1]).to.contain('missing: mocha@5.0.5');
-      expect(logs[1][0]).to.equal('error');
-      expect(logs[1][1]).to.contain('npm ERR! missing: mocha@5.0.5');
-    }
-  }).timeout(30000);
+    await capture(() => depcheck(console, dir));
+    const logs = recorder.get('error');
+    expect(logs.length).to.equal(2);
+    expect(logs[0]).to.include('missing: mocha@5.0.5');
+    expect(logs[1]).to.include('npm ERR! missing: mocha@5.0.5');
+  });
 
-  it('Testing Ok (NPM)', async ({ dir, logs, logger }) => {
+  it('Testing Ok (NPM)', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: {} });
     sfs.smartWrite(path.join(dir, 'package-lock.json'), { lockfileVersion: 1 });
-    await depcheck(logger, dir);
-    expect(logs.length).to.equal(0);
-  }).timeout(30000);
+    await depcheck(console, dir);
+    expect(recorder.get()).to.deep.equal([]);
+  });
 
-  it('Testing Not Installed (YARN)', async ({ dir, logs, logger }) => {
+  it('Testing Not Installed (YARN)', async ({ dir, recorder, capture }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '5.0.5' }, license: 'MIT' });
     exec.run('yarn install --silent --non-interactive', dir);
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '4.0.0' }, license: 'MIT' });
-    try {
-      await depcheck(logger, dir);
-    } catch (e) {
-      expect(logs.length).to.equal(2);
-      expect(logs[1][0]).to.equal('error');
-      expect(logs[1][1]).to.contain('Your lockfile needs to be updated');
-    }
-  }).timeout(30000);
+    await capture(() => depcheck(console, dir));
+    const logs = recorder.get();
+    expect(logs.length).to.equal(2);
+    expect(logs[1]).to.include('Your lockfile needs to be updated');
+  });
 
-  it('Testing Ok (YARN)', async ({ dir, logs, logger }) => {
+  it('Testing Ok (YARN)', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '5.0.5' }, license: 'MIT' });
     exec.run('yarn install --silent --non-interactive', dir);
-    await depcheck(logger, dir);
-    expect(logs.length).to.equal(0);
-  }).timeout(30000);
+    await depcheck(console, dir);
+    expect(recorder.get()).to.deep.equal([]);
+  });
 });
