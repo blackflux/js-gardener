@@ -6,7 +6,7 @@ module.exports = (logger, cwd) => new Promise((resolve, reject) => {
     result.forEach((l) => logger.error(l));
     return result.length === 0 ? resolve() : reject(result);
   } catch (e) {
-    logger.error(e);
+    logger.error(e.message);
     return reject(e);
   }
 });

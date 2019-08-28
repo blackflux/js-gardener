@@ -1,25 +1,17 @@
 const fs = require('fs');
 const path = require('path');
-const log = require('fancy-log');
+const fancyLog = require('fancy-log');
 const sfs = require('smart-fs');
 const expect = require('chai').expect;
 const { describe } = require('node-tdd');
 const gardener = require('../src/index');
 
-describe('Testing Integration', { useTmpDir: true }, () => {
-  const logs = [];
-  const logErrorOriginal = log.error;
-
+describe('Testing Integration', { useTmpDir: true, record: fancyLog, timeout: 30000 }, () => {
   let fsExistsSyncOriginal;
-
-  beforeEach(() => {
+  before(() => {
     fsExistsSyncOriginal = fs.existsSync;
-    logs.length = 0;
-    log.error = (e) => logs.push(e);
   });
-
-  afterEach(() => {
-    log.error = logErrorOriginal;
+  after(() => {
     fs.existsSync = fsExistsSyncOriginal;
   });
 
@@ -41,18 +33,14 @@ describe('Testing Integration', { useTmpDir: true }, () => {
       main: 'index.js'
     });
     expect(await gardener({ cwd: dir })).to.equal(undefined);
-  }).timeout(30000);
+  });
 
-  it('Testing Failure', async ({ dir }) => {
+  it('Testing Failure', async ({ dir, capture }) => {
     const savedCwd = process.cwd();
     process.chdir(dir);
-    try {
-      await gardener();
-    } catch (e) {
-      expect(e.message).to.equal(`Configuration File missing: ${dir}/.roboconfig`);
-    } finally {
-      process.chdir(savedCwd);
-    }
+    const e = await capture(() => gardener());
+    expect(e.message).to.equal(`Configuration File missing: ${dir}/.roboconfig`);
+    process.chdir(savedCwd);
   });
 
   it('Testing Not in Docker', ({ dir }) => {

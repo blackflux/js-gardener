@@ -1,28 +1,26 @@
 const path = require('path');
 const sfs = require('smart-fs');
 const expect = require('chai').expect;
-const desc = require('../util/desc');
+const { describe } = require('node-tdd');
 const depused = require('../../src/subtasks/depused');
 
-desc('Testing depused', ({ it }) => {
-  it('Testing Ok', async ({ dir, logger, logs }) => {
+describe('Testing depused', { useTmpDir: true, record: console, timeout: 60000 }, () => {
+  it('Testing Ok', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), {});
-    await depused(logger, dir, []);
-    expect(logs.length).to.equal(0);
-  }).timeout(60000);
+    await depused(console, dir, []);
+    expect(recorder.get().length).to.equal(0);
+  });
 
-  it('Testing Unnecessary Suppressed', async ({ dir, logger, logs }) => {
+  it('Testing Unnecessary Suppressed', async ({ dir, capture, recorder }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), {});
     const deps = ['@babel/register'];
-    try {
-      await depused(logger, dir, deps);
-    } catch (e) {
-      expect(logs, `Provided ${logs}`)
-        .to.deep.contain(['error', `Suppressed, not installed Dependencies: ${deps.join(',')}`]);
-    }
-  }).timeout(60000);
+    await capture(() => depused(console, dir, deps));
+    const logs = recorder.get();
+    expect(logs)
+      .to.deep.equal([`Suppressed, not installed Dependencies: ${deps.join(',')}`]);
+  });
 
-  it('Testing Unused', async ({ dir, logger, logs }) => {
+  it('Testing Unused', async ({ dir, capture, recorder }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), {
       name: 'pkg',
       dependencies: {
@@ -30,11 +28,9 @@ desc('Testing depused', ({ it }) => {
       },
       main: 'index.js'
     });
-    try {
-      await depused(logger, dir, []);
-    } catch (e) {
-      expect(logs, `Provided ${logs}`)
-        .to.deep.contain(['error', 'Unused/Not Installed Dependencies: object-scan']);
-    }
-  }).timeout(60000);
+    await capture(() => depused(console, dir, []));
+    const logs = recorder.get();
+    expect(logs)
+      .to.deep.equal(['Unused/Not Installed Dependencies: object-scan']);
+  });
 });
