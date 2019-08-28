@@ -1,45 +1,36 @@
 const path = require('path');
 const expect = require('chai').expect;
 const sfs = require('smart-fs');
-const desc = require('../util/desc');
+const { describe } = require('node-tdd');
 const robo = require('../../src/subtasks/robo');
 
 
-desc('Testing robo', ({ it }) => {
-  it('Testing Success (Done)', async ({ dir, logs, logger }) => {
+describe('Testing robo', { useTmpDir: true, record: console }, () => {
+  it('Testing Success (Done)', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, '.roboconfig.json'), {});
-    await robo(logger, dir);
-    expect(logs.length, `Provided ${logs}`).to.equal(0);
+    await robo(console, dir);
+    expect(recorder.get()).to.deep.equal([]);
   });
 
-  it('Testing Update (Failure)', async ({ dir, logs, logger }) => {
-    const result = [
-      'Updated: CONFDOCS.md'
-    ];
+  it('Testing Update (Failure)', async ({ dir, capture, recorder }) => {
+    const result = ['Updated: CONFDOCS.md'];
     sfs.smartWrite(path.join(dir, '.roboconfig.json'), {
       '@blackflux/robo-config-plugin': {
         tasks: [],
         variables: {}
       }
     });
-    try {
-      await robo(logger, dir);
-    } catch (e) {
-      expect(logs[0][0], `Provided ${logs}`).to.equal('error');
-      expect([logs[0][1]], `Provided ${logs}`).to.deep.equal(result);
-      expect(e).to.deep.equal(result);
-    }
+    const e = await capture(() => robo(console, dir));
+    expect(e).to.deep.equal(result);
+    expect(recorder.get()).to.deep.equal(result);
   });
 
-  it('Testing Failure', async ({ dir, logs, logger }) => {
+  it('Testing Failure', async ({ dir, capture, recorder }) => {
     const result = `Configuration File missing: ${dir}/.roboconfig`;
-    try {
-      await robo(logger, dir);
-    } catch (e) {
-      expect(logs.length).to.equal(1);
-      expect(logs[0][0]).to.equal('error');
-      expect(logs[0][1].message).to.equal(result);
-      expect(e.message).to.equal(result);
-    }
+    const e = await capture(() => robo(console, dir));
+    expect(e.message).to.equal(result);
+    const logs = recorder.get();
+    expect(logs.length).to.equal(1);
+    expect(logs[0]).to.equal(result);
   });
 });
