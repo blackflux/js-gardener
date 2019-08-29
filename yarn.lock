@@ -6164,10 +6164,10 @@ rimraf@2.6.3:
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.2.8:
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.2.8.tgz#00a2a83a77956a86e6ad386bc27fa68511da4270"
-  integrity sha512-J9C6YTcY96eFVrPz/z1y/nJQrZ/yNsu4TQ24jk/Den31GsYl577zqa/dYwIfhzd+FK9kqGXAK1nDfvtPn/U9zQ==
+robo-config@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.3.0.tgz#23d8df91e9ab4f244307c782d73ca28200037b64"
+  integrity sha512-CVdI7XRFbxueJuuEkiDj45ghiEPH3lkRe216dblRQbX7EHC3tyPide46vs3xxdaidcZ88zjrZw6IHuQHp0mV8g==
   dependencies:
     "@hapi/joi" "15.1.1"
     app-root-path "2.2.1"
