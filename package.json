@@ -113,7 +113,7 @@
     "lodash.get": "4.4.2",
     "mocha": "6.2.0",
     "npm-check": "5.9.0",
-    "robo-config": "3.3.0"
+    "robo-config": "3.3.1"
   },
   "peerDependencies": {
     "eslint": "^6.2.0"
