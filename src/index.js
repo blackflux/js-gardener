@@ -38,8 +38,8 @@ module.exports = (options = {}) => {
     ...options
   };
   assert(
-    Joi.validate(ctx, schema).error === null,
-    `Parameter Validation Error: ${Joi.validate(ctx, schema).error}`
+    schema.validate(ctx).error === undefined,
+    `Parameter Validation Error: ${schema.validate(ctx).error}`
   );
 
   if (ctx.docker !== false && !fs.existsSync('/.dockerenv')) {
