@@ -3566,6 +3566,13 @@ joi-strict@1.1.1:
   dependencies:
     "@hapi/joi" "16.0.1"
 
+joi-strict@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/joi-strict/-/joi-strict-1.1.2.tgz#6ccc94f615ccafb4bf707a7764b184ae152690a4"
+  integrity sha512-5FJarK5iGIUL4e+CBhvv4B9ptW2GcpUVkTKhNfwYNYMjG2UjQV2PGO5c5oQLUIS7s7ugO5Z9W5+LGuLfeQUqDA==
+  dependencies:
+    "@hapi/joi" "16.0.1"
+
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
