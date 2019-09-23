@@ -10,7 +10,8 @@ module.exports = (logger, dir, { files = [], fix = false } = {}) => new Promise(
     fix,
     baseConfig: {},
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
-    ignore: false
+    ignore: false,
+    reportUnusedDisableDirectives: true
   });
   const report = engine.executeOnFiles(files);
   eslint.CLIEngine.outputFixes(report);

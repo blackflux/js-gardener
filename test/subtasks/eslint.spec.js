@@ -24,6 +24,17 @@ describe('Testing eslint', { record: console, useTmpDir: true }, () => {
     expect(await eslint(console, dir, { files: [idxFile] })).to.equal(undefined);
   });
 
+  it('Testing reportUnusedDisableDirectives', async ({ dir, capture, recorder }) => {
+    const idxFile = path.join(dir, 'src', 'index.js');
+    sfs.smartWrite(idxFile, ['// eslint-disable-next-line no-console\nmodule.exports = {};']);
+    sfs.smartWrite(path.join(dir, '.eslintrc.json'), { root: true });
+    const e = await capture(() => eslint(console, dir, { files: [idxFile] }));
+    expect(String(e)).to.equal('Error: Linter Problems');
+    const logs = recorder.get();
+    expect(logs.length).to.equal(1);
+    expect(logs[0]).to.include('Unused eslint-disable directive');
+  });
+
   it('Testing No Files', async ({ dir }) => {
     try {
       await eslint(console, dir);
