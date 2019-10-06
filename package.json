@@ -26,7 +26,7 @@
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-markdown": "1.0.0",
     "eslint-plugin-mocha": "6.1.1",
-    "node-tdd": "2.5.14",
+    "node-tdd": "2.5.15",
     "nyc": "14.1.1",
     "semantic-release": "15.13.24",
     "smart-fs": "1.11.0"
@@ -112,7 +112,7 @@
     "lodash.get": "4.4.2",
     "mocha": "6.2.1",
     "npm-check": "5.9.0",
-    "robo-config": "3.4.0"
+    "robo-config": "3.4.1"
   },
   "peerDependencies": {
     "eslint": "^6.2.0"
