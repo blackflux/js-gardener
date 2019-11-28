@@ -1,4 +1,5 @@
 const path = require('path');
+const childProcess = require('child_process');
 const expect = require('chai').expect;
 const sfs = require('smart-fs');
 const { describe } = require('node-tdd');
@@ -17,10 +18,14 @@ describe('Testing depcheck', { timeout: 30000, record: console, useTmpDir: true 
   });
 
   it('Testing Ok (NPM)', async ({ dir, recorder }) => {
+    // todo: remove monkey patch once circleci container is updated
+    const spawnSyncOriginal = childProcess.spawnSync;
+    childProcess.spawnSync = () => ({ stdout: '', stderr: '' });
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: {} });
     sfs.smartWrite(path.join(dir, 'package-lock.json'), { lockfileVersion: 1 });
     await depcheck(console, dir);
     expect(recorder.get()).to.deep.equal([]);
+    childProcess.spawnSync = spawnSyncOriginal;
   });
 
   it('Testing Not Installed (YARN)', async ({ dir, recorder, capture }) => {
