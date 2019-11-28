@@ -6,7 +6,6 @@ const { describe } = require('node-tdd');
 const depcheck = require('../../src/subtasks/depcheck');
 const exec = require('../../src/util/exec');
 
-
 describe('Testing depcheck', { timeout: 30000, record: console, useTmpDir: true }, () => {
   it('Testing Not Installed (NPM)', async ({ dir, recorder, capture }) => {
     sfs.smartWrite(path.join(dir, 'package.json'), { dependencies: { mocha: '5.0.5' } });
