@@ -29,7 +29,7 @@
     "node-tdd": "2.5.20",
     "nyc": "14.1.1",
     "semantic-release": "15.13.31",
-    "smart-fs": "1.11.2"
+    "smart-fs": "1.11.3"
   },
   "engines": {
     "node": ">= 8.10"
