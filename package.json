@@ -28,7 +28,7 @@
     "eslint-plugin-mocha": "6.2.2",
     "node-tdd": "2.6.2",
     "nyc": "15.0.0",
-    "semantic-release": "15.14.0",
+    "semantic-release": "16.0.0",
     "smart-fs": "1.11.8"
   },
   "engines": {
