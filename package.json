@@ -23,13 +23,13 @@
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.1.0",
     "eslint-plugin-import": "2.20.1",
-    "eslint-plugin-json": "2.1.0",
+    "eslint-plugin-json": "2.1.1",
     "eslint-plugin-markdown": "1.0.2",
     "eslint-plugin-mocha": "6.3.0",
     "node-tdd": "2.9.9",
     "nyc": "15.0.0",
     "semantic-release": "17.0.4",
-    "smart-fs": "1.11.8"
+    "smart-fs": "1.11.9"
   },
   "engines": {
     "node": ">= 10"
@@ -112,7 +112,7 @@
     "lodash.get": "4.4.2",
     "mocha": "7.1.0",
     "npm-check": "5.9.2",
-    "robo-config": "3.4.25"
+    "robo-config": "3.4.26"
   },
   "peerDependencies": {
     "eslint": "^6.2.0"
