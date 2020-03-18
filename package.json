@@ -110,9 +110,9 @@
     "js-yaml": "3.13.1",
     "lodash.difference": "4.5.0",
     "lodash.get": "4.4.2",
-    "mocha": "7.1.0",
+    "mocha": "7.1.1",
     "npm-check": "5.9.2",
-    "robo-config": "3.4.26"
+    "robo-config": "3.4.28"
   },
   "peerDependencies": {
     "eslint": "^6.2.0"
