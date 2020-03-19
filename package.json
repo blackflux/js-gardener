@@ -29,7 +29,7 @@
     "node-tdd": "2.10.1",
     "nyc": "15.0.0",
     "semantic-release": "17.0.4",
-    "smart-fs": "1.11.9"
+    "smart-fs": "1.11.10"
   },
   "engines": {
     "node": ">= 10"
@@ -112,7 +112,7 @@
     "lodash.get": "4.4.2",
     "mocha": "7.1.1",
     "npm-check": "5.9.2",
-    "robo-config": "3.4.28"
+    "robo-config": "3.4.30"
   },
   "peerDependencies": {
     "eslint": "^6.2.0"
