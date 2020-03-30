@@ -22,7 +22,7 @@
     "coveralls": "3.0.11",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.1.0",
-    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-import": "2.20.2",
     "eslint-plugin-json": "2.1.1",
     "eslint-plugin-markdown": "1.0.2",
     "eslint-plugin-mocha": "6.3.0",
@@ -112,7 +112,7 @@
     "lodash.get": "4.4.2",
     "mocha": "7.1.1",
     "npm-check": "5.9.2",
-    "robo-config": "3.4.33"
+    "robo-config": "3.5.0"
   },
   "peerDependencies": {
     "eslint": "^6.2.0"
