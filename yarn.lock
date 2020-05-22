@@ -6471,10 +6471,10 @@ rimraf@^3.0.0:
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.5.6:
-  version "3.5.6"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.5.6.tgz#ec9d952bfaad10b25cd2101c21149ad2e37f95c6"
-  integrity sha512-xbJGvLdJBdUMuqhAE5zQjyOK+uDuo1Zy5IAXMtu2nM9Jh+AUvn/OvgobUwMNckuG7SaS2lSLZnLcbZh1bSyXoA==
+robo-config@3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.6.0.tgz#55d3106de08a3b7c19b1763e034f7410d35e6521"
+  integrity sha512-Gpb6fd19oVmOGEPOVMfJO6ZuYx55ShChB5TI92jvNkFyFuiIatMdXL5mlPA6laD0mLmgX+h2QGgePHvCwPKi1w==
   dependencies:
     app-root-path "3.0.0"
     deepmerge "4.2.2"
