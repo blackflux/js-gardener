@@ -4,7 +4,7 @@
     "package.json",
     ".npmignore",
     "LICENSE",
-    ".idea/${projectName}.iml",
+    ".idea/js-gardener.iml",
     ".gitignore",
     ".editorconfig",
     ".gally.json",
