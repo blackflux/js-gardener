@@ -240,10 +240,10 @@
   dependencies:
     smart-fs "1.11.11"
 
-"@blackflux/robo-config-plugin@3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-3.3.1.tgz#66d4e6692bbaf64bb0c93c45a8383940ec56696e"
-  integrity sha512-ExUL7hMErYVy5Odjmu8SWsrvKnWUh35cF2flVSjN6as2PGqE8RVfcA6m+YlcNHD2OhYXx17ZWuf3OdU2SdWNPA==
+"@blackflux/robo-config-plugin@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-3.4.0.tgz#4d318a06644ff78952230da8f8bb861df6e43e06"
+  integrity sha512-Ft872phAkqrTqPCi7kfipmkSben+fC0LckymgGqgaIqMvd521A+gzQxudCN6e3BUGUe82KwncFrvU6CX25I2qw==
 
 "@hapi/address@^4.0.1":
   version "4.0.1"
@@ -1734,9 +1734,9 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     which "^1.2.9"
 
 cross-spawn@^7.0.0:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.2.tgz#d0d7dcfa74e89115c7619f4f721a94e1fdb716d6"
-  integrity sha512-PD6G8QG3S4FK/XCGFbEQrDqO2AnMMsy0meR7lerlIOHAAbkuavGU/pOqprrlvfTNjvowivTeBsjebAL0NSoMxw==
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
+  integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
   dependencies:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
@@ -4662,10 +4662,10 @@ mkdirp@0.5.5, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.5, mkdirp@~0.5.0:
   dependencies:
     minimist "^1.2.5"
 
-mocha@7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-7.1.2.tgz#8e40d198acf91a52ace122cd7599c9ab857b29e6"
-  integrity sha512-o96kdRKMKI3E8U0bjnfqW4QMk12MwZ4mhdBTf+B5a1q9+aq2HRnj+3ZdJu0B/ZhJeK78MgYuv6L8d/rA5AeBJA==
+mocha@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-7.2.0.tgz#01cc227b00d875ab1eed03a75106689cfed5a604"
+  integrity sha512-O9CIypScywTVpNaRrCAgoUnJgozpIofjKUYmJhiCIJMiuYnLI6otcb1/kpW9/n/tJODHGZ7i8aLQoDVsMtOKQQ==
   dependencies:
     ansi-colors "3.2.3"
     browser-stdout "1.3.1"
@@ -6401,10 +6401,10 @@ rimraf@^3.0.0:
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.7.1.tgz#ce43be863ece203d003dae4b0315b313bca14ecd"
-  integrity sha512-8pTXDzv9FQx2zrmK/t2WfrGpcwYIJQXgZBApE6ToVrs36mrvWM3sJS2oiSh4btFxnu/XED0LOBjNlWeMfvi4pQ==
+robo-config@3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.7.2.tgz#844312e34cd8ae1eb4a741cf883829d2f99477c5"
+  integrity sha512-mKF7Gn1F9Wna3q4ww6aX6V/ai2Dvtt/db0h8ZPo+P8oQi6KhQDmA5o1Lu97cca2RnARWhyWbU3n16kIobKcC+Q==
   dependencies:
     app-root-path "3.0.0"
     deepmerge "4.2.2"
@@ -6480,10 +6480,10 @@ sax@>=0.6.0, sax@^1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-semantic-release@17.0.7:
-  version "17.0.7"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.7.tgz#03792bf6e1a9ad2353dfd0da6a5d5511fa672b06"
-  integrity sha512-F6FzJI1yiGavzCTXir4yPthK/iozZPJ4myUYndiHhSHbmOcCSJ2m7V+P6sFwVpDpQKQp1Q31M68sTJ/Q/27Bow==
+semantic-release@17.0.8:
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.8.tgz#68b80461fdd8eb445228ae23fd9e85857a50ae3f"
+  integrity sha512-9KcdidiJ4xchrJXxPdaDQVlybgX0xTeKyVjRySYk5u9GpjibXD7E5F8cB0BvFLMDmMyrkCwcem0kFiaLD2VNPg==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
