@@ -115,6 +115,6 @@
     "robo-config": "3.8.0"
   },
   "peerDependencies": {
-    "eslint": "^6.2.0"
+    "eslint": "^6.2.0 || ^7.0.0"
   }
 }
