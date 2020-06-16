@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 
-
 module.exports = (logger, dir) => new Promise((resolve, reject) => {
   let success = true;
   if (success && fs.existsSync(path.join(dir, 'package-lock.json'))) {

@@ -1,7 +1,6 @@
 const npmCheck = require('npm-check');
 const difference = require('lodash.difference');
 
-
 // Return Promise resolving to true iff packages are in good state
 module.exports = (logger, dir, suppressed) => new Promise((resolve, reject) => npmCheck({ cwd: dir })
   .then((currentState) => currentState.get('packages').filter((e) => e.unused).map((e) => e.moduleName))
