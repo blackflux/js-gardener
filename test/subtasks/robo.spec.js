@@ -4,7 +4,6 @@ const sfs = require('smart-fs');
 const { describe } = require('node-tdd');
 const robo = require('../../src/subtasks/robo');
 
-
 describe('Testing robo', { useTmpDir: true, record: console }, () => {
   it('Testing Success (Done)', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, '.roboconfig.json'), {});
