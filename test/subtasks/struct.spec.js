@@ -5,7 +5,6 @@ const { describe } = require('node-tdd');
 const util = require('../../src/util');
 const struct = require('../../src/subtasks/struct');
 
-
 describe('Testing struct', { useTmpDir: true, record: console }, () => {
   it('Testing Ok', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, 'src', 'index.js'), ['']);

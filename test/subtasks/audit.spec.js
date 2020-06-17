@@ -4,7 +4,6 @@ const { describe } = require('node-tdd');
 const audit = require('../../src/subtasks/audit');
 const exec = require('../../src/util/exec');
 
-
 describe('Testing copy', { record: console }, () => {
   let execRun;
   before(() => {
