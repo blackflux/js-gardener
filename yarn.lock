@@ -3846,13 +3846,6 @@ java-properties@^1.0.0:
   resolved "https://registry.yarnpkg.com/java-properties/-/java-properties-1.0.2.tgz#ccd1fa73907438a5b5c38982269d0e771fe78211"
   integrity sha512-qjdpeo2yKlYTH7nFdK0vbZWuTCesk4o63v5iVOlhMQPfuIZQfW/HI35SjfhA+4qpg36rnFSvUK5b1m+ckIblQQ==
 
-joi-strict@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/joi-strict/-/joi-strict-1.2.2.tgz#177ebf5f303d171d0d019252d75a0095c7b4abdf"
-  integrity sha512-tzanWyh9yhmiFJ2er/vVXhBWhzmjxJtR9lyru3Mvojlsu4qosWDzFTk4pQpBwx+AneelHqQZ7BTi/gLa2nEs1g==
-  dependencies:
-    "@hapi/joi" "17.1.1"
-
 joi-strict@1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/joi-strict/-/joi-strict-1.2.3.tgz#5dd21345fde40b953a7265e76299682d023fc6f0"
@@ -5308,10 +5301,10 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
-object-deep-contain@1.0.24:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/object-deep-contain/-/object-deep-contain-1.0.24.tgz#6d1088f00545eca1dd160100d3e7ba7ca94aaf73"
-  integrity sha512-49NP9G7PKdkQnh44yhQQsZqYIXgg4qpwS8ZxOW5tyVEPwR/FSoCT9UyeMZgddzvFsN0nSIMe8gq6HV6DxspHng==
+object-deep-contain@1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/object-deep-contain/-/object-deep-contain-1.0.25.tgz#1ab50297421932ccc7bb73cb28fbc28725dbabe5"
+  integrity sha512-2CRNQrChlMKjdCKuqDI2EH7qXiRBzwzW4IupABhAzRUM9KFjFHoRtN7KIFXs2e6i9ix1lQ2lUsprqRL/MoALng==
 
 object-inspect@^1.7.0:
   version "1.8.0"
@@ -5323,20 +5316,15 @@ object-keys@^1.0.11, object-keys@^1.0.12, object-keys@^1.1.1:
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
-object-scan@13.1.1:
-  version "13.1.1"
-  resolved "https://registry.yarnpkg.com/object-scan/-/object-scan-13.1.1.tgz#99b4c11cf91e2de8919066d52eab7bfdd757f502"
-  integrity sha512-dlrrdiU8BrOEN+dKl+uX7ly4Az18wHi+Abg4nl5ZS3w025FixgFMwsmptRfyHPkgQ3iD4YM5Mbxf1ISuVXU4KQ==
-
 object-scan@13.1.2:
   version "13.1.2"
   resolved "https://registry.yarnpkg.com/object-scan/-/object-scan-13.1.2.tgz#d190cdfd8821b6496afd2305568c5e7aaa539e24"
   integrity sha512-MurZBgumqnz1rM+cQ/3lGM33Mr+MXTvGUg3H1Ylcad4Q71XbBmsFKcqWq6lFc+70W1t3xCsTWYrXT/doZt9LeA==
 
-object-treeify@1.1.25:
-  version "1.1.25"
-  resolved "https://registry.yarnpkg.com/object-treeify/-/object-treeify-1.1.25.tgz#eb634c397bfc6512a28f569809079c93f41fe6d0"
-  integrity sha512-6Abx0xlXDnYd50JkQefvoIly3jWOu8/PqH4lh8p2/aMFEx5TjsUGHt0H9NHfzt+pCwOhpPgNYofD8e2YywIXig==
+object-treeify@1.1.26:
+  version "1.1.26"
+  resolved "https://registry.yarnpkg.com/object-treeify/-/object-treeify-1.1.26.tgz#80b882036cb5d0fddc16e8a2affa98ba96f89a74"
+  integrity sha512-0WTfU7SGM8umY4YPpOg+oHXL66E6dPVCr+sMR6KitPmvg8CkVrHUUZYEFtx0+5Wb0HjFEsBwBYXyGRNeX7c/oQ==
 
 object-visit@^1.0.0:
   version "1.0.1"
@@ -6464,21 +6452,21 @@ rimraf@^3.0.0:
   dependencies:
     glob "^7.1.3"
 
-robo-config@3.8.3:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.8.3.tgz#f0856e3c982b95329481e9b754bcca23820c406a"
-  integrity sha512-Sezgk6expJTiiXJqZhYUygyfSoAkgZ1U8UiawqWjndM04SwhsvOc3EOcoW65kmgyP//OP0MKcqDjXR2NwNMYAA==
+robo-config@3.8.4:
+  version "3.8.4"
+  resolved "https://registry.yarnpkg.com/robo-config/-/robo-config-3.8.4.tgz#ce1b28f4692eb01728f96434921739f5a12c77d0"
+  integrity sha512-NUPYj+S3DoESXze7i83zYLPPsuURd/t7WQiQf9Iqg+zBNhVORgtZo44vE0JhSrEPoimbRb/35F3I5+6DhFgPVw==
   dependencies:
     app-root-path "3.0.0"
     deepmerge "4.2.2"
-    joi-strict "1.2.2"
+    joi-strict "1.2.3"
     lodash.clonedeep "4.5.0"
     lodash.difference "4.5.0"
     lodash.get "4.4.2"
-    object-deep-contain "1.0.24"
-    object-scan "13.1.1"
-    object-treeify "1.1.25"
-    smart-fs "1.11.14"
+    object-deep-contain "1.0.25"
+    object-scan "13.1.2"
+    object-treeify "1.1.26"
+    smart-fs "1.11.15"
 
 run-async@^0.1.0:
   version "0.1.0"
@@ -6697,20 +6685,6 @@ smart-buffer@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.1.0.tgz#91605c25d91652f4661ea69ccf45f1b331ca21ba"
   integrity sha512-iVICrxOzCynf/SNaBQCw34eM9jROU/s5rzIhpOvzhzuYHfJR/DhZfDkXiZSgKXfgv26HT3Yni3AV/DGw0cGnnw==
-
-smart-fs@1.11.14:
-  version "1.11.14"
-  resolved "https://registry.yarnpkg.com/smart-fs/-/smart-fs-1.11.14.tgz#deb05c5c7249424467334990567e9e36d22ee26e"
-  integrity sha512-+7Gc5Raujv9bdg7niPm+mHVk5n0neulK9RGwx7CdX8UGXkj7MTPbmzFHEW+z1jY/6F7zPMZ8U6CZueXr9N80NA==
-  dependencies:
-    fs-extra "9.0.1"
-    js-yaml "3.14.0"
-    json-stringify-pretty-compact "2.0.0"
-    lodash.clonedeep "4.5.0"
-    lodash.isequal "4.5.0"
-    object-align "1.0.11"
-    xml-js "1.6.11"
-    yaml-boost "1.9.22"
 
 smart-fs@1.11.15:
   version "1.11.15"
