@@ -110,7 +110,7 @@
     "js-yaml": "3.14.0",
     "lodash.difference": "4.5.0",
     "lodash.get": "4.4.2",
-    "mocha": "8.0.1",
+    "mocha": "8.1.0",
     "npm-check": "5.9.2",
     "robo-config": "3.8.4"
   },
