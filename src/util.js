@@ -33,10 +33,11 @@ module.exports.getYamlFiles = (folder) => globSync(
   }
 );
 
-module.exports.readTextFile = (filePath) => String(fs.readFileSync(filePath));
+const readTextFile = (filePath) => String(fs.readFileSync(filePath));
+module.exports.readTextFile = readTextFile;
 
-module.exports.loadConfig = (cwd, name) => this.readTextFile(`${__dirname}/conf/${name}`).split('\n')
+module.exports.loadConfig = (cwd, name) => readTextFile(`${__dirname}/conf/${name}`).split('\n')
   // add additional config options from project
-  .concat(fs.existsSync(`${cwd}/${name}`) ? this.readTextFile(`${cwd}/${name}`).split('\n') : [])
+  .concat(fs.existsSync(`${cwd}/${name}`) ? readTextFile(`${cwd}/${name}`).split('\n') : [])
   .map((e) => e.split('#', 1)[0].trim())
   .filter((e) => e !== '');

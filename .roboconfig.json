@@ -8,6 +8,7 @@
       "packageName": "js-gardener",
       "projectName": "js-gardener",
       "owner": "simlu",
+      "nodeVersion": "10",
       "ownerName": "Lukas Siemon",
       "mergeBot": "MrsFlux"
     },
