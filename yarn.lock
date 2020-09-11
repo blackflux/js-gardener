@@ -309,12 +309,12 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@blackflux/eslint-plugin-rules@1.3.35":
-  version "1.3.35"
-  resolved "https://registry.yarnpkg.com/@blackflux/eslint-plugin-rules/-/eslint-plugin-rules-1.3.35.tgz#dd1211df2c4a88e86b30b2a7a222778e3f7bea10"
-  integrity sha512-VR+cs6qaS3qmhoXW4os8EjEj3PI6ufT0sWUTkwaFDgOqvbKeHBDCQhIXzCFKsjjtftcAWuDiOBkC3Q6q8GfoVg==
+"@blackflux/eslint-plugin-rules@1.3.38":
+  version "1.3.38"
+  resolved "https://registry.yarnpkg.com/@blackflux/eslint-plugin-rules/-/eslint-plugin-rules-1.3.38.tgz#0c36888388b94655818b15e20c203dd8d2a1b17b"
+  integrity sha512-GF15zTQ+3cX4F7NYWWWbchdDaUQl/oszi/cW9aPN/gL+ZQHd+kpEqMopUsaU993qb+dlb2wfeACD4X7gGytoSg==
   dependencies:
-    smart-fs "1.11.17"
+    smart-fs "1.11.19"
 
 "@blackflux/robo-config-plugin@3.10.1":
   version "3.10.1"
@@ -6799,20 +6799,6 @@ smart-fs@1.11.16:
     xml-js "1.6.11"
     yaml-boost "1.9.23"
 
-smart-fs@1.11.17:
-  version "1.11.17"
-  resolved "https://registry.yarnpkg.com/smart-fs/-/smart-fs-1.11.17.tgz#41fe4f45a38a66569023191a164f4c84739e68d9"
-  integrity sha512-MJEEAsAPuy34NztifiYS08Dl/TH7BY9lPnSg8dplofJ8/RbRXgrwWHp2T/rKWhlHEsfH/5fnNUV9hJp/KdcqOg==
-  dependencies:
-    fs-extra "9.0.1"
-    js-yaml "3.14.0"
-    json-stringify-pretty-compact "2.0.0"
-    lodash.clonedeep "4.5.0"
-    lodash.isequal "4.5.0"
-    object-align "1.0.12"
-    xml-js "1.6.11"
-    yaml-boost "1.9.23"
-
 smart-fs@1.11.18:
   version "1.11.18"
   resolved "https://registry.yarnpkg.com/smart-fs/-/smart-fs-1.11.18.tgz#9dcc1b20213e56ffa88e1d58d95df0e06d82128e"
@@ -6824,6 +6810,20 @@ smart-fs@1.11.18:
     lodash.clonedeep "4.5.0"
     lodash.isequal "4.5.0"
     object-align "1.0.12"
+    xml-js "1.6.11"
+    yaml-boost "1.9.24"
+
+smart-fs@1.11.19:
+  version "1.11.19"
+  resolved "https://registry.yarnpkg.com/smart-fs/-/smart-fs-1.11.19.tgz#82e70b13e4046747333c082797ebb9d14b949266"
+  integrity sha512-ycmO+cNcyV2ddd//njnAv7j4ViazaZY0urivob2OW14xr0ECWAjnqZsnT7G+LsvqjhB4GNyHRDDyjYAdjbgrlw==
+  dependencies:
+    fs-extra "9.0.1"
+    js-yaml "3.14.0"
+    json-stringify-pretty-compact "2.0.0"
+    lodash.clonedeep "4.5.0"
+    lodash.isequal "4.5.0"
+    object-align "1.0.13"
     xml-js "1.6.11"
     yaml-boost "1.9.24"
 
