@@ -28,7 +28,7 @@
     "node-tdd": "2.18.8",
     "nyc": "15.1.0",
     "semantic-release": "17.1.1",
-    "smart-fs": "1.11.20",
+    "smart-fs": "1.11.21",
     "babel-preset-latest-node": "4.1.0"
   },
   "engines": {
