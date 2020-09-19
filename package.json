@@ -29,7 +29,7 @@
     "nyc": "15.1.0",
     "semantic-release": "17.1.2",
     "smart-fs": "1.11.21",
-    "babel-preset-latest-node": "4.1.0"
+    "babel-preset-latest-node": "5.0.0"
   },
   "engines": {
     "node": ">= 10"
