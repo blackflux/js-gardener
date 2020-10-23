@@ -22,7 +22,7 @@ describe('Testing struct', { useTmpDir: true, record: console }, () => {
 
   it('Testing Failure', async ({ dir, capture, recorder }) => {
     sfs.smartWrite(path.join(dir, 'test', 'index.spec.js'), ['']);
-    await capture(struct(console, dir, []));
+    await capture(() => struct(console, dir, []));
     const logs = recorder.get();
     expect(logs.length).to.equal(1);
     expect(logs[0]).to.contain('index.js to exist for ');
