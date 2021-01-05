@@ -20,7 +20,7 @@ describe('Testing yamllint', { useTmpDir: true, record: console }, () => {
     await capture(() => yamllint(console, dir, ['invalid.yml']));
     expect(recorder.get('error')).to.deep.equal([
       'An error has occurred in: invalid.yml',
-      'duplicated mapping key at line 3, column -17:\n    double:\n    ^'
+      'duplicated mapping key (3:1)\n\n 1 | double:\n 2 |   - value\n 3 | double:\n-----^\n 4 |   - value'
     ]);
   });
 });
