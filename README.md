@@ -15,7 +15,6 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 
 - Enforces best code style practises using [ESLint](https://eslint.org/) and [YAMLlint](https://github.com/nodeca/js-yaml)
 - Automates and assists with config generation and best practices via [robo-config](https://github.com/blackflux/robo-config)
-- Scans dependencies for vulnerabilities using [npm audit](https://docs.npmjs.com/cli/audit)
 - Provides various integrity tests (e.g. checks for un-used dependencies)
 - Enforces 100% test coverage using [Nyc](https://github.com/istanbuljs/nyc)
 
@@ -121,7 +120,6 @@ Array of tasks to skip. Should not be necessary to use unless you really need to
 - `robo`: Apply [robo-config](https://github.com/blackflux/robo-config) configuration file.
 - `package`: [Alter](lib/templates/package.json) package.json
 - `structure`: Enforce that test file structure matches lib content
-- `audit`: Runs [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit) and throws errors for old or important issues.
 - `eslint`: Ensure code is according to eslint definitions.
 - `yamllint`: Ensure yaml files are passing lint
 - `depcheck`: Ensure dependencies are installed as specified in package.json
