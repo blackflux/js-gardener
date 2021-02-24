@@ -53,7 +53,7 @@ describe('Testing Integration', { useTmpDir: true, record: fancyLog, timeout: 30
     expect(() => gardener({
       docker: true,
       cwd: dir,
-      skip: ['robo', 'structure', 'audit', 'eslint', 'yamllint', 'depcheck', 'depused']
+      skip: ['robo', 'structure', 'eslint', 'yamllint', 'depcheck', 'depused']
     })).to.not.throw('Please run in Docker');
   });
 });

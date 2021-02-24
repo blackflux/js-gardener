@@ -6,7 +6,6 @@ const Joi = require('joi-strict');
 const util = require('./util');
 const roboSubtask = require('./subtasks/robo');
 const structSubtask = require('./subtasks/struct');
-const auditSubtask = require('./subtasks/audit');
 const eslintSubtask = require('./subtasks/eslint');
 const yamllintSubtask = require('./subtasks/yamllint');
 const depcheckSubtask = require('./subtasks/depcheck');
@@ -15,7 +14,6 @@ const depusedSubtask = require('./subtasks/depused');
 const taskNames = [
   'robo',
   'structure',
-  'audit',
   'eslint',
   'yamllint',
   'depcheck',
@@ -49,7 +47,6 @@ module.exports = (options = {}) => {
   const tasks = {
     robo: () => roboSubtask(ctx.logger, ctx.cwd),
     structure: () => structSubtask(ctx.logger, ctx.cwd, util.loadConfig(ctx.cwd, '.structignore')),
-    audit: () => auditSubtask(ctx.logger, ctx.cwd),
     eslint: () => eslintSubtask(ctx.logger, ctx.cwd, {
       files: util.getEsLintFiles(ctx.cwd, util.loadConfig(ctx.cwd, '.eslintignore')),
       fix: process.argv.includes('--fix')
