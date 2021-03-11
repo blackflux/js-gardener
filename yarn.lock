@@ -4013,6 +4013,13 @@ joi-strict@1.2.10:
   dependencies:
     "@hapi/joi" "17.1.1"
 
+joi-strict@1.2.11:
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/joi-strict/-/joi-strict-1.2.11.tgz#237d85a0d2b2b6776a9364e350a27b17c87ce014"
+  integrity sha512-lQzZRh8iY76PDRBktFJeDJfOJFjLBBIC6GlaZlFrokCyolGO0J/AKBOCuJapV2pGI0dScF3UzV3gjkyvDAvybw==
+  dependencies:
+    "@hapi/joi" "17.1.1"
+
 joi-strict@1.2.9:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/joi-strict/-/joi-strict-1.2.9.tgz#d92e27afcf1abc60fa77ef6a2c3db5e66fca8210"
