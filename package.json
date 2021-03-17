@@ -14,7 +14,7 @@
     "@babel/cli": "7.13.10",
     "@babel/core": "7.13.10",
     "@babel/register": "7.13.8",
-    "@blackflux/eslint-plugin-rules": "2.0.1",
+    "@blackflux/eslint-plugin-rules": "2.0.3",
     "@blackflux/robo-config-plugin": "5.0.0",
     "babel-eslint": "10.1.0",
     "babel-preset-latest-node": "5.5.1",
@@ -26,10 +26,10 @@
     "eslint-plugin-json": "2.1.2",
     "eslint-plugin-markdown": "2.0.0",
     "eslint-plugin-mocha": "8.1.0",
-    "node-tdd": "3.0.2",
+    "node-tdd": "3.0.3",
     "nyc": "15.1.0",
     "semantic-release": "17.4.2",
-    "smart-fs": "2.0.1"
+    "smart-fs": "2.0.2"
   },
   "engines": {
     "node": ">= 12"
