@@ -112,7 +112,7 @@
     "lodash.difference": "4.5.0",
     "mocha": "8.3.2",
     "npm-check": "5.9.2",
-    "robo-config": "4.0.1"
+    "robo-config": "4.0.3"
   },
   "peerDependencies": {
     "eslint": "^6.2.0 || ^7.0.0"
