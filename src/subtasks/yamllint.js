@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
-module.exports = (logger, cwd, files) => new Promise((resolve, reject) => {
+module.exports = (logger, cwd, files) => (async () => {
   let result = true;
   files.forEach((file) => {
     const content = fs.readFileSync(path.join(cwd, file), 'utf-8');
@@ -14,5 +14,7 @@ module.exports = (logger, cwd, files) => new Promise((resolve, reject) => {
       result = false;
     }
   });
-  return result ? resolve() : reject();
-});
+  if (!result) {
+    throw new Error('yamllint failed');
+  }
+})();

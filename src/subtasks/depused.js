@@ -2,7 +2,7 @@ const npmCheck = require('npm-check');
 const difference = require('lodash.difference');
 
 // Return Promise resolving to true iff packages are in good state
-module.exports = (logger, dir, suppressed) => new Promise((resolve, reject) => npmCheck({ cwd: dir })
+module.exports = (logger, dir, suppressed) => (async () => npmCheck({ cwd: dir })
   .then((currentState) => currentState.get('packages').filter((e) => e.unused).map((e) => e.moduleName))
   .then((unused) => {
     const unexpected = difference(unused, suppressed).sort();
@@ -13,5 +13,7 @@ module.exports = (logger, dir, suppressed) => new Promise((resolve, reject) => n
     if (suppressedNotUnused.length !== 0) {
       logger.error(`Suppressed, not installed Dependencies: ${suppressedNotUnused.join(', ')}`);
     }
-    return unexpected.length === 0 && suppressedNotUnused.length === 0 ? resolve() : reject();
-  }));
+    if (unexpected.length !== 0 || suppressedNotUnused.length !== 0) {
+      throw new Error('depused failed');
+    }
+  }))();
