@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 
-module.exports = (logger, dir) => new Promise((resolve, reject) => {
+module.exports = (logger, dir) => (async () => {
   let success = true;
   if (success && fs.existsSync(path.join(dir, 'package-lock.json'))) {
     const data = childProcess
@@ -24,5 +24,7 @@ module.exports = (logger, dir) => new Promise((resolve, reject) => {
       logger.error(stderr);
     }
   }
-  return success ? resolve() : reject();
-});
+  if (!success) {
+    throw new Error('depcheck failed');
+  }
+})();
