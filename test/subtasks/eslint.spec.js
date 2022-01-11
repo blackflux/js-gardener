@@ -45,9 +45,9 @@ describe('Testing eslint', { record: console, useTmpDir: true }, () => {
 
   it('Testing Exception: File Not Exists', async () => {
     try {
-      await eslint(console, null, { files: ['file'] });
+      await eslint(console, '/', { files: [String(Math.random())] });
     } catch (e) {
-      expect(String(e)).to.contain('TypeError');
+      expect(String(e)).to.contain('Error: No files matching');
     }
   });
 

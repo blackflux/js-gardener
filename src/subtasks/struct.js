@@ -4,7 +4,7 @@ const path = require('path');
 const util = require('../util');
 
 // Check project structure
-module.exports = (logger, cwd, ignored) => new Promise((resolve, reject) => {
+module.exports = (logger, cwd, ignored) => (async () => {
   const notFoundFiles = util.getTestFiles(cwd)
     .filter((e) => ignored.indexOf(e) === -1)
     .map((f) => [f, path.join(cwd, f.replace(/^test([/\\].*?)([^/\\]*?).spec.js$/, 'src$1$2.js'))])
@@ -15,6 +15,7 @@ module.exports = (logger, cwd, ignored) => new Promise((resolve, reject) => {
       }
       return errors;
     }, []);
-
-  return notFoundFiles.length === 0 ? resolve() : reject();
-});
+  if (notFoundFiles.length !== 0) {
+    throw new Error('struct failed');
+  }
+})();

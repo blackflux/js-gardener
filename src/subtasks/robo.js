@@ -1,12 +1,15 @@
 const robo = require('robo-config');
 
-module.exports = (logger, cwd) => new Promise((resolve, reject) => {
+module.exports = (logger, cwd) => (async () => {
+  let result;
   try {
-    const result = robo(cwd);
-    result.forEach((l) => logger.error(l));
-    return result.length === 0 ? resolve() : reject(result);
+    result = robo(cwd);
   } catch (e) {
     logger.error(e.message);
-    return reject(e);
+    throw e;
   }
-});
+  result.forEach((l) => logger.error(l));
+  if (result.length !== 0) {
+    throw result;
+  }
+})();

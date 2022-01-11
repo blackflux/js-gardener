@@ -1,25 +1,28 @@
-const eslint = require('eslint');
+const { ESLint } = require('eslint');
 
-module.exports = (logger, dir, { files = [], fix = false } = {}) => new Promise((resolve, reject) => {
+module.exports = (logger, dir, { files = [], fix = false } = {}) => (async () => {
   if (files.length === 0) {
-    return reject(new Error('No ESLint files found.'));
+    throw new Error('No ESLint files found.');
   }
 
-  const engine = new eslint.CLIEngine({
+  const eslint = new ESLint({
     cwd: dir,
     fix,
     baseConfig: {},
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
     ignore: false,
-    reportUnusedDisableDirectives: true
+    reportUnusedDisableDirectives: 'error'
   });
-  const report = engine.executeOnFiles(files);
-  eslint.CLIEngine.outputFixes(report);
+  const results = await eslint.lintFiles(files);
+  await ESLint.outputFixes(results);
+  const formatter = await eslint.loadFormatter('stylish');
+  const resultText = formatter.format(results);
 
-  const output = engine.getFormatter()(report.results);
-  if (output) {
-    logger.info(output);
+  if (resultText) {
+    logger.info(resultText);
   }
 
-  return report.warningCount === 0 && report.errorCount === 0 ? resolve() : reject(new Error('Linter Problems'));
-});
+  if (results.some((e) => e.warningCount !== 0 || e.errorCount !== 0)) {
+    throw new Error('Linter Problems');
+  }
+})();
