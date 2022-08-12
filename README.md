@@ -31,10 +31,15 @@ Enforces highest code quality and minimizes package setup and maintenance comple
 Create `gardener.js` in the root folder with the following contents
 <!-- eslint-disable import/no-unresolved -->
 ```javascript
+/* eslint-disable import/no-extraneous-dependencies */
 import gardener from 'js-gardener';
+import fs from 'smart-fs';
+import process from 'process';
 
-if (require.main === module) {
-  gardener().catch(() => process.exit(1));
+if (process.argv[1] === fs.filename(import.meta.url)) {
+  gardener({
+    skip: []
+  }).catch(() => process.exit(1));
 }
 ```
 
