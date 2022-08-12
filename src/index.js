@@ -1,15 +1,15 @@
-const assert = require('assert');
-const fs = require('fs');
-const log = require('fancy-log');
-const chalk = require('chalk');
-const Joi = require('joi-strict');
-const util = require('./util');
-const roboSubtask = require('./subtasks/robo');
-const structSubtask = require('./subtasks/struct');
-const eslintSubtask = require('./subtasks/eslint');
-const yamllintSubtask = require('./subtasks/yamllint');
-const depcheckSubtask = require('./subtasks/depcheck');
-const depusedSubtask = require('./subtasks/depused');
+import assert from 'assert';
+import fs from 'smart-fs';
+import log from 'fancy-log';
+import chalk from 'chalk';
+import Joi from 'joi-strict';
+import { getEsLintFiles, getYamlFiles, loadConfig } from './util.js';
+import roboSubtask from './subtasks/robo.js';
+import structSubtask from './subtasks/struct.js';
+import eslintSubtask from './subtasks/eslint.js';
+import yamllintSubtask from './subtasks/yamllint.js';
+import depcheckSubtask from './subtasks/depcheck.js';
+import depusedSubtask from './subtasks/depused.js';
 
 const taskNames = [
   'robo',
@@ -26,7 +26,7 @@ const schema = Joi.object().keys({
   docker: Joi.boolean()
 });
 
-module.exports = (options = {}) => {
+export default (options = {}) => {
   assert(options instanceof Object && !Array.isArray(options));
   const ctx = {
     logger: log,
@@ -46,14 +46,14 @@ module.exports = (options = {}) => {
 
   const tasks = {
     robo: () => roboSubtask(ctx.logger, ctx.cwd),
-    structure: () => structSubtask(ctx.logger, ctx.cwd, util.loadConfig(ctx.cwd, '.structignore')),
+    structure: () => structSubtask(ctx.logger, ctx.cwd, loadConfig(ctx.cwd, '.structignore')),
     eslint: () => eslintSubtask(ctx.logger, ctx.cwd, {
-      files: util.getEsLintFiles(ctx.cwd, util.loadConfig(ctx.cwd, '.eslintignore')),
+      files: getEsLintFiles(ctx.cwd, loadConfig(ctx.cwd, '.eslintignore')),
       fix: process.argv.includes('--fix')
     }),
-    yamllint: () => yamllintSubtask(ctx.logger, ctx.cwd, util.getYamlFiles(ctx.cwd)),
+    yamllint: () => yamllintSubtask(ctx.logger, ctx.cwd, getYamlFiles(ctx.cwd)),
     depcheck: () => depcheckSubtask(ctx.logger, ctx.cwd),
-    depused: () => depusedSubtask(ctx.logger, ctx.cwd, util.loadConfig(ctx.cwd, '.depunusedignore'))
+    depused: () => depusedSubtask(ctx.logger, ctx.cwd, loadConfig(ctx.cwd, '.depunusedignore'))
   };
 
   return taskNames

@@ -1,9 +1,9 @@
-const path = require('path');
-const expect = require('chai').expect;
-const sfs = require('smart-fs');
-const { describe } = require('node-tdd');
-const util = require('../../src/util');
-const struct = require('../../src/subtasks/struct');
+import path from 'path';
+import { expect } from 'chai';
+import sfs from 'smart-fs';
+import { describe } from 'node-tdd';
+import { loadConfig } from '../../src/util.js';
+import struct from '../../src/subtasks/struct.js';
 
 describe('Testing struct', { useTmpDir: true, record: console }, () => {
   it('Testing Ok', async ({ dir, recorder }) => {
@@ -16,7 +16,7 @@ describe('Testing struct', { useTmpDir: true, record: console }, () => {
   it('Testing Ok (Ignored)', async ({ dir, recorder }) => {
     sfs.smartWrite(path.join(dir, 'test', 'index.spec.js'), ['']);
     sfs.smartWrite(path.join(dir, '.structignore'), ['test/index.spec.js']);
-    expect(await struct(console, dir, util.loadConfig(dir, '.structignore'))).to.equal(undefined);
+    expect(await struct(console, dir, loadConfig(dir, '.structignore'))).to.equal(undefined);
     expect(recorder.get()).to.deep.equal([]);
   });
 

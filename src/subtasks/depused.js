@@ -1,8 +1,8 @@
-const npmCheck = require('npm-check');
-const difference = require('lodash.difference');
+import npmCheck from 'npm-check';
+import difference from 'lodash.difference';
 
 // Return Promise resolving to true iff packages are in good state
-module.exports = (logger, dir, suppressed) => (async () => npmCheck({ cwd: dir })
+export default (logger, dir, suppressed) => (async () => npmCheck({ cwd: dir })
   .then((currentState) => currentState.get('packages').filter((e) => e.unused).map((e) => e.moduleName))
   .then((unused) => {
     const unexpected = difference(unused, suppressed).sort();

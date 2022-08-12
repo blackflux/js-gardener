@@ -1,6 +1,6 @@
-const { ESLint } = require('eslint');
+import { ESLint } from 'eslint';
 
-module.exports = (logger, dir, { files = [], fix = false } = {}) => (async () => {
+export default (logger, dir, { files = [], fix = false } = {}) => (async () => {
   if (files.length === 0) {
     throw new Error('No ESLint files found.');
   }

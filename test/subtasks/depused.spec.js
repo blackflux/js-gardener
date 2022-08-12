@@ -1,8 +1,8 @@
-const path = require('path');
-const sfs = require('smart-fs');
-const expect = require('chai').expect;
-const { describe } = require('node-tdd');
-const depused = require('../../src/subtasks/depused');
+import path from 'path';
+import sfs from 'smart-fs';
+import { expect } from 'chai';
+import { describe } from 'node-tdd';
+import depused from '../../src/subtasks/depused.js';
 
 describe('Testing depused', { useTmpDir: true, record: console, timeout: 60000 }, () => {
   it('Testing Ok', async ({ dir, recorder }) => {
