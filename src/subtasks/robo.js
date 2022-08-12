@@ -1,6 +1,6 @@
-const robo = require('robo-config');
+import robo from 'robo-config';
 
-module.exports = (logger, cwd) => (async () => {
+export default (logger, cwd) => (async () => {
   let result;
   try {
     result = robo(cwd);

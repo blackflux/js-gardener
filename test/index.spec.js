@@ -1,10 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const fancyLog = require('fancy-log');
-const sfs = require('smart-fs');
-const expect = require('chai').expect;
-const { describe } = require('node-tdd');
-const gardener = require('../src/index');
+import fs from 'smart-fs';
+import path from 'path';
+import fancyLog from 'fancy-log';
+import { expect } from 'chai';
+import { describe } from 'node-tdd';
+import gardener from '../src/index.js';
 
 describe('Testing Integration', { useTmpDir: true, record: fancyLog, timeout: 30000 }, () => {
   let fsExistsSyncOriginal;
@@ -16,17 +15,18 @@ describe('Testing Integration', { useTmpDir: true, record: fancyLog, timeout: 30
   });
 
   it('Testing Ok', async ({ dir }) => {
-    sfs.smartWrite(path.join(dir, '.roboconfig.json'), {});
-    sfs.smartWrite(
+    fs.smartWrite(path.join(dir, '.roboconfig.json'), {});
+    fs.smartWrite(
       path.join(dir, '.eslintrc.json'),
-      sfs.smartRead(path.join(__dirname, '..', '.eslintrc.json'))
+      fs.smartRead(path.join(fs.dirname(import.meta.url), '..', '.eslintrc.json'))
     );
     fs.symlinkSync(
-      path.join(__dirname, '..', 'node_modules'),
+      path.join(fs.dirname(import.meta.url), '..', 'node_modules'),
       path.join(dir, 'node_modules')
     );
-    sfs.smartWrite(path.join(dir, 'package.json'), {
+    fs.smartWrite(path.join(dir, 'package.json'), {
       name: 'pkg',
+      type: 'module',
       dependencies: {
         '@babel/register': '1.0.0'
       },

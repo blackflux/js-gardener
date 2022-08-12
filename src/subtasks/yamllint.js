@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
+import fs from 'smart-fs';
+import path from 'path';
+import yaml from 'js-yaml';
 
-module.exports = (logger, cwd, files) => (async () => {
+export default (logger, cwd, files) => (async () => {
   let result = true;
   files.forEach((file) => {
     const content = fs.readFileSync(path.join(cwd, file), 'utf-8');

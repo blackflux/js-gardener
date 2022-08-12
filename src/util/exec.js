@@ -1,3 +1,3 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
-module.exports.run = (cmd, cwd) => execSync(cmd, { cwd }).toString('utf8').trim();
+export const run = (cmd, cwd) => execSync(cmd, { cwd }).toString('utf8').trim();

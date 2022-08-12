@@ -1,7 +1,9 @@
-const fs = require('fs');
-const globSync = require('glob').sync;
+import fs from 'smart-fs';
+import glob from 'glob';
 
-module.exports.getEsLintFiles = (folder, ignore) => globSync(
+const globSync = glob.sync;
+
+export const getEsLintFiles = (folder, ignore) => globSync(
   '**/*.{js,json,md}',
   {
     cwd: folder,
@@ -10,7 +12,7 @@ module.exports.getEsLintFiles = (folder, ignore) => globSync(
   }
 );
 
-module.exports.getTestFiles = (folder) => globSync(
+export const getTestFiles = (folder) => globSync(
   'test/**/*.spec.js',
   {
     cwd: folder,
@@ -22,7 +24,7 @@ module.exports.getTestFiles = (folder) => globSync(
   }
 );
 
-module.exports.getYamlFiles = (folder) => globSync(
+export const getYamlFiles = (folder) => globSync(
   '**/*.{yml,yaml}',
   {
     cwd: folder,
@@ -33,10 +35,10 @@ module.exports.getYamlFiles = (folder) => globSync(
   }
 );
 
-const readTextFile = (filePath) => String(fs.readFileSync(filePath));
-module.exports.readTextFile = readTextFile;
+export const readTextFile = (filePath) => String(fs.readFileSync(filePath));
 
-module.exports.loadConfig = (cwd, name) => readTextFile(`${__dirname}/conf/${name}`).split('\n')
+export const loadConfig = (cwd, name) => readTextFile(`${fs.dirname(import.meta.url)}/conf/${name}`)
+  .split('\n')
   // add additional config options from project
   .concat(fs.existsSync(`${cwd}/${name}`) ? readTextFile(`${cwd}/${name}`).split('\n') : [])
   .map((e) => e.split('#', 1)[0].trim())

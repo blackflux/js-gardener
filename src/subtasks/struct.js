@@ -1,11 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'smart-fs';
+import path from 'path';
 
-const util = require('../util');
+import { getTestFiles } from '../util.js';
 
 // Check project structure
-module.exports = (logger, cwd, ignored) => (async () => {
-  const notFoundFiles = util.getTestFiles(cwd)
+export default (logger, cwd, ignored) => (async () => {
+  const notFoundFiles = getTestFiles(cwd)
     .filter((e) => ignored.indexOf(e) === -1)
     .map((f) => [f, path.join(cwd, f.replace(/^test([/\\].*?)([^/\\]*?).spec.js$/, 'src$1$2.js'))])
     .reduce((errors, [testFile, srcFile]) => {
