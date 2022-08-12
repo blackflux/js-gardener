@@ -1,8 +1,8 @@
-const path = require('path');
-const expect = require('chai').expect;
-const sfs = require('smart-fs');
-const { describe } = require('node-tdd');
-const robo = require('../../src/subtasks/robo');
+import path from 'path';
+import { expect } from 'chai';
+import sfs from 'smart-fs';
+import { describe } from 'node-tdd';
+import robo from '../../src/subtasks/robo.js';
 
 describe('Testing robo', { useTmpDir: true, record: console }, () => {
   it('Testing Success (Done)', async ({ dir, recorder }) => {

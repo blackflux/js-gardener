@@ -1,8 +1,8 @@
-const path = require('path');
-const sfs = require('smart-fs');
-const expect = require('chai').expect;
-const { describe } = require('node-tdd');
-const yamllint = require('../../src/subtasks/yamllint');
+import path from 'path';
+import sfs from 'smart-fs';
+import { expect } from 'chai';
+import { describe } from 'node-tdd';
+import yamllint from '../../src/subtasks/yamllint.js';
 
 describe('Testing yamllint', { useTmpDir: true, record: console }, () => {
   it('Testing Ok', async ({ dir }) => {

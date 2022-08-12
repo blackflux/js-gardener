@@ -1,5 +1,6 @@
 {
   "description": "Minimizes project setup and maintenance complexity, so you can focus on writing code.",
+  "type": "module",
   "keywords": [
     "test",
     "automation",
@@ -11,76 +12,39 @@
     "ci"
   ],
   "devDependencies": {
-    "@babel/cli": "7.16.8",
-    "@babel/core": "7.16.7",
-    "@babel/eslint-parser": "7.16.5",
-    "@babel/register": "7.16.8",
-    "@blackflux/eslint-plugin-rules": "2.0.4",
-    "@blackflux/robo-config-plugin": "5.3.21",
-    "babel-plugin-istanbul": "6.1.1",
-    "babel-preset-latest-node": "5.5.1",
-    "chai": "4.3.4",
-    "coveralls": "3.1.1",
-    "eslint": "8.6.0",
+    "@babel/core": "7.18.10",
+    "@babel/eslint-parser": "7.18.9",
+    "@babel/register": "7.18.9",
+    "@blackflux/eslint-plugin-rules": "2.1.0",
+    "@blackflux/robo-config-plugin": "7.9.11",
+    "c8": "7.12.0",
+    "chai": "4.3.6",
+    "eslint": "8.21.0",
     "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-import": "2.26.0",
     "eslint-plugin-json": "3.1.0",
-    "eslint-plugin-markdown": "2.2.1",
-    "eslint-plugin-mocha": "9.0.0",
-    "node-tdd": "3.3.1",
-    "nyc": "15.1.0",
-    "smart-fs": "2.0.3"
+    "eslint-plugin-markdown": "3.0.0",
+    "eslint-plugin-mocha": "10.1.0",
+    "js-gardener": "3.0.5",
+    "node-tdd": "3.4.2"
   },
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "files": [
     "lib"
   ],
-  "nyc": {
-    "exclude": [
-      "gardener.js",
-      "node_modules/*",
-      "coverage/*",
-      "lib/*"
-    ],
-    "tempDir": "./coverage/.nyc_output",
-    "report-dir": "./coverage",
-    "check-coverage": true,
-    "per-file": false,
-    "lines": 100,
-    "statements": 100,
-    "functions": 100,
-    "branches": 100,
-    "include": [
-      "**/*.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ],
-    "require": [
-      "@babel/register"
-    ],
-    "extension": [],
-    "cache": true,
-    "all": true,
-    "babel": true,
-    "sourceMap": false,
-    "instrument": false
-  },
   "name": "js-gardener",
   "version": "0.0.0-development",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "npx babel src --out-dir lib --copy-files --include-dotfiles --config-file ./.babelrc",
+    "build": "cp -rf ./src ./lib",
     "build-clean": "yarn run clean && yarn run build",
-    "test-simple": "nyc mocha \"./test/**/*.spec.js\"",
+    "test-simple": "c8 mocha --experimental-loader=./test/hot.js \"./test/**/*.spec.js\"",
     "test": "yarn run clean && yarn run gardener && yarn run test-simple",
-    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info",
     "semantic-release": "yarn run build-clean && npx semantic-release",
-    "gardener": "node gardener",
+    "gardener": "node gardener.js",
     "docker": "docker run --net host -u`id -u`:`id -g` -v $(pwd):/user/project -v ~/.aws:/user/.aws -v ~/.npmrc:/user/.npmrc -w /user/project -it --entrypoint /bin/bash",
     "t": "yarn test",
     "ts": "yarn run test-simple",
@@ -106,15 +70,16 @@
   },
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
-    "chalk": "4.1.2",
+    "chalk": "5.0.1",
     "fancy-log": "2.0.0",
-    "glob": "7.2.0",
+    "glob": "8.0.3",
     "joi-strict": "2.0.1",
     "js-yaml": "4.1.0",
     "lodash.difference": "4.5.0",
-    "mocha": "9.1.3",
-    "npm-check": "5.9.2",
-    "robo-config": "4.0.5"
+    "mocha": "10.0.0",
+    "npm-check": "6.0.1",
+    "robo-config": "4.0.5",
+    "smart-fs": "3.0.1"
   },
   "peerDependencies": {
     "eslint": "^8.0.0"
