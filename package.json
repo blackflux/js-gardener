@@ -19,13 +19,13 @@
     "@blackflux/robo-config-plugin": "7.9.11",
     "c8": "7.12.0",
     "chai": "4.3.6",
-    "eslint": "8.21.0",
+    "eslint": "8.22.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-markdown": "3.0.0",
     "eslint-plugin-mocha": "10.1.0",
-    "js-gardener": "3.0.5",
+    "js-gardener": "4.0.0",
     "node-tdd": "3.4.2"
   },
   "engines": {
