@@ -1,6 +1,7 @@
 import fs from 'smart-fs';
 import path from 'path';
 import { ESLint } from 'eslint';
+import { transform } from 'plugin-name-to-package-name';
 
 export default (logger, dir, { files = [], fix = false } = {}) => (async () => {
   if (files.length === 0) {
@@ -10,10 +11,7 @@ export default (logger, dir, { files = [], fix = false } = {}) => (async () => {
   const configFile = path.join(dir, '.eslintrc.json');
   const config = fs.existsSync(configFile) ? fs.smartRead(configFile) : {};
   const plugins = Object.fromEntries(await Promise.all((config.plugins || [])
-    .map((p) => {
-      const [org, name] = p.includes('/') ? p.split('/') : ['', p];
-      return `${org}${org === '' ? '' : '/'}eslint-plugin-${name}`;
-    })
+    .map((p) => transform(p, 'eslint-plugin'))
     .map((p) => import(p).then(({ default: d }) => [p, d]))));
 
   const eslint = new ESLint({
