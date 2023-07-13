@@ -82,6 +82,9 @@
     "robo-config": "5.0.0",
     "smart-fs": "3.0.1"
   },
+  "resolutions": {
+    "strip-ansi": "^6.0.0"
+  },
   "peerDependencies": {
     "eslint": "^8.0.0"
   }
