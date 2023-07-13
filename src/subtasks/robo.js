@@ -3,7 +3,7 @@ import robo from 'robo-config';
 export default (logger, cwd) => (async () => {
   let result;
   try {
-    result = robo(cwd);
+    result = await robo(cwd);
   } catch (e) {
     logger.error(e.message);
     throw e;
