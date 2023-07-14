@@ -16,20 +16,20 @@
     "@babel/eslint-parser": "7.22.9",
     "@babel/register": "7.22.5",
     "@blackflux/eslint-plugin-rules": "2.1.0",
-    "@blackflux/robo-config-plugin": "7.9.21",
+    "@blackflux/robo-config-plugin": "8.0.1",
     "c8": "8.0.0",
     "chai": "4.3.7",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-markdown": "3.0.0",
     "eslint-plugin-mocha": "10.1.0",
-    "js-gardener": "4.0.2",
+    "js-gardener": "4.0.3",
     "node-tdd": "3.5.0"
   },
   "engines": {
-    "node": ">= 14"
+    "node": ">= 16"
   },
   "files": [
     "lib"
