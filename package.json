@@ -12,21 +12,21 @@
     "ci"
   ],
   "devDependencies": {
-    "@babel/core": "7.18.10",
-    "@babel/eslint-parser": "7.18.9",
-    "@babel/register": "7.18.9",
+    "@babel/core": "7.22.9",
+    "@babel/eslint-parser": "7.22.9",
+    "@babel/register": "7.22.5",
     "@blackflux/eslint-plugin-rules": "2.1.0",
-    "@blackflux/robo-config-plugin": "7.9.11",
-    "c8": "7.12.0",
-    "chai": "4.3.6",
-    "eslint": "8.22.0",
+    "@blackflux/robo-config-plugin": "7.9.21",
+    "c8": "8.0.0",
+    "chai": "4.3.7",
+    "eslint": "8.44.0",
     "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-import": "2.27.5",
     "eslint-plugin-json": "3.1.0",
     "eslint-plugin-markdown": "3.0.0",
     "eslint-plugin-mocha": "10.1.0",
-    "js-gardener": "4.0.0",
-    "node-tdd": "3.4.2"
+    "js-gardener": "4.0.2",
+    "node-tdd": "3.5.0"
   },
   "engines": {
     "node": ">= 14"
@@ -70,17 +70,22 @@
   },
   "homepage": "https://github.com/blackflux/js-gardener#readme",
   "dependencies": {
-    "chalk": "5.0.1",
+    "chalk": "5.3.0",
     "fancy-log": "2.0.0",
-    "glob": "8.0.3",
+    "glob": "10.3.3",
     "joi-strict": "2.0.1",
     "js-yaml": "4.1.0",
     "lodash.difference": "4.5.0",
-    "mocha": "10.0.0",
+    "mocha": "10.2.0",
     "npm-check": "6.0.1",
     "plugin-name-to-package-name": "0.1.1",
-    "robo-config": "4.0.5",
+    "robo-config": "5.0.0",
     "smart-fs": "3.0.1"
+  },
+  "resolutions": {
+    "strip-ansi": "^6.0.0",
+    "string-width": "^4.0.0",
+    "wrap-ansi": "^v7.0.0"
   },
   "peerDependencies": {
     "eslint": "^8.0.0"
