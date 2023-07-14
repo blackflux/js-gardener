@@ -34,14 +34,15 @@ version: 2
 jobs:
   gally-create-pr:
     docker:
-      - image: circleci/node:14
+#     PIN to what AWS ships with
+      - image: cimg/node:14.21
     steps:
       - checkout
       - run: sudo yarn global add gally
       - run: ga promote $CIRCLE_BRANCH
   release:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:14.19
     steps:
       - checkout
       - run:
@@ -67,11 +68,11 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run: yarn global add semantic-release
+      - run: yarn global add "semantic-release@^19.0.5"
       - run: yarn run semantic-release
   gally-auto-approve:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:14.21
     steps:
       - run:
           name: Set PR number
@@ -90,7 +91,7 @@ jobs:
           "base.ref=dev&state=open&user.login=dependabot-preview[bot]"
   test-node-v14:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:14.21
     steps:
       - checkout
       - run:
@@ -122,7 +123,7 @@ jobs:
           1);
   test-node-v16:
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:16.20
     steps:
       - checkout
       - run:
@@ -154,7 +155,7 @@ jobs:
           1);
   test-node-v18:
     docker:
-      - image: cimg/node:18.0
+      - image: cimg/node:18.16
     steps:
       - checkout
       - run:

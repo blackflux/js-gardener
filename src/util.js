@@ -1,7 +1,5 @@
 import fs from 'smart-fs';
-import glob from 'glob';
-
-const globSync = glob.sync;
+import { sync as globSync } from 'glob';
 
 export const getEsLintFiles = (folder, ignore) => globSync(
   '**/*.{js,json,md}',
