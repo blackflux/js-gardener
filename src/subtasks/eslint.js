@@ -1,5 +1,5 @@
-import fs from 'smart-fs';
 import path from 'path';
+import fs from 'smart-fs';
 import { ESLint } from 'eslint';
 import { transform } from 'plugin-name-to-package-name';
 
