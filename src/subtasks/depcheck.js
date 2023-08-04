@@ -1,6 +1,6 @@
-import fs from 'smart-fs';
 import path from 'path';
 import childProcess from 'child_process';
+import fs from 'smart-fs';
 
 export default (logger, dir) => (async () => {
   let success = true;

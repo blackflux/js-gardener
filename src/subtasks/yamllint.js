@@ -1,5 +1,5 @@
-import fs from 'smart-fs';
 import path from 'path';
+import fs from 'smart-fs';
 import yaml from 'js-yaml';
 
 export default (logger, cwd, files) => (async () => {

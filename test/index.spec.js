@@ -1,5 +1,5 @@
-import fs from 'smart-fs';
 import path from 'path';
+import fs from 'smart-fs';
 import fancyLog from 'fancy-log';
 import { expect } from 'chai';
 import { describe } from 'node-tdd';
