@@ -28,7 +28,7 @@
           "ci/circleci: test-node-v20"
         ]
       },
-      "enforce_admins": true,
+      "enforce_admins": false,
       "required_pull_request_reviews": {
         "dismissal_restrictions": {"users": ["simlu"], "teams": []},
         "dismiss_stale_reviews": true,

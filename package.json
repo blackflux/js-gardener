@@ -16,7 +16,7 @@
     "@babel/eslint-parser": "7.22.9",
     "@babel/register": "7.22.5",
     "@blackflux/eslint-plugin-rules": "2.2.0",
-    "@blackflux/robo-config-plugin": "9.1.7",
+    "@blackflux/robo-config-plugin": "9.1.8",
     "c8": "8.0.1",
     "chai": "4.3.7",
     "eslint": "8.46.0",
