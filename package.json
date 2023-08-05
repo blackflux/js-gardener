@@ -80,10 +80,7 @@
     "npm-check": "6.0.1",
     "plugin-name-to-package-name": "0.1.1",
     "robo-config": "6.0.0",
-    "smart-fs": "4.0.0",
-    "string-width": "^6.1.0",
-    "strip-ansi": "^7.1.0",
-    "wrap-ansi": "^8.1.0"
+    "smart-fs": "4.0.0"
   },
   "resolutions": {
     "strip-ansi": "^6.0.0",
