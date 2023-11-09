@@ -1,3 +1,4 @@
+import path from 'path';
 import fs from 'smart-fs';
 import { sync as globSync } from 'glob';
 
@@ -33,11 +34,16 @@ export const getYamlFiles = (folder) => globSync(
   }
 );
 
-export const readTextFile = (filePath) => String(fs.readFileSync(filePath));
+export const loadConfig = (cwd, name) => {
+  const configFilePathBase = path.join(fs.dirname(import.meta.url), 'conf', name);
+  const configFilePath = path.join(cwd, name);
 
-export const loadConfig = (cwd, name) => readTextFile(`${fs.dirname(import.meta.url)}/conf/${name}`)
-  .split('\n')
-  // add additional config options from project
-  .concat(fs.existsSync(`${cwd}/${name}`) ? readTextFile(`${cwd}/${name}`).split('\n') : [])
-  .map((e) => e.split('#', 1)[0].trim())
-  .filter((e) => e !== '');
+  const lines = fs.smartRead(configFilePathBase);
+  if (fs.existsSync(configFilePath)) {
+    lines.push(...fs.smartRead(configFilePath));
+  }
+
+  return lines
+    .map((e) => e.split('#', 1)[0].trim())
+    .filter((e) => e !== '');
+};
