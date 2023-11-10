@@ -1,37 +1,29 @@
 import path from 'path';
 import fs from 'smart-fs';
-import { sync as globSync } from 'glob';
+import { sync } from 'glob';
+
+const globSync = (wildcard, folder, ignore) => sync(
+  wildcard,
+  { cwd: folder, ignore, dot: true }
+)
+  .map((files) => files.split(path.sep).join(path.posix.sep));
 
 export const getEsLintFiles = (folder, ignore) => globSync(
   '**/*.{js,json,md}',
-  {
-    cwd: folder,
-    ignore,
-    dot: true
-  }
+  folder,
+  ignore
 );
 
 export const getTestFiles = (folder) => globSync(
   'test/**/*.spec.js',
-  {
-    cwd: folder,
-    ignore: [
-      '**/node_modules/**',
-      '**/coverage/**'
-    ],
-    dot: true
-  }
+  folder,
+  ['**/node_modules/**', '**/coverage/**']
 );
 
 export const getYamlFiles = (folder) => globSync(
   '**/*.{yml,yaml}',
-  {
-    cwd: folder,
-    ignore: [
-      '**/node_modules/**'
-    ],
-    dot: true
-  }
+  folder,
+  ['**/node_modules/**']
 );
 
 export const loadConfig = (cwd, name) => {
