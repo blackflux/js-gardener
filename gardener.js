@@ -5,6 +5,6 @@ import fs from 'smart-fs';
 
 if (process.argv[1] === fs.filename(import.meta.url)) {
   gardener({
-    skip: ['robo', 'eslint']
+    skip: []
   }).catch(() => process.exit(1));
 }
