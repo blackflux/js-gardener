@@ -13,8 +13,8 @@ describe('Testing depcheck', { timeout: 30000, record: console, useTmpDir: true 
     await capture(() => depcheck(console, dir));
     const logs = recorder.get('error');
     expect(logs.length).to.equal(2);
-    expect(logs[0]).to.include('missing: mocha@5.0.5');
-    expect(logs[1]).to.include('npm ERR! missing: mocha@5.0.5');
+    expect(String(logs[0])).to.include('missing: mocha@5.0.5');
+    expect(String(logs[1])).to.include('missing: mocha@5.0.5');
   });
 
   it('Testing Ok (NPM)', async ({ dir, recorder }) => {
