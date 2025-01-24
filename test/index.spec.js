@@ -19,9 +19,14 @@ describe('Testing Integration', { useTmpDir: true, record: fancyLog, timeout: 30
   it('Testing Ok', async ({ dir }) => {
     fs.smartWrite(path.join(dir, '.roboconfig.json'), {});
     fs.smartWrite(
+      path.join(dir, 'eslint.config.js'),
+      fs.smartRead(path.join(fs.dirname(import.meta.url), '..', 'eslint.config.js'), { treatAs: 'txt' })
+    );
+    fs.smartWrite(
       path.join(dir, '.eslintrc.json'),
       fs.smartRead(path.join(fs.dirname(import.meta.url), '..', '.eslintrc.json'))
     );
+    fs.smartWrite(path.join(dir, '.eslintignore'), ['eslint.config.js']);
     fs.symlinkSync(
       path.join(fs.dirname(import.meta.url), '..', 'node_modules'),
       path.join(dir, 'node_modules')

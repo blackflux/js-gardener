@@ -6,6 +6,11 @@ import eslint from '../../src/subtasks/eslint.js';
 
 describe('Testing eslint', { record: console, useTmpDir: true }, () => {
   beforeEach(({ dir }) => {
+    fs.smartWrite(path.join(dir, 'package.json'), { type: 'module' });
+    fs.smartWrite(
+      path.join(dir, 'eslint.config.js'),
+      fs.smartRead(path.join(fs.dirname(import.meta.url), '..', '..', 'eslint.config.js'), { treatAs: 'txt' })
+    );
     fs.smartWrite(
       path.join(dir, '.eslintrc.json'),
       fs.smartRead(path.join(fs.dirname(import.meta.url), '..', '..', '.eslintrc.json'))
@@ -20,6 +25,7 @@ describe('Testing eslint', { record: console, useTmpDir: true }, () => {
     const idxFile = path.join(dir, 'src', 'index.js');
     fs.smartWrite(idxFile, ['module.exports = {};']);
     fs.smartWrite(path.join(dir, '.eslintrc.json'), { root: true });
+    fs.smartWrite(path.join(dir, 'eslint.config.js'), ['export default [];']);
     expect(await eslint(console, dir, { files: [idxFile] })).to.equal(undefined);
   });
 
