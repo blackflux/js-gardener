@@ -21,7 +21,11 @@ export default (logger, dir, { files = [], fix = false } = {}) => (async () => {
     baseConfig: {},
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
     ignore: false,
-    reportUnusedDisableDirectives: 'error'
+    overrideConfig: {
+      linterOptions: {
+        reportUnusedDisableDirectives: 'error'
+      }
+    }
   });
   const results = await eslint.lintFiles(files);
   await ESLint.outputFixes(results);
