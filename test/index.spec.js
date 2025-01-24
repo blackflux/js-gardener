@@ -7,9 +7,11 @@ import gardener from '../src/index.js';
 
 describe('Testing Integration', { useTmpDir: true, record: fancyLog, timeout: 30000 }, () => {
   let fsExistsSyncOriginal;
+
   before(() => {
     fsExistsSyncOriginal = fs.existsSync;
   });
+
   after(() => {
     fs.existsSync = fsExistsSyncOriginal;
   });
