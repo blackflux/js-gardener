@@ -25,7 +25,7 @@
     "eslint-plugin-json": "4.0.1",
     "eslint-plugin-markdown": "5.1.0",
     "eslint-plugin-mocha": "10.5.0",
-    "js-gardener": "5.0.3",
+    "js-gardener": "6.0.1",
     "node-tdd": "5.2.5"
   },
   "engines": {
@@ -81,11 +81,6 @@
     "plugin-name-to-package-name": "0.1.1",
     "robo-config": "6.0.1",
     "smart-fs": "4.0.1"
-  },
-  "resolutions": {
-    "strip-ansi": "^6.0.0",
-    "string-width": "^4.0.0",
-    "wrap-ansi": "^v7.0.0"
   },
   "peerDependencies": {
     "eslint": "^9.0.0"
