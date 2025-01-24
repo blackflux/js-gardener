@@ -6,6 +6,7 @@ import eslint from '../../src/subtasks/eslint.js';
 
 describe('Testing eslint', { record: console, useTmpDir: true }, () => {
   beforeEach(({ dir }) => {
+    fs.smartWrite(path.join(dir, 'package.json'), { type: 'module' });
     fs.smartWrite(
       path.join(dir, 'eslint.config.js'),
       fs.smartRead(path.join(fs.dirname(import.meta.url), '..', '..', 'eslint.config.js'), { treatAs: 'txt' })
