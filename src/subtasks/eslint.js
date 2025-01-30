@@ -19,6 +19,7 @@ export default (logger, dir, { files = [], fix = false } = {}) => (async () => {
     fix,
     plugins,
     baseConfig: {},
+    flags: ['unstable_config_lookup_from_file'], // allow nested eslint config
     // we use glob on passed in files, due to https://github.com/eslint/eslint/issues/5623
     ignore: false,
     overrideConfig: {
